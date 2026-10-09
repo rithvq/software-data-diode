@@ -1,0 +1,15 @@
+{
+  "uid": "diode-security",
+  "title": "Security",
+  "tags": ["data-diode", "security"],
+  "timezone": "browser",
+  "schemaVersion": 41,
+  "refresh": "5s",
+  "time": {"from": "now-1h", "to": "now"},
+  "panels": [
+    {"id": 1, "type": "stat", "title": "Signature Failures", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "sum(signature_failures_total)"}], "gridPos": {"h": 7, "w": 8, "x": 0, "y": 0}},
+    {"id": 2, "type": "stat", "title": "Replay Attempts", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "sum(replay_attempts_total)"}], "gridPos": {"h": 7, "w": 8, "x": 8, "y": 0}},
+    {"id": 3, "type": "stat", "title": "Audit Chain", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "min(audit_log_valid)"}], "gridPos": {"h": 7, "w": 8, "x": 16, "y": 0}},
+    {"id": 4, "type": "timeseries", "title": "Rejected Messages", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "sum by (reason) (rate(messages_rejected_total[5m]))", "legendFormat": "{{reason}}"}], "gridPos": {"h": 10, "w": 24, "x": 0, "y": 7}}
+  ]
+}

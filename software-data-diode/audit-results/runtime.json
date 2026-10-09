@@ -1,0 +1,241 @@
+[
+  {
+    "check": "edge-gateway readiness",
+    "passed": true,
+    "evidence": 200,
+    "timestamp": "2026-09-23T07:47:39.544088+00:00"
+  },
+  {
+    "check": "dashboard readiness",
+    "passed": true,
+    "evidence": 200,
+    "timestamp": "2026-09-23T07:47:39.701911+00:00"
+  },
+  {
+    "check": "prometheus-edge readiness",
+    "passed": true,
+    "evidence": 200,
+    "timestamp": "2026-09-23T07:47:39.875524+00:00"
+  },
+  {
+    "check": "prometheus-fog readiness",
+    "passed": true,
+    "evidence": 200,
+    "timestamp": "2026-09-23T07:47:40.034058+00:00"
+  },
+  {
+    "check": "grafana readiness",
+    "passed": true,
+    "evidence": 200,
+    "timestamp": "2026-09-23T07:47:40.196698+00:00"
+  },
+  {
+    "check": "five active Edge devices",
+    "passed": true,
+    "evidence": {
+      "generated_messages": 123,
+      "accepted_messages": 3598,
+      "rejected_messages": 0,
+      "messages_per_second": 2.15,
+      "bytes_per_second": 761.0833333333334,
+      "average_latency": 0.4559077916666665,
+      "p95_latency": 0.862826,
+      "current_queue_size": 3,
+      "queue_utilization": 0.012,
+      "active_edge_nodes": 5,
+      "critical_alerts": 47,
+      "filtering_percentage": 0.0
+    },
+    "timestamp": "2026-09-23T07:47:41.682005+00:00"
+  },
+  {
+    "check": "analytics and alerts persisted",
+    "passed": true,
+    "evidence": {
+      "anomalies": 50,
+      "alerts": 50
+    },
+    "timestamp": "2026-09-23T07:47:41.682005+00:00"
+  },
+  {
+    "check": "prometheus-edge scrape targets",
+    "passed": true,
+    "evidence": [
+      {
+        "url": "http://data-diode:8000/metrics",
+        "health": "up"
+      },
+      {
+        "url": "http://edge-gateway:8000/metrics",
+        "health": "up"
+      }
+    ],
+    "timestamp": "2026-09-23T07:47:41.844802+00:00"
+  },
+  {
+    "check": "prometheus-fog scrape targets",
+    "passed": true,
+    "evidence": [
+      {
+        "url": "http://alert-engine:8000/metrics",
+        "health": "up"
+      },
+      {
+        "url": "http://event-processor:8000/metrics",
+        "health": "up"
+      },
+      {
+        "url": "http://fog-analytics:8000/metrics",
+        "health": "up"
+      },
+      {
+        "url": "http://fog-receiver:8000/metrics",
+        "health": "up"
+      },
+      {
+        "url": "http://monitoring-api:8000/metrics",
+        "health": "up"
+      }
+    ],
+    "timestamp": "2026-09-23T07:47:42.006531+00:00"
+  },
+  {
+    "check": "Fog and dashboard have no Edge network membership",
+    "passed": true,
+    "evidence": {
+      "edge-gateway": [
+        "software-data-diode-audit_diode-network",
+        "software-data-diode-audit_edge-host-network",
+        "software-data-diode-audit_edge-network"
+      ],
+      "fog-receiver": [
+        "software-data-diode-audit_fog-ingress-network",
+        "software-data-diode-audit_fog-services-network"
+      ],
+      "dashboard": [
+        "software-data-diode-audit_fog-host-network",
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "timestamp": "2026-09-23T07:47:42.868462+00:00"
+  },
+  {
+    "check": "Fog reverse connections blocked",
+    "passed": true,
+    "evidence": {
+      "edge-gateway": "blocked",
+      "edge-device-01": "blocked",
+      "172.29.0.2": "blocked"
+    },
+    "timestamp": "2026-09-23T07:47:43.578282+00:00"
+  },
+  {
+    "check": "Fog cannot submit to diode ingress",
+    "passed": true,
+    "evidence": "403",
+    "timestamp": "2026-09-23T07:47:44.192211+00:00"
+  },
+  {
+    "check": "edge-gateway sees only its runtime files",
+    "passed": true,
+    "evidence": [
+      "edge-gateway-sequences.json",
+      "edge-gateway-audit.jsonl"
+    ],
+    "timestamp": "2026-09-23T07:47:44.488297+00:00"
+  },
+  {
+    "check": "edge-gateway migrated audit chain valid",
+    "passed": true,
+    "evidence": "audit log hash chain is valid",
+    "timestamp": "2026-09-23T07:47:45.523461+00:00"
+  },
+  {
+    "check": "data-diode sees only its runtime files",
+    "passed": true,
+    "evidence": [
+      "data-diode-audit.jsonl"
+    ],
+    "timestamp": "2026-09-23T07:47:45.816452+00:00"
+  },
+  {
+    "check": "data-diode migrated audit chain valid",
+    "passed": true,
+    "evidence": "audit log hash chain is valid",
+    "timestamp": "2026-09-23T07:47:46.517342+00:00"
+  },
+  {
+    "check": "fog-receiver sees only its runtime files",
+    "passed": true,
+    "evidence": [
+      "fog-receiver-audit.jsonl"
+    ],
+    "timestamp": "2026-09-23T07:47:46.872227+00:00"
+  },
+  {
+    "check": "fog-receiver migrated audit chain valid",
+    "passed": true,
+    "evidence": "audit log hash chain is valid",
+    "timestamp": "2026-09-23T07:47:47.506680+00:00"
+  },
+  {
+    "check": "fog-receiver failure propagates readiness",
+    "passed": true,
+    "evidence": "readiness unavailable",
+    "timestamp": "2026-09-23T07:47:48.331577+00:00"
+  },
+  {
+    "check": "fog-receiver outage ingress bounded and responsive",
+    "passed": true,
+    "evidence": {
+      "status": "queued",
+      "message_id": "193fdafd-a14e-4c51-b143-ab5e08749d63",
+      "priority": "CRITICAL",
+      "action": "DELAY",
+      "reason": "admitted to local shaped transmission queue"
+    },
+    "timestamp": "2026-09-23T07:47:48.347805+00:00"
+  },
+  {
+    "check": "fog-receiver readiness recovered",
+    "passed": true,
+    "evidence": "dependency restarted",
+    "timestamp": "2026-09-23T07:47:53.173919+00:00"
+  },
+  {
+    "check": "fog-receiver outage message delivered once after recovery",
+    "passed": true,
+    "evidence": "1",
+    "timestamp": "2026-09-23T07:47:53.911140+00:00"
+  },
+  {
+    "check": "postgres failure propagates readiness",
+    "passed": true,
+    "evidence": "readiness unavailable",
+    "timestamp": "2026-09-23T07:47:54.467292+00:00"
+  },
+  {
+    "check": "postgres outage ingress bounded and responsive",
+    "passed": true,
+    "evidence": {
+      "status": "queued",
+      "message_id": "9d88fa6c-c015-4e08-9ad1-deedf8124138",
+      "priority": "CRITICAL",
+      "action": "DELAY",
+      "reason": "admitted to local shaped transmission queue"
+    },
+    "timestamp": "2026-09-23T07:47:54.470970+00:00"
+  },
+  {
+    "check": "postgres readiness recovered",
+    "passed": true,
+    "evidence": "dependency restarted",
+    "timestamp": "2026-09-23T07:47:55.397553+00:00"
+  },
+  {
+    "check": "postgres outage message delivered once after recovery",
+    "passed": true,
+    "evidence": "1",
+    "timestamp": "2026-09-23T07:47:57.833314+00:00"
+  }
+]

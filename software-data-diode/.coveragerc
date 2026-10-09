@@ -1,0 +1,14 @@
+[run]
+branch = True
+source = shared,phase1,phase2,edge-device,edge-gateway,data-diode,fog-receiver,event-processor,fog-analytics,alert-engine,monitoring-api,dashboard,security-test-client,experiments,scripts
+omit = */__pycache__/*
+
+[report]
+show_missing = True
+skip_empty = True
+
+[html]
+directory = audit-results/coverage-html
+
+[json]
+output = audit-results/coverage.json

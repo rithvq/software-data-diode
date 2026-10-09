@@ -1,0 +1,130 @@
+{
+  "configurations": [
+    {
+      "filtering": false,
+      "id": "baseline_a_direct",
+      "label": "Baseline A: Direct + FIFO",
+      "role": "baseline",
+      "scheduler": "fifo"
+    },
+    {
+      "filtering": true,
+      "id": "baseline_b_fifo",
+      "label": "Baseline B: Filtered + FIFO",
+      "role": "baseline",
+      "scheduler": "fifo"
+    },
+    {
+      "filtering": false,
+      "id": "adaptive_only",
+      "label": "Adaptive scheduling only",
+      "role": "ablation",
+      "scheduler": "adaptive"
+    },
+    {
+      "filtering": true,
+      "id": "proposed",
+      "label": "Adaptive scheduling + filtering",
+      "role": "proposed",
+      "scheduler": "adaptive"
+    }
+  ],
+  "diode_capacity_messages_per_second": 40.0,
+  "duration_seconds": 30.0,
+  "experiment_name": "phase7_research_benchmark",
+  "filter": {
+    "aggregation_sample_count": 5,
+    "enable_aggregation": true,
+    "humidity_delta_threshold": 1.0,
+    "temperature_delta_threshold": 0.25
+  },
+  "low_starvation_threshold_seconds": 5.0,
+  "max_queue_size": 100,
+  "queue_sample_interval_seconds": 0.25,
+  "random_seed": 20260902,
+  "runs_per_configuration": 5,
+  "schema_version": "1.0",
+  "workloads": [
+    {
+      "anomaly_fraction": 0.01,
+      "attack_fraction": 0.005,
+      "id": "light",
+      "label": "A - Light",
+      "load_factor": 0.25,
+      "priority_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 8,
+        "LOW": 70,
+        "MEDIUM": 20
+      }
+    },
+    {
+      "anomaly_fraction": 0.01,
+      "attack_fraction": 0.005,
+      "id": "moderate",
+      "label": "B - Moderate",
+      "load_factor": 0.5,
+      "priority_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 8,
+        "LOW": 70,
+        "MEDIUM": 20
+      }
+    },
+    {
+      "anomaly_fraction": 0.01,
+      "attack_fraction": 0.005,
+      "id": "near_saturation",
+      "label": "C - Near saturation",
+      "load_factor": 0.9,
+      "priority_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 8,
+        "LOW": 70,
+        "MEDIUM": 20
+      }
+    },
+    {
+      "anomaly_fraction": 0.01,
+      "attack_fraction": 0.005,
+      "id": "overload",
+      "label": "D - Overload",
+      "load_factor": 1.5,
+      "priority_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 8,
+        "LOW": 70,
+        "MEDIUM": 20
+      }
+    },
+    {
+      "anomaly_fraction": 0.01,
+      "attack_fraction": 0.005,
+      "burst_duration_fraction": 0.2,
+      "burst_multiplier": 3.0,
+      "burst_start_fraction": 0.4,
+      "id": "burst",
+      "label": "E - Burst",
+      "load_factor": 0.5,
+      "priority_distribution": {
+        "CRITICAL": 2,
+        "HIGH": 8,
+        "LOW": 70,
+        "MEDIUM": 20
+      }
+    },
+    {
+      "anomaly_fraction": 0.08,
+      "attack_fraction": 0.08,
+      "id": "critical_storm",
+      "label": "F - Critical-event storm",
+      "load_factor": 0.9,
+      "priority_distribution": {
+        "CRITICAL": 25,
+        "HIGH": 35,
+        "LOW": 20,
+        "MEDIUM": 20
+      }
+    }
+  ]
+}

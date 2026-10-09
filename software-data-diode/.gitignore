@@ -1,0 +1,9 @@
+.env
+.pytest_cache/
+.venv/
+__pycache__/
+*.py[cod]
+logs/
+secrets/*.pem
+security-reports/
+demo-results/

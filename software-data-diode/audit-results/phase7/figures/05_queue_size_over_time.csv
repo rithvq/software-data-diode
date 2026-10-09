@@ -1,0 +1,485 @@
+configuration,configuration_label,simulation_time_seconds,n,mean,sample_standard_deviation,ci95_margin
+adaptive_only,Adaptive scheduling only,0.0,5,0.0,0.0,0.0
+adaptive_only,Adaptive scheduling only,0.25,5,7.2,2.4899799195977463,3.0912227742432274
+adaptive_only,Adaptive scheduling only,0.5,5,11.8,1.7888543819998317,2.2207999999999997
+adaptive_only,Adaptive scheduling only,0.75,5,16.2,3.7013511046643495,4.595097631171725
+adaptive_only,Adaptive scheduling only,1.0,5,21.4,4.722287581247038,5.862554473947341
+adaptive_only,Adaptive scheduling only,1.25,5,26.4,6.730527468185536,8.355713886915947
+adaptive_only,Adaptive scheduling only,1.5,5,32.2,11.476062042355819,14.247128687563679
+adaptive_only,Adaptive scheduling only,1.75,5,35.2,9.257429448826494,11.492774105497766
+adaptive_only,Adaptive scheduling only,2.0,5,40.0,8.602325267042627,10.67948523103993
+adaptive_only,Adaptive scheduling only,2.25,5,48.4,10.454664030948102,12.979098865483689
+adaptive_only,Adaptive scheduling only,2.5,5,54.4,9.235799911215054,11.465921792860788
+adaptive_only,Adaptive scheduling only,2.75,5,57.2,14.771594362153328,18.33841652488022
+adaptive_only,Adaptive scheduling only,3.0,5,62.8,15.514509338035799,19.260719421662316
+adaptive_only,Adaptive scheduling only,3.25,5,67.4,16.04057355583023,19.91380970482544
+adaptive_only,Adaptive scheduling only,3.5,5,72.4,15.69394787808345,19.483486078215055
+adaptive_only,Adaptive scheduling only,3.75,5,74.4,14.17039166713468,17.592044456514994
+adaptive_only,Adaptive scheduling only,4.0,5,76.4,13.722244714331545,17.03568572614557
+adaptive_only,Adaptive scheduling only,4.25,5,79.4,12.116104984688768,15.04171956127357
+adaptive_only,Adaptive scheduling only,4.5,5,82.0,10.295630140987,12.781663866648973
+adaptive_only,Adaptive scheduling only,4.75,5,85.8,8.497058314499201,10.548799999999998
+adaptive_only,Adaptive scheduling only,5.0,5,87.4,8.44393273303382,10.482846453134758
+adaptive_only,Adaptive scheduling only,5.25,5,92.6,8.23407554009556,10.222316105462594
+adaptive_only,Adaptive scheduling only,5.5,5,95.0,6.041522986797286,7.500338979006215
+adaptive_only,Adaptive scheduling only,5.75,5,97.8,2.9495762407505253,3.661795494016562
+adaptive_only,Adaptive scheduling only,6.0,5,98.0,2.345207879911715,2.9114933625203405
+adaptive_only,Adaptive scheduling only,6.25,5,98.4,1.51657508881031,1.882774803315574
+adaptive_only,Adaptive scheduling only,6.5,5,98.2,1.6431676725154984,2.0399350577898305
+adaptive_only,Adaptive scheduling only,6.75,5,99.0,1.224744871391589,1.520477819634341
+adaptive_only,Adaptive scheduling only,7.0,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,7.25,5,98.4,1.140175425099138,1.4154878169733571
+adaptive_only,Adaptive scheduling only,7.5,5,99.0,1.0,1.241464941107883
+adaptive_only,Adaptive scheduling only,7.75,5,99.6,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,8.0,5,99.2,1.0954451150103321,1.3599567051932202
+adaptive_only,Adaptive scheduling only,8.25,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,8.5,5,98.4,1.140175425099138,1.4154878169733571
+adaptive_only,Adaptive scheduling only,8.75,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,9.0,5,99.0,0.7071067811865476,0.877848278462742
+adaptive_only,Adaptive scheduling only,9.25,5,99.4,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,9.5,5,98.8,1.3038404810405297,1.6186722460090552
+adaptive_only,Adaptive scheduling only,9.75,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,10.0,5,98.6,1.51657508881031,1.882774803315574
+adaptive_only,Adaptive scheduling only,10.25,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,10.5,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,10.75,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,11.0,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,11.25,5,98.0,2.0,2.482929882215766
+adaptive_only,Adaptive scheduling only,11.5,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,11.75,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,12.0,5,98.6,1.140175425099138,1.4154878169733571
+adaptive_only,Adaptive scheduling only,12.25,5,99.0,0.7071067811865476,0.877848278462742
+adaptive_only,Adaptive scheduling only,12.5,5,99.4,1.3416407864998738,1.6655999999999997
+adaptive_only,Adaptive scheduling only,12.75,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,13.0,5,98.2,1.3038404810405297,1.6186722460090552
+adaptive_only,Adaptive scheduling only,13.25,5,98.6,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,13.5,5,99.6,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,13.75,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,14.0,5,99.2,1.0954451150103321,1.3599567051932202
+adaptive_only,Adaptive scheduling only,14.25,5,98.8,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,14.5,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,14.75,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,15.0,5,99.6,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,15.25,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,15.5,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,15.75,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,16.0,5,99.2,1.0954451150103321,1.3599567051932202
+adaptive_only,Adaptive scheduling only,16.25,5,99.0,0.7071067811865476,0.877848278462742
+adaptive_only,Adaptive scheduling only,16.5,5,98.4,1.816590212458495,2.255233061126942
+adaptive_only,Adaptive scheduling only,16.75,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,17.0,5,98.6,1.140175425099138,1.4154878169733571
+adaptive_only,Adaptive scheduling only,17.25,5,99.2,1.0954451150103321,1.3599567051932202
+adaptive_only,Adaptive scheduling only,17.5,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,17.75,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,18.0,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,18.25,5,98.8,1.3038404810405297,1.6186722460090552
+adaptive_only,Adaptive scheduling only,18.5,5,98.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,18.75,5,99.4,1.3416407864998738,1.6655999999999997
+adaptive_only,Adaptive scheduling only,19.0,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,19.25,5,99.2,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,19.5,5,99.0,0.7071067811865476,0.877848278462742
+adaptive_only,Adaptive scheduling only,19.75,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,20.0,5,99.2,1.0954451150103321,1.3599567051932202
+adaptive_only,Adaptive scheduling only,20.25,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,20.5,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,20.75,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,21.0,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,21.25,5,98.6,1.51657508881031,1.882774803315574
+adaptive_only,Adaptive scheduling only,21.5,5,98.4,1.816590212458495,2.255233061126942
+adaptive_only,Adaptive scheduling only,21.75,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,22.0,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,22.25,5,98.8,2.16794833886788,2.6914318568375455
+adaptive_only,Adaptive scheduling only,22.5,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,22.75,5,99.4,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,23.0,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,23.25,5,98.8,1.3038404810405297,1.6186722460090552
+adaptive_only,Adaptive scheduling only,23.5,5,99.0,1.7320508075688772,2.1502803538143573
+adaptive_only,Adaptive scheduling only,23.75,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,24.0,5,99.4,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,24.25,5,99.2,1.3038404810405297,1.6186722460090552
+adaptive_only,Adaptive scheduling only,24.5,5,99.0,1.224744871391589,1.520477819634341
+adaptive_only,Adaptive scheduling only,24.75,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,25.0,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,25.25,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,25.5,5,99.4,1.3416407864998738,1.6655999999999997
+adaptive_only,Adaptive scheduling only,25.75,5,99.0,0.7071067811865476,0.877848278462742
+adaptive_only,Adaptive scheduling only,26.0,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,26.25,5,99.4,1.3416407864998738,1.6655999999999997
+adaptive_only,Adaptive scheduling only,26.5,5,98.2,1.6431676725154984,2.0399350577898305
+adaptive_only,Adaptive scheduling only,26.75,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,27.0,5,99.0,0.7071067811865476,0.877848278462742
+adaptive_only,Adaptive scheduling only,27.25,5,99.0,1.0,1.241464941107883
+adaptive_only,Adaptive scheduling only,27.5,5,99.0,1.7320508075688772,2.1502803538143573
+adaptive_only,Adaptive scheduling only,27.75,5,99.2,0.8366600265340756,1.038684090568446
+adaptive_only,Adaptive scheduling only,28.0,5,99.0,1.7320508075688772,2.1502803538143573
+adaptive_only,Adaptive scheduling only,28.25,5,98.6,1.140175425099138,1.4154878169733571
+adaptive_only,Adaptive scheduling only,28.5,5,98.6,0.8944271909999159,1.1103999999999998
+adaptive_only,Adaptive scheduling only,28.75,5,98.4,1.140175425099138,1.4154878169733571
+adaptive_only,Adaptive scheduling only,29.0,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,29.25,5,99.6,0.5477225575051661,0.6799783525966101
+adaptive_only,Adaptive scheduling only,29.5,5,99.8,0.4472135954999579,0.5551999999999999
+adaptive_only,Adaptive scheduling only,29.75,5,99.0,1.0,1.241464941107883
+adaptive_only,Adaptive scheduling only,30.0,5,99.2,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,0.0,5,0.0,0.0,0.0
+baseline_a_direct,Baseline A: Direct + FIFO,0.25,5,7.2,2.4899799195977463,3.0912227742432274
+baseline_a_direct,Baseline A: Direct + FIFO,0.5,5,11.8,1.7888543819998317,2.2207999999999997
+baseline_a_direct,Baseline A: Direct + FIFO,0.75,5,16.2,3.7013511046643495,4.595097631171725
+baseline_a_direct,Baseline A: Direct + FIFO,1.0,5,21.4,4.722287581247038,5.862554473947341
+baseline_a_direct,Baseline A: Direct + FIFO,1.25,5,26.4,6.730527468185536,8.355713886915947
+baseline_a_direct,Baseline A: Direct + FIFO,1.5,5,32.2,11.476062042355819,14.247128687563679
+baseline_a_direct,Baseline A: Direct + FIFO,1.75,5,35.2,9.257429448826494,11.492774105497766
+baseline_a_direct,Baseline A: Direct + FIFO,2.0,5,40.0,8.602325267042627,10.67948523103993
+baseline_a_direct,Baseline A: Direct + FIFO,2.25,5,48.4,10.454664030948102,12.979098865483689
+baseline_a_direct,Baseline A: Direct + FIFO,2.5,5,54.4,9.235799911215054,11.465921792860788
+baseline_a_direct,Baseline A: Direct + FIFO,2.75,5,57.2,14.771594362153328,18.33841652488022
+baseline_a_direct,Baseline A: Direct + FIFO,3.0,5,62.8,15.514509338035799,19.260719421662316
+baseline_a_direct,Baseline A: Direct + FIFO,3.25,5,67.4,16.04057355583023,19.91380970482544
+baseline_a_direct,Baseline A: Direct + FIFO,3.5,5,72.4,15.69394787808345,19.483486078215055
+baseline_a_direct,Baseline A: Direct + FIFO,3.75,5,74.4,14.17039166713468,17.592044456514994
+baseline_a_direct,Baseline A: Direct + FIFO,4.0,5,76.4,13.722244714331545,17.03568572614557
+baseline_a_direct,Baseline A: Direct + FIFO,4.25,5,79.4,12.116104984688768,15.04171956127357
+baseline_a_direct,Baseline A: Direct + FIFO,4.5,5,82.0,10.295630140987,12.781663866648973
+baseline_a_direct,Baseline A: Direct + FIFO,4.75,5,85.8,8.497058314499201,10.548799999999998
+baseline_a_direct,Baseline A: Direct + FIFO,5.0,5,87.4,8.44393273303382,10.482846453134758
+baseline_a_direct,Baseline A: Direct + FIFO,5.25,5,92.6,8.23407554009556,10.222316105462594
+baseline_a_direct,Baseline A: Direct + FIFO,5.5,5,95.0,6.041522986797286,7.500338979006215
+baseline_a_direct,Baseline A: Direct + FIFO,5.75,5,97.8,2.9495762407505253,3.661795494016562
+baseline_a_direct,Baseline A: Direct + FIFO,6.0,5,98.0,2.345207879911715,2.9114933625203405
+baseline_a_direct,Baseline A: Direct + FIFO,6.25,5,98.4,1.51657508881031,1.882774803315574
+baseline_a_direct,Baseline A: Direct + FIFO,6.5,5,98.2,1.6431676725154984,2.0399350577898305
+baseline_a_direct,Baseline A: Direct + FIFO,6.75,5,99.0,1.224744871391589,1.520477819634341
+baseline_a_direct,Baseline A: Direct + FIFO,7.0,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,7.25,5,98.4,1.140175425099138,1.4154878169733571
+baseline_a_direct,Baseline A: Direct + FIFO,7.5,5,99.0,1.0,1.241464941107883
+baseline_a_direct,Baseline A: Direct + FIFO,7.75,5,99.6,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,8.0,5,99.2,1.0954451150103321,1.3599567051932202
+baseline_a_direct,Baseline A: Direct + FIFO,8.25,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,8.5,5,98.4,1.140175425099138,1.4154878169733571
+baseline_a_direct,Baseline A: Direct + FIFO,8.75,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,9.0,5,99.0,0.7071067811865476,0.877848278462742
+baseline_a_direct,Baseline A: Direct + FIFO,9.25,5,99.4,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,9.5,5,98.8,1.3038404810405297,1.6186722460090552
+baseline_a_direct,Baseline A: Direct + FIFO,9.75,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,10.0,5,98.6,1.51657508881031,1.882774803315574
+baseline_a_direct,Baseline A: Direct + FIFO,10.25,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,10.5,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,10.75,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,11.0,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,11.25,5,98.0,2.0,2.482929882215766
+baseline_a_direct,Baseline A: Direct + FIFO,11.5,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,11.75,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,12.0,5,98.6,1.140175425099138,1.4154878169733571
+baseline_a_direct,Baseline A: Direct + FIFO,12.25,5,99.0,0.7071067811865476,0.877848278462742
+baseline_a_direct,Baseline A: Direct + FIFO,12.5,5,99.4,1.3416407864998738,1.6655999999999997
+baseline_a_direct,Baseline A: Direct + FIFO,12.75,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,13.0,5,98.2,1.3038404810405297,1.6186722460090552
+baseline_a_direct,Baseline A: Direct + FIFO,13.25,5,98.6,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,13.5,5,99.6,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,13.75,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,14.0,5,99.2,1.0954451150103321,1.3599567051932202
+baseline_a_direct,Baseline A: Direct + FIFO,14.25,5,98.8,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,14.5,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,14.75,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,15.0,5,99.6,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,15.25,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,15.5,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,15.75,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,16.0,5,99.2,1.0954451150103321,1.3599567051932202
+baseline_a_direct,Baseline A: Direct + FIFO,16.25,5,99.0,0.7071067811865476,0.877848278462742
+baseline_a_direct,Baseline A: Direct + FIFO,16.5,5,98.4,1.816590212458495,2.255233061126942
+baseline_a_direct,Baseline A: Direct + FIFO,16.75,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,17.0,5,98.6,1.140175425099138,1.4154878169733571
+baseline_a_direct,Baseline A: Direct + FIFO,17.25,5,99.2,1.0954451150103321,1.3599567051932202
+baseline_a_direct,Baseline A: Direct + FIFO,17.5,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,17.75,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,18.0,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,18.25,5,98.8,1.3038404810405297,1.6186722460090552
+baseline_a_direct,Baseline A: Direct + FIFO,18.5,5,98.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,18.75,5,99.4,1.3416407864998738,1.6655999999999997
+baseline_a_direct,Baseline A: Direct + FIFO,19.0,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,19.25,5,99.2,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,19.5,5,99.0,0.7071067811865476,0.877848278462742
+baseline_a_direct,Baseline A: Direct + FIFO,19.75,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,20.0,5,99.2,1.0954451150103321,1.3599567051932202
+baseline_a_direct,Baseline A: Direct + FIFO,20.25,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,20.5,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,20.75,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,21.0,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,21.25,5,98.6,1.51657508881031,1.882774803315574
+baseline_a_direct,Baseline A: Direct + FIFO,21.5,5,98.4,1.816590212458495,2.255233061126942
+baseline_a_direct,Baseline A: Direct + FIFO,21.75,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,22.0,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,22.25,5,98.8,2.16794833886788,2.6914318568375455
+baseline_a_direct,Baseline A: Direct + FIFO,22.5,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,22.75,5,99.4,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,23.0,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,23.25,5,98.8,1.3038404810405297,1.6186722460090552
+baseline_a_direct,Baseline A: Direct + FIFO,23.5,5,99.0,1.7320508075688772,2.1502803538143573
+baseline_a_direct,Baseline A: Direct + FIFO,23.75,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,24.0,5,99.4,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,24.25,5,99.2,1.3038404810405297,1.6186722460090552
+baseline_a_direct,Baseline A: Direct + FIFO,24.5,5,99.0,1.224744871391589,1.520477819634341
+baseline_a_direct,Baseline A: Direct + FIFO,24.75,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,25.0,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,25.25,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,25.5,5,99.4,1.3416407864998738,1.6655999999999997
+baseline_a_direct,Baseline A: Direct + FIFO,25.75,5,99.0,0.7071067811865476,0.877848278462742
+baseline_a_direct,Baseline A: Direct + FIFO,26.0,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,26.25,5,99.4,1.3416407864998738,1.6655999999999997
+baseline_a_direct,Baseline A: Direct + FIFO,26.5,5,98.2,1.6431676725154984,2.0399350577898305
+baseline_a_direct,Baseline A: Direct + FIFO,26.75,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,27.0,5,99.0,0.7071067811865476,0.877848278462742
+baseline_a_direct,Baseline A: Direct + FIFO,27.25,5,99.0,1.0,1.241464941107883
+baseline_a_direct,Baseline A: Direct + FIFO,27.5,5,99.0,1.7320508075688772,2.1502803538143573
+baseline_a_direct,Baseline A: Direct + FIFO,27.75,5,99.2,0.8366600265340756,1.038684090568446
+baseline_a_direct,Baseline A: Direct + FIFO,28.0,5,99.0,1.7320508075688772,2.1502803538143573
+baseline_a_direct,Baseline A: Direct + FIFO,28.25,5,98.6,1.140175425099138,1.4154878169733571
+baseline_a_direct,Baseline A: Direct + FIFO,28.5,5,98.6,0.8944271909999159,1.1103999999999998
+baseline_a_direct,Baseline A: Direct + FIFO,28.75,5,98.4,1.140175425099138,1.4154878169733571
+baseline_a_direct,Baseline A: Direct + FIFO,29.0,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,29.25,5,99.6,0.5477225575051661,0.6799783525966101
+baseline_a_direct,Baseline A: Direct + FIFO,29.5,5,99.8,0.4472135954999579,0.5551999999999999
+baseline_a_direct,Baseline A: Direct + FIFO,29.75,5,99.0,1.0,1.241464941107883
+baseline_a_direct,Baseline A: Direct + FIFO,30.0,5,99.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,0.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,0.25,5,0.8,0.8366600265340756,1.038684090568446
+baseline_b_fifo,Baseline B: Filtered + FIFO,0.5,5,0.6,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,0.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,1.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,1.25,5,0.4,0.5477225575051661,0.6799783525966101
+baseline_b_fifo,Baseline B: Filtered + FIFO,1.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,1.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,2.0,5,0.4,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,2.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,2.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,2.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,3.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,3.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,3.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,3.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,4.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,4.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,4.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,4.75,5,0.6,1.3416407864998738,1.6655999999999997
+baseline_b_fifo,Baseline B: Filtered + FIFO,5.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,5.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,5.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,5.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,6.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,6.25,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,6.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,6.75,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,7.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,7.25,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,7.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,7.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,8.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,8.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,8.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,8.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,9.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,9.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,9.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,9.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,10.0,5,0.4,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,10.25,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,10.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,10.75,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,11.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,11.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,11.5,5,0.4,0.5477225575051661,0.6799783525966101
+baseline_b_fifo,Baseline B: Filtered + FIFO,11.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,12.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,12.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,12.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,12.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,13.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,13.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,13.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,13.75,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,14.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,14.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,14.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,14.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,15.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,15.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,15.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,15.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,16.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,16.25,5,0.4,0.5477225575051661,0.6799783525966101
+baseline_b_fifo,Baseline B: Filtered + FIFO,16.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,16.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,17.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,17.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,17.5,5,0.4,0.5477225575051661,0.6799783525966101
+baseline_b_fifo,Baseline B: Filtered + FIFO,17.75,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,18.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,18.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,18.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,18.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,19.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,19.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,19.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,19.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,20.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,20.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,20.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,20.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,21.0,5,0.6,1.3416407864998738,1.6655999999999997
+baseline_b_fifo,Baseline B: Filtered + FIFO,21.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,21.5,5,0.4,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,21.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,22.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,22.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,22.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,22.75,5,0.6,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,23.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,23.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,23.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,23.75,5,0.4,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,24.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,24.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,24.5,5,0.8,1.0954451150103321,1.3599567051932202
+baseline_b_fifo,Baseline B: Filtered + FIFO,24.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,25.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,25.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,25.5,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,25.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,26.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,26.25,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,26.5,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,26.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,27.0,5,0.2,0.4472135954999579,0.5551999999999999
+baseline_b_fifo,Baseline B: Filtered + FIFO,27.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,27.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,27.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,28.0,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,28.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,28.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,28.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,29.0,5,0.4,0.8944271909999159,1.1103999999999998
+baseline_b_fifo,Baseline B: Filtered + FIFO,29.25,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,29.5,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,29.75,5,0.0,0.0,0.0
+baseline_b_fifo,Baseline B: Filtered + FIFO,30.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,0.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,0.25,5,0.8,0.8366600265340756,1.038684090568446
+proposed,Adaptive scheduling + filtering,0.5,5,0.6,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,0.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,1.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,1.25,5,0.4,0.5477225575051661,0.6799783525966101
+proposed,Adaptive scheduling + filtering,1.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,1.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,2.0,5,0.4,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,2.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,2.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,2.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,3.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,3.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,3.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,3.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,4.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,4.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,4.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,4.75,5,0.6,1.3416407864998738,1.6655999999999997
+proposed,Adaptive scheduling + filtering,5.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,5.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,5.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,5.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,6.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,6.25,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,6.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,6.75,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,7.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,7.25,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,7.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,7.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,8.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,8.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,8.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,8.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,9.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,9.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,9.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,9.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,10.0,5,0.4,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,10.25,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,10.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,10.75,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,11.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,11.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,11.5,5,0.4,0.5477225575051661,0.6799783525966101
+proposed,Adaptive scheduling + filtering,11.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,12.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,12.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,12.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,12.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,13.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,13.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,13.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,13.75,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,14.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,14.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,14.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,14.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,15.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,15.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,15.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,15.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,16.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,16.25,5,0.4,0.5477225575051661,0.6799783525966101
+proposed,Adaptive scheduling + filtering,16.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,16.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,17.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,17.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,17.5,5,0.4,0.5477225575051661,0.6799783525966101
+proposed,Adaptive scheduling + filtering,17.75,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,18.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,18.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,18.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,18.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,19.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,19.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,19.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,19.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,20.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,20.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,20.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,20.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,21.0,5,0.6,1.3416407864998738,1.6655999999999997
+proposed,Adaptive scheduling + filtering,21.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,21.5,5,0.4,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,21.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,22.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,22.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,22.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,22.75,5,0.6,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,23.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,23.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,23.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,23.75,5,0.4,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,24.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,24.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,24.5,5,0.8,1.0954451150103321,1.3599567051932202
+proposed,Adaptive scheduling + filtering,24.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,25.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,25.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,25.5,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,25.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,26.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,26.25,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,26.5,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,26.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,27.0,5,0.2,0.4472135954999579,0.5551999999999999
+proposed,Adaptive scheduling + filtering,27.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,27.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,27.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,28.0,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,28.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,28.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,28.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,29.0,5,0.4,0.8944271909999159,1.1103999999999998
+proposed,Adaptive scheduling + filtering,29.25,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,29.5,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,29.75,5,0.0,0.0,0.0
+proposed,Adaptive scheduling + filtering,30.0,5,0.0,0.0,0.0

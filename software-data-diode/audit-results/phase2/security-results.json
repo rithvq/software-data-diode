@@ -1,0 +1,112 @@
+[
+  {
+    "scenario": "exact retransmission",
+    "attack_type": "exact retransmission",
+    "expected_result": "DUPLICATE_MESSAGE",
+    "actual_result": "DUPLICATE_MESSAGE",
+    "detected": true,
+    "response_time": 0.009828787995502353,
+    "timestamp": "2026-09-23T07:39:49.971726+00:00",
+    "http_status": 200
+  },
+  {
+    "scenario": "duplicate UUID conflict",
+    "attack_type": "duplicate UUID conflict",
+    "expected_result": "DUPLICATE_MESSAGE",
+    "actual_result": "DUPLICATE_MESSAGE",
+    "detected": true,
+    "response_time": 0.005727522002416663,
+    "timestamp": "2026-09-23T07:39:49.977982+00:00",
+    "http_status": 409
+  },
+  {
+    "scenario": "replay sequence",
+    "attack_type": "replay sequence",
+    "expected_result": "REPLAY_DETECTED",
+    "actual_result": "REPLAY_DETECTED",
+    "detected": true,
+    "response_time": 0.004797431000042707,
+    "timestamp": "2026-09-23T07:39:49.983139+00:00",
+    "http_status": 409
+  },
+  {
+    "scenario": "payload tampering",
+    "attack_type": "payload tampering",
+    "expected_result": "HASH_MISMATCH",
+    "actual_result": "HASH_MISMATCH",
+    "detected": true,
+    "response_time": 0.004409024004417006,
+    "timestamp": "2026-09-23T07:39:49.987631+00:00",
+    "http_status": 400
+  },
+  {
+    "scenario": "metadata tampering",
+    "attack_type": "metadata tampering",
+    "expected_result": "INVALID_SIGNATURE",
+    "actual_result": "INVALID_SIGNATURE",
+    "detected": true,
+    "response_time": 0.0059641530024237,
+    "timestamp": "2026-09-23T07:39:49.993659+00:00",
+    "http_status": 400
+  },
+  {
+    "scenario": "signature corruption",
+    "attack_type": "signature corruption",
+    "expected_result": "INVALID_SIGNATURE",
+    "actual_result": "INVALID_SIGNATURE",
+    "detected": true,
+    "response_time": 0.004684781000833027,
+    "timestamp": "2026-09-23T07:39:49.998405+00:00",
+    "http_status": 400
+  },
+  {
+    "scenario": "stale timestamp",
+    "attack_type": "stale timestamp",
+    "expected_result": "EXPIRED_MESSAGE",
+    "actual_result": "EXPIRED_MESSAGE",
+    "detected": true,
+    "response_time": 0.00502010399941355,
+    "timestamp": "2026-09-23T07:39:50.003953+00:00",
+    "http_status": 400
+  },
+  {
+    "scenario": "future timestamp",
+    "attack_type": "future timestamp",
+    "expected_result": "EXPIRED_MESSAGE",
+    "actual_result": "EXPIRED_MESSAGE",
+    "detected": true,
+    "response_time": 0.004961700004059821,
+    "timestamp": "2026-09-23T07:39:50.009236+00:00",
+    "http_status": 400
+  },
+  {
+    "scenario": "missing fields",
+    "attack_type": "missing fields",
+    "expected_result": "INVALID_SCHEMA",
+    "actual_result": "INVALID_SCHEMA",
+    "detected": true,
+    "response_time": 0.007140121997508686,
+    "timestamp": "2026-09-23T07:39:50.016393+00:00",
+    "http_status": 422
+  },
+  {
+    "scenario": "oversized body",
+    "attack_type": "oversized body",
+    "expected_result": "PAYLOAD_TOO_LARGE",
+    "actual_result": "PAYLOAD_TOO_LARGE",
+    "detected": true,
+    "response_time": 0.005580044999078382,
+    "timestamp": "2026-09-23T07:39:50.021991+00:00",
+    "http_status": 413
+  },
+  {
+    "scenario": "bounded local flood",
+    "attack_type": "rate limiting",
+    "expected_result": "RATE_LIMIT_EXCEEDED",
+    "actual_result": "RATE_LIMIT_EXCEEDED",
+    "detected": true,
+    "response_time": 0.40122628600511234,
+    "timestamp": "2026-09-23T07:39:50.423232+00:00",
+    "http_status": 429
+  }
+]

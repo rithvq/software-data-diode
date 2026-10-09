@@ -1,0 +1,7 @@
+workload,workload_label,critical_latency_improvement_percent,high_latency_improvement_percent,fifo_low_starvation_rate_percent,adaptive_low_starvation_rate_percent,queue_overflow_reduction_percent
+light,A - Light,6.06368528354917,3.376073693334282,0.0,0.0,0.0
+moderate,B - Moderate,29.94745409539788,40.033868597613235,0.0,0.0,0.0
+near_saturation,C - Near saturation,87.38965966764145,85.66660751081633,0.0,0.0,0.0
+overload,D - Overload,97.93570372793752,97.3028714113703,39.96648842630818,39.96648842630818,100.0
+burst,E - Burst,97.75959045445258,97.74427045091532,4.178502429672127,4.178502429672127,100.0
+critical_storm,F - Critical-event storm,75.59280966694767,40.38942988550318,0.0,0.0,0.0

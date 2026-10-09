@@ -1,0 +1,289 @@
+{
+  "started_at": "2026-09-23T06:26:40.616217+00:00",
+  "finished_at": "2026-09-23T06:27:12.627981+00:00",
+  "project": "software-data-diode-phase2",
+  "checks": [
+    {
+      "check": "Three private application networks",
+      "passed": true,
+      "detail": [
+        "fog-network",
+        "edge-network",
+        "gateway-network"
+      ]
+    },
+    {
+      "check": "Membership edge-device",
+      "passed": true,
+      "detail": [
+        "edge-network"
+      ]
+    },
+    {
+      "check": "No published ports edge-device",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Membership edge-gateway",
+      "passed": true,
+      "detail": [
+        "edge-network",
+        "gateway-network"
+      ]
+    },
+    {
+      "check": "No published ports edge-gateway",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Membership unidirectional-gateway",
+      "passed": true,
+      "detail": [
+        "fog-network",
+        "gateway-network"
+      ]
+    },
+    {
+      "check": "No published ports unidirectional-gateway",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Membership fog-receiver",
+      "passed": true,
+      "detail": [
+        "fog-network"
+      ]
+    },
+    {
+      "check": "No published ports fog-receiver",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Continuous forward delivery",
+      "passed": true,
+      "detail": {
+        "start_count": 301,
+        "end_count": 313,
+        "required_new_messages": 10
+      }
+    },
+    {
+      "check": "One traceable Edge device",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "Contiguous FIFO sequence",
+      "passed": true,
+      "detail": [
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314
+      ]
+    },
+    {
+      "check": "Unique received IDs",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "Forward trace and instrumentation edge-gateway",
+      "passed": true,
+      "detail": {
+        "matched_ids": 10,
+        "received_ids": 10
+      }
+    },
+    {
+      "check": "Forward trace and instrumentation unidirectional-gateway",
+      "passed": true,
+      "detail": {
+        "matched_ids": 10,
+        "received_ids": 10
+      }
+    },
+    {
+      "check": "Edge Gateway reachable from Edge (control)",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "DNS edge-device",
+      "passed": true,
+      "detail": "[Errno -3] Temporary failure in name resolution"
+    },
+    {
+      "check": "DNS edge-gateway",
+      "passed": true,
+      "detail": "[Errno -3] Temporary failure in name resolution"
+    },
+    {
+      "check": "TCP edge-device 172.23.0.3:8000",
+      "passed": true,
+      "detail": "[Errno 101] Network is unreachable"
+    },
+    {
+      "check": "TCP edge-gateway 172.23.0.2:8000",
+      "passed": true,
+      "detail": "[Errno 101] Network is unreachable"
+    },
+    {
+      "check": "TCP edge-gateway 172.22.0.3:8000",
+      "passed": true,
+      "detail": "[Errno 101] Network is unreachable"
+    },
+    {
+      "check": "Reverse ingress guard",
+      "passed": true,
+      "detail": "HTTP 403; expected 403 from reachable gateway"
+    },
+    {
+      "check": "No private volume edge-device",
+      "passed": true,
+      "detail": [
+        "/state"
+      ]
+    },
+    {
+      "check": "No private volume unidirectional-gateway",
+      "passed": true,
+      "detail": [
+        "/public",
+        "/state"
+      ]
+    },
+    {
+      "check": "No private volume fog-receiver",
+      "passed": true,
+      "detail": [
+        "/state",
+        "/public"
+      ]
+    },
+    {
+      "check": "Fog public key mount is read-only",
+      "passed": true,
+      "detail": "public verification volume only"
+    },
+    {
+      "check": "Fog validates received Ed25519 envelopes",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "Fog has no private signing key",
+      "passed": true,
+      "detail": "private key path absent"
+    },
+    {
+      "check": "exact retransmission",
+      "passed": true,
+      "detail": "DUPLICATE_MESSAGE"
+    },
+    {
+      "check": "duplicate UUID conflict",
+      "passed": true,
+      "detail": "DUPLICATE_MESSAGE"
+    },
+    {
+      "check": "replay sequence",
+      "passed": true,
+      "detail": "REPLAY_DETECTED"
+    },
+    {
+      "check": "payload tampering",
+      "passed": true,
+      "detail": "HASH_MISMATCH"
+    },
+    {
+      "check": "metadata tampering",
+      "passed": true,
+      "detail": "INVALID_SIGNATURE"
+    },
+    {
+      "check": "signature corruption",
+      "passed": true,
+      "detail": "INVALID_SIGNATURE"
+    },
+    {
+      "check": "stale timestamp",
+      "passed": true,
+      "detail": "EXPIRED_MESSAGE"
+    },
+    {
+      "check": "future timestamp",
+      "passed": true,
+      "detail": "EXPIRED_MESSAGE"
+    },
+    {
+      "check": "missing fields",
+      "passed": true,
+      "detail": "INVALID_SCHEMA"
+    },
+    {
+      "check": "oversized body",
+      "passed": true,
+      "detail": "PAYLOAD_TOO_LARGE"
+    },
+    {
+      "check": "bounded local flood",
+      "passed": true,
+      "detail": "RATE_LIMIT_EXCEEDED"
+    },
+    {
+      "check": "edge-gateway: Audit hash chain",
+      "passed": true,
+      "detail": "audit log hash chain is valid"
+    },
+    {
+      "check": "edge-gateway: Audit copy tampering",
+      "passed": true,
+      "detail": "line 1: current_log_hash mismatch"
+    },
+    {
+      "check": "unidirectional-gateway: Audit hash chain",
+      "passed": true,
+      "detail": "audit log hash chain is valid"
+    },
+    {
+      "check": "unidirectional-gateway: Audit copy tampering",
+      "passed": true,
+      "detail": "line 1: current_log_hash mismatch"
+    },
+    {
+      "check": "fog-receiver: Audit hash chain",
+      "passed": true,
+      "detail": "audit log hash chain is valid"
+    },
+    {
+      "check": "fog-receiver: Audit copy tampering",
+      "passed": true,
+      "detail": "line 1: current_log_hash mismatch"
+    },
+    {
+      "check": "Valid delivery continues after probes",
+      "passed": true,
+      "detail": {
+        "before": 325,
+        "after": 329
+      }
+    },
+    {
+      "check": "Queue remains bounded",
+      "passed": true,
+      "detail": 0
+    }
+  ],
+  "passed": true
+}

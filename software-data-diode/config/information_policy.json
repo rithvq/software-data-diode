@@ -1,0 +1,42 @@
+{
+  "weights": {
+    "priority": 4.0,
+    "novelty": 3.0,
+    "freshness": 1.0,
+    "security_risk": 4.0,
+    "waiting_age": 1.0,
+    "starvation": 2.0,
+    "transmission_cost": 0.2,
+    "obsolescence": 2.0
+  },
+  "strategy": "utility",
+  "reduction_enabled": true,
+  "prediction_enabled": true,
+  "max_queue_size": 250,
+  "link_bytes_per_second": 16384,
+  "messages_per_second": 25,
+  "envelope_overhead_bytes": 512,
+  "max_message_bytes": 8192,
+  "window_seconds": 10,
+  "prediction_horizon_seconds": 5,
+  "freshness_seconds": 120,
+  "starvation_seconds": 15,
+  "low_novelty_threshold": 0.15,
+  "preserve_novelty_threshold": 0.75,
+  "elevated_threshold": 0.5,
+  "congested_threshold": 0.75,
+  "critical_threshold": 0.9,
+  "sample_every": 4,
+  "aggregation_max_samples": 5,
+  "max_streams": 1024,
+  "security_events": ["intrusion", "attack", "intrusion_detected"],
+  "routine_events": ["telemetry", "resource", "network", "security", "industrial_process", "environmental_telemetry", "system_telemetry", "network_telemetry", "security_telemetry", "industrial_telemetry"],
+  "security_scales": {"failed_logins": 5, "blocked_connections": 10},
+  "novelty_scales": {
+    "environmental": {"temperature": 5, "humidity": 10, "air_quality_index": 50},
+    "system": {"cpu_usage": 20, "memory_usage": 20, "load_average": 3},
+    "network": {"packets_per_second": 3000, "network_latency_ms": 100, "packet_loss_percent": 2},
+    "security": {"failed_logins": 3, "blocked_connections": 5},
+    "industrial": {"pressure_bar": 4, "vibration_mm_s": 3, "rpm": 300}
+  }
+}

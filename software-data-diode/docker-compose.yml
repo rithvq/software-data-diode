@@ -1,0 +1,551 @@
+x-python-hardening: &python-hardening
+  read_only: true
+  init: true
+  cap_drop:
+    - ALL
+  security_opt:
+    - no-new-privileges:true
+  tmpfs:
+    - /tmp:size=64m,mode=1777
+  mem_limit: 384m
+  cpus: "1.0"
+  pids_limit: 256
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+x-edge-device-common: &edge-device-common
+  <<: *python-hardening
+  build:
+    context: .
+    dockerfile: edge-device/Dockerfile
+  depends_on:
+    edge-gateway:
+      condition: service_healthy
+  networks:
+    - edge-network
+  profiles: ["core", "full", "security-test"]
+  restart: unless-stopped
+
+services:
+  runtime-state-init:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: edge-gateway/Dockerfile
+    command: ["python", "-m", "shared.security.runtime_state"]
+    network_mode: none
+    volumes:
+      - audit-logs:/logs
+    restart: "no"
+
+  edge-device-01:
+    <<: *edge-device-common
+    environment:
+      DEVICE_ID: edge-device-01
+      DEVICE_TYPE: environmental
+      DEVICE_SEED: 101
+      EDGE_GATEWAY_URL: http://edge-gateway:8000/telemetry
+      TELEMETRY_INTERVAL_SECONDS: ${EDGE_DEVICE_01_INTERVAL:-2.0}
+      TRAFFIC_PROFILE: ${EDGE_DEVICE_01_PROFILE:-normal}
+      LOW_TRAFFIC_PERCENT: ${EDGE_DEVICE_01_LOW_PERCENT:-70}
+      MEDIUM_TRAFFIC_PERCENT: ${EDGE_DEVICE_01_MEDIUM_PERCENT:-20}
+      HIGH_TRAFFIC_PERCENT: ${EDGE_DEVICE_01_HIGH_PERCENT:-8}
+      CRITICAL_TRAFFIC_PERCENT: ${EDGE_DEVICE_01_CRITICAL_PERCENT:-2}
+
+  edge-device-02:
+    <<: *edge-device-common
+    environment:
+      DEVICE_ID: edge-device-02
+      DEVICE_TYPE: system
+      DEVICE_SEED: 202
+      EDGE_GATEWAY_URL: http://edge-gateway:8000/telemetry
+      TELEMETRY_INTERVAL_SECONDS: ${EDGE_DEVICE_02_INTERVAL:-2.5}
+      TRAFFIC_PROFILE: ${EDGE_DEVICE_02_PROFILE:-normal}
+      LOW_TRAFFIC_PERCENT: ${EDGE_DEVICE_02_LOW_PERCENT:-65}
+      MEDIUM_TRAFFIC_PERCENT: ${EDGE_DEVICE_02_MEDIUM_PERCENT:-25}
+      HIGH_TRAFFIC_PERCENT: ${EDGE_DEVICE_02_HIGH_PERCENT:-8}
+      CRITICAL_TRAFFIC_PERCENT: ${EDGE_DEVICE_02_CRITICAL_PERCENT:-2}
+
+  edge-device-03:
+    <<: *edge-device-common
+    environment:
+      DEVICE_ID: edge-device-03
+      DEVICE_TYPE: network
+      DEVICE_SEED: 303
+      EDGE_GATEWAY_URL: http://edge-gateway:8000/telemetry
+      TELEMETRY_INTERVAL_SECONDS: ${EDGE_DEVICE_03_INTERVAL:-1.5}
+      TRAFFIC_PROFILE: ${EDGE_DEVICE_03_PROFILE:-normal}
+      LOW_TRAFFIC_PERCENT: ${EDGE_DEVICE_03_LOW_PERCENT:-65}
+      MEDIUM_TRAFFIC_PERCENT: ${EDGE_DEVICE_03_MEDIUM_PERCENT:-20}
+      HIGH_TRAFFIC_PERCENT: ${EDGE_DEVICE_03_HIGH_PERCENT:-12}
+      CRITICAL_TRAFFIC_PERCENT: ${EDGE_DEVICE_03_CRITICAL_PERCENT:-3}
+
+  edge-device-04:
+    <<: *edge-device-common
+    environment:
+      DEVICE_ID: edge-device-04
+      DEVICE_TYPE: security
+      DEVICE_SEED: 404
+      EDGE_GATEWAY_URL: http://edge-gateway:8000/telemetry
+      TELEMETRY_INTERVAL_SECONDS: ${EDGE_DEVICE_04_INTERVAL:-3.0}
+      TRAFFIC_PROFILE: ${EDGE_DEVICE_04_PROFILE:-normal}
+      LOW_TRAFFIC_PERCENT: ${EDGE_DEVICE_04_LOW_PERCENT:-75}
+      MEDIUM_TRAFFIC_PERCENT: ${EDGE_DEVICE_04_MEDIUM_PERCENT:-15}
+      HIGH_TRAFFIC_PERCENT: ${EDGE_DEVICE_04_HIGH_PERCENT:-5}
+      CRITICAL_TRAFFIC_PERCENT: ${EDGE_DEVICE_04_CRITICAL_PERCENT:-5}
+
+  edge-device-05:
+    <<: *edge-device-common
+    environment:
+      DEVICE_ID: edge-device-05
+      DEVICE_TYPE: industrial
+      DEVICE_SEED: 505
+      EDGE_GATEWAY_URL: http://edge-gateway:8000/telemetry
+      TELEMETRY_INTERVAL_SECONDS: ${EDGE_DEVICE_05_INTERVAL:-2.0}
+      TRAFFIC_PROFILE: ${EDGE_DEVICE_05_PROFILE:-normal}
+      LOW_TRAFFIC_PERCENT: ${EDGE_DEVICE_05_LOW_PERCENT:-70}
+      MEDIUM_TRAFFIC_PERCENT: ${EDGE_DEVICE_05_MEDIUM_PERCENT:-18}
+      HIGH_TRAFFIC_PERCENT: ${EDGE_DEVICE_05_HIGH_PERCENT:-10}
+      CRITICAL_TRAFFIC_PERCENT: ${EDGE_DEVICE_05_CRITICAL_PERCENT:-2}
+
+  edge-gateway:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: edge-gateway/Dockerfile
+    environment:
+      DATA_DIODE_URL: http://data-diode:8000/ingest
+      FORWARD_TIMEOUT_SECONDS: ${FORWARD_TIMEOUT_SECONDS:-5}
+      EDGE_PRIVATE_KEY_PATH: /run/secrets/edge_private_key.pem
+      EDGE_INPUT_FRESHNESS_SECONDS: ${EDGE_INPUT_FRESHNESS_SECONDS:-300}
+      INFORMATION_POLICY_ENABLED: ${INFORMATION_POLICY_ENABLED:-true}
+      INFORMATION_POLICY_CONFIG: /app/config/information_policy.json
+      DEVICE_HEALTH_TIMEOUT_SECONDS: ${DEVICE_HEALTH_TIMEOUT_SECONDS:-30}
+      GATEWAY_SEQUENCE_STATE_PATH: /logs/edge-gateway-sequences.json
+      AUDIT_LOG_PATH: /logs/edge-gateway-audit.jsonl
+      CRITICAL_EVENT_TYPES: ${CRITICAL_EVENT_TYPES:-intrusion,attack}
+      HIGH_TEMPERATURE_THRESHOLD: ${HIGH_TEMPERATURE_THRESHOLD:-38}
+      MEDIUM_TEMPERATURE_THRESHOLD: ${MEDIUM_TEMPERATURE_THRESHOLD:-34}
+      MEDIUM_CPU_THRESHOLD: ${MEDIUM_CPU_THRESHOLD:-85}
+      MEDIUM_MEMORY_THRESHOLD: ${MEDIUM_MEMORY_THRESHOLD:-85}
+      HIGH_PACKET_RATE_THRESHOLD: ${HIGH_PACKET_RATE_THRESHOLD:-8000}
+      CRITICAL_FAILED_LOGINS_THRESHOLD: ${CRITICAL_FAILED_LOGINS_THRESHOLD:-5}
+      HIGH_VIBRATION_THRESHOLD: ${HIGH_VIBRATION_THRESHOLD:-8}
+      MEDIUM_STATUS_VALUES: ${MEDIUM_STATUS_VALUES:-warning,abnormal,degraded}
+      FILTER_TEMPERATURE_DELTA: ${FILTER_TEMPERATURE_DELTA:-0.25}
+      FILTER_HUMIDITY_DELTA: ${FILTER_HUMIDITY_DELTA:-1.0}
+      EDGE_DEDUP_TTL_SECONDS: ${EDGE_DEDUP_TTL_SECONDS:-30}
+      LOW_SAMPLING_INTERVAL_SECONDS: ${LOW_SAMPLING_INTERVAL_SECONDS:-5}
+      AGGREGATION_SAMPLE_COUNT: ${AGGREGATION_SAMPLE_COUNT:-5}
+      ENABLE_AGGREGATION: ${ENABLE_AGGREGATION:-true}
+      EDGE_FILTER_CONGESTION_STATE: ${EDGE_FILTER_CONGESTION_STATE:-NORMAL}
+      DATA_DIODE_METRICS_URL: http://data-diode:8000/ingest-metrics
+      OBSERVABILITY_TOKEN: ${OBSERVABILITY_TOKEN:?Set OBSERVABILITY_TOKEN in .env}
+      OBSERVABILITY_INTERVAL_SECONDS: ${OBSERVABILITY_INTERVAL_SECONDS:-5}
+    ports:
+      - "127.0.0.1:${EDGE_GATEWAY_PORT:-8000}:8000"
+    volumes:
+      - ./secrets/edge_private_key.pem:/run/secrets/edge_private_key.pem:ro
+      - ./config/information_policy.json:/app/config/information_policy.json:ro
+      - type: volume
+        source: audit-logs
+        target: /logs
+        volume:
+          nocopy: true
+          subpath: edge-gateway
+    depends_on:
+      runtime-state-init:
+        condition: service_completed_successfully
+      data-diode:
+        condition: service_healthy
+    networks:
+      - edge-network
+      - diode-network
+      - edge-host-network
+    healthcheck: &python-healthcheck
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+  data-diode:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: data-diode/Dockerfile
+    environment:
+      FOG_RECEIVER_URL: http://fog-receiver:8000/receive
+      FORWARD_TIMEOUT_SECONDS: ${FORWARD_TIMEOUT_SECONDS:-5}
+      # These APIs are not published to the host; Docker network membership is the boundary.
+      DIODE_INGEST_ALLOWED_CIDR: 0.0.0.0/0
+      DIODE_ALLOWED_HOSTS: edge-gateway
+      MAX_MESSAGES_PER_SECOND: ${MAX_MESSAGES_PER_SECOND:-25}
+      BURST_LIMIT: ${BURST_LIMIT:-50}
+      MAX_PAYLOAD_BYTES: ${MAX_PAYLOAD_BYTES:-8192}
+      AUDIT_LOG_PATH: /logs/data-diode-audit.jsonl
+      MAX_QUEUE_SIZE: ${MAX_QUEUE_SIZE:-250}
+      SCHEDULER_MODE: ${SCHEDULER_MODE:-adaptive}
+      INFORMATION_POLICY_ENABLED: ${INFORMATION_POLICY_ENABLED:-true}
+      EGRESS_MESSAGES_PER_SECOND: ${EGRESS_MESSAGES_PER_SECOND:-25}
+      EGRESS_BURST_LIMIT: ${EGRESS_BURST_LIMIT:-25}
+      SCHEDULER_WEIGHT_PRIORITY: ${SCHEDULER_WEIGHT_PRIORITY:-10}
+      SCHEDULER_WEIGHT_WAITING_AGE: ${SCHEDULER_WEIGHT_WAITING_AGE:-1}
+      SCHEDULER_WEIGHT_URGENCY: ${SCHEDULER_WEIGHT_URGENCY:-8}
+      SCHEDULER_WEIGHT_CONGESTION: ${SCHEDULER_WEIGHT_CONGESTION:-1}
+      SCHEDULER_WEIGHT_STARVATION: ${SCHEDULER_WEIGHT_STARVATION:-12}
+      SCHEDULER_WEIGHT_TRANSMISSION_COST: ${SCHEDULER_WEIGHT_TRANSMISSION_COST:-0.01}
+      AGING_SECONDS_PER_PRIORITY: ${AGING_SECONDS_PER_PRIORITY:-30}
+      STARVATION_AFTER_SECONDS: ${STARVATION_AFTER_SECONDS:-10}
+      MAX_STARVATION_FACTOR: ${MAX_STARVATION_FACTOR:-4}
+      FOG_METRICS_URL: http://fog-receiver:8000/receive-metrics
+      OBSERVABILITY_TOKEN: ${OBSERVABILITY_TOKEN:?Set OBSERVABILITY_TOKEN in .env}
+    volumes:
+      - type: volume
+        source: audit-logs
+        target: /logs
+        volume:
+          nocopy: true
+          subpath: data-diode
+    depends_on:
+      runtime-state-init:
+        condition: service_completed_successfully
+      fog-receiver:
+        condition: service_healthy
+    networks:
+      - diode-network
+      - fog-ingress-network
+    healthcheck: *python-healthcheck
+    restart: unless-stopped
+
+  fog-receiver:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: fog-receiver/Dockerfile
+    environment:
+      FOG_RECEIVE_ALLOWED_CIDR: 0.0.0.0/0
+      FOG_ALLOWED_HOSTS: data-diode
+      MAX_PAYLOAD_BYTES: ${MAX_PAYLOAD_BYTES:-8192}
+      FOG_PUBLIC_KEY_PATH: /run/secrets/edge_public_key.pem
+      FOG_FRESHNESS_WINDOW_SECONDS: ${FOG_FRESHNESS_WINDOW_SECONDS:-300}
+      DUPLICATE_TTL_SECONDS: ${DUPLICATE_TTL_SECONDS:-600}
+      AUDIT_LOG_PATH: /logs/fog-receiver-audit.jsonl
+      EVENT_PROCESSOR_URL: http://event-processor:8000/events
+      OBSERVABILITY_TOKEN: ${OBSERVABILITY_TOKEN:?Set OBSERVABILITY_TOKEN in .env}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-fog}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-fog_data}
+    volumes:
+      - ./secrets/edge_public_key.pem:/run/secrets/edge_public_key.pem:ro
+      - type: volume
+        source: audit-logs
+        target: /logs
+        volume:
+          nocopy: true
+          subpath: fog-receiver
+    depends_on:
+      runtime-state-init:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      database-migrator:
+        condition: service_completed_successfully
+      event-processor:
+        condition: service_healthy
+    networks:
+      - fog-ingress-network
+      - fog-services-network
+    healthcheck: *python-healthcheck
+    restart: unless-stopped
+
+  event-processor:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: event-processor/Dockerfile
+    environment:
+      ANALYTICS_URL: http://fog-analytics:8000/analyze
+      EVENT_PROCESSOR_ALLOWED_CIDR: 0.0.0.0/0
+      DATABASE_URL: postgresql://${POSTGRES_USER:-fog}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-fog_data}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      database-migrator:
+        condition: service_completed_successfully
+      fog-analytics:
+        condition: service_healthy
+    networks:
+      - fog-services-network
+    healthcheck: *python-healthcheck
+    restart: unless-stopped
+
+  fog-analytics:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: fog-analytics/Dockerfile
+    environment:
+      ALERT_ENGINE_URL: http://alert-engine:8000/alerts
+      ANOMALY_RULES_PATH: /app/config/anomaly_rules.json
+      CORRELATION_RULES_PATH: /app/config/correlation_rules.json
+      DATABASE_URL: postgresql://${POSTGRES_USER:-fog}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-fog_data}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      database-migrator:
+        condition: service_completed_successfully
+      alert-engine:
+        condition: service_healthy
+    networks:
+      - fog-services-network
+    healthcheck: *python-healthcheck
+    restart: unless-stopped
+
+  alert-engine:
+    <<: *python-hardening
+    profiles: ["core", "full", "security-test"]
+    build:
+      context: .
+      dockerfile: alert-engine/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-fog}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-fog_data}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      database-migrator:
+        condition: service_completed_successfully
+    networks:
+      - fog-services-network
+    healthcheck: *python-healthcheck
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["core", "full", "security-test"]
+    mem_limit: 512m
+    cpus: "1.0"
+    pids_limit: 256
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fog}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-fog_data}
+    volumes:
+      - fog-postgres-data:/var/lib/postgresql/data
+      - ./database/migrations:/docker-entrypoint-initdb.d:ro
+    networks:
+      - fog-services-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-fog} -d ${POSTGRES_DB:-fog_data}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  database-migrator:
+    image: postgres:16-alpine
+    profiles: ["core", "full", "security-test"]
+    mem_limit: 256m
+    cpus: "0.5"
+    pids_limit: 128
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-fog}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-fog_data}
+      PGPASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - ./database/migrations:/migrations:ro
+    command:
+      - sh
+      - -c
+      - 'set -eu; for file in /migrations/*.sql; do psql -v ON_ERROR_STOP=1 -h postgres -U "$$POSTGRES_USER" -d "$$POSTGRES_DB" -f "$$file"; done'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - fog-services-network
+    restart: "no"
+
+  monitoring-api:
+    <<: *python-hardening
+    profiles: ["full"]
+    build:
+      context: .
+      dockerfile: monitoring-api/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-fog}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-fog_data}
+      AUDIT_LOG_DIRECTORY: /logs
+    volumes:
+      - audit-logs:/logs:ro
+    depends_on:
+      database-migrator:
+        condition: service_completed_successfully
+      fog-receiver:
+        condition: service_healthy
+    networks:
+      - fog-services-network
+    healthcheck: *python-healthcheck
+    restart: unless-stopped
+
+  dashboard:
+    <<: *python-hardening
+    profiles: ["full"]
+    mem_limit: 768m
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    environment:
+      MONITORING_API_URL: http://monitoring-api:8000
+      DASHBOARD_REFRESH_SECONDS: ${DASHBOARD_REFRESH_SECONDS:-3}
+    depends_on:
+      monitoring-api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${DASHBOARD_PORT:-8501}:8501"
+    networks:
+      - fog-services-network
+      - fog-host-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+
+  prometheus-edge:
+    image: prom/prometheus:v3.14.0
+    profiles: ["full", "observability"]
+    mem_limit: 512m
+    cpus: "0.75"
+    pids_limit: 256
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+    volumes:
+      - ./observability/prometheus/edge.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-edge-data:/prometheus
+    ports:
+      - "127.0.0.1:${PROMETHEUS_EDGE_PORT:-9091}:9090"
+    networks:
+      - diode-network
+      - observability-control-network
+      - edge-host-network
+    restart: unless-stopped
+
+  prometheus-fog:
+    image: prom/prometheus:v3.14.0
+    profiles: ["full", "observability"]
+    mem_limit: 512m
+    cpus: "0.75"
+    pids_limit: 256
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+    volumes:
+      - ./observability/prometheus/fog.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-fog-data:/prometheus
+    ports:
+      - "127.0.0.1:${PROMETHEUS_FOG_PORT:-9090}:9090"
+    networks:
+      - fog-services-network
+      - observability-control-network
+      - fog-host-network
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:12.4.8
+    profiles: ["full", "observability"]
+    mem_limit: 512m
+    cpus: "0.75"
+    pids_limit: 256
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?Set GRAFANA_ADMIN_PASSWORD in .env}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana-data:/var/lib/grafana
+    ports:
+      - "127.0.0.1:${GRAFANA_PORT:-3000}:3000"
+    depends_on:
+      - prometheus-edge
+      - prometheus-fog
+    networks:
+      - observability-control-network
+      - fog-host-network
+    restart: unless-stopped
+
+  security-test-client:
+    <<: *python-hardening
+    build:
+      context: .
+      dockerfile: security-test-client/Dockerfile
+    profiles: ["security-test"]
+    environment:
+      FOG_RECEIVER_URL: http://fog-receiver:8000/receive
+      DATA_DIODE_URL: http://data-diode:8000/ingest
+      REVERSE_PATH_URL: http://fog-receiver:8000/security-test/reverse-path
+      DIODE_RUNTIME_URL: http://data-diode:8000/metrics/runtime
+      EDGE_PRIVATE_KEY_PATH: /run/secrets/edge_private_key.pem
+      FOG_AUDIT_LOG_PATH: /logs/fog-receiver/fog-receiver-audit.jsonl
+      REPORT_DIR: /reports
+      FLOOD_REQUESTS: ${SECURITY_FLOOD_REQUESTS:-160}
+      EXPECTED_MAX_QUEUE_SIZE: ${SECURITY_TEST_QUEUE_SIZE:-20}
+    volumes:
+      - ./secrets/edge_private_key.pem:/run/secrets/edge_private_key.pem:ro
+      - audit-logs:/logs:ro
+      - ./security-reports:/reports
+    depends_on:
+      data-diode:
+        condition: service_healthy
+      fog-receiver:
+        condition: service_healthy
+      edge-device-01:
+        condition: service_started
+      edge-device-02:
+        condition: service_started
+      edge-device-03:
+        condition: service_started
+      edge-device-04:
+        condition: service_started
+      edge-device-05:
+        condition: service_started
+    networks:
+      - diode-network
+      - fog-ingress-network
+    restart: "no"
+
+networks:
+  edge-network:
+    internal: true
+  diode-network:
+    internal: true
+  fog-ingress-network:
+    internal: true
+  fog-services-network:
+    internal: true
+  observability-control-network:
+    internal: true
+  edge-host-network:
+    driver: bridge
+  fog-host-network:
+    driver: bridge
+
+volumes:
+  audit-logs:
+  fog-postgres-data:
+  prometheus-edge-data:
+  prometheus-fog-data:
+  grafana-data:

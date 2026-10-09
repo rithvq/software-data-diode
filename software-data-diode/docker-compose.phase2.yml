@@ -1,0 +1,91 @@
+name: software-data-diode-phase2
+
+x-common: &common
+  build:
+    context: .
+    dockerfile: phase2/Dockerfile
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  tmpfs: ["/tmp:size=32m,mode=1777"]
+  mem_limit: 256m
+  cpus: "0.5"
+  pids_limit: 128
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+x-health: &health
+  test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2)"]
+  interval: 3s
+  timeout: 3s
+  retries: 15
+  start_period: 5s
+
+services:
+  key-init:
+    <<: *common
+    profiles: [setup]
+    restart: "no"
+    network_mode: none
+    command: ["python", "-m", "phase2.keys"]
+    volumes: ["edge-private:/private", "verification-public:/public"]
+
+  edge-device:
+    <<: *common
+    command: ["python", "-m", "phase2.device"]
+    volumes: ["device-state:/state"]
+    networks: [edge-network]
+    depends_on:
+      edge-gateway:
+        condition: service_healthy
+
+  edge-gateway:
+    <<: *common
+    environment:
+      PHASE2_ROLE: edge-gateway
+    volumes: ["edge-state:/state", "edge-private:/private:ro", "verification-public:/public:ro"]
+    networks: [edge-network, gateway-network]
+    healthcheck: *health
+    depends_on:
+      unidirectional-gateway:
+        condition: service_healthy
+
+  unidirectional-gateway:
+    <<: *common
+    environment:
+      PHASE2_ROLE: unidirectional-gateway
+    volumes: ["diode-state:/state", "verification-public:/public:ro"]
+    networks: [gateway-network, fog-network]
+    healthcheck: *health
+    depends_on:
+      fog-receiver:
+        condition: service_healthy
+
+  fog-receiver:
+    <<: *common
+    environment:
+      PHASE2_ROLE: fog-receiver
+    volumes: ["fog-state:/state", "verification-public:/public:ro"]
+    networks: [fog-network]
+    healthcheck: *health
+
+networks:
+  edge-network:
+    internal: true
+  gateway-network:
+    internal: true
+  fog-network:
+    internal: true
+
+volumes:
+  edge-private:
+  verification-public:
+  device-state:
+  edge-state:
+  diode-state:
+  fog-state:

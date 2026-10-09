@@ -1,0 +1,20 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: fog-receiver
+    static_configs:
+      - targets: ["fog-receiver:8000"]
+  - job_name: event-processor
+    static_configs:
+      - targets: ["event-processor:8000"]
+  - job_name: fog-analytics
+    static_configs:
+      - targets: ["fog-analytics:8000"]
+  - job_name: alert-engine
+    static_configs:
+      - targets: ["alert-engine:8000"]
+  - job_name: monitoring-api
+    static_configs:
+      - targets: ["monitoring-api:8000"]

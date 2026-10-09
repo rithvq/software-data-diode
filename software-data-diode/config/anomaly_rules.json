@@ -1,0 +1,14 @@
+{
+  "thresholds": [
+    {"metric": "temperature", "maximum": 40.0, "severity": "HIGH"},
+    {"metric": "cpu_usage", "maximum": 90.0, "severity": "HIGH"},
+    {"metric": "memory_usage", "maximum": 92.0, "severity": "WARNING"},
+    {"metric": "packets_per_second", "maximum": 8000.0, "severity": "HIGH"},
+    {"metric": "network_latency_ms", "maximum": 250.0, "severity": "WARNING"},
+    {"metric": "failed_logins", "maximum": 5.0, "severity": "CRITICAL"},
+    {"metric": "vibration_mm_s", "maximum": 8.0, "severity": "HIGH"},
+    {"metric": "pressure_bar", "maximum": 14.0, "severity": "HIGH"}
+  ],
+  "moving_average": {"window": 5, "minimum_samples": 3, "deviation_ratio": 0.25},
+  "zscore": {"window": 20, "minimum_samples": 5, "threshold": 3.0}
+}

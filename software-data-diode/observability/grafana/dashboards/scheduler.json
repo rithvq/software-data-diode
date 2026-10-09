@@ -1,0 +1,15 @@
+{
+  "uid": "diode-scheduler",
+  "title": "Scheduler Performance",
+  "tags": ["data-diode", "scheduler"],
+  "timezone": "browser",
+  "schemaVersion": 41,
+  "refresh": "5s",
+  "time": {"from": "now-30m", "to": "now"},
+  "panels": [
+    {"id": 1, "type": "timeseries", "title": "Queue Size", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "queue_size{service=\"data-diode\"}", "legendFormat": "queue"}], "gridPos": {"h": 9, "w": 8, "x": 0, "y": 0}},
+    {"id": 2, "type": "timeseries", "title": "P95 Queue Wait", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "histogram_quantile(0.95, sum by (le, priority) (rate(queue_wait_seconds_bucket[5m])))", "legendFormat": "{{priority}}"}], "gridPos": {"h": 9, "w": 8, "x": 8, "y": 0}},
+    {"id": 3, "type": "timeseries", "title": "Dropped Messages", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "sum by (priority) (rate(dropped_messages_total[5m]))", "legendFormat": "{{priority}}"}], "gridPos": {"h": 9, "w": 8, "x": 16, "y": 0}},
+    {"id": 4, "type": "heatmap", "title": "Scheduler Score Distribution", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "sum by (le) (rate(scheduler_score_bucket[5m]))", "format": "heatmap"}], "gridPos": {"h": 10, "w": 24, "x": 0, "y": 9}}
+  ]
+}

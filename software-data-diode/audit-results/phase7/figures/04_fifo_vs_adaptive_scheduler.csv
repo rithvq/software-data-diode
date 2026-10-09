@@ -1,0 +1,17 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin,series,priority
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,0.04026989999999918,0.013075476880022537,0.016232746134814666,FIFO - CRITICAL,CRITICAL
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,0.06654942999999836,0.014444531705181674,0.017932379702704317,FIFO - CRITICAL,CRITICAL
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,0.37788765999999285,0.17574743839177098,0.21818428325290126,FIFO - CRITICAL,CRITICAL
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,2.3432067699997994,0.03736070953720097,0.04638201106534993,FIFO - CRITICAL,CRITICAL
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,high_latency_p95_seconds,5,0.04661479999999852,0.0025455834623433716,0.0031602526231633153,FIFO - HIGH,HIGH
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,high_latency_p95_seconds,5,0.07823175999999901,0.017069173244640096,0.02119078015691737,FIFO - HIGH,HIGH
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,high_latency_p95_seconds,5,0.3780973000000107,0.1625221370747719,0.201765535332259,FIFO - HIGH,HIGH
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,high_latency_p95_seconds,5,2.383895979999752,0.018247809668052863,0.022654015954897105,FIFO - HIGH,HIGH
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.03782805999999926,0.009830326121141802,0.012204005239054593,Adaptive - CRITICAL,CRITICAL
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.0466195699999999,0.0025705636929468354,0.0031912647036783054,Adaptive - CRITICAL,CRITICAL
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.04765291999998507,0.0010567975288379367,0.0013119770819017456,Adaptive - CRITICAL,CRITICAL
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.048370729999821435,0.0012993129672288412,0.0016130514963414624,Adaptive - CRITICAL,CRITICAL
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,high_latency_p95_seconds,5,0.04504104999999818,0.0025514864241250918,0.0031675809432640204,Adaptive - HIGH,HIGH
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,high_latency_p95_seconds,5,0.046912559999999257,0.0012631588179050925,0.0015681673874804489,Adaptive - HIGH,HIGH
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,high_latency_p95_seconds,5,0.05419417000000776,0.006260492552437879,0.007772182017918632,Adaptive - HIGH,HIGH
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,high_latency_p95_seconds,5,0.0642967399997673,0.003701305176991175,0.004595040613575652,Adaptive - HIGH,HIGH

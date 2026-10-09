@@ -1,0 +1,17 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,latency_p95_seconds,5,0.04860660000000022,0.0015388673265600927,0.0019104498349407709
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,latency_p95_seconds,5,0.04883430000000078,0.0012825187810524081,0.001592202102988982
+light,A - Light,0,25.0,baseline_b_fifo,Baseline B: Filtered + FIFO,latency_p95_seconds,5,0.02942525999999962,0.007031800178598203,0.008729733394605818
+light,A - Light,0,25.0,proposed,Adaptive scheduling + filtering,latency_p95_seconds,5,0.02942525999999962,0.007031800178598203,0.008729733394605818
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,latency_p95_seconds,5,0.08857740999999845,0.013664409568769395,0.01696388542056629
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,latency_p95_seconds,5,0.08191437999999916,0.010233353577556887,0.012704349696497804
+moderate,B - Moderate,1,50.0,baseline_b_fifo,Baseline B: Filtered + FIFO,latency_p95_seconds,5,0.04115609999999922,0.00554041666517473,0.00687823304894428
+moderate,B - Moderate,1,50.0,proposed,Adaptive scheduling + filtering,latency_p95_seconds,5,0.04064818999999883,0.006448803032967187,0.008005962877538946
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,latency_p95_seconds,5,0.4820067900000183,0.23892515464761527,0.2966172030437936
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,latency_p95_seconds,5,0.36582901999997064,0.14935308017509769,0.18541661288385858
+near_saturation,C - Near saturation,2,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,latency_p95_seconds,5,0.04678800999999848,0.004671832963142816,0.005799916834453964
+near_saturation,C - Near saturation,2,90.0,proposed,Adaptive scheduling + filtering,latency_p95_seconds,5,0.04618494999999816,0.003857970632015906,0.004789535283471569
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,latency_p95_seconds,5,3.8211413599999795,0.1158721298040251,0.143851186803199
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,latency_p95_seconds,5,2.378537479999721,0.026554150048451776,0.03296604632607107
+overload,D - Overload,3,150.0,baseline_b_fifo,Baseline B: Filtered + FIFO,latency_p95_seconds,5,0.057895159999998634,0.003309355993504308,0.004108449443580845
+overload,D - Overload,3,150.0,proposed,Adaptive scheduling + filtering,latency_p95_seconds,5,0.05822155999999745,0.004462597467196745,0.005540158301801596

@@ -1,0 +1,36 @@
+services:
+  edge-device-01:
+    environment:
+      TELEMETRY_INTERVAL_SECONDS: 3600
+  edge-device-02:
+    environment:
+      TELEMETRY_INTERVAL_SECONDS: 3600
+  edge-device-03:
+    environment:
+      TELEMETRY_INTERVAL_SECONDS: 3600
+  edge-device-04:
+    environment:
+      TELEMETRY_INTERVAL_SECONDS: 3600
+  edge-device-05:
+    environment:
+      TELEMETRY_INTERVAL_SECONDS: 3600
+
+  data-diode:
+    environment:
+      INFORMATION_POLICY_ENABLED: "false"
+      SCHEDULER_MODE: adaptive
+      DIODE_ALLOWED_HOSTS: edge-gateway,security-test-client
+      MAX_MESSAGES_PER_SECOND: 40
+      BURST_LIMIT: 40
+      MAX_QUEUE_SIZE: 20
+      EGRESS_MESSAGES_PER_SECOND: 2
+      EGRESS_BURST_LIMIT: 1
+
+  fog-receiver:
+    environment:
+      FOG_ALLOWED_HOSTS: data-diode,security-test-client
+      SECURITY_TEST_MODE: "true"
+
+  security-test-client:
+    environment:
+      EXPECTED_MAX_QUEUE_SIZE: 20

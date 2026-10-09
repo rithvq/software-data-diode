@@ -1,0 +1,666 @@
+{
+  "started_at": "2026-09-22T20:17:27.515203+00:00",
+  "completed_at": "2026-09-22T20:17:36.440388+00:00",
+  "python_version": "3.12.6",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": {
+    "shared\\traffic\\information.py": "0fb7f4b8cd935150d3597067d66911ea59a762f7f844feabed1eb9d5f9b2ce68",
+    "shared\\models\\telemetry.py": "086132f4ed03be12f985e7c4ac91bf846e85fd2c22061305fcd1b846ca196a34",
+    "experiments\\runners\\information_benchmark.py": "95c2c55fb512116d267e22bb8a9bcd1e2462ec3a7e66b25de1f22861547b08f8",
+    "experiments\\analysis\\information_report.py": "2425b6f4ac624945c21b8d87e0379e7712549580cd021dd06c12f73b0b082016",
+    "edge-gateway\\app\\main.py": "7d9cc739b67e95b61d54d8ea78b93c42591e368895f37f4ff85a8d58f695212e",
+    "data-diode\\app\\main.py": "fa51084ee404930b4d4bfce1de4730bdadb0db41e3eae672859599f6981c1495"
+  },
+  "configuration": {
+    "experiment_name": "feedback_free_information_preservation_v1",
+    "seed": 73191,
+    "runs_per_configuration": 5,
+    "duration_seconds": 30,
+    "reference_message_bytes": 1024,
+    "policy_config": "config/information_policy.json",
+    "policy_overrides": {
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096,
+      "messages_per_second": 10
+    },
+    "workloads": [
+      {
+        "id": "A_light",
+        "load": 0.25
+      },
+      {
+        "id": "B_moderate",
+        "load": 0.5
+      },
+      {
+        "id": "C_near_saturation",
+        "load": 0.9
+      },
+      {
+        "id": "D_overload",
+        "load": 1.5
+      },
+      {
+        "id": "E_burst",
+        "load": 0.9,
+        "burst_multiplier": 3
+      },
+      {
+        "id": "F_critical_storm",
+        "load": 1.5,
+        "critical_fraction": 0.6
+      },
+      {
+        "id": "G_bandwidth_step",
+        "load": 0.9,
+        "capacity_multiplier": 0.25
+      }
+    ],
+    "configurations": [
+      {
+        "id": "fifo",
+        "strategy": "fifo",
+        "reduction_enabled": false,
+        "prediction_enabled": false
+      },
+      {
+        "id": "priority_aging",
+        "strategy": "priority",
+        "reduction_enabled": false,
+        "prediction_enabled": false
+      },
+      {
+        "id": "utility_only",
+        "strategy": "utility",
+        "reduction_enabled": false,
+        "prediction_enabled": false
+      },
+      {
+        "id": "filtering_only",
+        "strategy": "fifo",
+        "reduction_enabled": true,
+        "prediction_enabled": true
+      },
+      {
+        "id": "without_prediction",
+        "strategy": "utility",
+        "reduction_enabled": true,
+        "prediction_enabled": false
+      },
+      {
+        "id": "proposed",
+        "strategy": "utility",
+        "reduction_enabled": true,
+        "prediction_enabled": true
+      },
+      {
+        "id": "density_under_pressure",
+        "strategy": "density_under_pressure",
+        "reduction_enabled": true,
+        "prediction_enabled": true
+      }
+    ]
+  },
+  "software_version": "information-policy-0cff71766ca54811",
+  "dependencies": {
+    "pydantic": "2.13.5",
+    "matplotlib": "3.11.1",
+    "cryptography": "46.0.7"
+  },
+  "resolved_policy_configs": {
+    "fifo": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "fifo",
+      "reduction_enabled": false,
+      "prediction_enabled": false,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    },
+    "priority_aging": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "priority",
+      "reduction_enabled": false,
+      "prediction_enabled": false,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    },
+    "utility_only": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "utility",
+      "reduction_enabled": false,
+      "prediction_enabled": false,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    },
+    "filtering_only": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "fifo",
+      "reduction_enabled": true,
+      "prediction_enabled": true,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    },
+    "without_prediction": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "utility",
+      "reduction_enabled": true,
+      "prediction_enabled": false,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    },
+    "proposed": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "utility",
+      "reduction_enabled": true,
+      "prediction_enabled": true,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    },
+    "density_under_pressure": {
+      "weights": {
+        "priority": 4.0,
+        "novelty": 3.0,
+        "freshness": 1.0,
+        "security_risk": 4.0,
+        "waiting_age": 1.0,
+        "starvation": 2.0,
+        "transmission_cost": 0.2,
+        "obsolescence": 2.0
+      },
+      "strategy": "density_under_pressure",
+      "reduction_enabled": true,
+      "prediction_enabled": true,
+      "max_queue_size": 40,
+      "link_bytes_per_second": 4096.0,
+      "messages_per_second": 10.0,
+      "envelope_overhead_bytes": 512,
+      "max_message_bytes": 8192,
+      "window_seconds": 10.0,
+      "prediction_horizon_seconds": 5.0,
+      "freshness_seconds": 120.0,
+      "starvation_seconds": 15.0,
+      "low_novelty_threshold": 0.15,
+      "preserve_novelty_threshold": 0.75,
+      "elevated_threshold": 0.5,
+      "congested_threshold": 0.75,
+      "critical_threshold": 0.9,
+      "sample_every": 4,
+      "aggregation_max_samples": 5,
+      "max_streams": 1024,
+      "security_events": [
+        "intrusion",
+        "attack",
+        "intrusion_detected"
+      ],
+      "routine_events": [
+        "telemetry",
+        "resource",
+        "network",
+        "security",
+        "industrial_process",
+        "environmental_telemetry",
+        "system_telemetry",
+        "network_telemetry",
+        "security_telemetry",
+        "industrial_telemetry"
+      ],
+      "security_scales": {
+        "failed_logins": 5.0,
+        "blocked_connections": 10.0
+      },
+      "novelty_scales": {
+        "environmental": {
+          "temperature": 5.0,
+          "humidity": 10.0,
+          "air_quality_index": 50.0
+        },
+        "system": {
+          "cpu_usage": 20.0,
+          "memory_usage": 20.0,
+          "load_average": 3.0
+        },
+        "network": {
+          "packets_per_second": 3000.0,
+          "network_latency_ms": 100.0,
+          "packet_loss_percent": 2.0
+        },
+        "security": {
+          "failed_logins": 3.0,
+          "blocked_connections": 5.0
+        },
+        "industrial": {
+          "pressure_bar": 4.0,
+          "vibration_mm_s": 3.0,
+          "rpm": 300.0
+        }
+      }
+    }
+  },
+  "measurement_scope": "discrete-event local policy simulation; no receiver, network, or attack detector measured"
+}

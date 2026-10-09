@@ -1,0 +1,17 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,throughput_messages_per_second,5,10.433333333333334,0.576387215526353,0.7155645205787605
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,throughput_messages_per_second,5,10.433333333333334,0.576387215526353,0.7155645205787605
+light,A - Light,0,25.0,baseline_b_fifo,Baseline B: Filtered + FIFO,throughput_messages_per_second,5,2.66,0.16566364853052237,0.205665611666662
+light,A - Light,0,25.0,proposed,Adaptive scheduling + filtering,throughput_messages_per_second,5,2.66,0.16566364853052237,0.205665611666662
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,throughput_messages_per_second,5,19.98024136608784,0.4035212448885192,0.5009574785213052
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,throughput_messages_per_second,5,19.98024136608784,0.4035212448885192,0.5009574785213052
+moderate,B - Moderate,1,50.0,baseline_b_fifo,Baseline B: Filtered + FIFO,throughput_messages_per_second,5,4.68,0.09603240193925289,0.11922086021796313
+moderate,B - Moderate,1,50.0,proposed,Adaptive scheduling + filtering,throughput_messages_per_second,5,4.68,0.09603240193925289,0.11922086021796313
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,throughput_messages_per_second,5,35.892188528978465,0.8084958526104729,1.0037192560470285
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,throughput_messages_per_second,5,35.892188528978465,0.8084958526104729,1.0037192560470285
+near_saturation,C - Near saturation,2,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,throughput_messages_per_second,5,8.245637560444685,0.1793602913075037,0.22266951348516284
+near_saturation,C - Near saturation,2,90.0,proposed,Adaptive scheduling + filtering,throughput_messages_per_second,5,8.245637560444685,0.1793602913075037,0.22266951348516284
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,throughput_messages_per_second,5,39.99271641875262,0.004209316506785351,0.005225718869200716
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,throughput_messages_per_second,5,39.99271641875262,0.004209316506785351,0.005225718869200716
+overload,D - Overload,3,150.0,baseline_b_fifo,Baseline B: Filtered + FIFO,throughput_messages_per_second,5,13.544981945467375,0.20846157583838906,0.2587977379714622
+overload,D - Overload,3,150.0,proposed,Adaptive scheduling + filtering,throughput_messages_per_second,5,13.544981945467375,0.20846157583838906,0.2587977379714622

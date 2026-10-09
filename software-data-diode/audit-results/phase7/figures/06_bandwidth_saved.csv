@@ -1,0 +1,25 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin
+burst,E - Burst,4,70.0,adaptive_only,Adaptive scheduling only,bandwidth_saving_percent,5,2.875720088014009,1.9841247849577501,2.4632213593082644
+burst,E - Burst,4,70.0,baseline_a_direct,Baseline A: Direct + FIFO,bandwidth_saving_percent,5,2.8756981131562442,1.9841644284846083,2.463270575357001
+burst,E - Burst,4,70.0,baseline_b_fifo,Baseline B: Filtered + FIFO,bandwidth_saving_percent,5,60.51954166961339,0.4608933693095256,0.572182959586864
+burst,E - Burst,4,70.0,proposed,Adaptive scheduling + filtering,bandwidth_saving_percent,5,60.51954166961339,0.4608933693095256,0.572182959586864
+critical_storm,F - Critical-event storm,5,90.0,adaptive_only,Adaptive scheduling only,bandwidth_saving_percent,5,0.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,baseline_a_direct,Baseline A: Direct + FIFO,bandwidth_saving_percent,5,0.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,bandwidth_saving_percent,5,43.76519066616825,0.7411290127854676,0.920085686211054
+critical_storm,F - Critical-event storm,5,90.0,proposed,Adaptive scheduling + filtering,bandwidth_saving_percent,5,43.76519066616825,0.7411290127854676,0.920085686211054
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,bandwidth_saving_percent,5,0.0,0.0,0.0
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,bandwidth_saving_percent,5,0.0,0.0,0.0
+light,A - Light,0,25.0,baseline_b_fifo,Baseline B: Filtered + FIFO,bandwidth_saving_percent,5,59.71141381276652,1.0179915533652857,1.2638008238469567
+light,A - Light,0,25.0,proposed,Adaptive scheduling + filtering,bandwidth_saving_percent,5,59.71141381276652,1.0179915533652857,1.2638008238469567
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,bandwidth_saving_percent,5,0.0,0.0,0.0
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,bandwidth_saving_percent,5,0.0,0.0,0.0
+moderate,B - Moderate,1,50.0,baseline_b_fifo,Baseline B: Filtered + FIFO,bandwidth_saving_percent,5,60.6317482833761,0.34832242914889044,0.4324300839898821
+moderate,B - Moderate,1,50.0,proposed,Adaptive scheduling + filtering,bandwidth_saving_percent,5,60.6317482833761,0.34832242914889044,0.4324300839898821
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,bandwidth_saving_percent,5,0.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,bandwidth_saving_percent,5,0.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,bandwidth_saving_percent,5,60.5982605012271,0.07955375621771443,0.09876319927773573
+near_saturation,C - Near saturation,2,90.0,proposed,Adaptive scheduling + filtering,bandwidth_saving_percent,5,60.5982605012271,0.07955375621771443,0.09876319927773573
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,bandwidth_saving_percent,5,27.55940111628892,1.706529645988224,2.118596726455627
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,bandwidth_saving_percent,5,27.55806920840206,1.705725845094948,2.1175988358269935
+overload,D - Overload,3,150.0,baseline_b_fifo,Baseline B: Filtered + FIFO,bandwidth_saving_percent,5,60.41674584480777,0.46459515369204585,0.5767785951173036
+overload,D - Overload,3,150.0,proposed,Adaptive scheduling + filtering,bandwidth_saving_percent,5,60.41674584480777,0.46459515369204585,0.5767785951173036

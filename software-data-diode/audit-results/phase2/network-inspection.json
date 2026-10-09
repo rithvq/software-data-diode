@@ -1,0 +1,188 @@
+[
+  {
+    "Name": "software-data-diode-phase2_fog-network",
+    "Id": "1ae8dbf3b099c5b4b1f823974f5bb68078b933894e0fd891e92ae20392345fb1",
+    "Created": "2026-09-23T06:20:53.063791899Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "172.21.0.0/16",
+          "Gateway": "172.21.0.1"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "17b3a37313827b8bb7ca04a9e8ada8c34c0aa85790d982c2d1660e587918132d",
+      "com.docker.compose.network": "fog-network",
+      "com.docker.compose.project": "software-data-diode-phase2",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "beacde34ae8ee3742a64820afc1a6a0a40a092d97918517abf34b874af762914": {
+        "Name": "software-data-diode-phase2-fog-receiver-1",
+        "EndpointID": "342e56d12924167c9a82fbaf92382c014a1a8276f402999a858e245b2c32b972",
+        "MacAddress": "f6:5b:dc:7a:2c:0d",
+        "IPv4Address": "172.21.0.2/16",
+        "IPv6Address": ""
+      },
+      "ef54e8c9eda975de5022677cb2681e8825353d6bf293dce5808efd7f1fadfdf3": {
+        "Name": "software-data-diode-phase2-unidirectional-gateway-1",
+        "EndpointID": "05277be5e33ca5453803b01da613de1edb98a966cfda92f8c4978ef4f0059953",
+        "MacAddress": "b2:53:ad:b1:7f:0c",
+        "IPv4Address": "172.21.0.3/16",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "172.21.0.0/16": {
+            "IPsInUse": 5,
+            "DynamicIPsAvailable": 65531
+          }
+        }
+      }
+    }
+  },
+  {
+    "Name": "software-data-diode-phase2_edge-network",
+    "Id": "5baa28ae4d191aa4a0e5b7151308dc8b0fb09bbc4c611007dd9d48cd8ea8ec7e",
+    "Created": "2026-09-23T06:20:53.074059906Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "172.23.0.0/16",
+          "Gateway": "172.23.0.1"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "1bcd087ff917be6f7baf5ae202e47d82b296ec32aa3224dc280bd5ca42d49048",
+      "com.docker.compose.network": "edge-network",
+      "com.docker.compose.project": "software-data-diode-phase2",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "5a3163eec8b873403e4fc0d7abf57ac1a2a2cb3ac2cb08dbdbf077b8b06f5ba3": {
+        "Name": "software-data-diode-phase2-edge-device-1",
+        "EndpointID": "a35616c03722fd11a587be3f192c43ad8554c35f38d4966e007608bc2dd2c36d",
+        "MacAddress": "22:e7:b3:10:ca:e7",
+        "IPv4Address": "172.23.0.3/16",
+        "IPv6Address": ""
+      },
+      "a213f8f14c1f60c855cad19b8977906c9ffadc47510d2550b84768d024aebb9c": {
+        "Name": "software-data-diode-phase2-edge-gateway-1",
+        "EndpointID": "f8c407d51d8ba4bbbb594e0d474de818853142eb1556cd631218b700c564307f",
+        "MacAddress": "f2:13:1f:67:80:6c",
+        "IPv4Address": "172.23.0.2/16",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "172.23.0.0/16": {
+            "IPsInUse": 5,
+            "DynamicIPsAvailable": 65531
+          }
+        }
+      }
+    }
+  },
+  {
+    "Name": "software-data-diode-phase2_gateway-network",
+    "Id": "a6cd5b48eeb5cf4e47f5ebc0ed6d654a05787751fbec8b16f6047a8ba7d53c8f",
+    "Created": "2026-09-23T06:20:53.063886907Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "172.22.0.0/16",
+          "Gateway": "172.22.0.1"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "b4cf3970fbca5211c7e5d995f47253e7307b25585f655a42cbc479da20ac8ee2",
+      "com.docker.compose.network": "gateway-network",
+      "com.docker.compose.project": "software-data-diode-phase2",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "a213f8f14c1f60c855cad19b8977906c9ffadc47510d2550b84768d024aebb9c": {
+        "Name": "software-data-diode-phase2-edge-gateway-1",
+        "EndpointID": "98b8503ee7e06539167a53b8e61d19932018c725bbc1a3b69af6713f55734029",
+        "MacAddress": "72:2b:de:11:be:b5",
+        "IPv4Address": "172.22.0.3/16",
+        "IPv6Address": ""
+      },
+      "ef54e8c9eda975de5022677cb2681e8825353d6bf293dce5808efd7f1fadfdf3": {
+        "Name": "software-data-diode-phase2-unidirectional-gateway-1",
+        "EndpointID": "ec234921119b924edd7357ab8321b47e1692a6200e67fff5727dfd94d896219c",
+        "MacAddress": "9a:7b:76:66:06:4d",
+        "IPv4Address": "172.22.0.2/16",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "172.22.0.0/16": {
+            "IPsInUse": 5,
+            "DynamicIPsAvailable": 65531
+          }
+        }
+      }
+    }
+  }
+]

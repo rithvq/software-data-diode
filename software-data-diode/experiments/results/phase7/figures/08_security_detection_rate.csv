@@ -1,0 +1,25 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin
+burst,E - Burst,4,70.0,adaptive_only,Adaptive scheduling only,security_detection_rate_percent,5,100.0,0.0,0.0
+burst,E - Burst,4,70.0,baseline_a_direct,Baseline A: Direct + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+burst,E - Burst,4,70.0,baseline_b_fifo,Baseline B: Filtered + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+burst,E - Burst,4,70.0,proposed,Adaptive scheduling + filtering,security_detection_rate_percent,5,100.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,adaptive_only,Adaptive scheduling only,security_detection_rate_percent,5,100.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,baseline_a_direct,Baseline A: Direct + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,proposed,Adaptive scheduling + filtering,security_detection_rate_percent,5,100.0,0.0,0.0
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,security_detection_rate_percent,5,100.0,0.0,0.0
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+light,A - Light,0,25.0,baseline_b_fifo,Baseline B: Filtered + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+light,A - Light,0,25.0,proposed,Adaptive scheduling + filtering,security_detection_rate_percent,5,100.0,0.0,0.0
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,security_detection_rate_percent,5,100.0,0.0,0.0
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+moderate,B - Moderate,1,50.0,baseline_b_fifo,Baseline B: Filtered + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+moderate,B - Moderate,1,50.0,proposed,Adaptive scheduling + filtering,security_detection_rate_percent,5,100.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,security_detection_rate_percent,5,100.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,proposed,Adaptive scheduling + filtering,security_detection_rate_percent,5,100.0,0.0,0.0
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,security_detection_rate_percent,5,100.0,0.0,0.0
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+overload,D - Overload,3,150.0,baseline_b_fifo,Baseline B: Filtered + FIFO,security_detection_rate_percent,5,100.0,0.0,0.0
+overload,D - Overload,3,150.0,proposed,Adaptive scheduling + filtering,security_detection_rate_percent,5,100.0,0.0,0.0

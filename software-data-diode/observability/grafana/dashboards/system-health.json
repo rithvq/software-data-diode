@@ -1,0 +1,14 @@
+{
+  "uid": "diode-system-health",
+  "title": "System Health",
+  "tags": ["data-diode", "health"],
+  "timezone": "browser",
+  "schemaVersion": 41,
+  "refresh": "5s",
+  "time": {"from": "now-30m", "to": "now"},
+  "panels": [
+    {"id": 1, "type": "stat", "title": "Fog Services", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "service_health", "legendFormat": "{{service}}"}], "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}},
+    {"id": 2, "type": "stat", "title": "Edge Transport Services", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "service_health", "legendFormat": "{{service}}"}], "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}},
+    {"id": 3, "type": "timeseries", "title": "Scrape Availability", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "up", "legendFormat": "{{job}}"}], "gridPos": {"h": 9, "w": 24, "x": 0, "y": 8}}
+  ]
+}

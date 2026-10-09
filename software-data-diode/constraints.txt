@@ -1,0 +1,12 @@
+# Direct dependency lock for reproducible Phase 8 container builds.
+fastapi==0.141.1
+uvicorn==0.52.4
+pydantic==2.13.5
+cryptography==46.0.7
+httpx==0.28.1
+psycopg==3.3.5
+prometheus-client==0.26.0
+streamlit==1.63.0
+requests==2.34.2
+pandas==2.3.3
+plotly==6.9.0

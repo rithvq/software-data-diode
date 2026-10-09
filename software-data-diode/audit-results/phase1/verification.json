@@ -1,0 +1,153 @@
+{
+  "started_at": "2026-09-23T07:36:31.352040+00:00",
+  "finished_at": "2026-09-23T07:36:52.608359+00:00",
+  "project": "software-data-diode-phase1",
+  "checks": [
+    {
+      "check": "Three private application networks",
+      "passed": true,
+      "detail": [
+        "edge-network",
+        "fog-network",
+        "gateway-network"
+      ]
+    },
+    {
+      "check": "Membership edge-device",
+      "passed": true,
+      "detail": [
+        "edge-network"
+      ]
+    },
+    {
+      "check": "No published ports edge-device",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Membership edge-gateway",
+      "passed": true,
+      "detail": [
+        "edge-network",
+        "gateway-network"
+      ]
+    },
+    {
+      "check": "No published ports edge-gateway",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Membership unidirectional-gateway",
+      "passed": true,
+      "detail": [
+        "fog-network",
+        "gateway-network"
+      ]
+    },
+    {
+      "check": "No published ports unidirectional-gateway",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Membership fog-receiver",
+      "passed": true,
+      "detail": [
+        "fog-network"
+      ]
+    },
+    {
+      "check": "No published ports fog-receiver",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "check": "Continuous forward delivery",
+      "passed": true,
+      "detail": {
+        "start_count": 38926,
+        "end_count": 38936,
+        "required_new_messages": 10
+      }
+    },
+    {
+      "check": "One traceable Edge device",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "Contiguous FIFO sequence",
+      "passed": true,
+      "detail": [
+        38928,
+        38929,
+        38930,
+        38931,
+        38932,
+        38933,
+        38934,
+        38935,
+        38936,
+        38937
+      ]
+    },
+    {
+      "check": "Unique received IDs",
+      "passed": true,
+      "detail": 10
+    },
+    {
+      "check": "Forward trace and instrumentation edge-gateway",
+      "passed": true,
+      "detail": {
+        "matched_ids": 10,
+        "received_ids": 10
+      }
+    },
+    {
+      "check": "Forward trace and instrumentation unidirectional-gateway",
+      "passed": true,
+      "detail": {
+        "matched_ids": 10,
+        "received_ids": 10
+      }
+    },
+    {
+      "check": "Edge Gateway reachable from Edge (control)",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "DNS edge-device",
+      "passed": true,
+      "detail": "[Errno -3] Temporary failure in name resolution"
+    },
+    {
+      "check": "DNS edge-gateway",
+      "passed": true,
+      "detail": "[Errno -3] Temporary failure in name resolution"
+    },
+    {
+      "check": "TCP edge-device 172.19.0.3:8000",
+      "passed": true,
+      "detail": "[Errno 101] Network is unreachable"
+    },
+    {
+      "check": "TCP edge-gateway 172.19.0.2:8000",
+      "passed": true,
+      "detail": "[Errno 101] Network is unreachable"
+    },
+    {
+      "check": "TCP edge-gateway 172.20.0.3:8000",
+      "passed": true,
+      "detail": "[Errno 101] Network is unreachable"
+    },
+    {
+      "check": "Reverse ingress guard",
+      "passed": true,
+      "detail": "HTTP 403; expected 403 from reachable gateway"
+    }
+  ],
+  "passed": true
+}

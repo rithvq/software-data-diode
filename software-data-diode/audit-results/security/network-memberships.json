@@ -1,0 +1,34 @@
+﻿{
+    "timestamp":  "2026-09-23T07:49:31.5578154Z",
+    "project":  "software-data-diode-security-audit",
+    "networks":  {
+                     "diode-network":  [
+                                           "software-data-diode-security-audit-data-diode-1",
+                                           "software-data-diode-security-audit-edge-gateway-1"
+                                       ],
+                     "fog-services-network":  [
+                                                  "software-data-diode-security-audit-alert-engine-1",
+                                                  "software-data-diode-security-audit-event-processor-1",
+                                                  "software-data-diode-security-audit-fog-analytics-1",
+                                                  "software-data-diode-security-audit-fog-receiver-1",
+                                                  "software-data-diode-security-audit-postgres-1"
+                                              ],
+                     "edge-network":  [
+                                          "software-data-diode-security-audit-edge-device-01-1",
+                                          "software-data-diode-security-audit-edge-device-02-1",
+                                          "software-data-diode-security-audit-edge-device-03-1",
+                                          "software-data-diode-security-audit-edge-device-04-1",
+                                          "software-data-diode-security-audit-edge-device-05-1",
+                                          "software-data-diode-security-audit-edge-gateway-1"
+                                      ],
+                     "fog-ingress-network":  [
+                                                 "software-data-diode-security-audit-data-diode-1",
+                                                 "software-data-diode-security-audit-fog-receiver-1"
+                                             ]
+                 },
+    "assertions":  {
+                       "fog_receiver_absent_from_edge_network":  true,
+                       "edge_gateway_absent_from_fog_services_network":  true,
+                       "edge_devices_absent_from_fog_services_network":  true
+                   }
+}

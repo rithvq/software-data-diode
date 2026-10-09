@@ -1,0 +1,14 @@
+{
+  "uid": "diode-workload",
+  "title": "Edge and Fog Workload",
+  "tags": ["data-diode", "workload"],
+  "timezone": "browser",
+  "schemaVersion": 41,
+  "refresh": "5s",
+  "time": {"from": "now-30m", "to": "now"},
+  "panels": [
+    {"id": 1, "type": "timeseries", "title": "Edge Workload by Device", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "sum by (device_id) (rate(messages_received_total{service=\"edge-gateway\"}[1m]))", "legendFormat": "{{device_id}}"}], "gridPos": {"h": 10, "w": 12, "x": 0, "y": 0}},
+    {"id": 2, "type": "timeseries", "title": "Fog Workload by Service", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "sum by (service) (rate(messages_forwarded_total[1m]))", "legendFormat": "{{service}}"}], "gridPos": {"h": 10, "w": 12, "x": 12, "y": 0}},
+    {"id": 3, "type": "timeseries", "title": "Filtered Bytes", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "sum by (device_id) (rate(filtered_bytes_total[1m]))", "legendFormat": "{{device_id}}"}], "gridPos": {"h": 9, "w": 24, "x": 0, "y": 10}}
+  ]
+}

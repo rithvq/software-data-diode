@@ -1,0 +1,14 @@
+{
+  "uid": "diode-throughput",
+  "title": "Throughput",
+  "tags": ["data-diode", "throughput"],
+  "timezone": "browser",
+  "schemaVersion": 41,
+  "refresh": "5s",
+  "time": {"from": "now-30m", "to": "now"},
+  "panels": [
+    {"id": 1, "type": "timeseries", "title": "Edge Messages Received", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "sum by (service, priority) (rate(messages_received_total[1m]))", "legendFormat": "{{service}} {{priority}}"}], "gridPos": {"h": 9, "w": 12, "x": 0, "y": 0}},
+    {"id": 2, "type": "timeseries", "title": "Fog Messages Received", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "sum by (service) (rate(messages_received_total[1m]))", "legendFormat": "{{service}}"}], "gridPos": {"h": 9, "w": 12, "x": 12, "y": 0}},
+    {"id": 3, "type": "timeseries", "title": "Transmitted Bytes", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "sum by (service) (rate(transmitted_bytes_total[1m]))", "legendFormat": "{{service}}"}], "gridPos": {"h": 9, "w": 24, "x": 0, "y": 9}}
+  ]
+}

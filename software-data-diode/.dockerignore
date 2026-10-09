@@ -1,0 +1,13 @@
+.env
+.git
+.pytest_cache
+.venv
+**/__pycache__
+**/*.pyc
+demo-results
+logs
+secrets/*.pem
+security-reports
+experiments/results
+phase1-results
+phase2-results

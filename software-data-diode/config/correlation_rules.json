@@ -1,0 +1,29 @@
+{
+  "rules": [
+    {
+      "rule_id": "coordinated-security-incident",
+      "alert_type": "POTENTIAL_SECURITY_INCIDENT",
+      "description": "Network traffic spike, high CPU utilization, and failed logins occurred within the correlation window.",
+      "severity": "CRITICAL",
+      "window_seconds": 60,
+      "cooldown_seconds": 120,
+      "conditions": [
+        {"telemetry_type": "network", "metric": "packets_per_second", "operator": ">=", "value": 8000},
+        {"telemetry_type": "system", "metric": "cpu_usage", "operator": ">=", "value": 90},
+        {"telemetry_type": "security", "metric": "failed_logins", "operator": ">=", "value": 5}
+      ]
+    },
+    {
+      "rule_id": "industrial-overheat",
+      "alert_type": "INDUSTRIAL_PROCESS_RISK",
+      "description": "Elevated environmental temperature coincided with excessive industrial vibration.",
+      "severity": "HIGH",
+      "window_seconds": 90,
+      "cooldown_seconds": 120,
+      "conditions": [
+        {"telemetry_type": "environmental", "metric": "temperature", "operator": ">=", "value": 38},
+        {"telemetry_type": "industrial", "metric": "vibration_mm_s", "operator": ">=", "value": 8}
+      ]
+    }
+  ]
+}

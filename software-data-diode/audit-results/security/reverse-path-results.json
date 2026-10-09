@@ -1,0 +1,78 @@
+{
+  "all_blocked": true,
+  "checks": [
+    {
+      "action": "resolve",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-01"
+    },
+    {
+      "action": "resolve",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-02"
+    },
+    {
+      "action": "resolve",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-03"
+    },
+    {
+      "action": "resolve",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-04"
+    },
+    {
+      "action": "resolve",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-05"
+    },
+    {
+      "action": "resolve",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-gateway"
+    },
+    {
+      "action": "connect",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-01:8000"
+    },
+    {
+      "action": "connect",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-02:8000"
+    },
+    {
+      "action": "connect",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-03:8000"
+    },
+    {
+      "action": "connect",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-04:8000"
+    },
+    {
+      "action": "connect",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-device-05:8000"
+    },
+    {
+      "action": "connect",
+      "blocked": true,
+      "detail": "gaierror",
+      "target": "edge-gateway:8000"
+    }
+  ],
+  "status": "blocked"
+}

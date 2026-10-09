@@ -1,0 +1,27 @@
+{
+  "experiment_name": "feedback_free_information_preservation_v1",
+  "seed": 73191,
+  "runs_per_configuration": 5,
+  "duration_seconds": 30,
+  "reference_message_bytes": 1024,
+  "policy_config": "config/information_policy.json",
+  "policy_overrides": {"max_queue_size": 40, "link_bytes_per_second": 4096, "messages_per_second": 10},
+  "workloads": [
+    {"id": "A_light", "load": 0.25},
+    {"id": "B_moderate", "load": 0.5},
+    {"id": "C_near_saturation", "load": 0.9},
+    {"id": "D_overload", "load": 1.5},
+    {"id": "E_burst", "load": 0.9, "burst_multiplier": 3},
+    {"id": "F_critical_storm", "load": 1.5, "critical_fraction": 0.6},
+    {"id": "G_bandwidth_step", "load": 0.9, "capacity_multiplier": 0.25}
+  ],
+  "configurations": [
+    {"id": "fifo", "strategy": "fifo", "reduction_enabled": false, "prediction_enabled": false},
+    {"id": "priority_aging", "strategy": "priority", "reduction_enabled": false, "prediction_enabled": false},
+    {"id": "utility_only", "strategy": "utility", "reduction_enabled": false, "prediction_enabled": false},
+    {"id": "filtering_only", "strategy": "fifo", "reduction_enabled": true, "prediction_enabled": true},
+    {"id": "without_prediction", "strategy": "utility", "reduction_enabled": true, "prediction_enabled": false},
+    {"id": "proposed", "strategy": "utility", "reduction_enabled": true, "prediction_enabled": true},
+    {"id": "density_under_pressure", "strategy": "density_under_pressure", "reduction_enabled": true, "prediction_enabled": true}
+  ]
+}

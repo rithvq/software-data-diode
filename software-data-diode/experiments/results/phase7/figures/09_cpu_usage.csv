@@ -1,0 +1,25 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin
+burst,E - Burst,4,70.0,adaptive_only,Adaptive scheduling only,cpu_utilization_percent,5,98.75325715882926,1.263878259876303,1.5690605494648682
+burst,E - Burst,4,70.0,baseline_a_direct,Baseline A: Direct + FIFO,cpu_utilization_percent,5,99.70084140989721,0.6689389435228319,0.8304642461253421
+burst,E - Burst,4,70.0,baseline_b_fifo,Baseline B: Filtered + FIFO,cpu_utilization_percent,5,98.94603376081527,1.0504388188647746,1.3040829663993918
+burst,E - Burst,4,70.0,proposed,Adaptive scheduling + filtering,cpu_utilization_percent,5,100.0,0.0,0.0
+critical_storm,F - Critical-event storm,5,90.0,adaptive_only,Adaptive scheduling only,cpu_utilization_percent,5,98.33373853475236,1.8142170099037602,2.2522868133570917
+critical_storm,F - Critical-event storm,5,90.0,baseline_a_direct,Baseline A: Direct + FIFO,cpu_utilization_percent,5,99.17549607055865,0.8263205979910025,1.0258480525211306
+critical_storm,F - Critical-event storm,5,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,cpu_utilization_percent,5,99.40875858200278,1.3220560017551743,1.6412861763603108
+critical_storm,F - Critical-event storm,5,90.0,proposed,Adaptive scheduling + filtering,cpu_utilization_percent,5,97.35801632745546,4.836214215840562,6.00399039665361
+light,A - Light,0,25.0,adaptive_only,Adaptive scheduling only,cpu_utilization_percent,5,97.02338604668647,6.655911142383435,8.263080334398355
+light,A - Light,0,25.0,baseline_a_direct,Baseline A: Direct + FIFO,cpu_utilization_percent,5,93.73837950124616,7.841016975350221,9.734347677529074
+light,A - Light,0,25.0,baseline_b_fifo,Baseline B: Filtered + FIFO,cpu_utilization_percent,5,95.41031912458236,4.794758666934916,5.952524786072868
+light,A - Light,0,25.0,proposed,Adaptive scheduling + filtering,cpu_utilization_percent,5,93.8569333885479,6.0484397859198085,7.508925942621512
+moderate,B - Moderate,1,50.0,adaptive_only,Adaptive scheduling only,cpu_utilization_percent,5,98.69458589203843,2.868699512968998,3.56138987192427
+moderate,B - Moderate,1,50.0,baseline_a_direct,Baseline A: Direct + FIFO,cpu_utilization_percent,5,98.3405557145023,3.1534841488813052,3.9149400131755723
+moderate,B - Moderate,1,50.0,baseline_b_fifo,Baseline B: Filtered + FIFO,cpu_utilization_percent,5,98.65254182238456,2.990399122861741,3.712475670952616
+moderate,B - Moderate,1,50.0,proposed,Adaptive scheduling + filtering,cpu_utilization_percent,5,99.17808407723187,1.1364522388390492,1.4108656117622422
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,cpu_utilization_percent,5,100.0,0.0,0.0
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,cpu_utilization_percent,5,99.63862723496662,0.5953315000193623,0.7390831856112052
+near_saturation,C - Near saturation,2,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,cpu_utilization_percent,5,99.50391490473639,0.8858754127073935,1.0997832670657057
+near_saturation,C - Near saturation,2,90.0,proposed,Adaptive scheduling + filtering,cpu_utilization_percent,5,99.61449391221193,0.8620178180341331,1.070164899699691
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,cpu_utilization_percent,5,98.88254747818098,0.7929264469760056,0.9843903847979496
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,cpu_utilization_percent,5,97.89243079884693,3.261844322662408,4.0494653699371685
+overload,D - Overload,3,150.0,baseline_b_fifo,Baseline B: Filtered + FIFO,cpu_utilization_percent,5,97.26331412121193,2.9508452927378843,3.6633709775673116
+overload,D - Overload,3,150.0,proposed,Adaptive scheduling + filtering,cpu_utilization_percent,5,99.24250719862339,1.078212625516986,1.338563173639221

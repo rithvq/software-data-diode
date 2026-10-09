@@ -1,0 +1,9 @@
+avg_queue_utilization,bytes_dropped,bytes_filtered,bytes_transmitted,capacity_messages_per_second,critical_delivered,critical_dropped,critical_latency_p50,critical_latency_p95,critical_latency_p99,generated_messages,high_delivered,high_dropped,high_latency_p50,high_latency_p95,high_latency_p99,low_delivered,low_dropped,low_latency_p50,low_latency_p95,low_latency_p99,max_queue_size,max_queue_utilization,medium_delivered,medium_dropped,medium_latency_p50,medium_latency_p95,medium_latency_p99,scenario,scheduled_input_messages,scheduler_mode,total_bytes_generated
+0.005,0,25400,9308,10.0,4,0,0.0,0.0,0.0,101,1,0,0.0,0.0,0.0,19,0,0.0,0.0,0.0,100,0.01,1,0,0.0,0.0,0.0,normal_load,25,fifo,27590
+0.005,0,25400,9308,10.0,4,0,0.0,0.0,0.0,101,1,0,0.0,0.0,0.0,19,0,0.0,0.0,0.0,100,0.01,1,0,0.0,0.0,0.0,normal_load,25,adaptive,27590
+0.005,0,51584,18081,10.0,7,0,0.0,0.0,0.0,200,1,0,0.0,0.0,0.0,38,0,0.0,0.0,0.0,100,0.01,1,0,0.0,0.0,0.0,near_capacity,47,fifo,54599
+0.005,0,51584,18081,10.0,7,0,0.0,0.0,0.0,200,1,0,0.0,0.0,0.0,38,0,0.0,0.0,0.0,100,0.01,1,0,0.0,0.0,0.0,near_capacity,47,adaptive,54599
+0.005,0,106202,35238,10.0,8,0,0.0,0.05,0.05,400,1,0,0.05,0.05,0.05,78,0,0.0,0.05,0.05,100,0.01,1,0,0.05,0.05,0.05,overload,88,fifo,109219
+0.005,0,106202,35238,10.0,8,0,0.0,0.05,0.05,400,1,0,0.05,0.05,0.05,78,0,0.0,0.05,0.05,100,0.01,1,0,0.05,0.05,0.05,overload,88,adaptive,109219
+0.10096491228070176,0,41474,19828,2.0,25,0,5.625,9.875,10.0,180,1,0,0.375,0.375,0.375,30,0,0.5,10.0,10.25,100,0.21,1,0,0.375,0.375,0.375,critical_burst,57,fifo,49166
+0.10096491228070176,0,41474,19828,2.0,25,0,4.625,9.125,9.625,180,1,0,0.375,0.375,0.375,30,0,0.5,11.5,11.625,100,0.21,1,0,0.375,0.375,0.375,critical_burst,57,adaptive,49166

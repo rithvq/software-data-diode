@@ -1,0 +1,18 @@
+{
+  "attack_detection_rate": 1.0,
+  "average_detection_latency_seconds": 0.16264499999999998,
+  "configured_queue_capacity": 20,
+  "critical_delivered": true,
+  "critical_traffic_latency_during_flood_seconds": 0.11633420799626037,
+  "false_rejection_rate": 0.0,
+  "flood_requests": 160,
+  "low_priority_drops": 62,
+  "maximum_queue_size_observed": 20,
+  "queue_full_requests": 61,
+  "rate_limited_requests": 82,
+  "run_id": "117fc0c458",
+  "timestamp": "2026-09-23T07:49:30.166394+00:00",
+  "valid_attempts": 13,
+  "valid_rejections": 0,
+  "valid_traffic_throughput_during_attack": 8.872758552959723
+}

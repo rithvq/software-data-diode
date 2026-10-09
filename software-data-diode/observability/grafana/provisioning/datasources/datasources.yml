@@ -1,0 +1,17 @@
+apiVersion: 1
+
+datasources:
+  - name: Edge Prometheus
+    uid: prometheus-edge
+    type: prometheus
+    access: proxy
+    url: http://prometheus-edge:9090
+    isDefault: false
+    editable: false
+  - name: Fog Prometheus
+    uid: prometheus-fog
+    type: prometheus
+    access: proxy
+    url: http://prometheus-fog:9090
+    isDefault: true
+    editable: false

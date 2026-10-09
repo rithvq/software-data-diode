@@ -1,0 +1,17 @@
+workload,workload_label,workload_order,offered_load_percent,configuration,configuration_label,metric,n,mean,sample_standard_deviation,ci95_margin
+burst,E - Burst,4,70.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.04776487999997171,0.0008408705828191819,0.001043911348578967
+burst,E - Burst,4,70.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,2.131970919999863,0.44808212663671254,0.5562782509565414
+burst,E - Burst,4,70.0,baseline_b_fifo,Baseline B: Filtered + FIFO,critical_latency_p95_seconds,5,0.04403083999999928,0.006401501398344123,0.007947239556497319
+burst,E - Burst,4,70.0,proposed,Adaptive scheduling + filtering,critical_latency_p95_seconds,5,0.0411263999999991,0.003478087094222948,0.00431792318959758
+critical_storm,F - Critical-event storm,5,90.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.06299220999996748,0.006158888745141094,0.007646044453276592
+critical_storm,F - Critical-event storm,5,90.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,0.2580887399999628,0.06864892924259988,0.0852252388992835
+critical_storm,F - Critical-event storm,5,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,critical_latency_p95_seconds,5,0.06450191999999658,0.008779240486904677,0.010899119274047058
+critical_storm,F - Critical-event storm,5,90.0,proposed,Adaptive scheduling + filtering,critical_latency_p95_seconds,5,0.05089363999999935,0.0034749504606907417,0.004314029169034243
+near_saturation,C - Near saturation,2,90.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.04765291999998507,0.0010567975288379367,0.0013119770819017456
+near_saturation,C - Near saturation,2,90.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,0.37788765999999285,0.17574743839177098,0.21818428325290126
+near_saturation,C - Near saturation,2,90.0,baseline_b_fifo,Baseline B: Filtered + FIFO,critical_latency_p95_seconds,5,0.039862939999999895,0.009283130719105592,0.011524681331491204
+near_saturation,C - Near saturation,2,90.0,proposed,Adaptive scheduling + filtering,critical_latency_p95_seconds,5,0.03766351999999769,0.007889281476280067,0.009794266363333547
+overload,D - Overload,3,150.0,adaptive_only,Adaptive scheduling only,critical_latency_p95_seconds,5,0.048370729999821435,0.0012993129672288412,0.0016130514963414624
+overload,D - Overload,3,150.0,baseline_a_direct,Baseline A: Direct + FIFO,critical_latency_p95_seconds,5,2.3432067699997994,0.03736070953720097,0.04638201106534993
+overload,D - Overload,3,150.0,baseline_b_fifo,Baseline B: Filtered + FIFO,critical_latency_p95_seconds,5,0.059233979999997174,0.00871243223033763,0.01081617916574253
+overload,D - Overload,3,150.0,proposed,Adaptive scheduling + filtering,critical_latency_p95_seconds,5,0.04638382999999798,0.001000834422870029,0.0012425008478470828
