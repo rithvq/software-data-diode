@@ -30,9 +30,10 @@ class Clock:
         return datetime(2026, 1, 1, tzinfo=timezone.utc)+timedelta(microseconds=self.us)
 
 
-def run_case(mode, *, service_available, windows=12):
+def run_case(mode, *, service_available, windows=12, config: AdmissionConfig | None = None):
+    """Use the tight one-cycle fixture by default; allow explicit paired budgets."""
     contract = load_contract(ROOT / "config/rule_coverage.json")
-    config = AdmissionConfig(link_bytes_per_second=65536, max_evidence_debt_cycles=1)
+    config = config or AdmissionConfig(link_bytes_per_second=65536, max_evidence_debt_cycles=1)
     policy = InformationPolicyConfig(max_queue_size=8, prediction_enabled=False)
     # Published fixture seed is deliberately not a deployment credential.
     key = Ed25519PrivateKey.from_private_bytes(hashlib.sha256(b"N4-local-accounting-fixture-only").digest())

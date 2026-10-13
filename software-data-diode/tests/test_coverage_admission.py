@@ -603,11 +603,40 @@ def test_mixed_flood_preserves_evidence_progress_with_finite_raw_evictions(facto
 
 def test_small_trace_comparator_has_matched_scope_config_and_actual_byte_budget():
     from scripts.check_coverage_admission import run_case
-    coupled = run_case("coupled", service_available=True, windows=2)
-    fixed = run_case("fixed_summary_no_reservation", service_available=True, windows=2)
+    # Closing evidence overlaps the next window's advance reservation at the boundary.
+    config = AdmissionConfig(link_bytes_per_second=65536, max_evidence_debt_cycles=2)
+    coupled = run_case("coupled", service_available=True, windows=2, config=config)
+    fixed = run_case("fixed_summary_no_reservation", service_available=True, windows=2, config=config)
     assert coupled["trace_sha256"] == fixed["trace_sha256"]
     assert coupled["config"] == fixed["config"]
     for metric in ("accepted", "modeled_bytes", "evidence_modeled_bytes", "raw_modeled_bytes"):
         assert coupled[metric] == fixed[metric]
     assert coupled["offered"] == coupled["accepted"] == 10
+    assert coupled["refused_unaccepted"] == fixed["refused_unaccepted"] == 0
+    assert coupled["evidence_locally_attempted_scopes"] == fixed["evidence_locally_attempted_scopes"] == 10
     assert coupled["unsupported_scopes"] == fixed["unsupported_scopes"] == 0
+    for result in (coupled, fixed):
+        assert result["outbox_items"] == result["reserved_wire_bytes"] == 0
+        assert result["modeled_bytes"] == sum(frame[3] for frame in result["frame_grants"])
+        assert result["modeled_bytes"] == result["raw_modeled_bytes"] + result["evidence_modeled_bytes"]
+        cycle_bytes = Counter()
+        for timestamp, _, _, cost in result["frame_grants"]:
+            cycle_bytes[timestamp // (config.service_cycle_seconds * 1000000)] += cost
+        assert max(cycle_bytes.values()) <= config.cycle_bytes
+
+
+def test_tight_comparator_budget_refuses_unfunded_scope_instead_of_matching_acceptance():
+    from scripts.check_coverage_admission import run_case
+    coupled = run_case("coupled", service_available=True, windows=2)
+    fixed = run_case("fixed_summary_no_reservation", service_available=True, windows=2)
+    assert coupled["trace_sha256"] == fixed["trace_sha256"]
+    assert coupled["config"] == fixed["config"]
+    assert coupled["config"]["max_evidence_debt_cycles"] == 1
+    assert coupled["offered"] == fixed["offered"] == 10
+    assert coupled["accepted"] == 6 and coupled["refused_unaccepted"] == 4
+    assert fixed["accepted"] == 10 and fixed["refused_unaccepted"] == 0
+    for result in (coupled, fixed):
+        assert result["accepted"] + result["refused_unaccepted"] == result["offered"]
+        assert result["unsupported_scopes"] == result["outbox_items"] == result["reserved_wire_bytes"] == 0
+        assert result["evidence_locally_attempted_scopes"] == result["accepted"]
+        assert result["modeled_bytes"] == sum(frame[3] for frame in result["frame_grants"])

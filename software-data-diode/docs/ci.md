@@ -176,6 +176,49 @@ still uses its old workflow revision. The complete hosted adversarial job must b
 confirmed by that new run; the focused reproduction is not a claim that every
 adversarial scenario has already been rerun.
 
+## Python CI comparator fixture fix
+
+The logs supplied on 2026-10-14 show the same failure on Linux Python 3.11/3.12
+and Windows Python 3.12: `test_small_trace_comparator_has_matched_scope_config_and_actual_byte_budget`
+asserted equal acceptance, but the coupled path accepted 6 messages and the
+unreserved-summary path accepted 10. Each job otherwise passed 543 tests. The
+Docker jobs succeeded; `CI Passed` correctly propagated the Python failures.
+
+The comparison helper deliberately defaults to one cycle of outstanding evidence
+debt. At a window boundary, the just-closed signed evidence has not yet been
+serviced, while the next window requires advance reservations. A matched offered
+trace and link capacity do not imply equal accepted populations with that tight
+budget. Refusing unbudgeted input is expected behavior, not an admission bug.
+
+`run_case` now accepts an explicit `AdmissionConfig` without changing its default
+fixture or production settings. The equal-throughput regression supplies the same
+two-cycle debt budget to both modes and verifies all 10 admissions, completed local
+evidence attempts, exact scheduled-byte sums and per-cycle capacity limits. A
+separate one-cycle regression preserves the 6 accepted / 4 refused result and
+checks that no accepted coupled scope becomes unsupported. Neither test claims
+confirmed Fog receipt or superiority of the coupled mode.
+
+No workflow gate, security check, runtime reservation limit, credential or Docker
+deployment was changed. Reproduce these focused checks with:
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -q tests/test_coverage_admission.py -k comparator
+```
+
+Local verification used Windows `.venv` Python 3.12.6 with fresh temporary audit,
+sequence, coverage, pytest-base and cache paths. The two focused comparator tests
+passed. `python -m coverage run -m pytest -q` with those isolated paths passed
+**545 tests in 62.83 seconds**, with one existing Starlette/httpx deprecation
+warning. JUnit evidence is generated at `ci-results/python-ci-fix-tests.xml`
+(ignored by Git). Repository-wide critical Ruff checks, focused full F checks,
+example configuration validation, `pip check` and `git diff --check` passed.
+Initial local sandbox/default temporary-directory permission errors were avoided
+by using a fresh pytest base directory, without changing filesystem permissions.
+
+Commit and push the fix to trigger a new workflow run. Re-running the old failed
+revision will still run its incorrect fixture. Local Windows verification does not
+replace confirmation of the Linux jobs in the new hosted run.
+
 ## Initial local verification of CI setup
 
 Using the existing Windows `.venv` Python 3.12.6:
