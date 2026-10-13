@@ -113,7 +113,7 @@ jobs:
           python -m coverage html -d ci-results/coverage-html
       - name: Retain test and coverage evidence
         if: ${{ always() }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: python-${{ matrix.python }}-${{ matrix.os }}
           path: ${{ steps.project.outputs.directory }}/ci-results/
@@ -178,7 +178,7 @@ jobs:
         run: docker compose -f "docker-compose.phase$PHASE.yml" down --volumes --remove-orphans
       - name: Retain baseline evidence
         if: ${{ always() }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: docker-phase-${{ matrix.phase }}
           path: ${{ steps.project.outputs.directory }}/ci-results/
@@ -245,7 +245,7 @@ jobs:
         run: docker compose -p software-data-diode-audit --profile full down --volumes --remove-orphans
       - name: Retain full-stack evidence
         if: ${{ always() }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: docker-full-stack
           path: ${{ steps.project.outputs.directory }}/ci-results/
@@ -302,7 +302,7 @@ jobs:
         run: docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test down --volumes --remove-orphans
       - name: Retain security evidence
         if: ${{ always() }}
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: docker-security
           path: |
