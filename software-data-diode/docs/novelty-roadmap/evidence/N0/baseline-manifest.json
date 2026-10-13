@@ -1,0 +1,4327 @@
+{
+  "client_timezone": "Asia/Calcutta",
+  "completed_at_utc": "2026-10-13T09:26:13.040810+00:00",
+  "compose_inventory": {
+    "docker-compose.phase1.yml": {
+      "networks": {
+        "edge-network": {
+          "internal": true
+        },
+        "fog-network": {
+          "internal": true
+        },
+        "gateway-network": {
+          "internal": true
+        }
+      },
+      "services": {
+        "edge-device": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-gateway": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "edge-network",
+            "gateway-network"
+          ],
+          "ports": [],
+          "profiles": []
+        },
+        "fog-receiver": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-network"
+          ],
+          "ports": [],
+          "profiles": []
+        },
+        "unidirectional-gateway": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "gateway-network",
+            "fog-network"
+          ],
+          "ports": [],
+          "profiles": []
+        }
+      },
+      "volumes": [
+        "edge-gateway-logs",
+        "unidirectional-gateway-logs",
+        "fog-receiver-logs"
+      ]
+    },
+    "docker-compose.phase2.yml": {
+      "networks": {
+        "edge-network": {
+          "internal": true
+        },
+        "fog-network": {
+          "internal": true
+        },
+        "gateway-network": {
+          "internal": true
+        }
+      },
+      "services": {
+        "edge-device": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-gateway": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "edge-network",
+            "gateway-network"
+          ],
+          "ports": [],
+          "profiles": []
+        },
+        "fog-receiver": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-network"
+          ],
+          "ports": [],
+          "profiles": []
+        },
+        "key-init": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": [
+            "setup"
+          ]
+        },
+        "unidirectional-gateway": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "gateway-network",
+            "fog-network"
+          ],
+          "ports": [],
+          "profiles": []
+        }
+      },
+      "volumes": [
+        "edge-private",
+        "verification-public",
+        "device-state",
+        "edge-state",
+        "diode-state",
+        "fog-state"
+      ]
+    },
+    "docker-compose.security.yml": {
+      "networks": {},
+      "services": {
+        "data-diode": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-device-01": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-device-02": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-device-03": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-device-04": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "edge-device-05": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "fog-receiver": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        },
+        "security-test-client": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": []
+        }
+      },
+      "volumes": []
+    },
+    "docker-compose.yml": {
+      "networks": {
+        "diode-network": {
+          "internal": true
+        },
+        "edge-host-network": {
+          "driver": "bridge"
+        },
+        "edge-network": {
+          "internal": true
+        },
+        "fog-host-network": {
+          "driver": "bridge"
+        },
+        "fog-ingress-network": {
+          "internal": true
+        },
+        "fog-services-network": {
+          "internal": true
+        },
+        "observability-control-network": {
+          "internal": true
+        }
+      },
+      "services": {
+        "alert-engine": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "dashboard": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-services-network",
+            "fog-host-network"
+          ],
+          "ports": [
+            "127.0.0.1:${DASHBOARD_PORT:-8501}:8501"
+          ],
+          "profiles": [
+            "full"
+          ]
+        },
+        "data-diode": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "diode-network",
+            "fog-ingress-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "database-migrator": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": "postgres:16-alpine",
+          "networks": [
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "edge-device-01": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "edge-device-02": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "edge-device-03": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "edge-device-04": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "edge-device-05": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "edge-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "edge-gateway": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "edge-network",
+            "diode-network",
+            "edge-host-network"
+          ],
+          "ports": [
+            "127.0.0.1:${EDGE_GATEWAY_PORT:-8000}:8000"
+          ],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "event-processor": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "fog-analytics": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "fog-receiver": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-ingress-network",
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "grafana": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": "grafana/grafana:12.4.8",
+          "networks": [
+            "observability-control-network",
+            "fog-host-network"
+          ],
+          "ports": [
+            "127.0.0.1:${GRAFANA_PORT:-3000}:3000"
+          ],
+          "profiles": [
+            "full",
+            "observability"
+          ]
+        },
+        "monitoring-api": {
+          "has_build": true,
+          "has_healthcheck": true,
+          "image": null,
+          "networks": [
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "full"
+          ]
+        },
+        "postgres": {
+          "has_build": false,
+          "has_healthcheck": true,
+          "image": "postgres:16-alpine",
+          "networks": [
+            "fog-services-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "prometheus-edge": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": "prom/prometheus:v3.14.0",
+          "networks": [
+            "diode-network",
+            "observability-control-network",
+            "edge-host-network"
+          ],
+          "ports": [
+            "127.0.0.1:${PROMETHEUS_EDGE_PORT:-9091}:9090"
+          ],
+          "profiles": [
+            "full",
+            "observability"
+          ]
+        },
+        "prometheus-fog": {
+          "has_build": false,
+          "has_healthcheck": false,
+          "image": "prom/prometheus:v3.14.0",
+          "networks": [
+            "fog-services-network",
+            "observability-control-network",
+            "fog-host-network"
+          ],
+          "ports": [
+            "127.0.0.1:${PROMETHEUS_FOG_PORT:-9090}:9090"
+          ],
+          "profiles": [
+            "full",
+            "observability"
+          ]
+        },
+        "runtime-state-init": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [],
+          "ports": [],
+          "profiles": [
+            "core",
+            "full",
+            "security-test"
+          ]
+        },
+        "security-test-client": {
+          "has_build": true,
+          "has_healthcheck": false,
+          "image": null,
+          "networks": [
+            "diode-network",
+            "fog-ingress-network"
+          ],
+          "ports": [],
+          "profiles": [
+            "security-test"
+          ]
+        }
+      },
+      "volumes": [
+        "audit-logs",
+        "fog-postgres-data",
+        "prometheus-edge-data",
+        "prometheus-fog-data",
+        "grafana-data"
+      ]
+    }
+  },
+  "configuration_checks": [
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "scripts/validate_config.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        ".venv/Scripts/python.exe",
+        "scripts/validate_config.py",
+        "--example"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "dependencies": {
+    "direct_constraint_comparison": [
+      {
+        "installed": "0.141.1",
+        "matches": true,
+        "name": "fastapi",
+        "pinned": "0.141.1"
+      },
+      {
+        "installed": "0.52.4",
+        "matches": true,
+        "name": "uvicorn",
+        "pinned": "0.52.4"
+      },
+      {
+        "installed": "2.13.5",
+        "matches": true,
+        "name": "pydantic",
+        "pinned": "2.13.5"
+      },
+      {
+        "installed": "46.0.7",
+        "matches": true,
+        "name": "cryptography",
+        "pinned": "46.0.7"
+      },
+      {
+        "installed": "0.28.1",
+        "matches": true,
+        "name": "httpx",
+        "pinned": "0.28.1"
+      },
+      {
+        "installed": "3.3.5",
+        "matches": true,
+        "name": "psycopg",
+        "pinned": "3.3.5"
+      },
+      {
+        "installed": "0.26.0",
+        "matches": true,
+        "name": "prometheus-client",
+        "pinned": "0.26.0"
+      },
+      {
+        "installed": "1.63.0",
+        "matches": true,
+        "name": "streamlit",
+        "pinned": "1.63.0"
+      },
+      {
+        "installed": "2.34.2",
+        "matches": true,
+        "name": "requests",
+        "pinned": "2.34.2"
+      },
+      {
+        "installed": "2.3.3",
+        "matches": true,
+        "name": "pandas",
+        "pinned": "2.3.3"
+      },
+      {
+        "installed": "6.9.0",
+        "matches": true,
+        "name": "plotly",
+        "pinned": "6.9.0"
+      }
+    ],
+    "direct_constraint_mismatches": [],
+    "installed": [
+      {
+        "name": "altair",
+        "version": "6.2.2"
+      },
+      {
+        "name": "annotated-doc",
+        "version": "0.0.5"
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0"
+      },
+      {
+        "name": "anyio",
+        "version": "4.14.2"
+      },
+      {
+        "name": "attrs",
+        "version": "26.1.0"
+      },
+      {
+        "name": "certifi",
+        "version": "2026.7.22"
+      },
+      {
+        "name": "cffi",
+        "version": "2.1.1"
+      },
+      {
+        "name": "charset-normalizer",
+        "version": "3.5.1"
+      },
+      {
+        "name": "click",
+        "version": "8.5.0"
+      },
+      {
+        "name": "colorama",
+        "version": "0.4.6"
+      },
+      {
+        "name": "contourpy",
+        "version": "1.3.3"
+      },
+      {
+        "name": "coverage",
+        "version": "7.16.1"
+      },
+      {
+        "name": "cryptography",
+        "version": "46.0.7"
+      },
+      {
+        "name": "cycler",
+        "version": "0.12.1"
+      },
+      {
+        "name": "fastapi",
+        "version": "0.141.1"
+      },
+      {
+        "name": "fonttools",
+        "version": "4.64.0"
+      },
+      {
+        "name": "h11",
+        "version": "0.16.0"
+      },
+      {
+        "name": "httpcore",
+        "version": "1.0.9"
+      },
+      {
+        "name": "httptools",
+        "version": "0.8.0"
+      },
+      {
+        "name": "httpx",
+        "version": "0.28.1"
+      },
+      {
+        "name": "idna",
+        "version": "3.19"
+      },
+      {
+        "name": "iniconfig",
+        "version": "2.3.0"
+      },
+      {
+        "name": "itsdangerous",
+        "version": "2.2.0"
+      },
+      {
+        "name": "Jinja2",
+        "version": "3.1.6"
+      },
+      {
+        "name": "jsonschema",
+        "version": "4.26.0"
+      },
+      {
+        "name": "jsonschema-specifications",
+        "version": "2025.9.1"
+      },
+      {
+        "name": "kiwisolver",
+        "version": "1.5.1"
+      },
+      {
+        "name": "MarkupSafe",
+        "version": "3.0.3"
+      },
+      {
+        "name": "matplotlib",
+        "version": "3.11.1"
+      },
+      {
+        "name": "narwhals",
+        "version": "2.25.0"
+      },
+      {
+        "name": "numpy",
+        "version": "2.5.2"
+      },
+      {
+        "name": "packaging",
+        "version": "26.3"
+      },
+      {
+        "name": "pandas",
+        "version": "2.3.3"
+      },
+      {
+        "name": "pillow",
+        "version": "12.3.0"
+      },
+      {
+        "name": "pip",
+        "version": "24.2"
+      },
+      {
+        "name": "plotly",
+        "version": "6.9.0"
+      },
+      {
+        "name": "pluggy",
+        "version": "1.6.0"
+      },
+      {
+        "name": "prometheus_client",
+        "version": "0.26.0"
+      },
+      {
+        "name": "protobuf",
+        "version": "7.36.1"
+      },
+      {
+        "name": "psycopg",
+        "version": "3.3.5"
+      },
+      {
+        "name": "psycopg-binary",
+        "version": "3.3.5"
+      },
+      {
+        "name": "pyarrow",
+        "version": "25.0.1"
+      },
+      {
+        "name": "pycparser",
+        "version": "3.0"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.13.5"
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.46.5"
+      },
+      {
+        "name": "pydeck",
+        "version": "0.9.3"
+      },
+      {
+        "name": "Pygments",
+        "version": "2.21.0"
+      },
+      {
+        "name": "pyparsing",
+        "version": "3.3.2"
+      },
+      {
+        "name": "pytest",
+        "version": "8.4.2"
+      },
+      {
+        "name": "python-dateutil",
+        "version": "2.9.0.post0"
+      },
+      {
+        "name": "python-dotenv",
+        "version": "1.2.3"
+      },
+      {
+        "name": "python-multipart",
+        "version": "0.0.32"
+      },
+      {
+        "name": "pytz",
+        "version": "2026.3.post1"
+      },
+      {
+        "name": "PyYAML",
+        "version": "6.0.3"
+      },
+      {
+        "name": "referencing",
+        "version": "0.37.0"
+      },
+      {
+        "name": "requests",
+        "version": "2.34.2"
+      },
+      {
+        "name": "rpds-py",
+        "version": "2026.6.3"
+      },
+      {
+        "name": "ruff",
+        "version": "0.16.8"
+      },
+      {
+        "name": "six",
+        "version": "1.17.0"
+      },
+      {
+        "name": "starlette",
+        "version": "1.6.0"
+      },
+      {
+        "name": "streamlit",
+        "version": "1.63.0"
+      },
+      {
+        "name": "toml",
+        "version": "0.10.2"
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.4"
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0"
+      },
+      {
+        "name": "tzdata",
+        "version": "2026.3"
+      },
+      {
+        "name": "urllib3",
+        "version": "2.7.0"
+      },
+      {
+        "name": "uvicorn",
+        "version": "0.52.4"
+      },
+      {
+        "name": "watchdog",
+        "version": "6.0.0"
+      },
+      {
+        "name": "watchfiles",
+        "version": "1.2.0"
+      },
+      {
+        "name": "websockets",
+        "version": "16.1.1"
+      }
+    ]
+  },
+  "docker": {
+    "client_version": "29.7.2",
+    "compose_validation": "passed",
+    "compose_version": "5.5.0",
+    "containers": [
+      {
+        "configured_networks": [
+          "software-data-diode_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:0eaefe961631c827abbb859c229a93a0edff6fd62a0c4f96bef6142cdff5671a",
+        "name": "software-data-diode-edge-device-02-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "edge-device-02",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:81599444ad0c53cd7f6789d7e90b5148ae555a7f2316ad5fc8769113602ce430",
+        "name": "software-data-diode-edge-device-04-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "edge-device-04",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:01f4283ed7d56e2e91617d78dacc6d1434fd503c0a1d99b37e7b8497888bef72",
+        "name": "software-data-diode-edge-device-05-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "edge-device-05",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:e13a2cf3cf6ae4eec70d05579a8b3ed25d9f14fc63360f2dfd01a905f5ddfbfd",
+        "name": "software-data-diode-edge-device-03-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "edge-device-03",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:aa1e058b76ec7ca6aeafea28f6d77eeac5dfdcae7a68ba95fd667cc0e0575493",
+        "name": "software-data-diode-edge-device-01-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "edge-device-01",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_diode-network",
+          "software-data-diode_edge-host-network",
+          "software-data-diode_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:e78f91b40b152468589f959cbc7adff897fe2069b9b54c7229a9bca41b387755",
+        "name": "software-data-diode-edge-gateway-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "8000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "8000"
+            }
+          ]
+        },
+        "project": "software-data-diode",
+        "running": false,
+        "service": "edge-gateway",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-host-network",
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 0,
+        "health_status": "unhealthy",
+        "image_id": "sha256:66cbe1e3f8f991647f3625d1035fd7774e6f33cb7b7595fa3b38cd503feed667",
+        "name": "software-data-diode-dashboard-1",
+        "named_volume_mounts": [],
+        "port_bindings": {
+          "8501/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "8501"
+            }
+          ]
+        },
+        "project": "software-data-diode",
+        "running": false,
+        "service": "dashboard",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_diode-network",
+          "software-data-diode_fog-ingress-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:767ba9265c33afe18c5cdd626bcf91e3ada56b13519e0c7fc07c7a7b6a95ac11",
+        "name": "software-data-diode-data-diode-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "data-diode",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:acdb41a3f0043113c0d598473dd9ca50313f6ee8b9344168f23711a64428bc7d",
+        "name": "software-data-diode-monitoring-api-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode_audit-logs",
+            "read_write": false
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "monitoring-api",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-ingress-network",
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:9ffc938501b8c0fef75245a750fc49982a0f87d8091a844c9b5ba8986f6361a9",
+        "name": "software-data-diode-fog-receiver-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "fog-receiver",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:25efd8a944f77c8632ba64ef963d7f25735498096a5d6271ea33df671b74744a",
+        "name": "software-data-diode-event-processor-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "event-processor",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:b5e47e86c53596e5b1af95fdfc9ca5a2ce52acf51610edcc19b569336c02f39a",
+        "name": "software-data-diode-fog-analytics-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "fog-analytics",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:2c81ed46d2d810e5772f332246ae7d20e51399af25f011433a8f4f0a4be57014",
+        "name": "software-data-diode-alert-engine-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "alert-engine",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-host-network",
+          "software-data-diode_observability-control-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:7753ad493720e33560077e8bc5e05fbce4ade777f1387b19ab5050b6777111dd",
+        "name": "software-data-diode-grafana-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/var/lib/grafana",
+            "name": "software-data-diode_grafana-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "3000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "3000"
+            }
+          ]
+        },
+        "project": "software-data-diode",
+        "running": false,
+        "service": "grafana",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+        "name": "software-data-diode-database-migrator-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/var/lib/postgresql/data",
+            "name": "87d062b3f184da80f2cbbd14260574216dfd2c87ff1a0ca285722b7f00b147fe",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "database-migrator",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_diode-network",
+          "software-data-diode_edge-host-network",
+          "software-data-diode_observability-control-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+        "name": "software-data-diode-prometheus-edge-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/prometheus",
+            "name": "software-data-diode_prometheus-edge-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "9090/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "9091"
+            }
+          ]
+        },
+        "project": "software-data-diode",
+        "running": false,
+        "service": "prometheus-edge",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-services-network"
+        ],
+        "exit_code": 0,
+        "health_status": "unhealthy",
+        "image_id": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+        "name": "software-data-diode-postgres-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/var/lib/postgresql/data",
+            "name": "software-data-diode_fog-postgres-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "postgres",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode_fog-host-network",
+          "software-data-diode_fog-services-network",
+          "software-data-diode_observability-control-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+        "name": "software-data-diode-prometheus-fog-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/prometheus",
+            "name": "software-data-diode_prometheus-fog-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "9090/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "9090"
+            }
+          ]
+        },
+        "project": "software-data-diode",
+        "running": false,
+        "service": "prometheus-fog",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "none"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:61da99ab6f46c15b69b41257ff0b0931f4d92c4f75ae31f18bc8a38448372f1f",
+        "name": "software-data-diode-runtime-state-init-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode",
+        "running": false,
+        "service": "runtime-state-init",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-ingress-network",
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:35d9f702873bb4930aca6a76f7b4f229fe023737b2260df033ca932177d5163b",
+        "name": "software-data-diode-audit-fog-receiver-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-audit_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "fog-receiver",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:33d6b5fdce382c94d85674901dd2329b1b94deb436d794f55b19de911add2c73",
+        "name": "software-data-diode-audit-edge-device-02-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "edge-device-02",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:962137af0becbda04f8f14546a582c1c590b01e4791e32efbe2dde0361a8874f",
+        "name": "software-data-diode-audit-edge-device-04-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "edge-device-04",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:32781b2e15369454fcbd9289e2ee0ba6ebd752374b934d3d387719339bdd0119",
+        "name": "software-data-diode-audit-edge-device-05-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "edge-device-05",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:77b7df49ee3634dd5a032cc1c835b871d2f1199f16016de746a6022b4b6f7d0a",
+        "name": "software-data-diode-audit-edge-device-01-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "edge-device-01",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:5bb530c080a5384e7341425b63bacb4e628d4932c02f79829fbb4de5d7c486f8",
+        "name": "software-data-diode-audit-edge-device-03-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "edge-device-03",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_diode-network",
+          "software-data-diode-audit_edge-host-network",
+          "software-data-diode-audit_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:543ce05c5b9bcd5dd7442287cd7a13cdb31e555668ca30f2965ce10a951c8256",
+        "name": "software-data-diode-audit-edge-gateway-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-audit_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "8000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "18000"
+            }
+          ]
+        },
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "edge-gateway",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:491236624c2cefb8d30c31ba213bddd044b64cfac36243d52f3c4c87ac2d00ca",
+        "name": "software-data-diode-audit-monitoring-api-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-audit_audit-logs",
+            "read_write": false
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "monitoring-api",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_diode-network",
+          "software-data-diode-audit_fog-ingress-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:1336d48a1da45d3657a1fe7cca6b50b6e4c613b718629d51623ad7f124d296e3",
+        "name": "software-data-diode-audit-data-diode-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-audit_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "data-diode",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:58a2db70ec9329179a33c22c85aa840fe67d622848b63e1ef05a6ae2e65654f9",
+        "name": "software-data-diode-audit-event-processor-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "event-processor",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:3c1da212ad134fae31c19f89644944983723ebeac8015db79dbec93b11753f10",
+        "name": "software-data-diode-audit-fog-analytics-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "fog-analytics",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:0df63610845a8e8e5bf2d7649a03292c07b289dff1511ca956ec3bbb0762248d",
+        "name": "software-data-diode-audit-alert-engine-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "alert-engine",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "none"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:49877be6fb70bfc616e75d8febad3fded9dda761b6be0af2e94b10f2e42679a8",
+        "name": "software-data-diode-audit-runtime-state-init-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-audit_audit-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "runtime-state-init",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-host-network",
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 0,
+        "health_status": "unhealthy",
+        "image_id": "sha256:0037adc04d82b1f829a7c302f1ac193ae3a2a6efa63b51b0c248186e7588f19e",
+        "name": "software-data-diode-audit-dashboard-1",
+        "named_volume_mounts": [],
+        "port_bindings": {
+          "8501/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "18501"
+            }
+          ]
+        },
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "dashboard",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+        "name": "software-data-diode-audit-database-migrator-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/var/lib/postgresql/data",
+            "name": "c89b6bda31ad5a89cc33e731eb17b0d86008b54f35c96aa261bc8677c374b4cc",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "database-migrator",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-host-network",
+          "software-data-diode-audit_observability-control-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:7753ad493720e33560077e8bc5e05fbce4ade777f1387b19ab5050b6777111dd",
+        "name": "software-data-diode-audit-grafana-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/var/lib/grafana",
+            "name": "software-data-diode-audit_grafana-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "3000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "13000"
+            }
+          ]
+        },
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "grafana",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-host-network",
+          "software-data-diode-audit_fog-services-network",
+          "software-data-diode-audit_observability-control-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+        "name": "software-data-diode-audit-prometheus-fog-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/prometheus",
+            "name": "software-data-diode-audit_prometheus-fog-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "9090/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "19090"
+            }
+          ]
+        },
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "prometheus-fog",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_fog-services-network"
+        ],
+        "exit_code": 0,
+        "health_status": "unhealthy",
+        "image_id": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+        "name": "software-data-diode-audit-postgres-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/var/lib/postgresql/data",
+            "name": "software-data-diode-audit_fog-postgres-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "postgres",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-audit_diode-network",
+          "software-data-diode-audit_edge-host-network",
+          "software-data-diode-audit_observability-control-network"
+        ],
+        "exit_code": 0,
+        "health_status": null,
+        "image_id": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+        "name": "software-data-diode-audit-prometheus-edge-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/prometheus",
+            "name": "software-data-diode-audit_prometheus-edge-data",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {
+          "9090/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "19091"
+            }
+          ]
+        },
+        "project": "software-data-diode-audit",
+        "running": false,
+        "service": "prometheus-edge",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase2_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:87744fffc67e4bc58b1a6e8d42418cc05b56e96e2df7f767a904d4250329b589",
+        "name": "software-data-diode-phase2-edge-device-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/state",
+            "name": "software-data-diode-phase2_device-state",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase2",
+        "running": false,
+        "service": "edge-device",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase2_edge-network",
+          "software-data-diode-phase2_gateway-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:47bbabc59e8e3a8c217c01a8ec73bf2921f7a6bd1d899cc09591cbede3309fe1",
+        "name": "software-data-diode-phase2-edge-gateway-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/private",
+            "name": "software-data-diode-phase2_edge-private",
+            "read_write": false
+          },
+          {
+            "destination": "/public",
+            "name": "software-data-diode-phase2_verification-public",
+            "read_write": false
+          },
+          {
+            "destination": "/state",
+            "name": "software-data-diode-phase2_edge-state",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase2",
+        "running": false,
+        "service": "edge-gateway",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase2_fog-network",
+          "software-data-diode-phase2_gateway-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:2392dd4fb73c6febafeeea05ecfeb7a6b2e715322bd2ca9c973972bc43b3b343",
+        "name": "software-data-diode-phase2-unidirectional-gateway-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/public",
+            "name": "software-data-diode-phase2_verification-public",
+            "read_write": false
+          },
+          {
+            "destination": "/state",
+            "name": "software-data-diode-phase2_diode-state",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase2",
+        "running": false,
+        "service": "unidirectional-gateway",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase2_fog-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:98b4d3781160552abce7dc844061af2c7eb309206a07812176d5e17840a13a1a",
+        "name": "software-data-diode-phase2-fog-receiver-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/public",
+            "name": "software-data-diode-phase2_verification-public",
+            "read_write": false
+          },
+          {
+            "destination": "/state",
+            "name": "software-data-diode-phase2_fog-state",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase2",
+        "running": false,
+        "service": "fog-receiver",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase1_edge-network"
+        ],
+        "exit_code": 143,
+        "health_status": null,
+        "image_id": "sha256:22fe9e42e88779d6a84bcd97982391432211115d1e31888ca1df73dfa0ed26d6",
+        "name": "software-data-diode-phase1-edge-device-1",
+        "named_volume_mounts": [],
+        "port_bindings": {},
+        "project": "software-data-diode-phase1",
+        "running": false,
+        "service": "edge-device",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase1_edge-network",
+          "software-data-diode-phase1_gateway-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:bbd69969c90b1c8d94b20d7e8d0c4fc27bed869f19028dd0c17eb89e4038ed70",
+        "name": "software-data-diode-phase1-edge-gateway-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-phase1_edge-gateway-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase1",
+        "running": false,
+        "service": "edge-gateway",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase1_fog-network",
+          "software-data-diode-phase1_gateway-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:ce4767739e359daaefc89492b9ae791f7268d25d4d3540190c8450b670391be0",
+        "name": "software-data-diode-phase1-unidirectional-gateway-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-phase1_unidirectional-gateway-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase1",
+        "running": false,
+        "service": "unidirectional-gateway",
+        "state": "exited"
+      },
+      {
+        "configured_networks": [
+          "software-data-diode-phase1_fog-network"
+        ],
+        "exit_code": 143,
+        "health_status": "unhealthy",
+        "image_id": "sha256:163d0c72099bfee58c3658499c584e05000bab841b14f81ba143122516dfbbeb",
+        "name": "software-data-diode-phase1-fog-receiver-1",
+        "named_volume_mounts": [
+          {
+            "destination": "/logs",
+            "name": "software-data-diode-phase1_fog-receiver-logs",
+            "read_write": true
+          }
+        ],
+        "port_bindings": {},
+        "project": "software-data-diode-phase1",
+        "running": false,
+        "service": "fog-receiver",
+        "state": "exited"
+      }
+    ],
+    "context": "desktop-linux",
+    "engine_version": "29.7.2",
+    "mode": "read-only",
+    "networks": [
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-audit_diode-network",
+        "subnets": [
+          {
+            "Gateway": "172.25.0.1",
+            "Subnet": "172.25.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": false,
+        "name": "software-data-diode-audit_edge-host-network",
+        "subnets": [
+          {
+            "Gateway": "172.24.0.1",
+            "Subnet": "172.24.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-audit_edge-network",
+        "subnets": [
+          {
+            "Gateway": "172.29.0.1",
+            "Subnet": "172.29.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": false,
+        "name": "software-data-diode-audit_fog-host-network",
+        "subnets": [
+          {
+            "Gateway": "172.31.0.1",
+            "Subnet": "172.31.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-audit_fog-ingress-network",
+        "subnets": [
+          {
+            "Gateway": "172.27.0.1",
+            "Subnet": "172.27.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-audit_fog-services-network",
+        "subnets": [
+          {
+            "Gateway": "172.30.0.1",
+            "Subnet": "172.30.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-audit_observability-control-network",
+        "subnets": [
+          {
+            "Gateway": "172.26.0.1",
+            "Subnet": "172.26.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-phase1_edge-network",
+        "subnets": [
+          {
+            "Gateway": "172.19.0.1",
+            "Subnet": "172.19.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-phase1_fog-network",
+        "subnets": [
+          {
+            "Gateway": "172.18.0.1",
+            "Subnet": "172.18.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-phase1_gateway-network",
+        "subnets": [
+          {
+            "Gateway": "172.20.0.1",
+            "Subnet": "172.20.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-phase2_edge-network",
+        "subnets": [
+          {
+            "Gateway": "172.23.0.1",
+            "Subnet": "172.23.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-phase2_fog-network",
+        "subnets": [
+          {
+            "Gateway": "172.21.0.1",
+            "Subnet": "172.21.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode-phase2_gateway-network",
+        "subnets": [
+          {
+            "Gateway": "172.22.0.1",
+            "Subnet": "172.22.0.0/16"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode_diode-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.48.1",
+            "Subnet": "192.168.48.0/20"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": false,
+        "name": "software-data-diode_edge-host-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.112.1",
+            "Subnet": "192.168.112.0/20"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode_edge-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.96.1",
+            "Subnet": "192.168.96.0/20"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": false,
+        "name": "software-data-diode_fog-host-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.0.1",
+            "Subnet": "192.168.0.0/20"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode_fog-ingress-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.16.1",
+            "Subnet": "192.168.16.0/20"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode_fog-network",
+        "subnets": [
+          {
+            "Gateway": "172.28.30.1",
+            "Subnet": "172.28.30.0/24"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode_fog-services-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.80.1",
+            "Subnet": "192.168.80.0/20"
+          }
+        ]
+      },
+      {
+        "active_container_names": [],
+        "driver": "bridge",
+        "internal": true,
+        "name": "software-data-diode_observability-control-network",
+        "subnets": [
+          {
+            "Gateway": "192.168.32.1",
+            "Subnet": "192.168.32.0/20"
+          }
+        ]
+      }
+    ],
+    "operations": [
+      "version",
+      "compose version",
+      "ps -a (project containers selected)",
+      "inspect (selected container fields exported)",
+      "network ls",
+      "network inspect",
+      "compose config --quiet"
+    ],
+    "running_project_container_count": 0,
+    "status": "available"
+  },
+  "environment": {
+    "env_file_present": true,
+    "public_settings": {
+      "DASHBOARD_REFRESH_SECONDS": "3",
+      "EGRESS_MESSAGES_PER_SECOND": "25",
+      "FORWARD_TIMEOUT_SECONDS": "5",
+      "MAX_MESSAGES_PER_SECOND": "25",
+      "MAX_PAYLOAD_BYTES": "8192",
+      "MAX_QUEUE_SIZE": "250",
+      "SCHEDULER_MODE": "adaptive"
+    },
+    "required_secret_present": {
+      "GRAFANA_ADMIN_PASSWORD": true,
+      "OBSERVABILITY_TOKEN": true,
+      "POSTGRES_PASSWORD": true
+    },
+    "secret_values_and_digests_exported": false,
+    "signing_key_files_present": {
+      "edge_private_key.pem": true,
+      "edge_public_key.pem": true
+    }
+  },
+  "fingerprints": {
+    "aggregate_sha256": "97189b4fd6d415bb0731cc984f7cb4e78d9fb4f5d3175e31ddfa547ff760ef49",
+    "algorithm": "SHA-256",
+    "exclusions": "Secrets, real .env files, runtime/generated results, evidence and reports; symlinks are not followed.",
+    "file_count": 204,
+    "files": [
+      {
+        "path": ".coveragerc",
+        "sha256": "e50f2a87fabd734fa54754a4081df04292454720166624c114f06298905d8e38",
+        "size_bytes": 372
+      },
+      {
+        "path": ".dockerignore",
+        "sha256": "90a20d59735f0b371ea73980795429f4f122dc3a48a221d4798c976dc7babd97",
+        "size_bytes": 153
+      },
+      {
+        "path": ".gitignore",
+        "sha256": "7a7c9188c7b29963433d0df6be640c678164061353f16629c230e52acad36722",
+        "size_bytes": 102
+      },
+      {
+        "path": "README.md",
+        "sha256": "7ec2ddff7f5570617843f29331ce0f9f900e3b19f62ba0d7cf5f6c2b2a737ecb",
+        "size_bytes": 12710
+      },
+      {
+        "path": "alert-engine/Dockerfile",
+        "sha256": "d7e25bfe12a22e23a4b64d5ac1547fcbb915f3fb839e5225a17bdbeb54c4acf1",
+        "size_bytes": 606
+      },
+      {
+        "path": "alert-engine/app/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      {
+        "path": "alert-engine/app/main.py",
+        "sha256": "bd5beeb9f13450d8d123b05e785a486a9a01989bcf9c68e7f294085e6beb341b",
+        "size_bytes": 2350
+      },
+      {
+        "path": "alert-engine/requirements.txt",
+        "sha256": "f29d0fd736f5932dc19b6ad0609592e1d120de8e12df7d946e024656b6d61c07",
+        "size_bytes": 124
+      },
+      {
+        "path": "config/anomaly_rules.json",
+        "sha256": "02204fb61f44eb2309c95d396a0d1cc5e9d78ba35d5d13ecd31425f54cb033b4",
+        "size_bytes": 749
+      },
+      {
+        "path": "config/correlation_rules.json",
+        "sha256": "96774e91122741ca3f7af5c0ecac84cc984e41a0dd03edfa4f785a0c556a61e5",
+        "size_bytes": 1193
+      },
+      {
+        "path": "config/information_policy.json",
+        "sha256": "622646f5b05f7ef3f00ba02d099c0ad0ab432c8dce2b22fa55529c0b7ad532ce",
+        "size_bytes": 1557
+      },
+      {
+        "path": "constraints.txt",
+        "sha256": "75370d763b1575c2bb53a870f10af52de04fb0e9ca068d0cb7349280afb9c444",
+        "size_bytes": 257
+      },
+      {
+        "path": "dashboard/.streamlit/config.toml",
+        "sha256": "a5763e7cac17995f9014bbd06384b1831c98327d245b2ebf851fd5f3eb5f5c6e",
+        "size_bytes": 134
+      },
+      {
+        "path": "dashboard/Dockerfile",
+        "sha256": "b8515fef692d812a12509716c72780922a6bd551b1ade2e597efb9e9519f4c9c",
+        "size_bytes": 693
+      },
+      {
+        "path": "dashboard/app.py",
+        "sha256": "27466d442b83f203379ab7babd1f28bfe2e8e32e3bc6ec9e0960d3a275d5da5d",
+        "size_bytes": 32386
+      },
+      {
+        "path": "dashboard/requirements.txt",
+        "sha256": "bd429b34407185e5dbdc8b728d55f353ab23f7b500fb33a49d426562a76d8ddf",
+        "size_bytes": 75
+      },
+      {
+        "path": "data-diode/Dockerfile",
+        "sha256": "14e07a4de35d01c38ca341b131aa2306a5c7671f1da8a79e630007c8f32ee2b3",
+        "size_bytes": 678
+      },
+      {
+        "path": "data-diode/app/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1
+      },
+      {
+        "path": "data-diode/app/main.py",
+        "sha256": "10f9980fdf442707482de4618f8226f974b5f01cfcb3ced94daac14704ea1d78",
+        "size_bytes": 17127
+      },
+      {
+        "path": "data-diode/requirements.txt",
+        "sha256": "58c7cb87255b05e4d1fe3fbc64f3dc0b9f9224a64ec4d39fb0ee56d1e57e480b",
+        "size_bytes": 140
+      },
+      {
+        "path": "database/migrations/001_phase4_schema.sql",
+        "sha256": "9a55d764222489b00b6eb0e3a50187a54e43432e17f71229e776a297dcc11a91",
+        "size_bytes": 3188
+      },
+      {
+        "path": "database/migrations/002_phase5_observability.sql",
+        "sha256": "8f0bfb4b9c3f06de60d41678ab69b720fb0765b69470d17ebb29297d65d87f15",
+        "size_bytes": 616
+      },
+      {
+        "path": "docker-compose.phase1.yml",
+        "sha256": "d35cb8c3f7d8b9485faddba4ac5c1e3a7194cf4a65362e1674247c4e0574beed",
+        "size_bytes": 1896
+      },
+      {
+        "path": "docker-compose.phase2.yml",
+        "sha256": "e21138dc66bb034e167b92575f447760afa2251e4165c26a616030bc14aa6b99",
+        "size_bytes": 2113
+      },
+      {
+        "path": "docker-compose.security.yml",
+        "sha256": "ba689bcc747cf242f53120e38e0542c828e6d95ee4e57aa4d346fa643b7462e2",
+        "size_bytes": 891
+      },
+      {
+        "path": "docker-compose.yml",
+        "sha256": "a6ce278b2005d99ac6cbad77ec71e49955f08f3a2a459c08b1e5e1dfaaf290d1",
+        "size_bytes": 19184
+      },
+      {
+        "path": "docs/adaptive_scheduler.md",
+        "sha256": "dc44268515c5444b96a41538d5809fbe2789bc1e3f0c0ca5ae96e6fb6a89d70f",
+        "size_bytes": 2689
+      },
+      {
+        "path": "docs/architecture.md",
+        "sha256": "6d558e8b9f54e7074396769adfa6724a182355d6ac321e21558f6b56a570d46c",
+        "size_bytes": 4146
+      },
+      {
+        "path": "docs/codebase_audit.md",
+        "sha256": "df88230f07fc6773fc82ba2ef5ca977e7b1d9e5d4d9a587fc2dbfca8dabb1a5b",
+        "size_bytes": 11959
+      },
+      {
+        "path": "docs/deployment.md",
+        "sha256": "b1d60060f66e053b2cc854598df5b8846046f0d60c6c7bfeb4ab2a3552895bae",
+        "size_bytes": 6428
+      },
+      {
+        "path": "docs/experiments.md",
+        "sha256": "d39d5127962e6fbc1a01e8ba525b9fffd98b5650273455e92e3cee5e64e1e7c0",
+        "size_bytes": 3020
+      },
+      {
+        "path": "docs/faculty_demo.md",
+        "sha256": "0a9e1acbb09a7e31f5f53ae659ec4b80f747c900a1e637eaa75c7346b4de30dc",
+        "size_bytes": 2677
+      },
+      {
+        "path": "docs/feedback_free_design.md",
+        "sha256": "c8410ae9558d4f4e65944cab4c21727b75fc970886ce870917756d3300f43d13",
+        "size_bytes": 12570
+      },
+      {
+        "path": "docs/fog_analytics.md",
+        "sha256": "9c8c6e248cb455a1dea1cc9defce89193f3648ac50ec716964bfa631e39d3bfa",
+        "size_bytes": 2227
+      },
+      {
+        "path": "docs/future_work.md",
+        "sha256": "280b1956ad00ea243dc256a0204935bcd8a04f8c9443dba6add2c0fea2bbb461",
+        "size_bytes": 1864
+      },
+      {
+        "path": "docs/limitations.md",
+        "sha256": "549b90c18bf40aac63b20ab53dd84849cd9d796c84a8488f97d34dc638ddc84b",
+        "size_bytes": 2053
+      },
+      {
+        "path": "docs/novelty-roadmap/README.md",
+        "sha256": "32720a605f3c8b44eb725a98eba3b11c3b91e6b927fbbf56fc3a8abf56f15b4a",
+        "size_bytes": 6834
+      },
+      {
+        "path": "docs/novelty-roadmap/design.md",
+        "sha256": "49712bf8c854f692b5b16179e77e82982b8840c716735ab86ef825ecb3b489bd",
+        "size_bytes": 20922
+      },
+      {
+        "path": "docs/novelty-roadmap/prior-art.md",
+        "sha256": "9770a95486e6f3ee4a468fbc6624676bd119f36551be1375356ea7eb1877fd7d",
+        "size_bytes": 10265
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/00-baseline-and-specification.md",
+        "sha256": "23ed1737fba2e0633998f4a27c2b6ab82689f8c8c79ffbe4c1041bdd10ac6a82",
+        "size_bytes": 3528
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/01-rule-contracts.md",
+        "sha256": "23fd5df4bb3952972a093c068570cb9aa8c54ca4c68da59744c4a945a16b2877",
+        "size_bytes": 3417
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/02-durable-ingress-ledger.md",
+        "sha256": "1ed143541ceb6c1e36a4f04ba62f4562b5038f2e2a5f71a1e168cae6d79fbf9d",
+        "size_bytes": 3569
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/03-signed-coverage-capsules.md",
+        "sha256": "6d6506708bd18b818c4ccbbaa2d9a50d4e9b8e190fdd807d239ce740cd68cd08",
+        "size_bytes": 3624
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/04-semantic-reduction-and-admission.md",
+        "sha256": "4fb0c7d458960c797c4ee071db5b1066efed5d106197f506fe395043279ffcf7",
+        "size_bytes": 3661
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/05-forward-only-local-transport.md",
+        "sha256": "185d5eea7e798ac99009e74f115355ef2a77e3367968ef1adbd58ed119a2f7c7",
+        "size_bytes": 3785
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/06-fog-verification-and-storage.md",
+        "sha256": "8af8509456c3ead4774ffc4193ef0804d172760938a54366c39f067f7c6cd66e",
+        "size_bytes": 3617
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/07-coverage-aware-analytics.md",
+        "sha256": "50c7303bc4679cc0ce1e07e6bc14861920fc5985cb6e887e0a3a18c29983780d",
+        "size_bytes": 3420
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/08-evidence-dashboard.md",
+        "sha256": "2b63d11e2daca1123f5c64fe7d0c27a2300e4b1faff531503180cadce42a1e80",
+        "size_bytes": 3546
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/09-adversarial-and-invariant-tests.md",
+        "sha256": "d509483aea80ad803422585b2d09a77602bb6da5879879174a514662dabb7593",
+        "size_bytes": 3747
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/10-reproducible-evaluation.md",
+        "sha256": "a966f2a25e0d5100ca843ad8200c43167493b0d76ff4ce1decdd04c2ec2c5135",
+        "size_bytes": 4079
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/11-local-demo-and-disclosure.md",
+        "sha256": "64380769bf417ecb4104d1d76d294c71ce50d67814fea1a8e4c25e45343068a3",
+        "size_bytes": 4037
+      },
+      {
+        "path": "docs/novelty-roadmap/prompts/ALL_PHASES.md",
+        "sha256": "010aa2e242d0db292981e57e7606bf6dd83bf7c8a5e06d0bac4d55ae18d4158f",
+        "size_bytes": 44398
+      },
+      {
+        "path": "docs/phase1_architecture.md",
+        "sha256": "d050e1321bbefd26d7e51e20a001ba5be5d68e8906ac772ddf8c794a9c6b6752",
+        "size_bytes": 8695
+      },
+      {
+        "path": "docs/phase2_completion_report.md",
+        "sha256": "f0f2ca24259ab28c427145b8f77b4734f3ce516eb98b2cf964a6c19841e677cd",
+        "size_bytes": 6494
+      },
+      {
+        "path": "docs/phase2_security.md",
+        "sha256": "acebaaadfdbac274030b4c5fbbc8dee7739dab8fb33fe0409b96bde9ff217511",
+        "size_bytes": 12090
+      },
+      {
+        "path": "docs/phase3_architecture.md",
+        "sha256": "51a2c063aaca7a8a4c743e9e79164b15b7b78fb2c6332bbb5f6dbdba0ade51ed",
+        "size_bytes": 3456
+      },
+      {
+        "path": "docs/phase4_architecture.md",
+        "sha256": "7eb1534d22e52b080507e7ac84ad4897f2176a79117b8340c573cb107ee309e4",
+        "size_bytes": 4424
+      },
+      {
+        "path": "docs/phase5_observability.md",
+        "sha256": "2560c51c1f3222807076e6b97838ec4d04a543e8f9e4d8300bce2053b3e91696",
+        "size_bytes": 2948
+      },
+      {
+        "path": "docs/phase6_security_validation.md",
+        "sha256": "2b167fd40824cbbe6895e260927d8fe73e7101a403477410100e20ba377e38ca",
+        "size_bytes": 4180
+      },
+      {
+        "path": "docs/phase7_experiments.md",
+        "sha256": "a314090cdf2fa54a8ad4d9b62cf607d27cf74a1466ddf6b450f29e989ce29fb6",
+        "size_bytes": 4897
+      },
+      {
+        "path": "docs/research_manuscript.md",
+        "sha256": "09dcba35f2f5966fbc6d9ddb9e0cd0bc9626c16d757dc44be30b2fb2ef15ff75",
+        "size_bytes": 5359
+      },
+      {
+        "path": "docs/research_phases.md",
+        "sha256": "ecfad42fe3239af48d95e1ad2351e306b7e95d5431a289de35e40f3efa228b56",
+        "size_bytes": 3348
+      },
+      {
+        "path": "docs/security_design.md",
+        "sha256": "cc695e5401805f18790dd085befbb2996bc598bf6a1c2b8ca1dec9a30d3d8520",
+        "size_bytes": 2976
+      },
+      {
+        "path": "docs/threat_model.md",
+        "sha256": "e9371cbc173459f4bcfdf64f7837856e20799a32a3bd419a8ba696e654046e24",
+        "size_bytes": 4593
+      },
+      {
+        "path": "edge-device/Dockerfile",
+        "sha256": "c77d6ac54d1dd63960b9176662eeb278189c5ff8efefd148bfa1009b0ffecc82",
+        "size_bytes": 553
+      },
+      {
+        "path": "edge-device/app/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1
+      },
+      {
+        "path": "edge-device/app/main.py",
+        "sha256": "e5a664c9fda463e94bbd99e8ad560d39a338ac7f82eda0e21eb77559af11b174",
+        "size_bytes": 8476
+      },
+      {
+        "path": "edge-device/requirements.txt",
+        "sha256": "2e6158a4c7a7e71511e2a376d1446753e94e35b68d6e6597f33f751bc9539da8",
+        "size_bytes": 66
+      },
+      {
+        "path": "edge-gateway/Dockerfile",
+        "sha256": "7f84783d5c349d703e5115a40811425e9bcfeb2ca245151a2cb2460e02402e0f",
+        "size_bytes": 660
+      },
+      {
+        "path": "edge-gateway/app/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1
+      },
+      {
+        "path": "edge-gateway/app/main.py",
+        "sha256": "1f085b185be501a89835a2e5f5b62bbc03b3235e8a162724375b0a47639b27a0",
+        "size_bytes": 18401
+      },
+      {
+        "path": "edge-gateway/requirements.txt",
+        "sha256": "58c7cb87255b05e4d1fe3fbc64f3dc0b9f9224a64ec4d39fb0ee56d1e57e480b",
+        "size_bytes": 140
+      },
+      {
+        "path": "event-processor/Dockerfile",
+        "sha256": "d246a9dd18d9879db4245da96afe55a2f839c613adbd857dde8d13ac9a559897",
+        "size_bytes": 612
+      },
+      {
+        "path": "event-processor/app/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      {
+        "path": "event-processor/app/main.py",
+        "sha256": "9a14c055db217159f061f92e5f879353fefe4bab7edc5079384aaef482164bc5",
+        "size_bytes": 4653
+      },
+      {
+        "path": "event-processor/requirements.txt",
+        "sha256": "8181f03f9289c4debc64ed4d33192c7af5be96bb5d0b9d0f6244980841874142",
+        "size_bytes": 141
+      },
+      {
+        "path": "experiments/__init__.py",
+        "sha256": "ce1f4e57c338ec62952e71e7f110bb26458a34aaea218f9c1830aec2ff6478f1",
+        "size_bytes": 54
+      },
+      {
+        "path": "experiments/analysis/__init__.py",
+        "sha256": "c3218a090e19bc50ddc4c699b5434f7e788a7eecf2e9e9541bd5b5cc16e6ea8a",
+        "size_bytes": 62
+      },
+      {
+        "path": "experiments/analysis/analyze.py",
+        "sha256": "2088ce9e1cafc828cc94a4ddccccc32470731d80b7d94d7686ac73aaee4f05f8",
+        "size_bytes": 30730
+      },
+      {
+        "path": "experiments/analysis/information_report.py",
+        "sha256": "2425b6f4ac624945c21b8d87e0379e7712549580cd021dd06c12f73b0b082016",
+        "size_bytes": 5998
+      },
+      {
+        "path": "experiments/runners/__init__.py",
+        "sha256": "3672de5694c4073b80b02cd9a7d7599bc315bc480420cc4e373a00731c32c664",
+        "size_bytes": 50
+      },
+      {
+        "path": "experiments/runners/benchmark.py",
+        "sha256": "de71c36aa314fefa3defc6e8ca33950d9450cef0b34202a75d6e28a9d100733c",
+        "size_bytes": 24753
+      },
+      {
+        "path": "experiments/runners/information_benchmark.py",
+        "sha256": "95c2c55fb512116d267e22bb8a9bcd1e2462ec3a7e66b25de1f22861547b08f8",
+        "size_bytes": 12335
+      },
+      {
+        "path": "experiments/runners/run_phase7.py",
+        "sha256": "0a7bd1da609987f824ca48b70f6cbfe7d0367a20faf2d830dc286f88fc61093a",
+        "size_bytes": 6284
+      },
+      {
+        "path": "experiments/workloads/information_workloads.json",
+        "sha256": "6e28c3fa73c312fc752bb1911c13f94dfd5075aa3543f7ef693ec4b0ac3c07fe",
+        "size_bytes": 1514
+      },
+      {
+        "path": "experiments/workloads/phase7_workloads.json",
+        "sha256": "9dae68f82a917e3e6e1333082ad24501aef02b4553cdcfb9d373a1276b0243e7",
+        "size_bytes": 2780
+      },
+      {
+        "path": "fog-analytics/Dockerfile",
+        "sha256": "3594286ef1a3ced82ea71bb63cbfa75a2e309b0259fe6004f94f4ccc00faa683",
+        "size_bytes": 645
+      },
+      {
+        "path": "fog-analytics/app/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      {
+        "path": "fog-analytics/app/main.py",
+        "sha256": "d5bd2c3989364609528eefc10116bd764d44d978c17d96f7c6271c265acfae92",
+        "size_bytes": 6866
+      },
+      {
+        "path": "fog-analytics/requirements.txt",
+        "sha256": "8181f03f9289c4debc64ed4d33192c7af5be96bb5d0b9d0f6244980841874142",
+        "size_bytes": 141
+      },
+      {
+        "path": "fog-receiver/Dockerfile",
+        "sha256": "19261ef295667383ff64a7c4c4c2260908983ab23b83c3e8ca6a506d32138243",
+        "size_bytes": 682
+      },
+      {
+        "path": "fog-receiver/app/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1
+      },
+      {
+        "path": "fog-receiver/app/main.py",
+        "sha256": "5d2d3d12aa75070a19c3a82b32099d4619c221fc406e1e612d17f681a0314bae",
+        "size_bytes": 11009
+      },
+      {
+        "path": "fog-receiver/requirements.txt",
+        "sha256": "96f8c4dbfe64f6fbaf09023ec3d8020a3fc1a7876d40add4839022bc2f5c2d0a",
+        "size_bytes": 166
+      },
+      {
+        "path": "monitoring-api/Dockerfile",
+        "sha256": "36bc717aeb108f2ac8fcf1438e5f29fd24bce748741cb46fe620c15873a93f94",
+        "size_bytes": 610
+      },
+      {
+        "path": "monitoring-api/app/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_bytes": 0
+      },
+      {
+        "path": "monitoring-api/app/main.py",
+        "sha256": "9f808dfdb7a173be01c9d7e3c43cb433b890a530323f99d0c9bd836b72b45aed",
+        "size_bytes": 2621
+      },
+      {
+        "path": "monitoring-api/app/store.py",
+        "sha256": "4af273e84b3213ff4f77b543909e8bb9e027728732a8f5ad934fb4072e70e83e",
+        "size_bytes": 15042
+      },
+      {
+        "path": "monitoring-api/requirements.txt",
+        "sha256": "a12e48c40886946157e27aaedded09c3921bc0778e33b685b817ee6ba3056918",
+        "size_bytes": 146
+      },
+      {
+        "path": "observability/grafana/dashboards/scheduler.json",
+        "sha256": "2708d7dff3a94e78fde57b49ae533a7cd89d1afa93fde35c51edd07882124199",
+        "size_bytes": 1374
+      },
+      {
+        "path": "observability/grafana/dashboards/security.json",
+        "sha256": "4fb8773545d206fd0d637879ee8c83fe1713d2fb0b67ade7a572aff672864b77",
+        "size_bytes": 1161
+      },
+      {
+        "path": "observability/grafana/dashboards/system-health.json",
+        "sha256": "77006ca6b31d87499740fb11f7cc9e5bc24177cdccc062e2c5f8fcfd341b4511",
+        "size_bytes": 949
+      },
+      {
+        "path": "observability/grafana/dashboards/throughput.json",
+        "sha256": "4b719d5de79a839d5ddcd96e7ed49173253cfe213dd1cd00264a9d2263f78ec6",
+        "size_bytes": 1119
+      },
+      {
+        "path": "observability/grafana/dashboards/workload.json",
+        "sha256": "0b134a003ac30b12ff5d48c555ecc39dd2ef8dc27f807451178dd3c2a6fa2e86",
+        "size_bytes": 1138
+      },
+      {
+        "path": "observability/grafana/provisioning/dashboards/dashboards.yml",
+        "sha256": "5032925fee2405b363431407c23f6748d854f9da61bfa61b47be296defcddbd2",
+        "size_bytes": 216
+      },
+      {
+        "path": "observability/grafana/provisioning/datasources/datasources.yml",
+        "sha256": "3f7d25bbf30d09da671fba49b9ab82164a6f0b9282af9fa2b25f66d43e304550",
+        "size_bytes": 360
+      },
+      {
+        "path": "observability/prometheus/edge.yml",
+        "sha256": "51a36817cfe27840f2f3aa52ef33b989e2e20604e3d214d0b48dff3103ff3af6",
+        "size_bytes": 241
+      },
+      {
+        "path": "observability/prometheus/fog.yml",
+        "sha256": "1d435b2611692282e564987e2d692dd73a2a0601130c7486f9ddabc0649fa824",
+        "size_bytes": 515
+      },
+      {
+        "path": "phase1/Dockerfile",
+        "sha256": "7c4cc824a9d046f6ab4fa79830eaf76a7761751412fe533c07b21547f844a813",
+        "size_bytes": 621
+      },
+      {
+        "path": "phase1/__init__.py",
+        "sha256": "e0e58b80de64b6c3c9f4ce77269a7b298c15ba0002effb46a0887ec72b08c0ff",
+        "size_bytes": 84
+      },
+      {
+        "path": "phase1/app.py",
+        "sha256": "ba5b19e889302ae1ecd9acdd02a6123f22a035b54b0ebef61810f636a92296bb",
+        "size_bytes": 6206
+      },
+      {
+        "path": "phase1/components.py",
+        "sha256": "37cbe0f36cd05f2ba4b9dee6817cf4d3f724395a2823c0e56b18e931655cf245",
+        "size_bytes": 1457
+      },
+      {
+        "path": "phase1/device.py",
+        "sha256": "ae5e8b1f3b5d04bdf827a1ab0303d62ce096b04af5f8bf40a915f6c1458d0f00",
+        "size_bytes": 1763
+      },
+      {
+        "path": "phase1/interfaces.py",
+        "sha256": "ad19b6b374573f13458d752bac69d42cf3d576fb3eb908f23681abc9579f9bbc",
+        "size_bytes": 1570
+      },
+      {
+        "path": "phase1/models.py",
+        "sha256": "8d75ac800287e3a10f6ae8eb70fe554ab2ce293e959bae78f7e9827a87c34744",
+        "size_bytes": 930
+      },
+      {
+        "path": "phase1/pipeline.py",
+        "sha256": "b63eec72a2370b23f8ccf2195bfffdd2c30d66134d90ed1a8622e57f8eb513d7",
+        "size_bytes": 6338
+      },
+      {
+        "path": "phase1/probe.py",
+        "sha256": "d128d674e63168fb2daee910cb7da080b904bf52e54a77c0c4807657bc7accdf",
+        "size_bytes": 2070
+      },
+      {
+        "path": "phase1/requirements.txt",
+        "sha256": "4a533b4f22677bdf997d4ccd32a77bf6bb65006dabd6c0045cc25eda1acfe269",
+        "size_bytes": 64
+      },
+      {
+        "path": "phase2/Dockerfile",
+        "sha256": "ff00dfc9633d8ea29f2d41a0fd6af67609432b7e51162ac3f778fd75a2e78d08",
+        "size_bytes": 803
+      },
+      {
+        "path": "phase2/__init__.py",
+        "sha256": "748fa79a49261e1c40c01a3a0861d35ef5c164ecb30d0d467b648eedae109f06",
+        "size_bytes": 87
+      },
+      {
+        "path": "phase2/app.py",
+        "sha256": "c59f9dbd68858e09e79fc3cb506dc03fd3ab37d70f44ad33106853d16e0016e3",
+        "size_bytes": 8237
+      },
+      {
+        "path": "phase2/device.py",
+        "sha256": "521f80ca02910187cba983e1423784c1bee59367ce9d6ee4557c3f2f3b4df7ee",
+        "size_bytes": 3314
+      },
+      {
+        "path": "phase2/keys.py",
+        "sha256": "112a01eaea3e159511c1dc67ce9a48c681ee496469e9d16e79d513827628fa31",
+        "size_bytes": 1627
+      },
+      {
+        "path": "phase2/models.py",
+        "sha256": "8d5006838943b0e5a45b98b524bdccf2820a57a82d68e998cd8fda507249804a",
+        "size_bytes": 1760
+      },
+      {
+        "path": "phase2/pipeline.py",
+        "sha256": "93bc717f32bb42968515bae7ded7eddb41d81f8bf895eb0bb92d44efb90c8ac3",
+        "size_bytes": 1900
+      },
+      {
+        "path": "phase2/probe.py",
+        "sha256": "a29a5870e7471658b273bc377e109c9e524bfe0d9be0fa5545f51c1dd54f4261",
+        "size_bytes": 5874
+      },
+      {
+        "path": "phase2/requirements.txt",
+        "sha256": "f471bdb54c58d926fe759657f778d830b438039b31d73326383d6fa4d49973d5",
+        "size_bytes": 51
+      },
+      {
+        "path": "phase2/security.py",
+        "sha256": "34d57131c67894c6b3eb1b5e7458843f1c7908d7fb3ef420c26392862d53966e",
+        "size_bytes": 2494
+      },
+      {
+        "path": "phase2/state.py",
+        "sha256": "7749bfa1f197bd8fb515a0d8b86fffbb87d1bbb7b0f4998209700d8a05d5aec7",
+        "size_bytes": 2959
+      },
+      {
+        "path": "requirements-dev.txt",
+        "sha256": "92a2cd0177fec7f0cc95ef14e4c1f489be336eaa22f8b4da4b9383234daff98f",
+        "size_bytes": 284
+      },
+      {
+        "path": "scripts/audit_runtime.py",
+        "sha256": "65be34b93d1b8d476d508e9f4afe519288c050be848a7afed78e129748814d5d",
+        "size_bytes": 7555
+      },
+      {
+        "path": "scripts/capture_n0_baseline.py",
+        "sha256": "9f257b6e8a839a7826ffbb4c7aa6d7942cef692b904632715bf49ca70506a432",
+        "size_bytes": 15106
+      },
+      {
+        "path": "scripts/create_signed_envelope.py",
+        "sha256": "ce400a74a0f6c5a319602f9a54a96eb43a3bdbe4e8a9dfa4b248f6a16431d607",
+        "size_bytes": 2303
+      },
+      {
+        "path": "scripts/demo.py",
+        "sha256": "58c20b047c82b9423b181f22b2a1d2d692ac522aa44ca5418baab75e69db2616",
+        "size_bytes": 9813
+      },
+      {
+        "path": "scripts/docker_support.py",
+        "sha256": "811b7cabd7954724fb0f985ee4d8ee3bbb47f393741ff54e58a6bbfbc742cef6",
+        "size_bytes": 726
+      },
+      {
+        "path": "scripts/generate_keys.py",
+        "sha256": "4ec0974802fc15602036a2c2bea7a60995c06888136b4375ec65794918c7825f",
+        "size_bytes": 2004
+      },
+      {
+        "path": "scripts/run_all_tests.py",
+        "sha256": "fa6478d00304b0948e20b4c8850f58db377cb03a501f7d161ae0eab26351d929",
+        "size_bytes": 5366
+      },
+      {
+        "path": "scripts/run_experiments.py",
+        "sha256": "e540f43a35d844c2f02b0d483310c11ad3f87b9bef6f0e55a83146a58607ad87",
+        "size_bytes": 269
+      },
+      {
+        "path": "scripts/setup.py",
+        "sha256": "d2860a3b6999a93462d6da40082a413fab5e87ab8b496a8f64eafe282e3a94f4",
+        "size_bytes": 1399
+      },
+      {
+        "path": "scripts/tamper_audit_log.py",
+        "sha256": "b5b485f1fff39a36bdee8fc676388ad7090072192831bfbecf7e3562bebb9471",
+        "size_bytes": 1275
+      },
+      {
+        "path": "scripts/tamper_message.py",
+        "sha256": "90bf9c2742a9935d7b332410d8ca661c4c2887549fbd14a05322ce99fbeae049",
+        "size_bytes": 1181
+      },
+      {
+        "path": "scripts/validate_config.py",
+        "sha256": "ec6d4d52d8ebadbcc6ef10ac12c31d293062f237daa65ea74079539c3ad53467",
+        "size_bytes": 3931
+      },
+      {
+        "path": "scripts/verify_audit_log.py",
+        "sha256": "9113fe90991b0d754aac25323f04a08c94b5d06a8cd92030622e50aa2ea4065a",
+        "size_bytes": 553
+      },
+      {
+        "path": "scripts/verify_phase1.py",
+        "sha256": "af243def1fb1abfbeb4b70be2c170774f1ae057257b8e2398ff0625140ba6547",
+        "size_bytes": 7244
+      },
+      {
+        "path": "scripts/verify_phase2.py",
+        "sha256": "12406b60cce2f5ac24fb6b25f8495bc2ef0077c81e17370f6ce067a7847a270e",
+        "size_bytes": 2486
+      },
+      {
+        "path": "security-test-client/Dockerfile",
+        "sha256": "6dea4fbaf709d99452b8c711c8de1f464580e88bd0d376e570b53751d722a2f6",
+        "size_bytes": 571
+      },
+      {
+        "path": "security-test-client/app/__init__.py",
+        "sha256": "6fd2a9f5a34775bb0509f069c809f1c86b601bdbbb31f611382f601146a01cac",
+        "size_bytes": 56
+      },
+      {
+        "path": "security-test-client/app/main.py",
+        "sha256": "c71b3abbe8dde5b2d9a6ff97ebc2d6a9c0becf1713f65acef081595f9613ae14",
+        "size_bytes": 21986
+      },
+      {
+        "path": "security-test-client/requirements.txt",
+        "sha256": "021fe75d0b58dca86c174d5a51e68b077401ee2ccb98d44b76dce5f008f3bb52",
+        "size_bytes": 62
+      },
+      {
+        "path": "shared/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1
+      },
+      {
+        "path": "shared/analytics/__init__.py",
+        "sha256": "5c9ea91a0013e0b4a5a6685a7773b63717b204e5d042f4656c67a7d84103694a",
+        "size_bytes": 301
+      },
+      {
+        "path": "shared/analytics/correlation.py",
+        "sha256": "47b96f555542574d3e8022826e693695b7f15206004a09934f8ff0a953f665b7",
+        "size_bytes": 5910
+      },
+      {
+        "path": "shared/analytics/detection.py",
+        "sha256": "8386df0765e7521748105043c308c546b3d69b929a1f5377f6f3f78349f91f88",
+        "size_bytes": 7887
+      },
+      {
+        "path": "shared/edge/__init__.py",
+        "sha256": "f4e7a638770781401deb487af01dced0a629a78cd69f53ee4ea858511cdce199",
+        "size_bytes": 64
+      },
+      {
+        "path": "shared/edge/state.py",
+        "sha256": "c3e416bfb822943f4d8056c9dda7134650bb008b6106328c468759ce10d9c388",
+        "size_bytes": 5665
+      },
+      {
+        "path": "shared/http.py",
+        "sha256": "f4d85b37d8cd32391993f8783c4658bc7530dc79e0e1b1bdc8ea31af00cc1774",
+        "size_bytes": 3223
+      },
+      {
+        "path": "shared/models/__init__.py",
+        "sha256": "798d799193f9ccfb5f3b42f669f960f91f5c862771b725a28fdbcb1e5de5d6a2",
+        "size_bytes": 813
+      },
+      {
+        "path": "shared/models/fog.py",
+        "sha256": "b3b05f67d49ff849541253ac23c6e07120c654751abf4bbcb9afca9133979384",
+        "size_bytes": 2198
+      },
+      {
+        "path": "shared/models/telemetry.py",
+        "sha256": "bcc101d54add451a40468a42fefd79d223d6eac06d05992a6511b716fb9e209d",
+        "size_bytes": 3356
+      },
+      {
+        "path": "shared/observability/__init__.py",
+        "sha256": "6cd57d2298096f01a96fee46796fd181c77c25db40df8179455e1699a0815ac7",
+        "size_bytes": 164
+      },
+      {
+        "path": "shared/observability/logging.py",
+        "sha256": "695e7a2065ec43e6424b4f980196fa1d998fc40139fd5da092a01e18e1d3cb69",
+        "size_bytes": 2509
+      },
+      {
+        "path": "shared/observability/metrics.py",
+        "sha256": "c5507027c0901691b6c3374ec7fccc7a16aa83f2aa814f79cbcf6398fb1addec",
+        "size_bytes": 4767
+      },
+      {
+        "path": "shared/persistence/__init__.py",
+        "sha256": "3f4a879884452ee5c734bacf310102c23462a89b9b17cf55e0c51a0227d750e2",
+        "size_bytes": 189
+      },
+      {
+        "path": "shared/persistence/repository.py",
+        "sha256": "daeebafdf0c6d9873256060aa8947ef5b579f380f651a08b2d78fe0dfd442791",
+        "size_bytes": 11732
+      },
+      {
+        "path": "shared/security/__init__.py",
+        "sha256": "dcef19c0278bd0252376cf307b7018cba2745e953bf2cc4e81e60b05abccc5ec",
+        "size_bytes": 683
+      },
+      {
+        "path": "shared/security/audit.py",
+        "sha256": "6be0b1c94bfddf5b15e4abf3e609a74b577cc12fab1ad988ed7944d3b867d176",
+        "size_bytes": 4155
+      },
+      {
+        "path": "shared/security/crypto.py",
+        "sha256": "756869776c0e550a3245737717ddffd57cdee53392ba084f25c2f489b67c0665",
+        "size_bytes": 2563
+      },
+      {
+        "path": "shared/security/network.py",
+        "sha256": "4a6e7eeca8ea2799aef9ad743a68dec2c9f517d150b815e03f320a5e604ce3aa",
+        "size_bytes": 2201
+      },
+      {
+        "path": "shared/security/rate_limit.py",
+        "sha256": "7422aead42eea1e925e7755c1fa39c8a83b881078ef3511afa89486b0d7c025c",
+        "size_bytes": 1039
+      },
+      {
+        "path": "shared/security/replay.py",
+        "sha256": "d6ae80cbc12028b87184c64a1824e2205175a01cf028e2b86c678103b0c87213",
+        "size_bytes": 2913
+      },
+      {
+        "path": "shared/security/runtime_state.py",
+        "sha256": "c3ec776bc19a633b6dd9108e083531912014cb3a13f898038b53538aa5f239d7",
+        "size_bytes": 1261
+      },
+      {
+        "path": "shared/traffic/__init__.py",
+        "sha256": "9ff9c2f5ea55086e3f141d1ee5316669bbf718ea37ac2c914d3595674ff7a196",
+        "size_bytes": 780
+      },
+      {
+        "path": "shared/traffic/filtering.py",
+        "sha256": "cbfd05bdb0bc64ad53d759856795850a0f7f70fe52e630c592f5f2dc0b319fd6",
+        "size_bytes": 9330
+      },
+      {
+        "path": "shared/traffic/information.py",
+        "sha256": "0fb7f4b8cd935150d3597067d66911ea59a762f7f844feabed1eb9d5f9b2ce68",
+        "size_bytes": 23454
+      },
+      {
+        "path": "shared/traffic/metrics.py",
+        "sha256": "a248730ba3687c3f718e7c0f4aebf5483e86b8810862dca7c2defd597c83a813",
+        "size_bytes": 5039
+      },
+      {
+        "path": "shared/traffic/priority.py",
+        "sha256": "73374d01353c2a1cbb919d9b0071cce1077424fd6f3e7fc8f2eb4cface5f8fef",
+        "size_bytes": 3190
+      },
+      {
+        "path": "shared/traffic/scheduling.py",
+        "sha256": "2a4c8938db593b6467002e2bdc933c16183b0ba7d73f96a30f246f0cb7f8a21f",
+        "size_bytes": 10801
+      },
+      {
+        "path": "tests/__init__.py",
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "size_bytes": 1
+      },
+      {
+        "path": "tests/conftest.py",
+        "sha256": "67c9a8e66c267fa4636c9314f7691ac980b468d4513664a4c071f48266d4f6e1",
+        "size_bytes": 4270
+      },
+      {
+        "path": "tests/test_anomaly_detection.py",
+        "sha256": "9431c39da8b05185acafe10f3e60900905adb0d0d0ffa872ab2ed959a70d6953",
+        "size_bytes": 1790
+      },
+      {
+        "path": "tests/test_audit_log.py",
+        "sha256": "015c34c91634463c6270c3a930348b245777c88c062189e90a7f50dc1e2b5652",
+        "size_bytes": 846
+      },
+      {
+        "path": "tests/test_audit_regressions.py",
+        "sha256": "2f1b22d0b090def3669116a5746a58ebd57d272f834e30ca97d2eba2e938d450",
+        "size_bytes": 13065
+      },
+      {
+        "path": "tests/test_compose_architecture.py",
+        "sha256": "1960b27920e2c2507d1966457e1abf5ac36cf670688167d0627df734648032d2",
+        "size_bytes": 1137
+      },
+      {
+        "path": "tests/test_correlation.py",
+        "sha256": "4d3d74a7bd8ab69ea7ace14fa2875a904cfc6aeca5c6a4c3668ad79761f7403b",
+        "size_bytes": 2012
+      },
+      {
+        "path": "tests/test_dashboard.py",
+        "sha256": "cc71f190806a01e663aa24bc923da1039757c61a2b13956007f60389fb6e4b21",
+        "size_bytes": 3562
+      },
+      {
+        "path": "tests/test_data_diode.py",
+        "sha256": "46423b861ec6a5ec2c5999b67d0b0949564316628a59eb847fa015574d347dea",
+        "size_bytes": 2895
+      },
+      {
+        "path": "tests/test_demo.py",
+        "sha256": "8048dff00de92d5cdffaf76c42ad03a98a23f2ae82fb14870f3f16168aea667c",
+        "size_bytes": 584
+      },
+      {
+        "path": "tests/test_device_registry.py",
+        "sha256": "424a5c7d27a5912f1c7960acbd3f99a145798f6d7f47832ebf337ad5ce7dce25",
+        "size_bytes": 2226
+      },
+      {
+        "path": "tests/test_edge_gateway.py",
+        "sha256": "f525ff158063ec1196d34db64798098aef77475f355d644c90899636ba7d9f91",
+        "size_bytes": 1414
+      },
+      {
+        "path": "tests/test_experiments_phase7.py",
+        "sha256": "06e5e8db08542df9a7c497b3d167b69967234beb0590d608b13aaa795341f2b8",
+        "size_bytes": 5323
+      },
+      {
+        "path": "tests/test_filtering.py",
+        "sha256": "0748bfe014777afb93c6d38f2d27acb1a3a67b8455c499185e2107594c38ccd8",
+        "size_bytes": 2456
+      },
+      {
+        "path": "tests/test_fog_receiver.py",
+        "sha256": "012461d791e4eeaf1b9760d7958d212077bf5f958dc83c1ac391d35884699ebd",
+        "size_bytes": 4091
+      },
+      {
+        "path": "tests/test_information_policy.py",
+        "sha256": "38e85fac6f3125825d2044a65cd394606968e73c62e8d43e488df055ef654e04",
+        "size_bytes": 16150
+      },
+      {
+        "path": "tests/test_monitoring_store.py",
+        "sha256": "c3a5e2af596035cc61794d717feefd1c54f3485dd1e31d1d052820a494994d6e",
+        "size_bytes": 2340
+      },
+      {
+        "path": "tests/test_n0_baseline.py",
+        "sha256": "fac20fff51c3350016fecea0f67c69d50063f005316212c21acc16c7a844c19e",
+        "size_bytes": 5213
+      },
+      {
+        "path": "tests/test_observability.py",
+        "sha256": "1a835dbe06040f253863e769c36012c1c7e5092b46645098cfe1b85de8fab5f7",
+        "size_bytes": 4932
+      },
+      {
+        "path": "tests/test_persistence.py",
+        "sha256": "46204fae17acc3d944d54ec5bbb1419f1cbac560354a46068b094aca04b97afa",
+        "size_bytes": 2079
+      },
+      {
+        "path": "tests/test_phase1.py",
+        "sha256": "2f6b50eeac28125da5ac453187137cc31c698bc28da6bed8c703f6da5b50d8c1",
+        "size_bytes": 10361
+      },
+      {
+        "path": "tests/test_phase2.py",
+        "sha256": "30ab3aafca310b2c0f473a8c4a3ad4b51e785378c59dfed73910dc9d609e349e",
+        "size_bytes": 13570
+      },
+      {
+        "path": "tests/test_phase8_packaging.py",
+        "sha256": "8dc758213d2eb64730cf8446afb0253560392eee5128e23c01d4d11f6de3ee24",
+        "size_bytes": 7259
+      },
+      {
+        "path": "tests/test_priority.py",
+        "sha256": "32280e8870ae186965e2901950cd492c2af002471b1ae9fca39e41769f876de0",
+        "size_bytes": 1290
+      },
+      {
+        "path": "tests/test_scheduling.py",
+        "sha256": "68eaf13c0e54b1b6f6beff9773db8d7a0eaa7286734b3f17c0db3e54646702f0",
+        "size_bytes": 4346
+      },
+      {
+        "path": "tests/test_security_validation.py",
+        "sha256": "6b33efc68bf1f0bba8e9ee18a0f9a9f82e20f89ac6d8bd692fd2196e0d3e6b76",
+        "size_bytes": 3191
+      },
+      {
+        "path": "tests/test_service_resilience.py",
+        "sha256": "399f5d6aeffba8e9ea856adde8d7aaa2340b3a99954d6b297931517c61f613f4",
+        "size_bytes": 8013
+      }
+    ]
+  },
+  "git": {
+    "head": "dfa89ca630af830e58f63612dc2f9f7ea2107ddc",
+    "project_status": [
+      "?? software-data-diode/docs/novelty-roadmap/",
+      "?? software-data-diode/scripts/capture_n0_baseline.py",
+      "?? software-data-diode/tests/test_n0_baseline.py"
+    ]
+  },
+  "n0_tool_test_evidence": {
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 7,
+      "skipped": 0,
+      "tests": 7
+    },
+    "junit_file": "capture-tool-tests.xml",
+    "sha256": "ab8dea803eaa9d5ce5de597bae4b9ca85d990912bef150b93337d451968b8e58",
+    "status": "passed",
+    "test_cases": [
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_fingerprints_exclude_private_and_generated_material"
+      },
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_fingerprints_are_stable_and_detect_source_changes"
+      },
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_environment_exports_presence_without_secret_values_or_digests"
+      },
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_container_export_omits_credentials_and_health_command_output"
+      },
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_readonly_command_errors_do_not_export_expanded_configuration"
+      },
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_docker_capture_has_no_service_mutations"
+      },
+      {
+        "class": "tests.test_n0_baseline",
+        "name": "test_junit_summary_preserves_failed_and_skipped_evidence"
+      }
+    ]
+  },
+  "phase": "N0",
+  "project": "software-data-diode",
+  "python": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "version": "3.12.6"
+  },
+  "runtime_features_added": [],
+  "schema_version": 1,
+  "service_routes": {
+    "alert-engine/app/main.py": [
+      {
+        "function": "health",
+        "line": 22,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 27,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 34,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "create_alert",
+        "line": 40,
+        "method": "POST",
+        "path": "/alerts"
+      }
+    ],
+    "data-diode/app/main.py": [
+      {
+        "function": "health",
+        "line": 83,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 88,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 102,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "metrics",
+        "line": 110,
+        "method": "GET",
+        "path": "/metrics/runtime"
+      },
+      {
+        "function": "ingest_telemetry",
+        "line": 125,
+        "method": "POST",
+        "path": "/ingest"
+      },
+      {
+        "function": "ingest_metrics",
+        "line": 220,
+        "method": "POST",
+        "path": "/ingest-metrics"
+      }
+    ],
+    "edge-device/app/main.py": [],
+    "edge-gateway/app/main.py": [
+      {
+        "function": "health",
+        "line": 139,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 144,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 159,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "metrics",
+        "line": 167,
+        "method": "GET",
+        "path": "/metrics/runtime"
+      },
+      {
+        "function": "devices",
+        "line": 176,
+        "method": "GET",
+        "path": "/devices"
+      },
+      {
+        "function": "device_status",
+        "line": 181,
+        "method": "GET",
+        "path": "/devices/{device_id}"
+      },
+      {
+        "function": "receive_telemetry",
+        "line": 189,
+        "method": "POST",
+        "path": "/telemetry"
+      }
+    ],
+    "event-processor/app/main.py": [
+      {
+        "function": "health",
+        "line": 31,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 36,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 49,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "process_envelope",
+        "line": 55,
+        "method": "POST",
+        "path": "/events"
+      }
+    ],
+    "fog-analytics/app/main.py": [
+      {
+        "function": "health",
+        "line": 39,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 44,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 57,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "analyze",
+        "line": 63,
+        "method": "POST",
+        "path": "/analyze"
+      }
+    ],
+    "fog-receiver/app/main.py": [
+      {
+        "function": "health",
+        "line": 53,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 58,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 74,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "receive_telemetry",
+        "line": 82,
+        "method": "POST",
+        "path": "/receive"
+      },
+      {
+        "function": "receive_metrics",
+        "line": 190,
+        "method": "POST",
+        "path": "/receive-metrics"
+      },
+      {
+        "function": "security_test_reverse_path",
+        "line": 204,
+        "method": "POST",
+        "path": "/security-test/reverse-path"
+      }
+    ],
+    "monitoring-api/app/main.py": [
+      {
+        "function": "health",
+        "line": 30,
+        "method": "GET",
+        "path": "/health"
+      },
+      {
+        "function": "ready",
+        "line": 35,
+        "method": "GET",
+        "path": "/ready"
+      },
+      {
+        "function": "prometheus",
+        "line": 42,
+        "method": "GET",
+        "path": "/metrics"
+      },
+      {
+        "function": "snapshot",
+        "line": 48,
+        "method": "GET",
+        "path": "/api/snapshot"
+      }
+    ],
+    "security-test-client/app/main.py": []
+  },
+  "started_at_utc": "2026-10-13T09:26:11.078144+00:00",
+  "test_evidence": {
+    "counts": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 207,
+      "skipped": 0,
+      "tests": 207
+    },
+    "junit_file": "baseline-tests.xml",
+    "sha256": "d66019fc63c7701c5dd469a9a811e1b66c0a5df259515a41aefbe191121cf99a",
+    "status": "passed",
+    "test_cases": [
+      {
+        "class": "tests.test_anomaly_detection",
+        "name": "test_threshold_detector_explains_out_of_range_value"
+      },
+      {
+        "class": "tests.test_anomaly_detection",
+        "name": "test_moving_average_and_zscore_detect_a_spike"
+      },
+      {
+        "class": "tests.test_audit_log",
+        "name": "test_audit_hash_chain_detects_tampering"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_diode_retries_identical_envelope_after_transient_failure"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_diode_discards_permanent_rejection_once"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_fog_failed_handoff_does_not_consume_replay_state"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_analytics_retry_is_idempotent"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_ambiguous_json_is_rejected[{\"x\":1,\"x\":2}]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_ambiguous_json_is_rejected[{\"x\":NaN}]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_ambiguous_json_is_rejected[{\"x\":Infinity}]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_request_boundary_limits_and_strict_parsing"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_peer_allowlist_fails_closed"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_rate_limiter_invalid_config[0-1]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_rate_limiter_invalid_config[-1-1]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_rate_limiter_invalid_config[nan-1]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_rate_limiter_invalid_config[inf-1]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_rate_limiter_invalid_config[1-0]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_nonfinite_envelope_cost_is_invalid"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_bounded_latency_history_and_weighted_mean"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_filter_preserves_changed_non_environmental_measurements[changed0]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_filter_preserves_changed_non_environmental_measurements[changed1]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_filter_preserves_changed_non_environmental_measurements[changed2]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_filter_preserves_changed_non_environmental_measurements[changed3]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_audit_scalar_reports_broken_line"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_key_setup_preserves_identity_and_repairs_missing_public_key"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_key_setup_does_not_replace_orphan_public_key"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_environment_rejects_nonfinite_config[MAX_QUEUE_SIZE-NaN]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_environment_rejects_nonfinite_config[MAX_MESSAGES_PER_SECOND-inf]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_environment_rejects_nonfinite_config[LOW_TRAFFIC_PERCENT-nan]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_statistics_reject_nonfinite_and_use_conservative_t"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_detector_rejects_unusable_configuration[config0]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_detector_rejects_unusable_configuration[config1]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_detector_rejects_unusable_configuration[config2]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_snapshot_health_checks_freshness[0-HEALTHY]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_snapshot_health_checks_freshness[60-STALE]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_snapshot_health_checks_freshness[-60-STALE]"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_experiment_refuses_to_overwrite_results"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_gateway_retries_same_signed_identity"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_diode_worker_survives_unexpected_iteration_error"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_diode_readiness_detects_stopped_worker"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_runtime_state_migration_preserves_files_and_never_rolls_back"
+      },
+      {
+        "class": "tests.test_audit_regressions",
+        "name": "test_compose_service_writers_have_disjoint_volume_subpaths"
+      },
+      {
+        "class": "tests.test_compose_architecture",
+        "name": "test_compose_defines_five_typed_edge_nodes_and_isolated_fog"
+      },
+      {
+        "class": "tests.test_correlation",
+        "name": "test_cross_device_rule_creates_security_event_and_alert"
+      },
+      {
+        "class": "tests.test_dashboard",
+        "name": "test_dashboard_views_filters_and_refresh_controls"
+      },
+      {
+        "class": "tests.test_dashboard",
+        "name": "test_dashboard_retains_snapshot_during_outage"
+      },
+      {
+        "class": "tests.test_dashboard",
+        "name": "test_dashboard_initial_outage_does_not_crash"
+      },
+      {
+        "class": "tests.test_data_diode",
+        "name": "test_valid_signed_envelope_is_received_and_forwarded"
+      },
+      {
+        "class": "tests.test_data_diode",
+        "name": "test_oversized_payload_is_rejected"
+      },
+      {
+        "class": "tests.test_data_diode",
+        "name": "test_malformed_json_is_rejected"
+      },
+      {
+        "class": "tests.test_data_diode",
+        "name": "test_excessive_request_rate_is_rejected"
+      },
+      {
+        "class": "tests.test_demo",
+        "name": "test_demo_reports_stopped_docker_engine"
+      },
+      {
+        "class": "tests.test_device_registry",
+        "name": "test_concurrent_devices_have_independent_sequences_and_statistics"
+      },
+      {
+        "class": "tests.test_device_registry",
+        "name": "test_sequence_numbers_survive_gateway_restart"
+      },
+      {
+        "class": "tests.test_device_registry",
+        "name": "test_filtering_and_priority_statistics_are_kept_per_device"
+      },
+      {
+        "class": "tests.test_edge_gateway",
+        "name": "test_valid_raw_telemetry_is_signed_and_forwarded"
+      },
+      {
+        "class": "tests.test_edge_gateway",
+        "name": "test_invalid_raw_telemetry_is_rejected"
+      },
+      {
+        "class": "tests.test_experiments_phase7",
+        "name": "test_phase7_configuration_has_required_workloads_and_ablation_arms"
+      },
+      {
+        "class": "tests.test_experiments_phase7",
+        "name": "test_workload_generation_is_reproducible_for_the_same_seed"
+      },
+      {
+        "class": "tests.test_experiments_phase7",
+        "name": "test_burst_workload_contains_a_three_times_rate_segment"
+      },
+      {
+        "class": "tests.test_experiments_phase7",
+        "name": "test_trial_records_bounded_queue_bandwidth_and_detection_metrics"
+      },
+      {
+        "class": "tests.test_experiments_phase7",
+        "name": "test_virtual_time_metrics_repeat_exactly_for_the_same_trace"
+      },
+      {
+        "class": "tests.test_experiments_phase7",
+        "name": "test_statistics_use_repeated_trials_and_report_confidence_interval"
+      },
+      {
+        "class": "tests.test_filtering",
+        "name": "test_change_based_filtering_reduces_low_value_telemetry"
+      },
+      {
+        "class": "tests.test_filtering",
+        "name": "test_low_priority_samples_can_be_aggregated"
+      },
+      {
+        "class": "tests.test_filtering",
+        "name": "test_critical_events_are_never_aggregated"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_valid_signed_message_is_accepted"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_payload_tampering_is_rejected"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_invalid_signature_is_rejected"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_modified_hash_is_rejected"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_replayed_sequence_is_rejected"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_duplicate_uuid_is_rejected"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_expired_timestamp_is_rejected"
+      },
+      {
+        "class": "tests.test_fog_receiver",
+        "name": "test_malformed_json_is_rejected"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_type_specific_novelty_uses_last_dispatched_state[environmental-temperature-25-83]"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_type_specific_novelty_uses_last_dispatched_state[system-cpu_usage-30-95]"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_type_specific_novelty_uses_last_dispatched_state[network-packets_per_second-1000-10000]"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_type_specific_novelty_uses_last_dispatched_state[security-failed_logins-0-10]"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_type_specific_novelty_uses_last_dispatched_state[industrial-vibration_mm_s-1-10]"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_predictor_anticipates_overflow_without_receiver_input"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_all_terms_and_weights_are_explained_and_config_validated"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_pending_queue_bytes_are_not_counted_as_savings"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_mixed_timezone_input_and_older_samples_do_not_invert_aggregation_windows"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_aggregation_contains_signed_summary_provenance_and_extrema"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_supersession_sampling_expiry_and_event_preservation"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_old_low_priority_event_is_served_during_critical_storm"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_queue_and_histories_stay_bounded_under_flood"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_link_capacity_and_density_are_explicit_local_controls"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_policy_audit_details_are_hash_chained"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_live_gateway_signs_in_dispatch_order_and_preserves_source_time"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_diagnostics_do_not_change_policy_decisions"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_oversize_and_invalid_capacity_are_explicitly_rejected"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_signed_aggregate_is_verified_by_fog_and_tampering_rejected"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_research_mode_keeps_transport_fifo"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_experiment_trace_and_decisions_reproduce_with_capacity_change"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_report_does_not_claim_confidence_from_one_priority_observation"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_fifo_baseline_does_not_evict_already_queued_messages"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_monotonic_envelope_times_with_coarse_clock"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_critical_candidate_progresses_when_novel_low_states_fill_queue"
+      },
+      {
+        "class": "tests.test_information_policy",
+        "name": "test_transport_failure_does_not_change_policy_state"
+      },
+      {
+        "class": "tests.test_monitoring_store",
+        "name": "test_audit_verification_runs_in_background_and_is_cached"
+      },
+      {
+        "class": "tests.test_monitoring_store",
+        "name": "test_monitoring_api_offloads_blocking_store_calls"
+      },
+      {
+        "class": "tests.test_observability",
+        "name": "test_prometheus_registry_exposes_required_metrics"
+      },
+      {
+        "class": "tests.test_observability",
+        "name": "test_json_logs_include_trace_fields"
+      },
+      {
+        "class": "tests.test_observability",
+        "name": "test_observability_snapshot_flows_into_fog_persistence"
+      },
+      {
+        "class": "tests.test_observability",
+        "name": "test_dashboard_is_fog_only_and_observability_is_split_by_zone"
+      },
+      {
+        "class": "tests.test_observability",
+        "name": "test_phase5_migration_and_grafana_dashboards_are_provisioned"
+      },
+      {
+        "class": "tests.test_observability",
+        "name": "test_monitoring_image_includes_audit_verifier_dependency"
+      },
+      {
+        "class": "tests.test_persistence",
+        "name": "test_event_processor_persists_accepted_telemetry"
+      },
+      {
+        "class": "tests.test_persistence",
+        "name": "test_alert_engine_stores_complete_alert"
+      },
+      {
+        "class": "tests.test_persistence",
+        "name": "test_postgres_migration_contains_all_phase4_tables"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_forward_pipeline_and_instrumentation"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_retry_after_lost_ack_is_idempotent_and_bounded"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_scheduler_is_replaceable"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_interfaces_participate_in_admission"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_ingress_validation[edge-gateway-/telemetry]"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_ingress_validation[unidirectional-gateway-/ingest]"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_ingress_validation[fog-receiver-/receive]"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_concurrent_arrivals_remain_traceable"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_background_worker_wakes_and_retries"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_identity_conflict_and_bounded_history"
+      },
+      {
+        "class": "tests.test_phase1",
+        "name": "test_phase1_compose_network_contract"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_canonical_signing_and_all_metadata_protected"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_ambiguous_json[{\"a\":1,\"a\":2}]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_ambiguous_json[{\"a\":NaN}]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_ambiguous_json[{\"a\":Infinity}]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates0]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates1]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates2]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates3]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates4]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates5]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rejects_unsafe_semantics[updates6]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_required_event_semantics"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_secure_pipeline"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[tamper-HASH_MISMATCH]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[signature-INVALID_SIGNATURE]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[stale-EXPIRED_MESSAGE]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[future-EXPIRED_MESSAGE]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[size-PAYLOAD_SIZE_MISMATCH]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[oversized-PAYLOAD_TOO_LARGE]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[schema-INVALID_SCHEMA]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_attack_validation[unknown-UNKNOWN_DEVICE]"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_replay_duplicate_conflict_and_restart"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_rate_and_payload_limits_do_not_poison_sequence"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_pending_recovery_bounded_queue_and_retry"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_terminal_rejection_does_not_block_fifo"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_source_spoofing_rejected"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_audit_tampering_fails_closed"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_device_sequence_survives_restart"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_key_initialization_is_non_destructive"
+      },
+      {
+        "class": "tests.test_phase2",
+        "name": "test_phase2_private_key_and_network_contract"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_deployment_profiles_have_expected_membership"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_python_services_use_non_root_read_only_containers"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_expected_host_ports_are_published_and_networks_are_internal"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_fog_services_have_no_edge_network_membership"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_readiness_checks_use_readiness_endpoints"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_configuration_rejects_placeholders_and_bad_capacity"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_runtime_material_is_not_tracked_by_default"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_audit_logs_use_non_root_compatible_named_volume"
+      },
+      {
+        "class": "tests.test_phase8_packaging",
+        "name": "test_database_outage_does_not_mask_security_rejection"
+      },
+      {
+        "class": "tests.test_priority",
+        "name": "test_priority_rules_are_centralized_and_deterministic"
+      },
+      {
+        "class": "tests.test_scheduling",
+        "name": "test_adaptive_scheduler_prioritizes_critical_messages"
+      },
+      {
+        "class": "tests.test_scheduling",
+        "name": "test_aging_and_starvation_boost_can_promote_old_low_priority_messages"
+      },
+      {
+        "class": "tests.test_scheduling",
+        "name": "test_fifo_and_adaptive_can_choose_different_messages"
+      },
+      {
+        "class": "tests.test_scheduling",
+        "name": "test_congestion_state_transitions"
+      },
+      {
+        "class": "tests.test_scheduling",
+        "name": "test_queue_overflow_retains_higher_priority_messages"
+      },
+      {
+        "class": "tests.test_scheduling",
+        "name": "test_full_queue_drops_incoming_low_priority_message"
+      },
+      {
+        "class": "tests.test_security_validation",
+        "name": "test_security_client_restricts_targets_to_internal_services"
+      },
+      {
+        "class": "tests.test_security_validation",
+        "name": "test_security_csv_has_required_machine_readable_columns"
+      },
+      {
+        "class": "tests.test_security_validation",
+        "name": "test_controlled_audit_copy_reports_first_broken_location"
+      },
+      {
+        "class": "tests.test_security_validation",
+        "name": "test_reverse_path_passes_only_when_resolution_and_connections_fail"
+      },
+      {
+        "class": "tests.test_security_validation",
+        "name": "test_security_compose_profile_does_not_weaken_default_memberships"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[CRITICAL-environmental]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[CRITICAL-system]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[CRITICAL-network]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[CRITICAL-security]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[CRITICAL-industrial]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[HIGH-environmental]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[HIGH-system]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[HIGH-network]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[HIGH-security]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[HIGH-industrial]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[MEDIUM-environmental]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[MEDIUM-system]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[MEDIUM-network]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[MEDIUM-security]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[MEDIUM-industrial]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[LOW-environmental]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[LOW-system]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[LOW-network]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[LOW-security]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_all_device_types_generate_valid_telemetry[LOW-industrial]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_invalid_settings_fail_fast[TELEMETRY_INTERVAL_SECONDS-0]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_invalid_settings_fail_fast[BURST_SIZE-0]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_invalid_settings_fail_fast[LOW_TRAFFIC_PERCENT-nan]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_invalid_settings_fail_fast[TRAFFIC_PROFILE-typo]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_handles_transport_failure"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_traffic_loops_continue_and_cancel[normal]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_traffic_loops_continue_and_cancel[burst]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_traffic_loops_continue_and_cancel[overload]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_device_traffic_loops_continue_and_cancel[critical_burst]"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_adaptive_transport_preserves_signed_device_order"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_monitoring_store_stale_devices_and_active_alerts"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_monitoring_api_handles_database_outages"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_monitoring_api_reports_actual_fog_health"
+      },
+      {
+        "class": "tests.test_service_resilience",
+        "name": "test_fog_health_remains_responsive_during_rejection_persistence"
+      }
+    ]
+  }
+}

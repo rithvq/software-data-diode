@@ -1,0 +1,339 @@
+name: CI
+
+'on':
+  push:
+  pull_request:
+  workflow_dispatch:
+  merge_group:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PYTHONDONTWRITEBYTECODE: "1"
+  PYTHONHASHSEED: "0"
+  MPLBACKEND: Agg
+  COMPOSE_PARALLEL_LIMIT: "2"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  python-tests:
+    name: Python ${{ matrix.python }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            python: "3.11"
+          - os: ubuntu-24.04
+            python: "3.12"
+          - os: windows-2022
+            python: "3.12"
+    env:
+      DATABASE_URL: ""
+      RULE_COVERAGE_ENABLED: "false"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Locate application
+        id: project
+        run: |
+          if [[ -f software-data-diode/requirements-dev.txt ]]; then
+            echo "directory=software-data-diode" >> "$GITHUB_OUTPUT"
+          elif [[ -f requirements-dev.txt ]]; then
+            echo "directory=." >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Cannot find requirements-dev.txt"
+            exit 1
+          fi
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: ${{ steps.project.outputs.directory }}/requirements-dev.txt
+      - name: Validate GitHub workflow syntax
+        if: ${{ matrix.os == 'ubuntu-24.04' && matrix.python == '3.11' }}
+        run: |
+          tool="$RUNNER_TEMP/actionlint"
+          mkdir -p "$tool"
+          curl -fsSL --retry 3 --max-time 120 https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz -o "$tool/actionlint_1.7.12_linux_amd64.tar.gz"
+          curl -fsSL --retry 3 --max-time 120 https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_checksums.txt -o "$tool/checksums.txt"
+          (cd "$tool" && sha256sum --ignore-missing --check checksums.txt)
+          tar -xzf "$tool/actionlint_1.7.12_linux_amd64.tar.gz" -C "$tool" actionlint
+          "$tool/actionlint" -shellcheck= -pyflakes= .github/workflows/ci.yml
+      - name: Install pinned dependencies
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python -m pip check
+      - name: Validate configuration and source
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python scripts/validate_config.py --example
+          python -m ruff check . --select E9,F63,F7,F82
+          python -m compileall -q shared phase1 phase2 edge-device edge-gateway data-diode fog-receiver event-processor fog-analytics alert-engine monitoring-api dashboard security-test-client experiments scripts tests
+      - name: Isolate test runtime state
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          runtime = Path(os.environ["RUNNER_TEMP"]) / "diode-ci"
+          runtime.mkdir(parents=True, exist_ok=True)
+          settings = {"AUDIT_LOG_PATH": "audit.jsonl",
+                      "GATEWAY_SEQUENCE_STATE_PATH": "sequences.json",
+                      "COVERAGE_FILE": ".coverage"}
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as output:
+              for key, name in settings.items():
+                  output.write(f"{key}={runtime / name}\n")
+          PY
+      - name: Run every discovered test with coverage
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python -c "import os; from pathlib import Path; Path(os.environ['AUDIT_LOG_PATH']).parent.mkdir(parents=True, exist_ok=True); Path('ci-results').mkdir(exist_ok=True)"
+          python -m coverage run -m pytest -q --junitxml=ci-results/tests.xml
+      - name: Export coverage
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python -m coverage report
+          python -m coverage xml -o ci-results/coverage.xml
+          python -m coverage json -o ci-results/coverage.json
+          python -m coverage html -d ci-results/coverage-html
+      - name: Retain test and coverage evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: python-${{ matrix.python }}-${{ matrix.os }}
+          path: ${{ steps.project.outputs.directory }}/ci-results/
+          if-no-files-found: warn
+          retention-days: 14
+
+  docker-baselines:
+    name: Docker Phase ${{ matrix.phase }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        phase: [1, 2]
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Locate application
+        id: project
+        run: |
+          if [[ -f software-data-diode/requirements-dev.txt ]]; then
+            echo "directory=software-data-diode" >> "$GITHUB_OUTPUT"
+          elif [[ -f requirements-dev.txt ]]; then
+            echo "directory=." >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Cannot find requirements-dev.txt"
+            exit 1
+          fi
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+      - name: Build isolated baseline
+        working-directory: ${{ steps.project.outputs.directory }}
+        env:
+          PHASE: ${{ matrix.phase }}
+        run: |
+          docker compose -f "docker-compose.phase$PHASE.yml" config --quiet
+          if [[ "$PHASE" == "2" ]]; then
+            docker compose -f docker-compose.phase2.yml run --build --rm key-init
+          fi
+          docker compose -f "docker-compose.phase$PHASE.yml" up --build -d --wait --wait-timeout 180
+      - name: Verify live delivery, isolation and security
+        working-directory: ${{ steps.project.outputs.directory }}
+        env:
+          PHASE: ${{ matrix.phase }}
+        run: python "scripts/verify_phase$PHASE.py" --timeout 90 --output "ci-results/phase$PHASE"
+      - name: Collect diagnostics
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        env:
+          PHASE: ${{ matrix.phase }}
+        run: |
+          mkdir -p ci-results
+          docker compose -f "docker-compose.phase$PHASE.yml" ps --all > ci-results/containers.txt
+          docker compose -f "docker-compose.phase$PHASE.yml" logs --no-color --tail 300 > ci-results/docker-logs.txt
+      - name: Remove only the disposable baseline
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        env:
+          PHASE: ${{ matrix.phase }}
+        run: docker compose -f "docker-compose.phase$PHASE.yml" down --volumes --remove-orphans
+      - name: Retain baseline evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: docker-phase-${{ matrix.phase }}
+          path: ${{ steps.project.outputs.directory }}/ci-results/
+          if-no-files-found: warn
+          retention-days: 14
+
+  docker-system:
+    name: Full Stack and Recovery
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      EDGE_GATEWAY_PORT: "28000"
+      DASHBOARD_PORT: "28501"
+      PROMETHEUS_EDGE_PORT: "29091"
+      PROMETHEUS_FOG_PORT: "29090"
+      GRAFANA_PORT: "23000"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Locate application
+        id: project
+        run: |
+          if [[ -f software-data-diode/requirements-dev.txt ]]; then
+            echo "directory=software-data-diode" >> "$GITHUB_OUTPUT"
+          elif [[ -f requirements-dev.txt ]]; then
+            echo "directory=." >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Cannot find requirements-dev.txt"
+            exit 1
+          fi
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: ${{ steps.project.outputs.directory }}/requirements-dev.txt
+      - name: Prepare disposable configuration and permissions
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python scripts/ci_runtime.py prepare
+          python scripts/validate_config.py
+      - name: Build and start full profile
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          docker compose -p software-data-diode-audit --profile full config --quiet
+          docker compose -p software-data-diode-audit --profile full up --build -d --wait --wait-timeout 240
+          python scripts/ci_runtime.py wait --timeout 180
+      - name: Verify migration rerun and live recovery
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          docker compose -p software-data-diode-audit --profile full run --rm database-migrator
+          python scripts/audit_runtime.py --outages --output ci-results/runtime.json
+      - name: Collect diagnostics
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          mkdir -p ci-results
+          docker compose -p software-data-diode-audit --profile full ps --all > ci-results/containers.txt
+          docker compose -p software-data-diode-audit --profile full logs --no-color --tail 300 > ci-results/docker-logs.txt
+      - name: Remove only the disposable full stack
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: docker compose -p software-data-diode-audit --profile full down --volumes --remove-orphans
+      - name: Retain full-stack evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: docker-full-stack
+          path: ${{ steps.project.outputs.directory }}/ci-results/
+          if-no-files-found: warn
+          retention-days: 14
+
+  docker-security:
+    name: Isolated Adversarial Tests
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      EDGE_GATEWAY_PORT: "28080"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+      - name: Locate application
+        id: project
+        run: |
+          if [[ -f software-data-diode/requirements-dev.txt ]]; then
+            echo "directory=software-data-diode" >> "$GITHUB_OUTPUT"
+          elif [[ -f requirements-dev.txt ]]; then
+            echo "directory=." >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Cannot find requirements-dev.txt"
+            exit 1
+          fi
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: ${{ steps.project.outputs.directory }}/requirements-dev.txt
+      - name: Prepare disposable security environment
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python scripts/ci_runtime.py prepare
+          python scripts/validate_config.py
+      - name: Run isolated attack simulator
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test config --quiet
+          docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test run --build --rm security-test-client
+      - name: Collect diagnostics
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          mkdir -p ci-results
+          docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test ps --all > ci-results/containers.txt
+          docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test logs --no-color --tail 300 > ci-results/docker-logs.txt
+      - name: Remove only the disposable security stack
+        if: ${{ always() }}
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test down --volumes --remove-orphans
+      - name: Retain security evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: docker-security
+          path: |
+            ${{ steps.project.outputs.directory }}/ci-results/
+            ${{ steps.project.outputs.directory }}/security-reports/security-test-results.csv
+            ${{ steps.project.outputs.directory }}/security-reports/security-metrics.json
+            ${{ steps.project.outputs.directory }}/security-reports/reverse-path-results.json
+          if-no-files-found: warn
+          retention-days: 14
+
+  ci-passed:
+    name: CI Passed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    if: ${{ always() }}
+    needs: [python-tests, docker-baselines, docker-system, docker-security]
+    steps:
+      - name: Require every suite to succeed
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          results = json.loads(os.environ["RESULTS"])
+          rows = ["| Suite | Result |", "|---|---|"]
+          rows.extend(f"| {name} | {job['result']} |" for name, job in results.items())
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text("\n".join(rows) + "\n")
+          failures = [name for name, job in results.items() if job["result"] != "success"]
+          if failures:
+              raise SystemExit("CI failed, was cancelled or skipped: " + ", ".join(failures))
+          print("Every required CI suite passed.")
+          PY

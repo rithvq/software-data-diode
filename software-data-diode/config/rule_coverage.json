@@ -1,0 +1,30 @@
+{
+  "contract_id": "synthetic-five-edge-v1",
+  "purpose": "synthetic_demonstration",
+  "devices": [
+    {"device_id": "edge-device-01", "telemetry_type": "environmental", "metrics": [{"path": "temperature", "unit": "degC"}]},
+    {"device_id": "edge-device-02", "telemetry_type": "system", "metrics": [{"path": "cpu_usage", "unit": "percent"}]},
+    {"device_id": "edge-device-03", "telemetry_type": "network", "metrics": [{"path": "measurements.packets_per_second", "unit": "packets/s"}]},
+    {"device_id": "edge-device-04", "telemetry_type": "security", "metrics": [{"path": "measurements.failed_logins", "unit": "attempts"}]},
+    {"device_id": "edge-device-05", "telemetry_type": "industrial", "metrics": [{"path": "measurements.vibration_mm_s", "unit": "mm/s"}]}
+  ],
+  "conditions": [
+    {"condition_id": "environmental-hot", "device_id": "edge-device-01", "metric_path": "temperature", "unit": "degC", "predicate": "EXISTS", "inequality": ">=", "threshold": 38},
+    {"condition_id": "resource-busy", "device_id": "edge-device-02", "metric_path": "cpu_usage", "unit": "percent", "predicate": "EXISTS", "inequality": ">=", "threshold": 90},
+    {"condition_id": "network-spike", "device_id": "edge-device-03", "metric_path": "measurements.packets_per_second", "unit": "packets/s", "predicate": "EXISTS", "inequality": ">=", "threshold": 8000},
+    {"condition_id": "security-failures", "device_id": "edge-device-04", "metric_path": "measurements.failed_logins", "unit": "attempts", "predicate": "EXISTS", "inequality": ">=", "threshold": 5},
+    {"condition_id": "industrial-vibration", "device_id": "edge-device-05", "metric_path": "measurements.vibration_mm_s", "unit": "mm/s", "predicate": "EXISTS", "inequality": ">=", "threshold": 8},
+    {"condition_id": "security-repeat", "device_id": "edge-device-04", "metric_path": "measurements.failed_logins", "unit": "attempts", "predicate": "COUNT_GE", "inequality": ">=", "threshold": 5, "k": 2}
+  ],
+  "rules": [
+    {"rule_id": "environmental-threshold", "expression": {"kind": "ATOM", "condition_id": "environmental-hot"}},
+    {"rule_id": "resource-threshold", "expression": {"kind": "ATOM", "condition_id": "resource-busy"}},
+    {"rule_id": "network-threshold", "expression": {"kind": "ATOM", "condition_id": "network-spike"}},
+    {"rule_id": "security-threshold", "expression": {"kind": "ATOM", "condition_id": "security-failures"}},
+    {"rule_id": "industrial-threshold", "expression": {"kind": "ATOM", "condition_id": "industrial-vibration"}},
+    {"rule_id": "incident-correlation", "expression": {"kind": "AND", "children": [{"kind": "ATOM", "condition_id": "resource-busy"}, {"kind": "ATOM", "condition_id": "network-spike"}, {"kind": "ATOM", "condition_id": "security-failures"}]}},
+    {"rule_id": "process-correlation", "expression": {"kind": "AND", "children": [{"kind": "ATOM", "condition_id": "environmental-hot"}, {"kind": "ATOM", "condition_id": "industrial-vibration"}]}},
+    {"rule_id": "process-attention", "expression": {"kind": "OR", "children": [{"kind": "ATOM", "condition_id": "environmental-hot"}, {"kind": "ATOM", "condition_id": "industrial-vibration"}]}},
+    {"rule_id": "repeated-security-observations", "expression": {"kind": "ATOM", "condition_id": "security-repeat"}}
+  ]
+}

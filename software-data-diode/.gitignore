@@ -7,3 +7,6 @@ logs/
 secrets/*.pem
 security-reports/
 demo-results/
+ci-results/
+.coverage
+.coverage.*

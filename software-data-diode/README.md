@@ -1,5 +1,13 @@
 # Feedback-Free Information Preservation for Software-Defined Unidirectional Edge-Fog Gateways
 
+## Continuous Integration
+
+GitHub Actions checks pushes, pull requests and merge-queue commits using Python
+regression tests, coverage, configuration/source validation and disposable Docker
+delivery, security, persistence and recovery checks. See [CI setup and results](docs/ci.md)
+for publishing the workflow, requiring the `CI Passed` check and adding future
+phase tests. CI never deploys to your machine or uses your existing credentials.
+
 ## Codebase Audit and Upgrade
 
 See the [2026-09-23 audit report](docs/codebase_audit.md) for fixes, reproducible test

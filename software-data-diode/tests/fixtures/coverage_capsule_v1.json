@@ -1,0 +1,11 @@
+{
+  "profile": "rccd-capsule-v1",
+  "test_key": "Public test vector only: Ed25519 seed bytes 0..31. Never use for deployment.",
+  "input_hash": "d229e56ce2a5ded520df9a28c0ccc4f6728c0e959d995d2ebb350ac3d0d1a31f",
+  "commitment": "2679457591c05b44127307408f5b9e55ab3ed028ac2351e6fd39716cebb5a80e",
+  "capsule_id": "3a107e027fb627f01d21d011b71ff190a193ba643c0d4975c392913dc3b2db0b",
+  "body_digest": "88381e0bc7002ed500b1b1dbf5db04d7920c471c393cda329be0d4d7c68741c7",
+  "signature": "1XC/szzzmZ9dwf/2zUmv9p8ew2vIdSf0RJ/dcQPdH8i/sBKgXNE/a1NpLHSFJHNMv0VnQ06HnHlppVy1M1N0BA==",
+  "artifact_digest": "651bd73aab999bba3355a0ac34dc6b8f8dc1777b10f41c6ff6319c6f35e7a878",
+  "artifact_bytes": 1738
+}

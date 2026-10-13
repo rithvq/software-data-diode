@@ -17,6 +17,7 @@ from scripts.docker_support import docker_executable
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--outages", action="store_true")
+    parser.add_argument("--output", type=Path, default=ROOT / "audit-results/runtime.json")
     args = parser.parse_args()
     docker = docker_executable()
     compose = [docker, "compose", "-p", "software-data-diode-audit", "--profile", "full"]
@@ -47,8 +48,8 @@ def main():
     def snapshot():
         return json.loads(inside("dashboard", "import requests,json; r=requests.get('http://monitoring-api:8000/api/snapshot',timeout=15); r.raise_for_status(); print(r.text)"))
 
-    gateway = url("edge-gateway", 8000, "")
     try:
+        gateway = url("edge-gateway", 8000, "")
         for service, port, path in (("edge-gateway", 8000, "/ready"), ("dashboard", 8501, "/_stcore/health"),
                                     ("prometheus-edge", 9090, "/-/ready"), ("prometheus-fog", 9090, "/-/ready"),
                                     ("grafana", 3000, "/api/health")):
@@ -125,8 +126,8 @@ print(json.dumps(result))
     except Exception as exc:
         check("runtime audit completed", False, str(exc))
     finally:
-        path = ROOT / "audit-results/runtime.json"
-        path.parent.mkdir(exist_ok=True)
+        path = args.output
+        path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
     return int(not all(item["passed"] for item in results))
 

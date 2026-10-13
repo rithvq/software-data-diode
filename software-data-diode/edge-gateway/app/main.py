@@ -3,11 +3,12 @@ from contextlib import asynccontextmanager, suppress
 from datetime import datetime, timedelta, timezone
 import logging
 import os
+import re
 import time
 from uuid import uuid4
 
 import httpx
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, Header, HTTPException, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse, Response
 
@@ -64,6 +65,10 @@ DATA_DIODE_METRICS_URL = os.getenv(
 OBSERVABILITY_TOKEN = os.getenv("OBSERVABILITY_TOKEN", "phase5-internal-observability")
 OBSERVABILITY_INTERVAL_SECONDS = float(os.getenv("OBSERVABILITY_INTERVAL_SECONDS", "5"))
 INFORMATION_POLICY_ENABLED = os.getenv("INFORMATION_POLICY_ENABLED", "false").lower() == "true"
+_coverage_flag = os.getenv("RULE_COVERAGE_ENABLED", "false").lower()
+if _coverage_flag not in {"true", "false"}:
+    raise ValueError("RULE_COVERAGE_ENABLED must be true or false")
+RULE_COVERAGE_ENABLED = _coverage_flag == "true"
 
 audit_log = AuditLog(AUDIT_LOG_PATH, "edge-gateway")
 device_registry = DeviceRegistry(
@@ -79,6 +84,9 @@ _observability_task: asyncio.Task | None = None
 _policy_task: asyncio.Task | None = None
 _pending_envelope = None
 _last_envelope_created_at: datetime | None = None
+_coverage_ledger = None
+_coverage_task: asyncio.Task | None = None
+_coverage_admissions: set[asyncio.Task] = set()
 
 
 def _audit_policy_decision(decision: dict) -> None:
@@ -106,20 +114,42 @@ information_engine = InformationEngine(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _observability_task, _policy_task
-    _observability_task = asyncio.create_task(_observability_loop())
-    if INFORMATION_POLICY_ENABLED:
+    global _observability_task, _policy_task, _coverage_ledger, _coverage_task
+    _observability_task = _policy_task = _coverage_task = None
+    if RULE_COVERAGE_ENABLED:
+        from shared.coverage.contracts import load_contract
+        from shared.coverage.ledger import ObservationLedger, PROJECT_NAME
+        if os.getenv("COVERAGE_PROJECT_NAME") != PROJECT_NAME or not os.getenv("COVERAGE_LEDGER_PATH") or not os.getenv("COVERAGE_CONTRACT_PATH"):
+            raise ValueError("coverage mode requires a separately provisioned research project, ledger and contract")
+        _coverage_ledger = await asyncio.to_thread(
+            ObservationLedger, os.environ["COVERAGE_LEDGER_PATH"],
+            load_contract(os.environ["COVERAGE_CONTRACT_PATH"]), project_name=PROJECT_NAME,
+        )
+        _coverage_task = asyncio.create_task(_coverage_clock_loop())
+    else:
+        _observability_task = asyncio.create_task(_observability_loop())
+    if INFORMATION_POLICY_ENABLED and not RULE_COVERAGE_ENABLED:
         _policy_task = asyncio.create_task(_information_loop())
     try:
         yield
     finally:
-        _observability_task.cancel()
-        with suppress(asyncio.CancelledError):
-            await _observability_task
+        if _observability_task is not None:
+            _observability_task.cancel()
+            with suppress(asyncio.CancelledError):
+                await _observability_task
         if _policy_task is not None:
             _policy_task.cancel()
             with suppress(asyncio.CancelledError):
                 await _policy_task
+        if _coverage_task is not None:
+            _coverage_task.cancel()
+            with suppress(asyncio.CancelledError):
+                await _coverage_task
+        if _coverage_admissions:
+            await asyncio.gather(*tuple(_coverage_admissions), return_exceptions=True)
+        if _coverage_ledger is not None:
+            await asyncio.to_thread(_coverage_ledger.close)
+            _coverage_ledger = None
 
 
 app = FastAPI(title="Edge Gateway", version="0.5.0", lifespan=lifespan)
@@ -142,6 +172,16 @@ async def health() -> dict[str, str]:
 
 @app.get("/ready")
 async def ready() -> dict[str, str]:
+    if RULE_COVERAGE_ENABLED:
+        try:
+            if _coverage_ledger is None or (_coverage_task is not None and _coverage_task.done()):
+                raise RuntimeError("ledger worker unavailable")
+            state = await asyncio.to_thread(_coverage_ledger.status)
+            if state["clock_halted"] or state["admission_blocked"]:
+                raise RuntimeError("ledger clock requires recovery")
+        except Exception as exc:
+            raise HTTPException(status_code=503, detail="coverage ledger unavailable") from exc
+        return {"status": "ready", "service": "edge-gateway", "mode": "ledger-only"}
     if INFORMATION_POLICY_ENABLED and _policy_task is not None and _policy_task.done():
         raise HTTPException(status_code=503, detail="policy worker stopped")
     try:
@@ -169,6 +209,8 @@ async def metrics() -> dict[str, object]:
         "traffic": traffic_metrics.snapshot(),
         "devices": [item.model_dump(mode="json") for item in device_registry.snapshots()],
         "information_policy": information_engine.snapshot(time.monotonic()) if INFORMATION_POLICY_ENABLED else None,
+        **({"coverage_ledger": await asyncio.to_thread(_coverage_ledger.status)
+            if _coverage_ledger is not None else None} if RULE_COVERAGE_ENABLED else {}),
     }
 
 
@@ -186,7 +228,13 @@ async def device_status(device_id: str) -> dict[str, object]:
 
 
 @app.post("/telemetry")
-async def receive_telemetry(message: EdgeTelemetryMessage) -> dict[str, str]:
+async def receive_telemetry(
+    message: EdgeTelemetryMessage,
+    coverage_epoch: str | None = Header(default=None, alias="X-Coverage-Epoch"),
+    retry_sequence: str | None = Header(default=None, alias="X-Coverage-Retry-Sequence"),
+) -> dict[str, object]:
+    if RULE_COVERAGE_ENABLED:
+        return await _receive_coverage(message, coverage_epoch, retry_sequence)
     if not _timestamp_fresh(message.timestamp, EDGE_INPUT_FRESHNESS_SECONDS):
         device_registry.record_rejected(message.device_id)
         prometheus_metrics.rejected(RejectionReason.EXPIRED_MESSAGE, message.device_id)
@@ -469,3 +517,50 @@ async def _information_loop() -> None:
         except Exception:
             logger.exception("Information policy dispatch failed")
         await asyncio.sleep(0.01)
+
+
+def _coverage_admission_done(task):
+    _coverage_admissions.discard(task)
+    if not task.cancelled():
+        task.exception()
+
+
+async def _receive_coverage(message, epoch, retry_sequence):
+    from shared.coverage.ledger import LedgerRefused
+    if _coverage_ledger is None:
+        raise HTTPException(status_code=503, detail="coverage ledger not initialized")
+    if len(_coverage_admissions) >= 8:
+        raise HTTPException(status_code=429, detail="coverage admission workers busy")
+    if isinstance(retry_sequence, str):
+        if not re.fullmatch(r"[1-9][0-9]{0,18}", retry_sequence):
+            raise HTTPException(status_code=422, detail="invalid local retry sequence")
+        retry_sequence = int(retry_sequence)
+    task = asyncio.create_task(asyncio.to_thread(
+        _coverage_ledger.admit, message, expected_epoch=epoch, retry_sequence=retry_sequence,
+        freshness_seconds=EDGE_INPUT_FRESHNESS_SECONDS,
+    ))
+    _coverage_admissions.add(task)
+    task.add_done_callback(_coverage_admission_done)
+    try:
+        receipt = await asyncio.shield(task)
+    except LedgerRefused as exc:
+        raise HTTPException(status_code=exc.http_status,
+                            detail={"status": "refused", "reason": exc.reason}) from exc
+    except Exception as exc:
+        logger.exception("Coverage admission failed; acceptance not acknowledged")
+        raise HTTPException(status_code=503, detail="durable admission unavailable") from exc
+    if not receipt.duplicate:
+        priority = classify_priority(message, priority_config)
+        device_registry.record_received(message.device_id, priority)
+        prometheus_metrics.received(message.device_id, priority)
+    return {"status": "accepted", "mode": "ledger-only", **receipt.model_dump(mode="json")}
+
+
+async def _coverage_clock_loop():
+    while True:
+        try:
+            await asyncio.to_thread(_coverage_ledger.tick)
+        except Exception:
+            logger.exception("Coverage closure failed; ledger requires recovery")
+            return
+        await asyncio.sleep(0.1)
