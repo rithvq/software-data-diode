@@ -47,7 +47,22 @@ def test_workflow_runs_all_required_suites_and_never_deploys_to_the_user():
     assert "docker system prune" not in commands and "docker volume prune" not in commands
     assert "pytest -q --junitxml=" in commands
     assert "scripts/audit_runtime.py --outages" in commands
-    assert "--profile security-test run --build --rm security-test-client" in commands
+    assert "--profile security-test run --build --use-aliases --rm security-test-client" in commands
+
+
+def test_one_off_security_client_preserves_the_alias_required_by_source_allowlists():
+    step = next(step for step in CI["jobs"]["docker-security"]["steps"]
+                if step.get("name") == "Run isolated attack simulator")
+    command = next(line for line in step["run"].splitlines() if " run " in line)
+    assert "--use-aliases" in command.split()
+    assert command.split()[-1] == "security-test-client"
+    assert "--service-ports" not in command and "--publish" not in command
+    override = yaml.safe_load((ROOT / "docker-compose.security.yml").read_text())
+    assert override["services"]["data-diode"]["environment"]["DIODE_ALLOWED_HOSTS"] == "edge-gateway,security-test-client"
+    assert override["services"]["fog-receiver"]["environment"]["FOG_ALLOWED_HOSTS"] == "data-diode,security-test-client"
+    base = yaml.safe_load((ROOT / "docker-compose.yml").read_text())
+    assert base["services"]["data-diode"]["environment"]["DIODE_ALLOWED_HOSTS"] == "edge-gateway"
+    assert base["services"]["fog-receiver"]["environment"]["FOG_ALLOWED_HOSTS"] == "data-diode"
 
 
 @pytest.mark.parametrize("job_name", ["docker-baselines", "docker-system", "docker-security"])

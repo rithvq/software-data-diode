@@ -141,7 +141,42 @@ on your computer. Prefer **phase branch -> CI -> reviewed merge -> local update*
 Required checks stop known failing changes from merging; they are not a promise of
 100% coverage, bug freedom, physical one-way security or uninterrupted operation.
 
-## Local verification of this change
+## Security CI source authorization fix
+
+The 2026-10-13 hosted run passed the Python matrix, both Docker baselines and the
+full-stack recovery job. The adversarial job instead reported `UNAUTHORIZED_SOURCE`
+even for valid controls. Consequently `CI Passed` correctly failed; its gate must
+not be bypassed.
+
+Unlike the existing normal-service security launcher, CI uses a one-off
+`docker compose run` container. That invocation needs `--use-aliases` so Docker DNS
+registers `security-test-client` on the test networks. The diode and Fog authorize
+the client's source IP against that service name. Without the alias, the tests
+cannot reach signature, replay or flood validation.
+
+The CI command now includes `run --build --use-aliases --rm security-test-client`.
+See [Docker's Compose run options](https://docs.docker.com/reference/cli/docker/compose/run/).
+No production/test allowlist, network membership, exposed port, cryptographic check
+or final CI gate was weakened. A regression test binds this invocation to the
+existing source allowlists.
+
+A bounded local reproduction used the actual `shared.http.peer_allowed` function
+in two temporary containers on private networks: the original invocation returned
+HTTP 403; the alias-enabled invocation returned HTTP 200 for the same source IP.
+Only public source was mounted read-only; no keys or host ports were used. Those
+test containers/networks were removed, and other running projects were left alone.
+
+Fix verification: the full isolated-state regression suite passed **485 tests**
+in 18.43 seconds (one existing Starlette/httpx warning); critical Ruff checks,
+actionlint workflow validation and `git diff --check` also passed. JUnit evidence is
+generated locally at `ci-results/security-ci-fix-tests.xml` and is not committed.
+
+Commit and push the fix to trigger a **new** CI run. Re-running an old failed job
+still uses its old workflow revision. The complete hosted adversarial job must be
+confirmed by that new run; the focused reproduction is not a claim that every
+adversarial scenario has already been rerun.
+
+## Initial local verification of CI setup
 
 Using the existing Windows `.venv` Python 3.12.6:
 

@@ -288,7 +288,7 @@ jobs:
         working-directory: ${{ steps.project.outputs.directory }}
         run: |
           docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test config --quiet
-          docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test run --build --rm security-test-client
+          docker compose -p software-data-diode-ci-security -f docker-compose.yml -f docker-compose.security.yml --profile security-test run --build --use-aliases --rm security-test-client
       - name: Collect diagnostics
         if: ${{ always() }}
         working-directory: ${{ steps.project.outputs.directory }}
