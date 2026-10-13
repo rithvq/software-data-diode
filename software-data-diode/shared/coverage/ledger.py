@@ -75,6 +75,9 @@ class ObservationLedger:
         self.digest, self.limits = contract_hash(contract), limits or LedgerLimits()
         self.clock, self.fault = clock or SystemClock(), fault or (lambda stage, db: None)
         self._mutex, self._closed, self._failed = RLock(), False, False
+        self.admission_hook = self.closure_hook = self.retirement_hook = None
+        self._coupled = False
+        self._savepoint_number = 0
         self.db = self._lock_file = None
         self.anchor_path = Path(str(self.path)+".anchor.json")
         if not self.path.parent.is_dir():
@@ -119,6 +122,10 @@ class ObservationLedger:
                     or self._meta("contract_hash") != self.digest):
                 raise LedgerRefused("IDENTITY_OR_CONTRACT_MISMATCH")
             self._window_has_reason = "closure_reason" in {row["name"] for row in self.db.execute("PRAGMA table_info(windows)")}
+            mode = self.db.execute("SELECT value FROM metadata WHERE key='coupled_schema_version'").fetchone()
+            if mode and mode[0] != "1":
+                raise LedgerRefused("UNSUPPORTED_COUPLED_STORE_VERSION")
+            self._coupled = bool(mode)
             self.schedule = WindowSchedule(self.clock, jump_tolerance_us=contract.limits.clock_jump_tolerance_us,
                                            interrupted=not create)
             with self._transaction():
@@ -151,6 +158,19 @@ class ObservationLedger:
 
     @contextmanager
     def _transaction(self):
+        if self.db.in_transaction:
+            self._savepoint_number += 1
+            name = "coverage_nested_" + str(self._savepoint_number)
+            self.db.execute("SAVEPOINT " + name)
+            try:
+                yield
+                self.db.execute("RELEASE " + name)
+            except BaseException:
+                if self.db.in_transaction:
+                    self.db.execute("ROLLBACK TO " + name)
+                    self.db.execute("RELEASE " + name)
+                raise
+            return
         self.db.execute("BEGIN IMMEDIATE")
         try:
             yield
@@ -222,6 +242,8 @@ class ObservationLedger:
                     else "INTERRUPTED" if CoverageLimitation.INTERRUPTED in merged else "WINDOW_END")
                 self.db.execute("UPDATE windows SET closure_reason=? WHERE epoch=? AND device=? AND idx=?",
                                 (reason,row["epoch"],row["device"],row["idx"]))
+            if self.closure_hook is not None:
+                self.closure_hook((row["epoch"], row["device"], row["idx"]))
         if rows:
             self._set_meta("closed_floor", max(int(self._meta("closed_floor")), max(row["idx"] for row in rows)))
 
@@ -238,7 +260,11 @@ class ObservationLedger:
         if any(not 0 <= row["ingress"] <= 2**63-1 or not 0 <= row["retry_highwater"] <= 2**63-1 for row in devices):
             raise LedgerRefused("INCONSISTENT_RECOVERED_COUNTERS")
         for window in self.db.execute("SELECT * FROM windows"):
-            if (window["obligation"] not in {"UNSIZED", "RETIRED_LOCAL"} or window["reserved_bytes"] != 0
+            permitted = {"UNSIZED", "RETIRED_LOCAL"}
+            if self._coupled:
+                permitted |= {"RESERVED", "EVIDENCE_READY", "LOCAL_ATTEMPTED", "UNSUPPORTED"}
+            if (window["obligation"] not in permitted or window["reserved_bytes"] < 0
+                    or (not self._coupled and window["reserved_bytes"] != 0)
                     or (window["obligation"] == "RETIRED_LOCAL" and (not window["closed"] or not window["archive_hash"] or not window["archive_path"]))):
                 raise LedgerRefused("INCONSISTENT_RECOVERED_OBLIGATION")
             if window["obligation"] == "RETIRED_LOCAL":
@@ -266,7 +292,9 @@ class ObservationLedger:
                 message = EdgeTelemetryMessage.model_validate_json(record["body"])
                 if (message.device_id != record["device"] or record["ingress_us"]//10000000 != window["idx"]
                         or canonical_bytes(message.model_dump(mode="json")) != record["body"]
-                        or record["disposition"] != ("ARCHIVED_LOCAL" if window["obligation"] == "RETIRED_LOCAL" else "PENDING_POLICY")):
+                        or (record["disposition"] not in {"PENDING_POLICY", "SELECTED_RAW", "REDUCED_RAW", "DROPPED_RAW"}
+                            if self._coupled and window["obligation"] != "RETIRED_LOCAL"
+                            else record["disposition"] != ("ARCHIVED_LOCAL" if window["obligation"] == "RETIRED_LOCAL" else "PENDING_POLICY"))):
                     raise LedgerRefused("INCONSISTENT_RECOVERED_INPUT")
                 originals.append(self._observation(message, record["epoch"], record["seq"], record["ingress_us"]))
             identity = WindowIdentity(ledger_epoch=window["epoch"], device_id=window["device"],
@@ -320,6 +348,8 @@ class ObservationLedger:
         digest = hashlib.sha256(body).hexdigest()
         with self._mutex:
             self._ensure_open()
+            if self._coupled and self.admission_hook is None:
+                raise LedgerRefused("COUPLED_CONTROLLER_REQUIRED")
             if expected_epoch != self._meta("epoch"):
                 raise LedgerRefused("EPOCH_MISMATCH", 409)
             previous = self.db.execute("SELECT * FROM observations WHERE device=? AND retry=?",
@@ -391,13 +421,17 @@ class ObservationLedger:
                         self.db.execute("INSERT INTO facts VALUES (?,?,?,?,?,?,?) ON CONFLICT(epoch,device,idx,condition) DO UPDATE SET matches=matches+excluded.matches,misses=misses+excluded.misses,unresolved=unresolved+excluded.unresolved",
                             (epoch,message.device_id,idx,condition.condition_id,fact.matching_count,fact.nonmatching_count,fact.unresolved_count))
                     self.fault("after_facts", self.db)
+                    if self.admission_hook is not None:
+                        self.admission_hook(AdmissionReceipt(ledger_epoch=epoch, device_id=message.device_id,
+                            ingress_sequence=sequence, window_index=idx, contract_hash=self.digest, input_hash=digest),
+                            message)
                     self._check_limits()
                     self.fault("after_obligation", self.db)
                     self.fault("before_commit", self.db)
                 self.schedule = candidate
                 self.fault("after_commit", self.db)
-                return AdmissionReceipt(ledger_epoch=epoch, device_id=message.device_id, ingress_sequence=sequence,
-                                        window_index=idx, contract_hash=self.digest, input_hash=digest)
+                return self._receipt(self.db.execute("SELECT * FROM observations WHERE epoch=? AND device=? AND seq=?",
+                                                     (epoch, message.device_id, sequence)).fetchone())
             except sqlite3.Error as exc:
                 self._failed = True
                 raise LedgerRefused("STORAGE_UNAVAILABLE") from exc
@@ -498,6 +532,10 @@ class ObservationLedger:
         """
         with self._mutex, self._transaction():
             self._ensure_open()
+            if self._coupled:
+                if self.retirement_hook is None:
+                    raise LedgerRefused("COUPLED_CONTROLLER_REQUIRED")
+                self.retirement_hook((epoch, device_id, window_index))
             expected = self._archive_bytes((epoch,device_id,window_index))
             archive_path = self._external_archive_path(archive_path)
             with archive_path.open("rb") as handle:
@@ -507,7 +545,7 @@ class ObservationLedger:
             archive_hash = hashlib.sha256(actual).hexdigest()
             self.db.execute("UPDATE observations SET disposition='ARCHIVED_LOCAL' WHERE epoch=? AND device=? AND idx=?",
                             (epoch,device_id,window_index))
-            self.db.execute("UPDATE windows SET obligation='RETIRED_LOCAL',archive_hash=?,archive_path=? WHERE epoch=? AND device=? AND idx=?",
+            self.db.execute("UPDATE windows SET obligation='RETIRED_LOCAL',reserved_bytes=0,archive_hash=?,archive_path=? WHERE epoch=? AND device=? AND idx=?",
                             (archive_hash,str(archive_path),epoch,device_id,window_index))
 
     def compact(self) -> int:

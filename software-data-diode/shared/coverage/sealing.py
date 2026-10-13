@@ -81,7 +81,7 @@ class CapsuleSealer:
         if count > self.limits.max_capsules or total > self.limits.max_signed_bytes:
             raise LedgerRefused("SEALED_EVIDENCE_CAPACITY",429)
 
-    def seal(self, *, device_id, window_index, epoch=None):
+    def seal(self, *, device_id, window_index, epoch=None, accounting=None):
         ledger = self.ledger
         with ledger._mutex:
             ledger._ensure_open()
@@ -118,7 +118,7 @@ class CapsuleSealer:
                 limitations += (CoverageLimitation.INTERRUPTED,)
             body = build_capsule(contract=ledger.contract,window=window,records=records,
                 gateway_id=self.gateway_id,signing_key_id=self.key_id,created_at_utc_us=utc_microseconds(ledger.clock.utc_now()),
-                closure_reason=reason,limitations=limitations,accounting=RawAccounting(pending_policy=pending,archived_local=archived),
+                closure_reason=reason,limitations=limitations,accounting=accounting or RawAccounting(pending_policy=pending,archived_local=archived),
                 previous_digest=head["digest"] if head and head["epoch"] == window.ledger_epoch else None)
             persisted = {fact.condition_id:fact for fact in ledger.facts() if fact.window == window}
             if set(persisted) != {fact.condition_id for fact in body.per_condition_facts}:

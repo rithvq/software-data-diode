@@ -5,6 +5,7 @@ import logging
 import os
 import re
 import time
+from pathlib import Path
 from uuid import uuid4
 
 import httpx
@@ -69,6 +70,9 @@ _coverage_flag = os.getenv("RULE_COVERAGE_ENABLED", "false").lower()
 if _coverage_flag not in {"true", "false"}:
     raise ValueError("RULE_COVERAGE_ENABLED must be true or false")
 RULE_COVERAGE_ENABLED = _coverage_flag == "true"
+COVERAGE_ADMISSION_MODE = os.getenv("COVERAGE_ADMISSION_MODE", "ledger-only").lower()
+if COVERAGE_ADMISSION_MODE not in {"ledger-only", "coupled"}:
+    raise ValueError("COVERAGE_ADMISSION_MODE must be ledger-only or coupled")
 
 audit_log = AuditLog(AUDIT_LOG_PATH, "edge-gateway")
 device_registry = DeviceRegistry(
@@ -85,6 +89,7 @@ _policy_task: asyncio.Task | None = None
 _pending_envelope = None
 _last_envelope_created_at: datetime | None = None
 _coverage_ledger = None
+_coverage_controller = None
 _coverage_task: asyncio.Task | None = None
 _coverage_admissions: set[asyncio.Task] = set()
 
@@ -114,8 +119,9 @@ information_engine = InformationEngine(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _observability_task, _policy_task, _coverage_ledger, _coverage_task
+    global _observability_task, _policy_task, _coverage_ledger, _coverage_task, _coverage_controller
     _observability_task = _policy_task = _coverage_task = None
+    _coverage_controller = None
     if RULE_COVERAGE_ENABLED:
         from shared.coverage.contracts import load_contract
         from shared.coverage.ledger import ObservationLedger, PROJECT_NAME
@@ -125,6 +131,22 @@ async def lifespan(app: FastAPI):
             ObservationLedger, os.environ["COVERAGE_LEDGER_PATH"],
             load_contract(os.environ["COVERAGE_CONTRACT_PATH"]), project_name=PROJECT_NAME,
         )
+        if COVERAGE_ADMISSION_MODE == "coupled":
+            from shared.coverage.admission import CoupledAdmission
+            from shared.coverage.budget import AdmissionConfig
+            try:
+                config_path = os.environ["COVERAGE_ADMISSION_CONFIG"]
+                config = AdmissionConfig.model_validate_json(Path(config_path).read_text(encoding="utf-8"))
+                _coverage_controller = await asyncio.to_thread(
+                    CoupledAdmission, _coverage_ledger,
+                    os.getenv("COVERAGE_GATEWAY_ID", "coverage-gateway"),
+                    os.getenv("COVERAGE_SIGNING_KEY_ID", "coverage-key"), _get_private_key(),
+                    config=config, policy=information_engine.config,
+                )
+            except BaseException:
+                await asyncio.to_thread(_coverage_ledger.close)
+                _coverage_ledger = None
+                raise
         _coverage_task = asyncio.create_task(_coverage_clock_loop())
     else:
         _observability_task = asyncio.create_task(_observability_loop())
@@ -150,6 +172,7 @@ async def lifespan(app: FastAPI):
         if _coverage_ledger is not None:
             await asyncio.to_thread(_coverage_ledger.close)
             _coverage_ledger = None
+            _coverage_controller = None
 
 
 app = FastAPI(title="Edge Gateway", version="0.5.0", lifespan=lifespan)
@@ -179,9 +202,11 @@ async def ready() -> dict[str, str]:
             state = await asyncio.to_thread(_coverage_ledger.status)
             if state["clock_halted"] or state["admission_blocked"]:
                 raise RuntimeError("ledger clock requires recovery")
+            if _coverage_controller is not None:
+                await asyncio.to_thread(_coverage_controller.status)
         except Exception as exc:
             raise HTTPException(status_code=503, detail="coverage ledger unavailable") from exc
-        return {"status": "ready", "service": "edge-gateway", "mode": "ledger-only"}
+        return {"status": "ready", "service": "edge-gateway", "mode": COVERAGE_ADMISSION_MODE}
     if INFORMATION_POLICY_ENABLED and _policy_task is not None and _policy_task.done():
         raise HTTPException(status_code=503, detail="policy worker stopped")
     try:
@@ -211,6 +236,8 @@ async def metrics() -> dict[str, object]:
         "information_policy": information_engine.snapshot(time.monotonic()) if INFORMATION_POLICY_ENABLED else None,
         **({"coverage_ledger": await asyncio.to_thread(_coverage_ledger.status)
             if _coverage_ledger is not None else None} if RULE_COVERAGE_ENABLED else {}),
+        **({"coverage_admission": await asyncio.to_thread(_coverage_controller.status)}
+            if _coverage_controller is not None else {}),
     }
 
 
@@ -535,9 +562,12 @@ async def _receive_coverage(message, epoch, retry_sequence):
         if not re.fullmatch(r"[1-9][0-9]{0,18}", retry_sequence):
             raise HTTPException(status_code=422, detail="invalid local retry sequence")
         retry_sequence = int(retry_sequence)
+    target = _coverage_controller.admit if _coverage_controller is not None else _coverage_ledger.admit
+    extra = {"priority": classify_priority(message, priority_config)} if _coverage_controller is not None else {}
     task = asyncio.create_task(asyncio.to_thread(
-        _coverage_ledger.admit, message, expected_epoch=epoch, retry_sequence=retry_sequence,
+        target, message, expected_epoch=epoch, retry_sequence=retry_sequence,
         freshness_seconds=EDGE_INPUT_FRESHNESS_SECONDS,
+        **extra,
     ))
     _coverage_admissions.add(task)
     task.add_done_callback(_coverage_admission_done)
@@ -553,7 +583,7 @@ async def _receive_coverage(message, epoch, retry_sequence):
         priority = classify_priority(message, priority_config)
         device_registry.record_received(message.device_id, priority)
         prometheus_metrics.received(message.device_id, priority)
-    return {"status": "accepted", "mode": "ledger-only", **receipt.model_dump(mode="json")}
+    return {"status": "accepted", "mode": COVERAGE_ADMISSION_MODE, **receipt.model_dump(mode="json")}
 
 
 async def _coverage_clock_loop():

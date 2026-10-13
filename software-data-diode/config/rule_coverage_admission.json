@@ -1,0 +1,19 @@
+{
+  "link_bytes_per_second": 131072,
+  "service_cycle_seconds": 10,
+  "evidence_share_percent": 10,
+  "protected_share_percent": 45,
+  "evidence_repeats": 2,
+  "datagram_payload_bytes": 1200,
+  "network_overhead_bytes": 28,
+  "raw_header_bytes": 128,
+  "max_raw_artifact_bytes": 12288,
+  "max_observations_per_scope": 1000,
+  "max_outbox_items": 256,
+  "max_raw_candidates": 64,
+  "max_policy_streams": 64,
+  "max_outbox_bytes": 4194304,
+  "max_evidence_debt_cycles": 2,
+  "max_policy_state_bytes": 1048576,
+  "max_journal_records": 256
+}

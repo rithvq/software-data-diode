@@ -197,7 +197,10 @@ class LocalStateEstimator:
 
 
 class InformationEngine:
-    def __init__(self, config: InformationPolicyConfig, on_decision: Callable[[dict], None] | None = None):
+    BASELINE_NAME = "legacy_information_engine_v1"
+
+    def __init__(self, config: InformationPolicyConfig, on_decision: Callable[[dict], None] | None = None,
+                 before_action: Callable | None = None):
         self.config = config
         self.local = LocalStateEstimator(config)
         self.queue: list[Candidate] = []
@@ -209,6 +212,11 @@ class InformationEngine:
         self.generated_bytes = 0
         self.dispatched_bytes = 0
         self.on_decision = on_decision
+        self.before_action = before_action
+
+    def _guard(self, action, item, related=()):
+        if self.before_action is not None:
+            self.before_action(action, item, related)
 
     def configure_local_link(self, bytes_per_second: float) -> None:
         """Apply an operator/testbed link setting, never a receiver recommendation."""
@@ -305,8 +313,10 @@ class InformationEngine:
         self.local.record(now, "arrival", size, priority.value)
         state = self.local.snapshot(now, len(self.queue))
         if size > self.config.max_message_bytes:
+            self._guard(PolicyAction.DROP, item)
             return self._decision(item, PolicyAction.DROP, "candidate exceeds configured serialized size bound", now, state)
         if initial_age > self.config.freshness_seconds and not protected and self.config.reduction_enabled:
+            self._guard(PolicyAction.DROP, item)
             return self._decision(item, PolicyAction.DROP, "obsolete routine measurement", now, state)
 
         pressure = state["congestion_state"]
@@ -316,6 +326,7 @@ class InformationEngine:
                 count = self.sample_counts.get(key, 0) + 1
                 self._remember(self.sample_counts, key, count)
                 if (count - 1) % self.config.sample_every:
+                    self._guard(PolicyAction.SAMPLE, item)
                     return self._decision(item, PolicyAction.SAMPLE, "deterministic low-novelty sample omitted", now, state, retained=False)
             matches = [old for old in self.queue if not old.protected and self.stream(old.message) == key and old.priority == priority]
             if matches:
@@ -327,9 +338,11 @@ class InformationEngine:
                     aggregate = replace(item)
                     self._aggregate(previous, aggregate)
                     if aggregate.size_bytes <= self.config.max_message_bytes:
+                        self._guard(PolicyAction.AGGREGATE, aggregate, (previous,))
                         self.queue[self.queue.index(previous)] = aggregate
                         return self._decision(aggregate, PolicyAction.AGGREGATE, "low-novelty routine samples summarized before signing", now, state)
                 if previous.message.aggregation is None and message.timestamp >= previous.message.timestamp:
+                    self._guard(PolicyAction.SUPERSEDE, previous, (item,))
                     self.queue.remove(previous)
                     item.enqueued_at = previous.enqueued_at
                     self._decision(previous, PolicyAction.SUPERSEDE, "newer routine state replaces queued reading", now, state, replacement_id=item.message_id)
@@ -344,7 +357,9 @@ class InformationEngine:
                 victims = []
             victim = min(victims, key=lambda old: self.utility(old, now)["score"], default=None)
             if victim is None or (not item.protected and self.utility(item, now)["score"] <= self.utility(victim, now)["score"]):
+                self._guard(PolicyAction.DROP, item)
                 return self._decision(item, PolicyAction.DROP, "bounded queue admission exhausted", now, state)
+            self._guard(PolicyAction.DROP, victim)
             self.queue.remove(victim)
             self._decision(victim, PolicyAction.DROP, "lower-utility state evicted at hard capacity", now, state, replacement_id=item.message_id)
         self.queue.append(item)
@@ -378,27 +393,29 @@ class InformationEngine:
         item.generated_bytes += previous.generated_bytes
         item.size_bytes = serialized_size(item.message) + self.config.envelope_overhead_bytes
 
-    def pop(self, now: float) -> Candidate | None:
-        if now < self.next_dispatch_at:
+    def pop(self, now: float, *, eligible=None, shaped=True) -> Candidate | None:
+        if shaped and now < self.next_dispatch_at:
             return None
         state = self.local.snapshot(now, len(self.queue))
         for item in list(self.queue):
             if (self.config.reduction_enabled and not item.protected
                     and now - item.generated_at > self.config.freshness_seconds):
+                self._guard(PolicyAction.DROP, item)
                 self.queue.remove(item)
                 self._decision(item, PolicyAction.DROP, "routine measurement expired while queued", now, state)
-        if not self.queue:
+        candidates = [item for item in self.queue if eligible is None or eligible(item)]
+        if not candidates:
             return None
-        overdue = [item for item in self.queue if now - item.enqueued_at >= self.config.starvation_seconds]
+        overdue = [item for item in candidates if now - item.enqueued_at >= self.config.starvation_seconds]
         if self.config.strategy == "fifo":
-            selected = self.queue[0]
+            selected = candidates[0]
         elif overdue:
             selected = min(overdue, key=lambda item: item.enqueued_at)
         elif self.config.strategy == "priority":
-            selected = max(self.queue, key=lambda item: self.utility(item, now)["terms"]["priority"])
+            selected = max(candidates, key=lambda item: self.utility(item, now)["terms"]["priority"])
         else:
             use_density = self.config.strategy == "density_under_pressure" and state["congestion_state"] == "CRITICAL"
-            selected = max(self.queue, key=lambda item: self.utility(item, now)["density" if use_density else "score"])
+            selected = max(candidates, key=lambda item: self.utility(item, now)["density" if use_density else "score"])
         self.queue.remove(selected)
         service = max(1 / self.config.messages_per_second, selected.size_bytes / self.config.link_bytes_per_second)
         self.next_dispatch_at = now + service
