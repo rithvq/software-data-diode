@@ -1,0 +1,1 @@
+{"stored_row_counts": [705, 1564, 0, 6111], "temporary_n8_schemas_remaining": 0, "n8_indexes": ["idx_coverage_capsule_receipt", "idx_coverage_filtered_page", "idx_coverage_outcome_reason", "idx_coverage_rule_devices", "idx_coverage_window_page"]}

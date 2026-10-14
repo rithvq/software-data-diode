@@ -1,0 +1,64 @@
+{
+  "overview": {
+    "observed_at": "2026-10-14T15:00:27.260460+00:00",
+    "rules": [
+      "incident-correlation"
+    ],
+    "contract": {
+      "devices": [
+        {
+          "device_id": "edge-device-02"
+        }
+      ]
+    },
+    "counts": {
+      "opportunities": 1,
+      "definite_yield": 0,
+      "unknown_rate": 1
+    },
+    "cost": {
+      "received_evidence_bytes": 1200
+    },
+    "sender": {
+      "evidence_fraction": null
+    },
+    "devices": [
+      {
+        "device_id": "edge-device-02",
+        "coverage": "MISSING"
+      }
+    ]
+  },
+  "page": {
+    "items": [
+      {
+        "decision_id": "11111111-1111-5111-8111-111111111111",
+        "window_index": 179190000,
+        "rule_id": "incident-correlation",
+        "verdict": "UNKNOWN",
+        "revision": 2,
+        "contract_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "result": {
+          "truth": "UNKNOWN",
+          "reason_codes": [
+            "MISSING_EVIDENCE"
+          ],
+          "conditions": [],
+          "supporting_artifacts": [
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          ],
+          "coverage_health": {
+            "state": "DEGRADED"
+          }
+        }
+      }
+    ],
+    "next_cursor": null,
+    "observed_at": "2026-10-14T15:00:27.269254+00:00"
+  },
+  "filters": {
+    "start_window": 179198642,
+    "end_window": 179199002,
+    "limit": 25
+  }
+}

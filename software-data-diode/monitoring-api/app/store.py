@@ -37,6 +37,25 @@ class MonitoringStore:
         self._audit_cache: tuple[float, list[dict[str, object]]] | None = None
         self._audit_refresh_in_progress = False
         self._audit_cache_lock = Lock()
+        self.coverage_enabled = os.getenv("COVERAGE_DASHBOARD_ENABLED", "false").lower() == "true"
+        self.coverage_contract = None
+        if self.coverage_enabled:
+            from shared.coverage.contracts import load_contract
+            self.coverage_contract = load_contract(os.environ["COVERAGE_CONTRACT_PATH"])
+
+    def coverage(self, operation, *args):
+        if not self.coverage_enabled:
+            raise LookupError("coverage dashboard disabled")
+        from shared.persistence import coverage_queries
+        functions = {"overview": coverage_queries.overview, "verdicts": coverage_queries.verdict_page,
+                     "decision": coverage_queries.decision_detail, "capsule": coverage_queries.capsule_detail,
+                     "witnesses": coverage_queries.witnesses}
+        with self._connect() as connection:
+            # A coherent page/detail snapshot; no writes even if a query is changed.
+            connection.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
+            if operation == "overview":
+                return functions[operation](connection, *args, self.coverage_contract)
+            return functions[operation](connection, *args)
 
     def _connect(self):
         import psycopg
@@ -49,7 +68,11 @@ class MonitoringStore:
             with self._connect() as connection, connection.cursor() as cursor:
                 cursor.execute("SELECT 1")
                 row = cursor.fetchone()
-                return row is not None and next(iter(row.values())) == 1
+                available = row is not None and next(iter(row.values())) == 1
+                if available and self.coverage_enabled:
+                    cursor.execute("SELECT decision_id,revision,result FROM coverage_rule_verdicts LIMIT 0")
+                    cursor.execute("SELECT 1 FROM coverage_original_witnesses LIMIT 0")
+                return available
         except Exception:
             return False
 
@@ -76,10 +99,14 @@ class MonitoringStore:
                 FROM alerts ORDER BY timestamp DESC LIMIT 50
                 """,
             )
-            active_alerts = self._rows(connection, """
+            active_predicate = ""
+            if self.coverage_enabled:
+                active_predicate = """AND NOT EXISTS (SELECT 1 FROM coverage_alert_intents i
+                    WHERE i.alert_id=alerts.alert_id AND NOT i.active)"""
+            active_alerts = self._rows(connection, f"""
                 SELECT alert_id, timestamp, source_devices, alert_type, severity,
                        evidence, description, acknowledged_at
-                FROM alerts WHERE acknowledged_at IS NULL ORDER BY timestamp DESC LIMIT 50
+                FROM alerts WHERE acknowledged_at IS NULL {active_predicate} ORDER BY timestamp DESC LIMIT 50
             """)
             anomaly_timeline = self._rows(
                 connection,
@@ -119,7 +146,7 @@ class MonitoringStore:
         if p95_latency is None:
             p95_latency = latency.get("p95", 0.0)
         generated = sum(
-            int(device.get("received_count", 0))
+            int(device.get("accepted_observations" if self.coverage_enabled else "received_count", 0))
             for device in gateway_metrics.get("devices", [])
         )
         filtered_bytes = int(edge_traffic.get("bytes_filtered", 0))
@@ -168,6 +195,9 @@ class MonitoringStore:
             "observed_at": datetime.now(timezone.utc),
             "overview": {
                 "generated_messages": generated,
+                "generated_label": "Gateway accepted" if self.coverage_enabled else "Gateway inputs",
+                "generated_scope": "Signed sender, ledger epoch" if self.coverage_enabled else "Gateway, current process",
+                "counter_comparison": "NOT_COMPARABLE_WITH_HISTORICAL_FOG_TOTAL",
                 "accepted_messages": counts["accepted"],
                 "rejected_messages": counts["rejected"],
                 "messages_per_second": counts["recent_accepted"] / 60.0,
@@ -195,7 +225,7 @@ class MonitoringStore:
             },
             "security": {
                 "counts": security,
-                "audit_logs": self._audit_states(),
+                "audit_logs": [] if self.coverage_enabled else self._audit_states(),
             },
             "analytics": {
                 "latest_anomalies": anomalies,
@@ -220,9 +250,13 @@ class MonitoringStore:
         return {row["service"]: row for row in rows}
 
     def _counts(self, connection) -> dict[str, int]:
+        active_predicate = ""
+        if self.coverage_enabled:
+            active_predicate = """AND NOT EXISTS (SELECT 1 FROM coverage_alert_intents i
+                WHERE i.alert_id=alerts.alert_id AND NOT i.active)"""
         with connection.cursor() as cursor:
             cursor.execute(
-                """
+                f"""
                 SELECT
                     (SELECT COUNT(*) FROM accepted_telemetry) AS accepted,
                     (SELECT COUNT(*) FROM rejected_messages) AS rejected,
@@ -232,7 +266,7 @@ class MonitoringStore:
                      FROM accepted_telemetry
                      WHERE received_at >= NOW() - INTERVAL '60 seconds') AS recent_bytes,
                     (SELECT COUNT(*) FROM alerts
-                     WHERE severity = 'CRITICAL' AND acknowledged_at IS NULL) AS critical_alerts
+                     WHERE severity = 'CRITICAL' AND acknowledged_at IS NULL {active_predicate}) AS critical_alerts
                 """
             )
             return dict(cursor.fetchone())

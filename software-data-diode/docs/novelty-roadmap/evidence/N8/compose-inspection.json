@@ -1,0 +1,152 @@
+{
+  "mode": "DECLARED_COMPOSE_NOT_LIVE_MEMBERSHIPS",
+  "project": "software-data-diode-coverage",
+  "services": {
+    "dashboard": {
+      "networks": [
+        "fog-host-network",
+        "fog-services-network"
+      ],
+      "ports": [
+        {
+          "target": 8501,
+          "host_ip": "127.0.0.1",
+          "published": "38501"
+        }
+      ],
+      "mounts": []
+    },
+    "monitoring-api": {
+      "networks": [
+        "fog-services-network"
+      ],
+      "ports": [],
+      "mounts": [
+        {
+          "target": "/app/config/rule_coverage.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage.json"
+        }
+      ]
+    },
+    "fog-receiver": {
+      "networks": [
+        "fog-ingress-network",
+        "fog-services-network"
+      ],
+      "ports": [],
+      "mounts": [
+        {
+          "target": "/run/secrets/edge_public_key.pem",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_public_key.pem"
+        },
+        {
+          "target": "/logs",
+          "read_only": null,
+          "source": "audit-logs"
+        },
+        {
+          "target": "/state/research-replay",
+          "read_only": null,
+          "source": "coverage-replay"
+        },
+        {
+          "target": "/app/config/rule_coverage_monitoring.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_monitoring.json"
+        },
+        {
+          "target": "/run/coverage",
+          "read_only": true,
+          "source": "coverage-trust"
+        },
+        {
+          "target": "/app/config/rule_coverage.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage.json"
+        },
+        {
+          "target": "/app/config/rule_coverage_transport.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_transport.json"
+        }
+      ]
+    },
+    "data-diode": {
+      "networks": [
+        "diode-network",
+        "fog-ingress-network"
+      ],
+      "ports": [],
+      "mounts": [
+        {
+          "target": "/logs",
+          "read_only": null,
+          "source": "audit-logs"
+        },
+        {
+          "target": "/app/config/rule_coverage_transport.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_transport.json"
+        }
+      ]
+    },
+    "edge-gateway": {
+      "networks": [
+        "diode-network",
+        "edge-host-network",
+        "edge-network"
+      ],
+      "ports": [
+        {
+          "target": 8000,
+          "host_ip": "127.0.0.1",
+          "published": "38000"
+        }
+      ],
+      "mounts": [
+        {
+          "target": "/run/secrets/edge_private_key.pem",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_private_key.pem"
+        },
+        {
+          "target": "/app/config/information_policy.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\information_policy.json"
+        },
+        {
+          "target": "/logs",
+          "read_only": null,
+          "source": "audit-logs"
+        },
+        {
+          "target": "/state/coverage-ledger",
+          "read_only": null,
+          "source": "coverage-ledger"
+        },
+        {
+          "target": "/run/coverage",
+          "read_only": true,
+          "source": "coverage-trust"
+        },
+        {
+          "target": "/app/config/rule_coverage.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage.json"
+        },
+        {
+          "target": "/app/config/rule_coverage_admission.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_admission.json"
+        },
+        {
+          "target": "/app/config/rule_coverage_transport.json",
+          "read_only": true,
+          "source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_transport.json"
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 import html
 import json
 import os
@@ -14,6 +14,7 @@ import streamlit as st
 
 MONITORING_API_URL = os.getenv("MONITORING_API_URL", "http://monitoring-api:8000")
 REFRESH_SECONDS = max(1, int(os.getenv("DASHBOARD_REFRESH_SECONDS", "3")))
+COVERAGE_ENABLED = os.getenv("DASHBOARD_COVERAGE_ENABLED", "false").lower() == "true"
 PRIORITY_COLORS = {
     "CRITICAL": "#ef4444",
     "HIGH": "#f59e0b",
@@ -42,6 +43,205 @@ def load_snapshot() -> dict[str, object]:
     if not isinstance(document, dict):
         raise ValueError("Monitoring snapshot is not an object")
     return document
+
+
+def coverage_request(path, params, cache_key, identity):
+    cached = st.session_state.get(cache_key)
+    fetch = (auto_refresh or st.session_state.get("manual_refresh", 0) !=
+             st.session_state.get(cache_key+"_manual") or not cached or cached[0] != identity)
+    if not fetch:
+        return cached[1] if cached else None
+    try:
+        response = requests.get(f"{MONITORING_API_URL}/api/coverage/{path}", params=params, timeout=2)
+        response.raise_for_status()
+        if len(response.content) > 3*1024*1024:
+            raise ValueError("coverage response exceeds view limit")
+        document = response.json()
+        if not isinstance(document, dict):
+            raise ValueError("coverage response is not an object")
+        st.session_state[cache_key] = (identity, document)
+        st.session_state[cache_key+"_manual"] = st.session_state.get("manual_refresh", 0)
+        return document
+    except (requests.RequestException, ValueError):
+        if cached and cached[0] == identity:
+            st.warning("Coverage API timeout/unavailable. Last good data retained; timestamps are unchanged.")
+            return cached[1]
+        st.warning("Coverage data unavailable for this selection. No evidence is inferred from silence.")
+        return None
+
+
+def coverage_downloads(document, name, table=None):
+    left, right = st.columns(2)
+    left.download_button("JSON", json.dumps(document, indent=2, default=str),
+                         file_name=f"{name}.json", mime="application/json", key=name+"_json",
+                         icon=":material/download:", on_click="ignore", width="stretch")
+    if table is not None:
+        # Neutralize spreadsheet formula prefixes in externally sourced text.
+        frame = pd.DataFrame(table).map(lambda v: "'"+v if isinstance(v, str) and
+                                        v.startswith(("=", "+", "-", "@", "\t", "\r")) else v)
+        right.download_button("CSV", frame.to_csv(index=False), file_name=f"{name}.csv",
+                              mime="text/csv", key=name+"_csv", icon=":material/download:",
+                              on_click="ignore", width="stretch")
+
+
+def coverage_next(cursor, next_cursor, end):
+    st.session_state.setdefault("coverage_page_stack", []).append(cursor)
+    st.session_state["coverage_page_stack"] = st.session_state["coverage_page_stack"][-100:]
+    st.session_state["coverage_cursor"] = next_cursor
+    st.session_state["coverage_page_end"] = end
+
+
+def coverage_previous():
+    st.session_state["coverage_cursor"] = st.session_state["coverage_page_stack"].pop()
+
+
+def render_coverage():
+    st.subheader("Evidence Coverage")
+    st.caption("Accepted normalized Gateway ingress only. Aligned 10-second ingress windows; synthetic rule thresholds.")
+    seeded = None
+    if not st.session_state.get("coverage_options"):
+        end = int(datetime.now(timezone.utc).timestamp()//10)
+        seeded = coverage_request("overview", {"start_window": end-360, "end_window": end, "limit": 25},
+            "coverage_overview", ("All", "All", 1, "", "", "", "All"))
+        if seeded:
+            st.session_state["coverage_options"] = {"rules": seeded.get("rules", []),
+                "devices": [d["device_id"] for d in seeded.get("contract", {}).get("devices", [])]}
+    options = st.session_state.get("coverage_options", {})
+    controls = st.columns(3)
+    rule = controls[0].selectbox("Rule", ["All", *options.get("rules", [])], key="coverage_rule")
+    device = controls[1].selectbox("Device", ["All", *options.get("devices", [])], key="coverage_device")
+    hours = controls[2].selectbox("Time range", [1, 6, 24, 168],
+                                format_func=lambda h: f"Last {h} {'hour' if h == 1 else 'hours'}", key="coverage_hours")
+    with st.expander("Scope filters"):
+        gateway = st.text_input("Gateway ID", max_chars=128, key="coverage_gateway")
+        epoch = st.text_input("Ledger epoch", max_chars=128, key="coverage_epoch")
+        digest_filter = st.text_input("Contract hash", max_chars=64, key="coverage_contract")
+    truth = st.segmented_control("Decision status", ["All", "TRUE", "FALSE", "UNKNOWN"],
+                                default="All", key="coverage_truth") or "All"
+    filters = (rule, device, hours, gateway, epoch, digest_filter, truth)
+    if st.session_state.get("coverage_filters") != filters:
+        st.session_state["coverage_filters"] = filters
+        st.session_state["coverage_cursor"] = None
+        st.session_state["coverage_page_stack"] = []
+    cursor = st.session_state.get("coverage_cursor")
+    end = st.session_state.get("coverage_page_end") if cursor else int(datetime.now(timezone.utc).timestamp()//10)
+    params = {"start_window": max(0, end-hours*360), "end_window": end, "limit": 25}
+    for key, value in (("rule_id", rule), ("device_id", device), ("truth", truth)):
+        if value != "All":
+            params[key] = value
+    for key, value in (("gateway_id", gateway), ("ledger_epoch", epoch), ("contract_hash", digest_filter)):
+        if value:
+            params[key] = value
+    identity = (filters, json.dumps(cursor, sort_keys=True))
+    overview = seeded or coverage_request("overview", params, "coverage_overview", filters)
+    if overview:
+        st.session_state["coverage_options"] = {"rules": overview.get("rules", []),
+            "devices": [d["device_id"] for d in overview.get("contract", {}).get("devices", [])]}
+        counts, cost, sender = overview.get("counts", {}), overview.get("cost", {}), overview.get("sender", {})
+        percentage = lambda n: f"{n:.1%}" if n is not None else "Unavailable"
+        cols = st.columns(4)
+        cols[0].metric("Evidence received", f"{cost.get('received_evidence_bytes', 0):,} B")
+        cols[1].metric("Evidence / forward bytes", percentage(sender.get("evidence_fraction")))
+        cols[2].metric("Definite-decision yield", percentage(counts.get("definite_yield")))
+        cols[3].metric("UNKNOWN rate", percentage(counts.get("unknown_rate")))
+        st.caption(f"Fog unique complete parts, filtered historical totals. {counts.get('opportunities', 0):,} stored rule windows; latest revisions, not measured accuracy.")
+        st.caption(f"Fog snapshot: {overview.get('observed_at', 'unknown')} | Accepted ingress is not generated-message completeness.")
+        with st.expander("Byte accounting and assurance"):
+            st.write("Sender-authenticated summary (AUTHENTICATED_SUMMARY). Offline raw recomputation: NOT RUN.")
+            st.write("Forward fraction uses latest signed sender local grants since N8 accounting start, including scheduled repeats and modeled overhead; not confirmed receipt. Sender counters are independent of the rule/time filters.")
+            st.json({"sender": sender, "Fog byte scope": cost.get("scope"), "observed_at": overview.get("observed_at")})
+        st.markdown("#### Device observation coverage")
+        st.dataframe(pd.DataFrame(overview.get("devices", [])), hide_index=True, width="stretch")
+        st.caption("Coverage and freshness are independent of general device health and rule truth.")
+        with st.expander("Verification outcomes and pending publication"):
+            st.json({"outcomes": overview.get("verification_outcomes", []),
+                     "scope": overview.get("outcome_scope"), "pending_fog_publications": overview.get("pending_fog_publications")})
+    if cursor:
+        params.update(cursor)
+    page = coverage_request("verdicts", params, "coverage_page", identity)
+    if not page:
+        return
+    items = page.get("items", [])
+    table = [{"decision_id": r["decision_id"], "window_index": r["window_index"],
+              "window_start_utc": datetime.fromtimestamp(r["window_index"]*10, timezone.utc).isoformat(),
+              "rule": r["rule_id"], "status": r["verdict"], "revision": r["revision"],
+              "coverage": r.get("result", {}).get("coverage_health", {}).get("state", "UNKNOWN"),
+              "reason": ", ".join(r.get("result", {}).get("reason_codes", []))} for r in items]
+    st.markdown("#### Rule windows")
+    st.dataframe(pd.DataFrame(table), hide_index=True, width="stretch", height=300)
+    if not items:
+        st.info("No stored rule windows match these filters. This is not a negative rule result.")
+    nav = st.columns(3)
+    nav[0].button("Previous", icon=":material/chevron_left:", key="coverage_previous",
+                  disabled=not st.session_state.get("coverage_page_stack"), on_click=coverage_previous)
+    nav[1].button("Next", icon=":material/chevron_right:", key="coverage_next", disabled=not page.get("next_cursor"),
+                  on_click=coverage_next, args=(cursor, page.get("next_cursor"), end))
+    coverage_downloads({"overview": overview, "page": page, "filters": params}, "coverage-snapshot", table)
+    if not items and not st.session_state.get("coverage_selected"):
+        return
+    ids = [str(r["decision_id"]) for r in items]
+    pinned = st.session_state.get("coverage_selected")
+    if pinned and pinned not in ids:
+        ids.insert(0, pinned)
+    labels = {str(r["decision_id"]): f"{r['rule_id']} / {r['window_index']} / {r['verdict']}" for r in items}
+    selected = st.selectbox("Inspect rule window", ids, format_func=lambda x: labels.get(x, f"Pinned / {x}"), key="coverage_selected")
+    before_revision = st.number_input("History before revision (0 = latest)", min_value=0, max_value=2**31-1,
+                                      step=1, key="coverage_history_cursor")
+    detail = coverage_request(f"decisions/{selected}", {"before_revision": before_revision} if before_revision else {},
+                               "coverage_detail", (selected, before_revision))
+    if not detail:
+        return
+    result = detail["decision"].get("result", {})
+    verdict = detail["decision"]["verdict"]
+    descriptions = {"TRUE": "Matching result supported in this observation scope.",
+                    "FALSE": "No matching rule result in the supported scope. Not globally safe or complete device coverage.",
+                    "UNKNOWN": "Insufficient, partial, expired or conflicting evidence; no definite result."}
+    tone = {"TRUE": "error", "FALSE": "info", "UNKNOWN": "warning"}[verdict]
+    getattr(st, tone)(f"{verdict}: {descriptions[verdict]}")
+    st.write("Reasons: " + ", ".join(result.get("reason_codes", [])))
+    st.code(detail["decision"]["contract_hash"], language=None)
+    st.caption(result.get("quantifier", ""))
+    st.dataframe(pd.DataFrame(result.get("conditions", [])), width="stretch", hide_index=True)
+    with st.expander("Bounds, supporting references and alert state", expanded=True):
+        st.json({k: result.get(k) for k in ("observation_scope", "time_basis", "condition_bounds", "coverage_health",
+            "supporting_artifacts", "examined_artifacts", "checked_original_witnesses", "verification_status")})
+        st.json({"alerts": detail.get("alerts", []), "missing_support": detail.get("missing_supporting_artifacts", [])})
+    capsules = detail.get("capsules", [])
+    accounting = []
+    for capsule in capsules:
+        body = capsule["body"]
+        accounting.append({"device": body["device_id"], "artifact": capsule["artifact_digest"],
+            "original_accepted": body["accepted_observation_count"],
+            "predicate_represented": body["accepted_observation_count"],
+            "unresolved_metric_counts": sum(f["unresolved_count"] for f in body.get("per_condition_facts", [])),
+            **body.get("reduction_accounting", {}), "quarantined": capsule.get("quarantined", False),
+            "continuity": capsule["verification"].get("continuity"), "assurance": capsule["verification"].get("assurance_level")})
+    st.markdown("#### Original versus raw disposition")
+    st.dataframe(pd.DataFrame(accounting), hide_index=True, width="stretch")
+    st.caption("Per signed capsule, not summed across conflicting variants. Predicate representation can be unresolved; raw selection/attempts do not establish delivery. Accounting is frozen at sealing.")
+    if detail.get("capsules_truncated"):
+        st.warning("Capsule list exceeds 32 records; this inspection is truncated.")
+    if capsules:
+        digests = [c["artifact_digest"] for c in capsules]
+        if st.session_state.get("coverage_capsule_id") not in digests:
+            st.session_state.pop("coverage_capsule_id", None)
+        capsule_id = st.selectbox("Capsule", digests, key="coverage_capsule_id")
+        artifact = coverage_request(f"capsules/{capsule_id}", {}, "coverage_capsule", capsule_id)
+        if artifact:
+            with st.expander("Signed capsule, verification and witness references"):
+                st.json(artifact)
+            coverage_downloads(artifact, "coverage-capsule")
+            after = st.number_input("Witness cursor (after ingress sequence)", min_value=0, step=1, key="coverage_witness_cursor")
+            witness_page = coverage_request(f"capsules/{capsule_id}/witnesses", {"after_sequence": after, "limit": 8},
+                                             "coverage_witnesses", (capsule_id, after))
+            if witness_page:
+                st.caption("Checked disclosed originals only; not independent recomputation of every withheld input.")
+                st.json(witness_page)
+                coverage_downloads(witness_page, "coverage-witnesses", witness_page.get("items", []))
+    with st.expander("Verdict revision history"):
+        st.json(detail.get("history", []))
+        st.caption(f"Next older revision cursor: {detail.get('next_revision') or 'None'}")
+    coverage_downloads(detail, "coverage-decision", table)
 
 
 def inject_styles() -> None:
@@ -81,6 +281,7 @@ def inject_styles() -> None:
         h3 { font-size: 1rem !important; color: var(--text) !important; }
         h4 { font-size: 0.9rem !important; color: var(--muted) !important; }
         p, li { color: var(--text); }
+        [data-testid="stCaptionContainer"] p { color: var(--muted) !important; }
 
         .product-mark { margin-bottom: 1.4rem; }
         .product-name { color: var(--text); font-size: 1.15rem; font-weight: 700; }
@@ -239,7 +440,8 @@ def fmt_latency(value: object) -> str:
 
 def render_kpis(overview: dict[str, object]) -> None:
     metrics = [
-        ("Generated", fmt_number(overview.get("generated_messages")), "Edge, current run", "info"),
+        (str(overview.get("generated_label", "Gateway inputs")), fmt_number(overview.get("generated_messages")),
+         str(overview.get("generated_scope", "Gateway, current process")), "info"),
         ("Accepted", fmt_number(overview.get("accepted_messages")), "Fog, stored total", "success"),
         (
             "Rejected",
@@ -689,7 +891,7 @@ with st.sidebar:
     )
     refresh_seconds = int(refresh_seconds or REFRESH_SECONDS)
     if st.button("Refresh now", icon=":material/refresh:", width="stretch"):
-        st.rerun()
+        st.session_state["manual_refresh"] = st.session_state.get("manual_refresh", 0)+1
     with st.expander("Connection", icon=":material/hub:"):
         st.caption("Monitoring API")
         st.code(MONITORING_API_URL.removeprefix("http://"), language=None)
@@ -699,16 +901,23 @@ with st.sidebar:
 
 @st.fragment(run_every=refresh_seconds if auto_refresh else None)
 def live_dashboard() -> None:
-    stale = False
+    stale = st.session_state.get("snapshot_stale", False)
     try:
-        snapshot = load_snapshot()
-        st.session_state["last_good_snapshot"] = snapshot
-    except (requests.RequestException, ValueError) as exc:
+        snapshot = st.session_state.get("last_good_snapshot")
+        if (auto_refresh or snapshot is None or st.session_state.get("snapshot_manual") !=
+                st.session_state.get("manual_refresh", 0)):
+            snapshot = load_snapshot()
+            st.session_state["last_good_snapshot"] = snapshot
+            st.session_state["snapshot_manual"] = st.session_state.get("manual_refresh", 0)
+            st.session_state["snapshot_stale"] = stale = False
+    except (requests.RequestException, ValueError):
+        st.session_state["snapshot_stale"] = True
         snapshot = st.session_state.get("last_good_snapshot")
         st.warning("Fog monitoring is unavailable. Showing the last received snapshot." if snapshot else
                    "Fog monitoring data is temporarily unavailable.")
-        if snapshot is None:
+        if snapshot is None and st.session_state.get("dashboard_view") != "Evidence Coverage":
             return
+        snapshot = snapshot or {}
         stale = True
 
     observed = snapshot.get("observed_at")
@@ -744,17 +953,19 @@ def live_dashboard() -> None:
             mime="application/json",
             icon=":material/download:",
             width="stretch",
+            on_click="ignore",
         )
-    render_kpis(snapshot.get("overview", {}))
-
     selected_view = st.segmented_control(
         "Dashboard view",
-        options=["Architecture", "Scheduler", "Security", "Fog analytics"],
+        options=["Architecture", "Scheduler", "Security", "Fog analytics"] +
+                (["Evidence Coverage"] if COVERAGE_ENABLED else []),
         default="Architecture",
         selection_mode="single",
         label_visibility="collapsed",
         key="dashboard_view",
     ) or "Architecture"
+    if selected_view != "Evidence Coverage":
+        render_kpis(snapshot.get("overview", {}))
     if selected_view == "Architecture":
         st.subheader("Trust-zone architecture")
         render_architecture(snapshot.get("architecture", {}))
@@ -765,6 +976,8 @@ def live_dashboard() -> None:
         render_security(snapshot.get("security", {}))
     elif selected_view == "Fog analytics":
         render_analytics(snapshot.get("analytics", {}))
+    elif selected_view == "Evidence Coverage":
+        render_coverage()
 
 
 live_dashboard()

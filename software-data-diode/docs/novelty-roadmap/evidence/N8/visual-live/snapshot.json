@@ -1,0 +1,2527 @@
+{
+  "overview": {
+    "observed_at": "2026-10-14T15:21:36.994354+00:00",
+    "counts": {
+      "opportunities": 603,
+      "definite": 0,
+      "unknown": 603,
+      "positive": 0,
+      "negative": 0,
+      "definite_yield": 0.0,
+      "unknown_rate": 1.0,
+      "scope": "FILTERED_PERSISTED_LATEST_RULE_WINDOWS_NOT_ORACLE_ACCURACY"
+    },
+    "cost": {
+      "capsules": 0,
+      "received_evidence_bytes": 0,
+      "signed_body_bytes": 0,
+      "conflicting_capsules": 0,
+      "scope": "PERSISTED_UNIQUE_COMPLETE_CAPSULE_PART_PAYLOADS_EXCLUDES_LOST_REPEATS_AND_NETWORK_OVERHEAD"
+    },
+    "devices": [
+      {
+        "device_id": "edge-device-01",
+        "window_index": 179199126,
+        "artifact_state": "MISSING_EVIDENCE",
+        "latest_capsule_window": null,
+        "age_seconds": null,
+        "freshness": "MISSING",
+        "device_health": "NOT_ASSESSED"
+      },
+      {
+        "device_id": "edge-device-02",
+        "window_index": 179199126,
+        "artifact_state": "MISSING_EVIDENCE",
+        "latest_capsule_window": null,
+        "age_seconds": null,
+        "freshness": "MISSING",
+        "device_health": "NOT_ASSESSED"
+      },
+      {
+        "device_id": "edge-device-03",
+        "window_index": 179199126,
+        "artifact_state": "MISSING_EVIDENCE",
+        "latest_capsule_window": null,
+        "age_seconds": null,
+        "freshness": "MISSING",
+        "device_health": "NOT_ASSESSED"
+      },
+      {
+        "device_id": "edge-device-04",
+        "window_index": 179199126,
+        "artifact_state": "MISSING_EVIDENCE",
+        "latest_capsule_window": null,
+        "age_seconds": null,
+        "freshness": "MISSING",
+        "device_health": "NOT_ASSESSED"
+      },
+      {
+        "device_id": "edge-device-05",
+        "window_index": 179199126,
+        "artifact_state": "MISSING_EVIDENCE",
+        "latest_capsule_window": null,
+        "age_seconds": null,
+        "freshness": "MISSING",
+        "device_health": "NOT_ASSESSED"
+      }
+    ],
+    "sender": {
+      "reported_at": "2026-10-14T15:21:28.454146+00:00",
+      "binding": {
+        "scope": "accepted_gateway_ingress",
+        "assurance": "AUTHENTICATED_FORWARD_STATE",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd"
+      },
+      "assurance": "AUTHENTICATED_FORWARD_STATE",
+      "receipt": "NOT_OBSERVED",
+      "scope": "N8_LOCAL_GRANTS_SINCE_START",
+      "start_utc_us": 1791990898223243,
+      "bytes": {
+        "RAW": 0,
+        "STATE": 59338,
+        "scope": "N8_LOCAL_GRANTS_SINCE_START",
+        "total": 59338,
+        "EVIDENCE": 0,
+        "start_utc_us": 1791990898223243
+      },
+      "evidence_fraction": 0.0,
+      "pending_reserved_bytes": 0,
+      "pending_obligations": 0,
+      "fraction_reason": "MATCHED_LOCAL_GRANTS_INCLUDING_REPEATS_AND_MODELED_OVERHEAD"
+    },
+    "pending_fog_publications": 0,
+    "verification_outcomes": [],
+    "verification_failures": 0,
+    "outcome_scope": "ALL_PERSISTED_OUTCOMES_INCLUDING_VALID_NOT_FILTERED",
+    "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+    "contract": {
+      "contract_id": "synthetic-five-edge-v1",
+      "protocol_version": "rccd-contract-v1",
+      "purpose": "synthetic_demonstration",
+      "observation_scope": "accepted_normalized_gateway_ingress",
+      "numeric_interpretation": "finite_ieee754_binary64",
+      "time_basis": "gateway_ingress_utc_microseconds",
+      "window_seconds": 10,
+      "alignment": "unix_epoch",
+      "boundary": "start_inclusive_end_exclusive",
+      "limits": {
+        "max_devices": 16,
+        "max_conditions": 64,
+        "max_rules": 32,
+        "max_expression_depth": 8,
+        "max_expression_nodes": 127,
+        "max_datagram_payload_bytes": 1200,
+        "evidence_repetitions": 1,
+        "clock_jump_tolerance_us": 100000
+      },
+      "devices": [
+        {
+          "device_id": "edge-device-01",
+          "telemetry_type": "environmental",
+          "metrics": [
+            {
+              "path": "temperature",
+              "unit": "degC"
+            }
+          ]
+        },
+        {
+          "device_id": "edge-device-02",
+          "telemetry_type": "system",
+          "metrics": [
+            {
+              "path": "cpu_usage",
+              "unit": "percent"
+            }
+          ]
+        },
+        {
+          "device_id": "edge-device-03",
+          "telemetry_type": "network",
+          "metrics": [
+            {
+              "path": "measurements.packets_per_second",
+              "unit": "packets/s"
+            }
+          ]
+        },
+        {
+          "device_id": "edge-device-04",
+          "telemetry_type": "security",
+          "metrics": [
+            {
+              "path": "measurements.failed_logins",
+              "unit": "attempts"
+            }
+          ]
+        },
+        {
+          "device_id": "edge-device-05",
+          "telemetry_type": "industrial",
+          "metrics": [
+            {
+              "path": "measurements.vibration_mm_s",
+              "unit": "mm/s"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition_id": "environmental-hot",
+          "device_id": "edge-device-01",
+          "metric_path": "temperature",
+          "unit": "degC",
+          "predicate": "EXISTS",
+          "inequality": ">=",
+          "threshold": 38.0,
+          "k": 1,
+          "minimum_samples": 1
+        },
+        {
+          "condition_id": "resource-busy",
+          "device_id": "edge-device-02",
+          "metric_path": "cpu_usage",
+          "unit": "percent",
+          "predicate": "EXISTS",
+          "inequality": ">=",
+          "threshold": 90.0,
+          "k": 1,
+          "minimum_samples": 1
+        },
+        {
+          "condition_id": "network-spike",
+          "device_id": "edge-device-03",
+          "metric_path": "measurements.packets_per_second",
+          "unit": "packets/s",
+          "predicate": "EXISTS",
+          "inequality": ">=",
+          "threshold": 8000.0,
+          "k": 1,
+          "minimum_samples": 1
+        },
+        {
+          "condition_id": "security-failures",
+          "device_id": "edge-device-04",
+          "metric_path": "measurements.failed_logins",
+          "unit": "attempts",
+          "predicate": "EXISTS",
+          "inequality": ">=",
+          "threshold": 5.0,
+          "k": 1,
+          "minimum_samples": 1
+        },
+        {
+          "condition_id": "industrial-vibration",
+          "device_id": "edge-device-05",
+          "metric_path": "measurements.vibration_mm_s",
+          "unit": "mm/s",
+          "predicate": "EXISTS",
+          "inequality": ">=",
+          "threshold": 8.0,
+          "k": 1,
+          "minimum_samples": 1
+        },
+        {
+          "condition_id": "security-repeat",
+          "device_id": "edge-device-04",
+          "metric_path": "measurements.failed_logins",
+          "unit": "attempts",
+          "predicate": "COUNT_GE",
+          "inequality": ">=",
+          "threshold": 5.0,
+          "k": 2,
+          "minimum_samples": 1
+        }
+      ],
+      "rules": [
+        {
+          "rule_id": "environmental-threshold",
+          "expression": {
+            "kind": "ATOM",
+            "condition_id": "environmental-hot",
+            "children": []
+          }
+        },
+        {
+          "rule_id": "resource-threshold",
+          "expression": {
+            "kind": "ATOM",
+            "condition_id": "resource-busy",
+            "children": []
+          }
+        },
+        {
+          "rule_id": "network-threshold",
+          "expression": {
+            "kind": "ATOM",
+            "condition_id": "network-spike",
+            "children": []
+          }
+        },
+        {
+          "rule_id": "security-threshold",
+          "expression": {
+            "kind": "ATOM",
+            "condition_id": "security-failures",
+            "children": []
+          }
+        },
+        {
+          "rule_id": "industrial-threshold",
+          "expression": {
+            "kind": "ATOM",
+            "condition_id": "industrial-vibration",
+            "children": []
+          }
+        },
+        {
+          "rule_id": "incident-correlation",
+          "expression": {
+            "kind": "AND",
+            "condition_id": null,
+            "children": [
+              {
+                "kind": "ATOM",
+                "condition_id": "resource-busy",
+                "children": []
+              },
+              {
+                "kind": "ATOM",
+                "condition_id": "network-spike",
+                "children": []
+              },
+              {
+                "kind": "ATOM",
+                "condition_id": "security-failures",
+                "children": []
+              }
+            ]
+          }
+        },
+        {
+          "rule_id": "process-correlation",
+          "expression": {
+            "kind": "AND",
+            "condition_id": null,
+            "children": [
+              {
+                "kind": "ATOM",
+                "condition_id": "environmental-hot",
+                "children": []
+              },
+              {
+                "kind": "ATOM",
+                "condition_id": "industrial-vibration",
+                "children": []
+              }
+            ]
+          }
+        },
+        {
+          "rule_id": "process-attention",
+          "expression": {
+            "kind": "OR",
+            "condition_id": null,
+            "children": [
+              {
+                "kind": "ATOM",
+                "condition_id": "environmental-hot",
+                "children": []
+              },
+              {
+                "kind": "ATOM",
+                "condition_id": "industrial-vibration",
+                "children": []
+              }
+            ]
+          }
+        },
+        {
+          "rule_id": "repeated-security-observations",
+          "expression": {
+            "kind": "ATOM",
+            "condition_id": "security-repeat",
+            "children": []
+          }
+        }
+      ]
+    },
+    "rules": [
+      "environmental-threshold",
+      "resource-threshold",
+      "network-threshold",
+      "security-threshold",
+      "industrial-threshold",
+      "incident-correlation",
+      "process-correlation",
+      "process-attention",
+      "repeated-security-observations"
+    ],
+    "observation_scope": "accepted_normalized_gateway_ingress",
+    "assurance": "AUTHENTICATED_SUMMARY",
+    "offline_recomputation": "NOT_RUN_BY_DASHBOARD",
+    "filters": {
+      "gateway_id": null,
+      "ledger_epoch": null,
+      "contract_hash": null,
+      "rule_id": null,
+      "device_id": null,
+      "truth": null,
+      "start_window": 179198769,
+      "end_window": 179199129,
+      "limit": 25,
+      "before_window": null,
+      "before_id": null
+    },
+    "sender_scope": "LATEST_PROVISIONED_SIGNED_STATE_NOT_FILTERED_BY_RULE_OR_TIME"
+  },
+  "page": {
+    "items": [
+      {
+        "decision_id": "ff86abed-9e93-528b-95c1-c9408e359e57",
+        "window_index": 179199126,
+        "rule_id": "process-correlation",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "process-correlation",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "ff86abed-9e93-528b-95c1-c9408e359e57",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            },
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE",
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot",
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "ee06d960-f999-5a1b-93f6-51c64dcd96f1",
+        "window_index": 179199126,
+        "rule_id": "security-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "security-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-failures",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "ee06d960-f999-5a1b-93f6-51c64dcd96f1",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "security-failures": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "security-failures"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "ba48df9a-2cbf-543f-b8aa-f53229a33150",
+        "window_index": 179199126,
+        "rule_id": "resource-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "resource-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "resource-busy",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "ba48df9a-2cbf-543f-b8aa-f53229a33150",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "resource-busy": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-02": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "resource-busy"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "aa0d3a71-98c2-5150-955c-878ff2dfac95",
+        "window_index": 179199126,
+        "rule_id": "process-attention",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "process-attention",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "aa0d3a71-98c2-5150-955c-878ff2dfac95",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            },
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE",
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot",
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "8e6615ce-c23b-5327-ba2f-9826aad9236d",
+        "window_index": 179199126,
+        "rule_id": "industrial-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "industrial-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "8e6615ce-c23b-5327-ba2f-9826aad9236d",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "713bcc33-450d-5e72-b000-ecc5895e726f",
+        "window_index": 179199126,
+        "rule_id": "network-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "network-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "network-spike",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "713bcc33-450d-5e72-b000-ecc5895e726f",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-03"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-03": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "network-spike"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "6c9f1540-7be2-5641-b3c9-b4d69e2924ce",
+        "window_index": 179199126,
+        "rule_id": "repeated-security-observations",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "repeated-security-observations",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-repeat",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "6c9f1540-7be2-5641-b3c9-b4d69e2924ce",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "security-repeat": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "security-repeat"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "4dedc790-7a2b-52bf-88f5-fdd83ba5ff40",
+        "window_index": 179199126,
+        "rule_id": "environmental-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "environmental-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "4dedc790-7a2b-52bf-88f5-fdd83ba5ff40",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "1581b5a2-8cc9-5fea-b806-bcf634036ed9",
+        "window_index": 179199126,
+        "rule_id": "incident-correlation",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "incident-correlation",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "resource-busy",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "network-spike",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-failures",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "1581b5a2-8cc9-5fea-b806-bcf634036ed9",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199126,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02",
+            "edge-device-03",
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 0,
+              "upper": null
+            },
+            "resource-busy": {
+              "lower": 0,
+              "upper": null
+            },
+            "security-failures": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-02": "MISSING_EVIDENCE",
+            "edge-device-03": "MISSING_EVIDENCE",
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "resource-busy",
+            "network-spike",
+            "security-failures"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:30.042078+00:00"
+      },
+      {
+        "decision_id": "e9e77f39-ddaa-57fe-8dbe-1bde2f4d13b1",
+        "window_index": 179199125,
+        "rule_id": "security-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "security-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-failures",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "e9e77f39-ddaa-57fe-8dbe-1bde2f4d13b1",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "security-failures": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "security-failures"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "b0683eb9-0312-5d8f-a70d-b5678b3209af",
+        "window_index": 179199125,
+        "rule_id": "process-attention",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "process-attention",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "b0683eb9-0312-5d8f-a70d-b5678b3209af",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            },
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE",
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot",
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "b00d708f-0056-5004-ba29-bea65a03f88e",
+        "window_index": 179199125,
+        "rule_id": "resource-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "resource-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "resource-busy",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "b00d708f-0056-5004-ba29-bea65a03f88e",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "resource-busy": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-02": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "resource-busy"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "9ea28564-18cf-5a1a-ab32-5651760018e4",
+        "window_index": 179199125,
+        "rule_id": "process-correlation",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "process-correlation",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "9ea28564-18cf-5a1a-ab32-5651760018e4",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            },
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE",
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot",
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "781e1490-9f3e-5f8d-bfbc-679a6361bba0",
+        "window_index": 179199125,
+        "rule_id": "incident-correlation",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "incident-correlation",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "resource-busy",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "network-spike",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-failures",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "781e1490-9f3e-5f8d-bfbc-679a6361bba0",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02",
+            "edge-device-03",
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 0,
+              "upper": null
+            },
+            "resource-busy": {
+              "lower": 0,
+              "upper": null
+            },
+            "security-failures": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-02": "MISSING_EVIDENCE",
+            "edge-device-03": "MISSING_EVIDENCE",
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "resource-busy",
+            "network-spike",
+            "security-failures"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "6353a5f7-17fa-5c0b-87c2-3caa757d616c",
+        "window_index": 179199125,
+        "rule_id": "environmental-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "environmental-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "6353a5f7-17fa-5c0b-87c2-3caa757d616c",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "57adbc5b-05ef-53d0-aee5-8af02be106e1",
+        "window_index": 179199125,
+        "rule_id": "repeated-security-observations",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "repeated-security-observations",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-repeat",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "57adbc5b-05ef-53d0-aee5-8af02be106e1",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "security-repeat": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "security-repeat"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "551f0a48-7640-5bcc-9a2d-9e5aaf1300e1",
+        "window_index": 179199125,
+        "rule_id": "industrial-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "industrial-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "551f0a48-7640-5bcc-9a2d-9e5aaf1300e1",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "38381076-a358-55df-b316-b68a561b2105",
+        "window_index": 179199125,
+        "rule_id": "network-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "network-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "network-spike",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "38381076-a358-55df-b316-b68a561b2105",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199125,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-03"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-03": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "network-spike"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:20.047459+00:00"
+      },
+      {
+        "decision_id": "f85958ac-dae9-5763-8dbb-590529b9f274",
+        "window_index": 179199124,
+        "rule_id": "resource-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "resource-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "resource-busy",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "f85958ac-dae9-5763-8dbb-590529b9f274",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "resource-busy": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-02": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "resource-busy"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      },
+      {
+        "decision_id": "e53ca8e0-5c66-5d16-984f-761cb6868ea8",
+        "window_index": 179199124,
+        "rule_id": "network-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "network-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "network-spike",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "e53ca8e0-5c66-5d16-984f-761cb6868ea8",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-03"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-03": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "network-spike"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      },
+      {
+        "decision_id": "d2e60065-5998-5da4-b488-fc570891ec79",
+        "window_index": 179199124,
+        "rule_id": "security-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "security-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-failures",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "d2e60065-5998-5da4-b488-fc570891ec79",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "security-failures": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "security-failures"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      },
+      {
+        "decision_id": "c3a4c5e4-715a-5a60-911b-a2f3ff8dcc38",
+        "window_index": 179199124,
+        "rule_id": "process-attention",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "process-attention",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "c3a4c5e4-715a-5a60-911b-a2f3ff8dcc38",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            },
+            "industrial-vibration": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE",
+            "edge-device-05": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot",
+            "industrial-vibration"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      },
+      {
+        "decision_id": "8b83318f-a87a-5935-abe8-70b39e73bff8",
+        "window_index": 179199124,
+        "rule_id": "repeated-security-observations",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "repeated-security-observations",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-repeat",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "8b83318f-a87a-5935-abe8-70b39e73bff8",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "security-repeat": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "security-repeat"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      },
+      {
+        "decision_id": "56b78aa2-aeed-595d-868d-9dc53c10d7a3",
+        "window_index": 179199124,
+        "rule_id": "incident-correlation",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "incident-correlation",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "resource-busy",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "network-spike",
+              "coverage_complete": false
+            },
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "security-failures",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "56b78aa2-aeed-595d-868d-9dc53c10d7a3",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02",
+            "edge-device-03",
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 0,
+              "upper": null
+            },
+            "resource-busy": {
+              "lower": 0,
+              "upper": null
+            },
+            "security-failures": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-02": "MISSING_EVIDENCE",
+            "edge-device-03": "MISSING_EVIDENCE",
+            "edge-device-04": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "resource-busy",
+            "network-spike",
+            "security-failures"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      },
+      {
+        "decision_id": "366b6bbd-2492-5da7-a1d0-35983d4d17f4",
+        "window_index": 179199124,
+        "rule_id": "environmental-threshold",
+        "verdict": "UNKNOWN",
+        "revision": 1,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "gateway_id": "coverage-gateway",
+        "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ],
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "UNKNOWN",
+          "rule_id": "environmental-threshold",
+          "conditions": [
+            {
+              "truth": "UNKNOWN",
+              "reason": "MISSING_FACTS",
+              "condition_id": "environmental-hot",
+              "coverage_complete": false
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "366b6bbd-2492-5da7-a1d0-35983d4d17f4",
+          "ledger_epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+          "reason_codes": [
+            "MISSING_EVIDENCE",
+            "MISSING_FACTS"
+          ],
+          "window_index": 179199124,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "DEGRADED",
+            "devices": {
+              "edge-device-01": "MISSING_EVIDENCE",
+              "edge-device-02": "MISSING_EVIDENCE",
+              "edge-device-03": "MISSING_EVIDENCE",
+              "edge-device-04": "MISSING_EVIDENCE",
+              "edge-device-05": "MISSING_EVIDENCE"
+            },
+            "complete": false,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": false
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 0,
+              "upper": null
+            }
+          },
+          "coverage_complete": false,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [],
+          "rule_device_status": {
+            "edge-device-01": "MISSING_EVIDENCE"
+          },
+          "unknown_conditions": [
+            "environmental-hot"
+          ],
+          "verification_status": "PARTIAL_OR_MISSING",
+          "supporting_artifacts": [],
+          "artifact_verification": "NOT_PERFORMED",
+          "supporting_conditions": [],
+          "checked_original_witnesses": []
+        },
+        "updated_at": "2026-10-14T15:21:10.096619+00:00"
+      }
+    ],
+    "next_cursor": {
+      "before_window": 179199124,
+      "before_id": "366b6bbd-2492-5da7-a1d0-35983d4d17f4"
+    },
+    "scope": "LATEST_REVISION_PER_RULE_WINDOW",
+    "limit": 25,
+    "filters": {
+      "gateway_id": null,
+      "ledger_epoch": null,
+      "contract_hash": null,
+      "rule_id": null,
+      "device_id": null,
+      "truth": null,
+      "start_window": 179198769,
+      "end_window": 179199129,
+      "limit": 25,
+      "before_window": null,
+      "before_id": null
+    }
+  },
+  "filters": {
+    "start_window": 179198769,
+    "end_window": 179199129,
+    "limit": 25
+  }
+}

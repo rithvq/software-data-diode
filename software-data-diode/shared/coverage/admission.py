@@ -94,6 +94,12 @@ class CoupledAdmission:
                             raise LedgerRefused("FRESH_RESEARCH_TRANSPORT_STATE_REQUIRED")
                         ledger.db.execute("INSERT INTO metadata VALUES ('research_transport',?)", (profile,))
                         ledger.db.execute("INSERT INTO n4_state VALUES ('forward_state_sequence','0')")
+                    if not ledger.db.execute("SELECT 1 FROM n4_state WHERE key='forward_byte_accounting'").fetchone():
+                        ledger.db.execute("INSERT INTO n4_state VALUES ('forward_byte_accounting',?)",
+                            (canonical_bytes({"scope": "N8_LOCAL_GRANTS_SINCE_START",
+                                "start_utc_us": utc_microseconds(ledger.clock.utc_now()),
+                                "total": 0, "RAW": 0, "EVIDENCE": 0, "STATE": 0}),))
+                    self._forward_accounting()
                 elif transport:
                     raise LedgerRefused("RESEARCH_TRANSPORT_REQUIRED_FOR_RECOVERY")
                 self.engine = self._load_engine()
@@ -498,6 +504,13 @@ class CoupledAdmission:
                     result = None
                     if lane:
                         row, frame, cost = heads[lane]
+                        if self.framer is not None:
+                            accounting = self._forward_accounting()
+                            if accounting["total"]+cost > 2**63-1:
+                                raise LedgerRefused("BYTE_ACCOUNTING_EXHAUSTED")
+                            accounting["total"] += cost
+                            accounting[row["kind"]] += cost
+                            self._set_state("forward_byte_accounting", canonical_bytes(accounting))
                         token = str(uuid4())
                         ledger.db.execute("INSERT INTO n4_inflight VALUES (1,?,?,?,?)", (token, row["id"], row["cursor"], cost))
                         result = FrameLease(lease_id=token, work_id=row["id"], lane=lane, kind=row["kind"],
@@ -600,6 +613,22 @@ class CoupledAdmission:
                 "outbox_items": db.execute("SELECT COUNT(*) FROM n4_outbox").fetchone()[0],
                 "outbox_bytes": db.execute("SELECT COALESCE(SUM(length(body)),0) FROM n4_outbox").fetchone()[0],
                 "reserved_wire_bytes": db.execute("SELECT COALESCE(SUM(reserved_bytes),0) FROM windows").fetchone()[0],
+                "pending_evidence_obligations": db.execute("SELECT COUNT(*) FROM windows WHERE reserved_bytes>0").fetchone()[0],
                 "unsupported_scopes": db.execute("SELECT COUNT(*) FROM windows WHERE obligation='UNSUPPORTED'").fetchone()[0],
                 "refused_unaccepted": int(self._state("refused")), "local_lease_unresolved": bool(db.execute("SELECT 1 FROM n4_inflight").fetchone()),
-                "modeled_scheduled_bytes": self._service().total_bytes, "confirmed_receipt": "NOT_OBSERVED"}
+                "modeled_scheduled_bytes": self._service().total_bytes, "confirmed_receipt": "NOT_OBSERVED",
+                "forward_byte_accounting": self._forward_accounting() if self.framer else None}
+
+    def _forward_accounting(self):
+        try:
+            result = strict_json(self._state("forward_byte_accounting"))
+            if (set(result) != {"scope", "start_utc_us", "total", "RAW", "EVIDENCE", "STATE"}
+                    or result["scope"] != "N8_LOCAL_GRANTS_SINCE_START"
+                    or type(result["start_utc_us"]) is not int
+                    or any(type(result[k]) is not int or not 0 <= result[k] <= 2**63-1
+                           for k in ("total", "RAW", "EVIDENCE", "STATE"))
+                    or sum(result[k] for k in ("RAW", "EVIDENCE", "STATE")) != result["total"]):
+                raise ValueError("invalid accounting")
+            return result
+        except (ValueError, TypeError, KeyError) as exc:
+            raise LedgerRefused("CORRUPT_FORWARD_BYTE_ACCOUNTING") from exc

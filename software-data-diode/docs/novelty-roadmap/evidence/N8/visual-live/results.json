@@ -1,0 +1,77 @@
+{
+  "mode": "LIVE_COVERAGE_DOCKER_POSTGRES",
+  "checks": [
+    {
+      "check": "live unknown is explained",
+      "passed": true
+    },
+    {
+      "check": "live fragment reruns do not dim metrics",
+      "passed": true
+    },
+    {
+      "check": "selection survives live timer",
+      "passed": true
+    },
+    {
+      "check": "live 5-second cadence updates data",
+      "passed": true
+    },
+    {
+      "check": "live pause cancels previous timer",
+      "passed": true
+    },
+    {
+      "check": "live manual refresh while paused",
+      "passed": true
+    },
+    {
+      "check": "live JSON includes actual PostgreSQL decision page",
+      "passed": true
+    },
+    {
+      "check": "live desktop no document overflow",
+      "passed": true
+    },
+    {
+      "check": "real API outage keeps pinned decision",
+      "passed": true
+    },
+    {
+      "check": "real API outage keeps evidence explanation",
+      "passed": true
+    },
+    {
+      "check": "manual recovery without losing selected window",
+      "passed": true
+    },
+    {
+      "check": "live mobile no document overflow",
+      "passed": true
+    }
+  ],
+  "opacity_samples": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "viewports": [
+    [
+      1440,
+      1100
+    ],
+    [
+      390,
+      844
+    ]
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "mode": "REAL_POSTGRES_TEMPORARY_SCHEMA",
+  "checks": [
+    {
+      "check": "all additive migrations run twice",
+      "passed": true
+    },
+    {
+      "check": "historical capsule byte total equals received unique parts",
+      "passed": true
+    },
+    {
+      "check": "no-input evidence is UNKNOWN not false safety",
+      "passed": true
+    },
+    {
+      "check": "unmatched sender fraction unavailable",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "bounded page",
+      "passed": true
+    },
+    {
+      "check": "keyset page has no duplicates",
+      "passed": true
+    },
+    {
+      "check": "all latest rule-window identities traversed",
+      "passed": true
+    },
+    {
+      "check": "rule/device dependency filter",
+      "passed": true
+    },
+    {
+      "check": "exact decision references and revision history",
+      "passed": true
+    },
+    {
+      "check": "signed body and complete part sizes available",
+      "passed": true
+    },
+    {
+      "check": "empty witness page cannot imply full recomputation",
+      "passed": true
+    },
+    {
+      "check": "unknown identity returns no record",
+      "passed": true
+    },
+    {
+      "check": "conflict visible without overwriting original",
+      "passed": true
+    },
+    {
+      "check": "TRUE resource verdict read from actual database",
+      "passed": true
+    },
+    {
+      "check": "TRUE supporting capsule is exact",
+      "passed": true
+    },
+    {
+      "check": "TRUE filtered byte totals do not multiply rules",
+      "passed": true
+    },
+    {
+      "check": "actual canonical witnesses paginate without duplication",
+      "passed": true
+    },
+    {
+      "check": "witness revisions are inspectable",
+      "passed": true
+    },
+    {
+      "check": "FALSE resource verdict read from actual database",
+      "passed": true
+    },
+    {
+      "check": "FALSE supporting capsule is exact",
+      "passed": true
+    },
+    {
+      "check": "FALSE filtered byte totals do not multiply rules",
+      "passed": true
+    }
+  ],
+  "source": "ephemeral signed no-input/positive/negative scopes; no production rows changed"
+}

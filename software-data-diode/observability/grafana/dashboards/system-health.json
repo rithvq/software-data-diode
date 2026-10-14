@@ -9,6 +9,12 @@
   "panels": [
     {"id": 1, "type": "stat", "title": "Fog Services", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "service_health", "legendFormat": "{{service}}"}], "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}},
     {"id": 2, "type": "stat", "title": "Edge Transport Services", "datasource": {"type": "prometheus", "uid": "prometheus-edge"}, "targets": [{"expr": "service_health", "legendFormat": "{{service}}"}], "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}},
-    {"id": 3, "type": "timeseries", "title": "Scrape Availability", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "up", "legendFormat": "{{job}}"}], "gridPos": {"h": 9, "w": 24, "x": 0, "y": 8}}
+    {"id": 3, "type": "timeseries", "title": "Scrape Availability", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "up", "legendFormat": "{{job}}"}], "gridPos": {"h": 9, "w": 24, "x": 0, "y": 8}},
+    {"id": 4, "type": "stat", "title": "RCCD Fog Query Available", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "coverage_metrics_available"}], "gridPos": {"h": 6, "w": 6, "x": 0, "y": 17}},
+    {"id": 5, "type": "stat", "title": "Unique Evidence Part Bytes (Fog Stored)", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "coverage_evidence_received_bytes"}], "gridPos": {"h": 6, "w": 6, "x": 6, "y": 17}},
+    {"id": 6, "type": "stat", "title": "Evidence / Modeled Local Grants (Sender Scope)", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "coverage_evidence_forward_fraction"}], "fieldConfig": {"defaults": {"unit": "percentunit"}}, "gridPos": {"h": 6, "w": 6, "x": 12, "y": 17}},
+    {"id": 7, "type": "stat", "title": "Sender State Age (Stale Values Are Not Live)", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "coverage_sender_state_age_seconds"}], "fieldConfig": {"defaults": {"unit": "s"}}, "gridPos": {"h": 6, "w": 6, "x": 18, "y": 17}},
+    {"id": 8, "type": "timeseries", "title": "Latest Rule-Window Decisions (Historical Totals)", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "coverage_rule_windows", "legendFormat": "{{truth}}"}], "gridPos": {"h": 8, "w": 12, "x": 0, "y": 23}},
+    {"id": 9, "type": "timeseries", "title": "Pending Obligations / Verification Failures", "datasource": {"type": "prometheus", "uid": "prometheus-fog"}, "targets": [{"expr": "coverage_pending_obligations", "legendFormat": "Sender obligations"}, {"expr": "coverage_verification_failures", "legendFormat": "Historical failures"}], "gridPos": {"h": 8, "w": 12, "x": 12, "y": 23}}
   ]
 }

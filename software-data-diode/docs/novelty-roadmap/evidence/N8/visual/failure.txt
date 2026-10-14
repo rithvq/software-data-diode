@@ -1,0 +1,210 @@
+keyboard_double_arrow_left
+Diode Observatory
+FOG CONTROL PLANE
+Live monitoring
+Fog-side data only
+
+Auto refresh
+
+Auto-refresh cadence
+
+3s
+
+5s
+
+10s
+
+30s
+
+refresh
+
+Refresh now
+
+hub
+
+Connection
+
+keyboard_double_arrow_right
+Deploy
+
+Fog monitoring is unavailable. Showing the last received snapshot.
+
+FOG OBSERVABILITY
+Data Diode Observatory
+Stale
+|
+Paused
+|
+Updated 14:55:30 UTC
+download
+
+Snapshot
+
+Architecture
+
+Scheduler
+
+Security
+
+Fog analytics
+
+Evidence Coverage
+
+Evidence Coverage
+
+Accepted normalized Gateway ingress only. Aligned 10-second ingress windows; synthetic rule thresholds.
+
+Rule
+
+Device
+
+Time range
+
+keyboard_arrow_right
+
+Scope filters
+
+Decision status
+
+All
+
+TRUE
+
+FALSE
+
+UNKNOWN
+
+Coverage API timeout/unavailable. Last good data retained; timestamps are unchanged.
+
+Evidence received
+
+1,200 B
+
+Evidence / forward bytes
+
+Unavailable
+
+Definite-decision yield
+
+0.0%
+
+UNKNOWN rate
+
+100.0%
+
+Fog unique complete parts, filtered historical totals. 1 stored rule windows; latest revisions, not measured accuracy.
+
+keyboard_arrow_right
+
+Byte accounting and assurance
+
+Device observation coverage
+
+Coverage and freshness are independent of general device health and rule truth.
+
+keyboard_arrow_right
+
+Verification outcomes and pending publication
+
+Coverage API timeout/unavailable. Last good data retained; timestamps are unchanged.
+
+Rule windows
+chevron_left
+
+Previous
+
+chevron_right
+
+Next
+
+download
+
+JSON
+
+download
+
+CSV
+
+Inspect rule window
+
+History before revision (0 = latest)
+
+Coverage API timeout/unavailable. Last good data retained; timestamps are unchanged.
+
+UNKNOWN: Insufficient, partial, expired or conflicting evidence; no definite result.
+
+Reasons: MISSING_EVIDENCE
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+keyboard_arrow_down
+
+Bounds, supporting references and alert state
+
+{
+"observation_scope":NULL
+"time_basis":NULL
+"condition_bounds":NULL
+"coverage_health":{
+"state":"DEGRADED"
+}
+"supporting_artifacts":[
+0:"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+]
+"examined_artifacts":NULL
+"checked_original_witnesses":NULL
+"verification_status":NULL
+}
+{
+"alerts":[
+0:{
+"active":false
+}
+]
+"missing_support":[]
+}
+Original versus raw disposition
+
+Per signed capsule, not summed across conflicting variants. Predicate representation can be unresolved; raw selection/attempts do not establish delivery. Accounting is frozen at sealing.
+
+Capsule
+
+Coverage API timeout/unavailable. Last good data retained; timestamps are unchanged.
+
+keyboard_arrow_right
+
+Signed capsule, verification and witness references
+
+download
+
+JSON
+
+Witness cursor (after ingress sequence)
+
+Coverage API timeout/unavailable. Last good data retained; timestamps are unchanged.
+
+Checked disclosed originals only; not independent recomputation of every withheld input.
+
+{
+"items":[]
+"next_sequence":NULL
+"observed_at":"2026-10-14T14:55:30.972939+00:00"
+}
+download
+
+JSON
+
+download
+
+CSV
+
+keyboard_arrow_right
+
+Verdict revision history
+
+download
+
+JSON
+
+download
+
+CSV

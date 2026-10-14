@@ -280,7 +280,9 @@ class FogUDP(IngressRuntime):
                     else:
                         from datetime import datetime, timedelta, timezone
                         snapshot = ObservabilitySnapshot(timestamp=datetime(1970,1,1,tzinfo=timezone.utc)+timedelta(microseconds=body["timestamp_us"]),
-                            service="edge-gateway", metrics=body["metrics"], labels={"scope": "accepted_gateway_ingress", "assurance": "AUTHENTICATED_FORWARD_STATE"})
+                            service="edge-gateway", metrics=body["metrics"], labels={"scope": "accepted_gateway_ingress",
+                                "assurance": "AUTHENTICATED_FORWARD_STATE", "gateway_id": self.framer.profile.gateway_id,
+                                "ledger_epoch": self.framer.profile.ledger_epoch, "contract_hash": self.framer.profile.contract_hash})
                         await self._offload(self.repository.save_observability_snapshot, snapshot)
                     await self._offload(self.store.completed, row["kind"], row["id"])
             except Exception:

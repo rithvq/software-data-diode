@@ -1,6 +1,6 @@
 # RCCD technical specification
 
-Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5 transport, N6 Fog persistence and N7 coverage-aware rules/alerts implemented. Research mode remains disabled in the baseline deployment. N8-N11 remain proposed.
+Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N8 implemented and verified. N8 has local and real PostgreSQL/API/scrape/network/browser evidence. Research mode remains disabled in the baseline deployment. N9-N11 remain proposed.
 Version: roadmap-1 + N0-contract-v1. Date: 2026-10-13.
 The normative v1 decisions are in [N0 contract freeze](reports/N0-contract-v1.md).
 N0 adds baseline evidence only. N1 adds pure contracts and semantics. N2 adds a ledger-only opt-in path, not a coverage pipeline. See [N2 scope and recovery limits](reports/N2.md).
@@ -8,6 +8,7 @@ N3 adds separate signed artifacts, offline recomputation and an optional Edge-lo
 N5 adds isolated UDP deployment, charged signed raw/state/evidence parts and bounded Fog replay/reassembly, with local no-reply/outage evidence. See [N5 report](reports/N5.md) and [transport contract](reports/N5-transport-v1.md). It records N4's missing report and does not implement N6 PostgreSQL verdict persistence.
 N6 adds typed authenticated-summary verification, bounded Fog evidence spooling, additive PostgreSQL persistence, conflict quarantine and transactional publication. See [N6 report](reports/N6.md). It does not execute coverage rules, activate received contract transitions or remove N4 retention limits.
 N7 integrates N1 semantics with signed persisted facts, checked original-witness references, revision history and idempotent/cooldown-controlled Alert Engine delivery. See [N7 report](reports/N7.md). Observation coverage remains independent of rule truth. Legacy received-payload analytics remains a named baseline; N8 visualization and N4 archival/retirement are not implemented here.
+N8 adds opt-in Fog-persistence queries, bounded window/capsule/witness inspection, stable fragment controls and scope-specific metrics. See [N8 report](reports/N8.md) for local and real-deployment evidence. Sender grant accounting starts explicitly at N8 activation; it does not establish receipt. N4 archival/retirement remains outside N8.
 
 ## 1. Main mechanism
 

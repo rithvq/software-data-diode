@@ -1,0 +1,65 @@
+{
+  "mode": "SYNTHETIC_UI_FIXTURE_NOT_LIVE_POSTGRES",
+  "checks": [
+    {
+      "check": "desktop no horizontal document overflow",
+      "passed": true
+    },
+    {
+      "check": "readability unchanged across timed reruns",
+      "passed": true
+    },
+    {
+      "check": "cadence selection reflected",
+      "passed": true
+    },
+    {
+      "check": "pause cancels the previous timer",
+      "passed": true
+    },
+    {
+      "check": "manual refresh while paused",
+      "passed": true
+    },
+    {
+      "check": "JSON download includes page and sender scope",
+      "passed": true
+    },
+    {
+      "check": "timeout keeps decision inspection readable",
+      "passed": true
+    },
+    {
+      "check": "mobile no horizontal document overflow",
+      "passed": true
+    },
+    {
+      "check": "mobile retains readable result",
+      "passed": true
+    }
+  ],
+  "opacity_samples": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "viewports": [
+    [
+      1440,
+      1100
+    ],
+    [
+      390,
+      844
+    ]
+  ]
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="58" time="8.533" timestamp="2026-10-14T20:05:35.932299+05:30" hostname="LAPTOP-TL6S4C5G"><testcase classname="tests.test_coverage_dashboard" name="test_coverage_controls_pause_manual_timeout_and_downloads" time="1.495"><failure message="ValueError: 'incident-correlation' is not in list">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x0000024293508C50&gt;
+
+    def test_coverage_controls_pause_manual_timeout_and_downloads(monkeypatch):
+        documents, calls = fixture_documents(), []
+        get = Mock(side_effect=responses(documents, calls))
+        monkeypatch.setattr(requests, "get", get)
+        app = AppTest.from_file(str(APP), default_timeout=20).run()
+        app.button_group(key="dashboard_view").set_value("Evidence Coverage").run()
+        assert not app.exception
+        assert app.session_state["coverage_selected"] == IDENTITY
+        assert any("NOT RUN" in e.value for e in app.markdown)
+        downloads = app.get("download_button")
+        assert len(downloads) &gt;= 6
+        assert any(e.proto.url for e in downloads)
+&gt;       app.selectbox(key="coverage_rule").select("incident-correlation").run()
+
+tests\test_coverage_dashboard.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\streamlit\testing\v1\element_tree.py:194: in run
+    return self.root.run(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\streamlit\testing\v1\element_tree.py:2655: in run
+    widget_states = self.get_widget_states()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\streamlit\testing\v1\element_tree.py:2638: in get_widget_states
+    w = get_widget_state(node)
+        ^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\streamlit\testing\v1\element_tree.py:2581: in get_widget_state
+    return node._widget_state
+           ^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\streamlit\testing\v1\element_tree.py:1623: in _widget_state
+    if self.index is not None and len(self.options) &gt; 0:
+       ^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = Selectbox(key='coverage_rule', _value='incident-correlation', label='Rule', options=['All'])
+
+    @property
+    def index(self) -&gt; int | None:
+        """The index of the current selection. (int)"""  # noqa: D400
+        if self.value is None:
+            return None
+    
+        if len(self.options) == 0:
+            return 0
+        formatted_value = _format_value_for_widget(self.format_func, self.value)
+&gt;       return self.options.index(formatted_value)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ValueError: 'incident-correlation' is not in list
+
+.venv\Lib\site-packages\streamlit\testing\v1\element_tree.py:1584: ValueError</failure></testcase><testcase classname="tests.test_coverage_dashboard" name="test_empty_results_and_large_paginated_results" time="0.664" /><testcase classname="tests.test_coverage_dashboard" name="test_api_bounds_disabled_missing_timeout_and_scrape" time="0.224" /><testcase classname="tests.test_coverage_dashboard" name="test_keyset_query_parameterization_and_witness_bounds" time="0.001"><failure message="AttributeError: __enter__">def test_keyset_query_parameterization_and_witness_bounds():
+        query = CoverageQuery(rule_id="x", device_id="edge-01", limit=2, before_window=50, before_id=UUID(IDENTITY))
+        where, params = predicate(query, page=True)
+        assert "edge-01" not in where and "edge-01" in params
+        assert "&lt;(%s,%s)" in where
+        records = [{"decision_id": UUID(int=n), "window_index": n} for n in (49, 48, 47)]
+        connection = Mock()
+&gt;       cursor = connection.cursor.return_value.__enter__.return_value
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_coverage_dashboard.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;Mock name='mock.cursor()' id='2486658734160'&gt;, name = '__enter__'
+
+    def __getattr__(self, name):
+        if name in {'_mock_methods', '_mock_unsafe'}:
+            raise AttributeError(name)
+        elif self._mock_methods is not None:
+            if name not in self._mock_methods or name in _all_magics:
+                raise AttributeError("Mock object has no attribute %r" % name)
+        elif _is_magic(name):
+&gt;           raise AttributeError(name)
+E           AttributeError: __enter__
+
+C:\Program Files\Python312\Lib\unittest\mock.py:660: AttributeError</failure></testcase><testcase classname="tests.test_coverage_dashboard" name="test_unmatched_byte_fraction_is_unavailable[None]" time="0.001" /><testcase classname="tests.test_coverage_dashboard" name="test_unmatched_byte_fraction_is_unavailable[bad1]" time="0.000" /><testcase classname="tests.test_coverage_dashboard" name="test_unmatched_byte_fraction_is_unavailable[bad2]" time="0.000" /><testcase classname="tests.test_coverage_dashboard" name="test_unmatched_byte_fraction_is_unavailable[bad3]" time="0.000" /><testcase classname="tests.test_coverage_dashboard" name="test_matched_byte_scopes_and_fixed_label_metrics" time="0.001" /><testcase classname="tests.test_coverage_dashboard" name="test_read_only_fog_wiring" time="0.001" /><testcase classname="tests.test_dashboard" name="test_dashboard_views_filters_and_refresh_controls" time="0.898" /><testcase classname="tests.test_dashboard" name="test_dashboard_retains_snapshot_during_outage" time="0.278" /><testcase classname="tests.test_dashboard" name="test_dashboard_initial_outage_does_not_crash" time="0.241" /><testcase classname="tests.test_monitoring_store" name="test_audit_verification_runs_in_background_and_is_cached" time="0.006" /><testcase classname="tests.test_monitoring_store" name="test_monitoring_api_offloads_blocking_store_calls" time="0.001" /><testcase classname="tests.test_coverage_rules" name="test_positive_partial_negative_complete_and_coverage_not_global" time="0.023" /><testcase classname="tests.test_coverage_rules" name="test_empty_missing_no_input_and_clock_uncertainty" time="0.012" /><testcase classname="tests.test_coverage_rules" name="test_count_lower_upper_missing_metrics_and_original_not_double_counted" time="0.025" /><testcase classname="tests.test_coverage_rules" name="test_correlation_real_paths_quantifier_and_different_windows" time="0.021" /><testcase classname="tests.test_coverage_rules" name="test_conflicting_scope_and_gap_are_distinct" time="0.013" /><testcase classname="tests.test_coverage_rules" name="test_contract_epoch_device_and_record_mismatch_never_supply_facts" time="0.012" /><testcase classname="tests.test_coverage_rules" name="test_unrelated_disclosure_cannot_authenticate_an_original_witness" time="0.009" /><testcase classname="tests.test_coverage_rules" name="test_exhaustive_finite_scoped_decisions_against_independent_oracle" time="0.325" /><testcase classname="tests.test_coverage_rules" name="test_exhaustive_count_traces_and_partial_observation_against_oracle" time="0.360" /><testcase classname="tests.test_coverage_rules" name="test_monitor_policy_validation_and_alert_revision_request" time="0.001" /><testcase classname="tests.test_coverage_rules" name="test_alert_engine_revision_delivery_is_opt_in_off_loop_and_durable" time="0.014" /><testcase classname="tests.test_coverage_rules" name="test_readonly_rule_history_query_is_fog_local" time="0.016" /><testcase classname="tests.test_coverage_rules" name="test_boundary_uses_ingress_not_original_source_timestamp" time="0.011" /><testcase classname="tests.test_coverage_rules" name="test_exhaustive_cross_device_correlation_against_full_ingress_oracle" time="0.627" /><testcase classname="tests.test_coverage_rules" name="test_decision_identity_and_supporting_basis_stay_stable" time="0.015" /><testcase classname="tests.test_coverage_transport" name="test_binary_frame_header_exact_cost_and_reverse_reassembly" time="0.004" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[0]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[4]" time="0.002" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[20]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[52]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[54]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[56]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[60]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[64]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[127]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[128]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_all_header_meaning_signature_and_chunk_mutations_rejected[-1]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_epoch_signature_binding_prevents_unapproved_epoch" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_partial_expiry_capacity_and_oversize_never_request_missing_parts" time="0.002" /><testcase classname="tests.test_coverage_transport" name="test_seeded_faults_reproducible_bounded_and_missing_parts_stay_missing" time="0.002" /><testcase classname="tests.test_coverage_transport" name="test_reorder_duplicates_restart_stale_window_and_retired_epoch" time="0.056" /><testcase classname="tests.test_coverage_transport" name="test_replay_capacity_rolls_back_highwater_and_no_reset_of_anchored_store" time="0.203" /><testcase classname="tests.test_coverage_transport" name="test_empty_or_aging_forward_state_does_not_certify_rule_coverage" time="0.044" /><testcase classname="tests.test_coverage_transport" name="test_sequential_clock_sampling_at_boundary_defers_not_halts[True]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_sequential_clock_sampling_at_boundary_defers_not_halts[False]" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_budgeted_immutable_raw_state_capsules_and_recovery" time="1.224" /><testcase classname="tests.test_coverage_transport" name="test_extra_state_cost_rejects_underfunded_research_startup" time="0.025" /><testcase classname="tests.test_coverage_transport" name="test_receive_queue_is_bounded_and_has_no_reply_api" time="0.002" /><testcase classname="tests.test_coverage_transport" name="test_real_loopback_receiver_emits_no_udp_application_response" time="0.060" /><testcase classname="tests.test_coverage_transport" name="test_udp_sender_unavailable_destination_attempts_do_not_wait_or_receive" time="0.001" /><testcase classname="tests.test_coverage_transport" name="test_diode_udp_readiness_never_queries_fog_http" time="0.021" /><testcase classname="tests.test_coverage_transport" name="test_profile_provisioning_preserves_epoch_and_device_counters" time="0.073" /><testcase classname="tests.test_coverage_transport" name="test_research_compose_keeps_ledger_private_and_control_paths_disabled" time="0.040" /></testsuite></testsuites>

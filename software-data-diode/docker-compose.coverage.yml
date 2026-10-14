@@ -115,8 +115,15 @@ services:
       COVERAGE_ALERTS_ENABLED: "true"
   monitoring-api:
     profiles: !override [coverage]
+    environment:
+      COVERAGE_DASHBOARD_ENABLED: "true"
+      COVERAGE_CONTRACT_PATH: /app/config/rule_coverage.json
+    volumes: !override
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
   dashboard:
     profiles: !override [coverage]
+    environment:
+      DASHBOARD_COVERAGE_ENABLED: "true"
     ports: !override ["127.0.0.1:38501:8501"]
 
   prometheus-edge:

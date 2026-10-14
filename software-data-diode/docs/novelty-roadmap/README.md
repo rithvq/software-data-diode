@@ -1,7 +1,7 @@
 # Local novelty development roadmap
 
 Prepared: 2026-10-13 (Asia/Calcutta).
-Status: N0-N3 reported complete; N4 code verified but its report is missing. N5 transport, N6 Fog persistence and N7 coverage-aware rules/alerts are implemented and verified; N8-N11 remain planned. Research mode remains opt-in and separate from HTTP. See N5-N7 for finite-retention, evidence and reporting limits.
+Status: N0-N3 reported complete; N4 code verified but its report is missing. N5-N8 are implemented and verified, including N8 real PostgreSQL/API/scrape/network/browser checks. N9-N11 remain planned. Research mode remains opt-in and separate from HTTP. See N5-N8 for limits, including the inherited signing-retention cap.
 
 Project: C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode
 
@@ -39,6 +39,7 @@ The product proposition is **less raw telemetry with explicit evidence for each 
 - [N5 framing, budgets and replay semantics](reports/N5-transport-v1.md)
 - [N6 durable Fog verification, PostgreSQL checks and limits](reports/N6.md)
 - [N7 coverage-aware decisions, versioned history and idempotent alerts](reports/N7.md)
+- [N8 coverage dashboard, metrics, local and live verification](reports/N8.md)
 - [Frozen v1 contract and independent oracle definition](reports/N0-contract-v1.md)
 - [Baseline modes and local integration checklist](reports/N0-integration.md)
 
@@ -56,7 +57,7 @@ The N prefix identifies a new research track. It does not renumber the existing 
 | N5 (complete) | Forward-only research transport | [Local UDP deployment, bounded replay, no-reply observations and outage tests](reports/N5.md) |
 | N6 (complete) | Fog evidence verification and persistence | [Typed assurance, conflict quarantine, transactional publication and real PostgreSQL/outage checks](reports/N6.md) |
 | N7 (complete) | Coverage-aware correlation and alerts | [Scoped oracle comparisons, late evidence, conflicts, revision history and Alert Engine checks](reports/N7.md) |
-| N8 | Fog-only coverage dashboard and metrics | Interactive window/rule views and refresh checks |
+| N8 (complete) | Fog-only coverage dashboard and metrics | [Interactive inspection, stable refresh, PostgreSQL and deployed checks](reports/N8.md) |
 | N9 | Adversarial and invariant validation | Machine-readable local security and correctness reports |
 | N10 | Repeated baseline and ablation experiments | Raw measurements, paired trials, uncertainty and regenerated figures |
 | N11 | Local demo, packaging and invention disclosure | Reproducible demonstration and claims-to-evidence review |
@@ -90,6 +91,6 @@ Use local Docker Compose on this Windows machine. Provision rules and keys throu
 
 ## Deliverables and current status
 
-This folder contains the proposed design, prior-art assessment, twelve build prompts and N0-N3/N5-N7 reports and evidence. N4 provides coupled admission and byte accounting. N5 integrates isolated UDP, charged signed frames and bounded reorder/reassembly. N6 adds durable verification and PostgreSQL facts. N7 adds scoped three-valued rules, independent coverage health, revision history, checked original-witness disclosures and recoverable Alert Engine delivery. Existing HTTP/standalone deployments remain preserved. Coverage visualization and repeated comparative performance campaigns remain future work. The existing N4 signing-retention cap still requires a reviewed long-run retirement procedure; N7 does not reset it.
+This folder contains the proposed design, prior-art assessment, twelve build prompts and N0-N3/N5-N8 reports and evidence. N4 provides coupled admission and byte accounting. N5 integrates isolated UDP, charged signed frames and bounded reorder/reassembly. N6 adds durable verification and PostgreSQL facts. N7 adds scoped three-valued rules, independent coverage health, revision history, checked original-witness disclosures and recoverable Alert Engine delivery. N8 adds opt-in inspection and metrics with local and real database/deployment evidence. Existing HTTP/standalone deployments remain preserved. Repeated comparative performance campaigns remain future work. The existing N4 signing-retention cap still requires a reviewed long-run retirement procedure; N8 does not reset it.
 
 Future phase reports should live in docs/novelty-roadmap/reports/Nxx.md. New experimental artifacts should use new directories under experiments/results/coverage/ and must not overwrite prior results.
