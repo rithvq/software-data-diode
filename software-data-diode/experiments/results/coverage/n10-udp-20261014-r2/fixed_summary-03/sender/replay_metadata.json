@@ -1,0 +1,20 @@
+{
+  "measurement_scope": "ACTUAL_DOCKER_UDP_ARTIFACT_REPLAY_NOT_ONLINE_POLICY",
+  "project": "software-data-diode-n9-1eb2e2327d9d",
+  "arm": "fixed_summary",
+  "trial": 3,
+  "seed": 846418329,
+  "epoch_utc": "2026-10-14T18:16:40+00:00",
+  "target": {
+    "address": "10.0.0.18",
+    "ports": [
+      9001
+    ]
+  },
+  "paired_relative_trace_hash": "48f1bc156999c9f90b79f0b4eb5a0e3763963da755aef85e549c0fe77b842bd3",
+  "receiver_feedback": false,
+  "uid": 10001,
+  "gid": 10001,
+  "attempts": 334,
+  "local_send_errors": 0
+}

@@ -1,0 +1,83 @@
+{
+  "services": {
+    "alert-engine": {
+      "image": "sha256:2408e106d4a9463d706e1ac89d0383e6a15d250dcbe8dc24d257883e4a9d454e",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "data-diode": {
+      "image": "sha256:b708113329b8ffd696083ce0b88562c775cf1afb3b5c9f57b383ecc7b65e4e90",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "edge-device-01": {
+      "image": "sha256:f0791f818060cb8180add43e5f3a6fce4ed65a4633381ed65b8758d7facf9bd7",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "edge-device-02": {
+      "image": "sha256:939da51cddc1e8a25fe2d516d2a90cd1b3e7635d768c4abca0e47e0017f962a8",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "edge-device-03": {
+      "image": "sha256:3c82c859a2994bb827c242ededce811f55c1e5dc28c7502887a03aa56f0f8f68",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "edge-device-04": {
+      "image": "sha256:c2405dccee05bce647ce14df3ba5f01ec3a2900234318cd9a680557a09f4b5ab",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "edge-device-05": {
+      "image": "sha256:7d47320193cad707b6a9c2f145777321fd5d218eb462f8cf69054aa80f5bd38f",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "edge-gateway": {
+      "image": "sha256:935f280f0fe0244479d8858b0436888c684e3c87bd12e8d63e978f04b1781ceb",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "event-processor": {
+      "image": "sha256:b757f82a1a1fcb581b9194843563a9286a9b40e680c1d7e6943dfd069759f3cd",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "fog-analytics": {
+      "image": "sha256:1c95dd27c631bebd1a41a7d13881bc6ec2d62ca00cb93b11741f51895190ed79",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "fog-receiver": {
+      "image": "sha256:97a5442feb68da6d9c96488d61dae493782d6aa39ea596bc0bb228dfb326b91e",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    },
+    "security-test-client": {
+      "image": "sha256:2025def6bfe8214160588ff9751df657ee51068691cf136115319604485f0333",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro",
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\security-test-client\\app:/app/app:ro"
+      ]
+    },
+    "validation-init": {
+      "image": "sha256:0719da6153f332d3f3223711058f4391261cfb518eea2b8efa4bb9dd7eb79c30",
+      "volumes": [
+        "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared:/app/shared:ro"
+      ]
+    }
+  }
+}

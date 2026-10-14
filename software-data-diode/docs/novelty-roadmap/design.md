@@ -1,6 +1,6 @@
 # RCCD technical specification
 
-Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N9 implemented and locally verified. N9 has scoped adversarial, process-crash, oracle, PostgreSQL and packet evidence. Research mode remains disabled in the baseline deployment. N10-N11 remain proposed.
+Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N10 implemented and locally verified within their reports' scopes. N10 retains negative comparative findings and distinct simulation/actual-UDP evidence. Research mode remains disabled in the baseline deployment. N11 remains proposed.
 Version: roadmap-1 + N0-contract-v1. Date: 2026-10-13.
 The normative v1 decisions are in [N0 contract freeze](reports/N0-contract-v1.md).
 N0 adds baseline evidence only. N1 adds pure contracts and semantics. N2 adds a ledger-only opt-in path, not a coverage pipeline. See [N2 scope and recovery limits](reports/N2.md).
@@ -12,6 +12,14 @@ N8 adds opt-in Fog-persistence queries, bounded window/capsule/witness inspectio
 N9 adds an allowlisted, disposable software-data-diode-n9-<run-id> test project with fresh trust/state and no host ports. It validates finite traces, seeded loss/reorder patterns, real crash boundaries, scoped attacks, finite floods and no-feedback behavior. See [N9 report](reports/N9.md). A trusted signer's consistent lie and pre-admission loss remain outside assurance. No all-executions proof, hardware one-way enforcement, performance advantage or patentability is established.
 
 ## 1. Main mechanism
+
+N10 adds bounded repeated comparisons with strong signed gap barriers, compact
+exact predicate summaries, a matched-RCC-format control and separately ablated
+reservation, service, repeats and recovery. Independent raw replay found no wrong
+definite answer in supported tested arms, but no yield advantage over matched-format
+summaries and lower mean yield than compact summaries in twelve cases. See the
+[N10 report](reports/N10.md). Live UDP evidence is artifact replay, not native online
+policy throughput. N10 changes no production coverage semantics or N11 packaging.
 
 RCCD couples telemetry reduction to the production and admission of evidence required by registered monitoring rules.
 

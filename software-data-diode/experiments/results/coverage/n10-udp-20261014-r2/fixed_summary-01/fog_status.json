@@ -1,0 +1,80 @@
+{
+  "coverage_deadline_windows": 6,
+  "coverage_alert_delivery_attempts": 40,
+  "datagrams_received": 329,
+  "received_payload_bytes": 341888,
+  "durably_spooled_artifacts": 51,
+  "verified_artifacts": 51,
+  "duplicate_artifacts": 12,
+  "postgres_accepted": 10,
+  "coverage_evidence_window": 10,
+  "queue_frames": 0,
+  "max_queue_frames": 256,
+  "application_replies_sent": 0,
+  "socket_audit": {
+    "installed": true,
+    "udp_send_calls": 0,
+    "last_destinations": []
+  },
+  "live": true,
+  "partial_artifacts": 0,
+  "partial_bytes": 0,
+  "expired_partial_artifacts": 0,
+  "evidence_database_available": true,
+  "coverage_rule_monitor_enabled": true,
+  "received_artifacts": 41,
+  "pending_internal_processing": 0,
+  "retired_epoch": false,
+  "edge_state_stale": false,
+  "edge_state": {
+    "n10_local_state": {
+      "accepted": 38,
+      "queue": 2
+    }
+  },
+  "evidence_freshness": [
+    {
+      "device_id": "edge-device-01",
+      "last_closed_window": 179200143,
+      "age_seconds": 15.324189,
+      "stale_or_missing": false
+    },
+    {
+      "device_id": "edge-device-02",
+      "last_closed_window": 179200143,
+      "age_seconds": 15.324224,
+      "stale_or_missing": false
+    },
+    {
+      "device_id": "edge-device-03",
+      "last_closed_window": 179200143,
+      "age_seconds": 15.324259,
+      "stale_or_missing": false
+    },
+    {
+      "device_id": "edge-device-04",
+      "last_closed_window": 179200143,
+      "age_seconds": 15.324312,
+      "stale_or_missing": false
+    },
+    {
+      "device_id": "edge-device-05",
+      "last_closed_window": 179200143,
+      "age_seconds": 15.324346,
+      "stale_or_missing": false
+    }
+  ],
+  "coverage_evidence_stale_or_missing": false,
+  "coverage": "AUTHENTICATED_SUMMARY_NOT_RULE_VERDICTS",
+  "receipt_scope": "FOG_DURABLE_SPOOL_NOT_POSTGRES_COMMIT",
+  "pending_evidence": 0,
+  "pending_verification_outcomes": 0,
+  "evidence_spool_records": 10,
+  "evidence_spool_max_records": 1024,
+  "evidence_spool_max_bytes": 8388608,
+  "local_admission_available": true,
+  "postgres_verified_scopes": 10,
+  "quarantined_scopes": 0,
+  "pending_coverage_publications": 0,
+  "rule_evaluation": "RCCD_SCOPED_RULES_V1"
+}

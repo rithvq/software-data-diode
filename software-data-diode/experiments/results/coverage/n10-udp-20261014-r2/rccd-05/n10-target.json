@@ -1,0 +1,12 @@
+{
+  "project": "software-data-diode-n9-306b45f69dbf",
+  "run_id": "306b45f69dbf",
+  "targets": {
+    "data-diode": {
+      "address": "10.0.0.18",
+      "ports": [
+        9001
+      ]
+    }
+  }
+}

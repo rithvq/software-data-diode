@@ -1,0 +1,15 @@
+x_label,case,arm,metric,planned_trials,n,mean,median,stddev,ci95_low,ci95_high
+16384,moderate,fifo_gap,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+16384,moderate,legacy,decision_yield,5,5,0.01111111111111111,0.0,0.024845199749997663,-0.019733333333333332,0.04195555555555555
+16384,moderate,heartbeat,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+16384,moderate,compact_summary,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+16384,moderate,fixed_summary,decision_yield,5,5,0.8888888888888888,0.8888888888888888,0.07856742013183861,0.7913501912819175,0.9864275864958602
+16384,moderate,rccd,decision_yield,5,5,0.8888888888888888,0.8888888888888888,0.07856742013183861,0.7913501912819175,0.9864275864958602
+16384,moderate,always_unknown,decision_yield,5,5,0.0,0.0,0.0,0.0,0.0
+32768,moderate_double_budget,fifo_gap,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+32768,moderate_double_budget,legacy,decision_yield,5,5,0.01111111111111111,0.0,0.024845199749997663,-0.019733333333333332,0.04195555555555555
+32768,moderate_double_budget,heartbeat,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+32768,moderate_double_budget,compact_summary,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+32768,moderate_double_budget,fixed_summary,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+32768,moderate_double_budget,rccd,decision_yield,5,5,1.0,1.0,0.0,1.0,1.0
+32768,moderate_double_budget,always_unknown,decision_yield,5,5,0.0,0.0,0.0,0.0,0.0

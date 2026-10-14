@@ -1,0 +1,56 @@
+{
+  "static": {
+    "arm": "rccd",
+    "budget": 16384,
+    "generated": 39,
+    "upstream_lost": 1,
+    "accepted": 33,
+    "admission_refused": 5,
+    "refusal_reasons": {
+      "CLOSED_WINDOW_REFUSED": 5
+    },
+    "accepted_trace_hash": "b197f7c7a7b083e841eb60e994f6cf72419e12edd46aa63e948f6e94138fe165",
+    "generated_bytes": 206765,
+    "modeled_capacity_bytes": 393216.0,
+    "storage_bytes": 958464,
+    "outbox_final_bytes": 173877,
+    "unsupported_scopes": 0,
+    "raw_dropped_originals": 0,
+    "raw_reduced_originals": 0,
+    "queue_max_items": 31,
+    "queue_max_bytes": 173877,
+    "queue_average_items": 5.446236559139785,
+    "charged_local_bytes": 106924,
+    "wire_bytes": 106924,
+    "state_bytes": 1202,
+    "repeat_bytes": 4645,
+    "lost_frames": 0,
+    "framing_bytes": 16524,
+    "raw_bytes": 94498,
+    "evidence_bytes": 8508,
+    "runner_cpu_seconds": 1.770737271,
+    "runner_wall_seconds": 1.7785375799994654,
+    "runner_cpu_percent": 99.56142006291104,
+    "runner_peak_python_bytes": null,
+    "runner_sampled_rss_bytes": 63971328,
+    "cancelled_charged_grants": 0
+  },
+  "events": [
+    {
+      "kind": "restart",
+      "at_seconds": 7,
+      "durable": true,
+      "admission_unavailable_reason": null
+    }
+  ],
+  "profile": {
+    "protocol": "rccd-udp-v1",
+    "gateway_id": "coverage-gateway",
+    "signing_key_id": "coverage-key",
+    "ledger_epoch": "7987473a-26c0-52e3-b61e-dba3b06addfe",
+    "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+    "public_key_sha256": "22689a24d994084a70494e85fbcce922ec552b025fff8f8ed0140fa6e3db6b66"
+  },
+  "public_key": "0k4hCWRiyeGHVX1tGBH/GwS1snlvmUOlqcFCmCKjdoU=",
+  "epoch_utc": "2026-01-01T00:00:00+00:00"
+}

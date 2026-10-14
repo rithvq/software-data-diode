@@ -1,0 +1,253 @@
+{
+  "contract_id": "synthetic-five-edge-v1",
+  "protocol_version": "rccd-contract-v1",
+  "purpose": "synthetic_demonstration",
+  "observation_scope": "accepted_normalized_gateway_ingress",
+  "numeric_interpretation": "finite_ieee754_binary64",
+  "time_basis": "gateway_ingress_utc_microseconds",
+  "window_seconds": 10,
+  "alignment": "unix_epoch",
+  "boundary": "start_inclusive_end_exclusive",
+  "limits": {
+    "max_devices": 16,
+    "max_conditions": 64,
+    "max_rules": 32,
+    "max_expression_depth": 8,
+    "max_expression_nodes": 127,
+    "max_datagram_payload_bytes": 1200,
+    "evidence_repetitions": 1,
+    "clock_jump_tolerance_us": 100000
+  },
+  "devices": [
+    {
+      "device_id": "edge-device-01",
+      "telemetry_type": "environmental",
+      "metrics": [
+        {
+          "path": "temperature",
+          "unit": "degC"
+        }
+      ]
+    },
+    {
+      "device_id": "edge-device-02",
+      "telemetry_type": "system",
+      "metrics": [
+        {
+          "path": "cpu_usage",
+          "unit": "percent"
+        }
+      ]
+    },
+    {
+      "device_id": "edge-device-03",
+      "telemetry_type": "network",
+      "metrics": [
+        {
+          "path": "measurements.packets_per_second",
+          "unit": "packets/s"
+        }
+      ]
+    },
+    {
+      "device_id": "edge-device-04",
+      "telemetry_type": "security",
+      "metrics": [
+        {
+          "path": "measurements.failed_logins",
+          "unit": "attempts"
+        }
+      ]
+    },
+    {
+      "device_id": "edge-device-05",
+      "telemetry_type": "industrial",
+      "metrics": [
+        {
+          "path": "measurements.vibration_mm_s",
+          "unit": "mm/s"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "environmental-hot",
+      "device_id": "edge-device-01",
+      "metric_path": "temperature",
+      "unit": "degC",
+      "predicate": "EXISTS",
+      "inequality": ">=",
+      "threshold": 38.0,
+      "k": 1,
+      "minimum_samples": 1
+    },
+    {
+      "condition_id": "resource-busy",
+      "device_id": "edge-device-02",
+      "metric_path": "cpu_usage",
+      "unit": "percent",
+      "predicate": "EXISTS",
+      "inequality": ">=",
+      "threshold": 90.0,
+      "k": 1,
+      "minimum_samples": 1
+    },
+    {
+      "condition_id": "network-spike",
+      "device_id": "edge-device-03",
+      "metric_path": "measurements.packets_per_second",
+      "unit": "packets/s",
+      "predicate": "EXISTS",
+      "inequality": ">=",
+      "threshold": 8000.0,
+      "k": 1,
+      "minimum_samples": 1
+    },
+    {
+      "condition_id": "security-failures",
+      "device_id": "edge-device-04",
+      "metric_path": "measurements.failed_logins",
+      "unit": "attempts",
+      "predicate": "EXISTS",
+      "inequality": ">=",
+      "threshold": 5.0,
+      "k": 1,
+      "minimum_samples": 1
+    },
+    {
+      "condition_id": "industrial-vibration",
+      "device_id": "edge-device-05",
+      "metric_path": "measurements.vibration_mm_s",
+      "unit": "mm/s",
+      "predicate": "EXISTS",
+      "inequality": ">=",
+      "threshold": 8.0,
+      "k": 1,
+      "minimum_samples": 1
+    },
+    {
+      "condition_id": "security-repeat",
+      "device_id": "edge-device-04",
+      "metric_path": "measurements.failed_logins",
+      "unit": "attempts",
+      "predicate": "COUNT_GE",
+      "inequality": ">=",
+      "threshold": 5.0,
+      "k": 2,
+      "minimum_samples": 1
+    }
+  ],
+  "rules": [
+    {
+      "rule_id": "environmental-threshold",
+      "expression": {
+        "kind": "ATOM",
+        "condition_id": "environmental-hot",
+        "children": []
+      }
+    },
+    {
+      "rule_id": "resource-threshold",
+      "expression": {
+        "kind": "ATOM",
+        "condition_id": "resource-busy",
+        "children": []
+      }
+    },
+    {
+      "rule_id": "network-threshold",
+      "expression": {
+        "kind": "ATOM",
+        "condition_id": "network-spike",
+        "children": []
+      }
+    },
+    {
+      "rule_id": "security-threshold",
+      "expression": {
+        "kind": "ATOM",
+        "condition_id": "security-failures",
+        "children": []
+      }
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "expression": {
+        "kind": "ATOM",
+        "condition_id": "industrial-vibration",
+        "children": []
+      }
+    },
+    {
+      "rule_id": "incident-correlation",
+      "expression": {
+        "kind": "AND",
+        "condition_id": null,
+        "children": [
+          {
+            "kind": "ATOM",
+            "condition_id": "resource-busy",
+            "children": []
+          },
+          {
+            "kind": "ATOM",
+            "condition_id": "network-spike",
+            "children": []
+          },
+          {
+            "kind": "ATOM",
+            "condition_id": "security-failures",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "process-correlation",
+      "expression": {
+        "kind": "AND",
+        "condition_id": null,
+        "children": [
+          {
+            "kind": "ATOM",
+            "condition_id": "environmental-hot",
+            "children": []
+          },
+          {
+            "kind": "ATOM",
+            "condition_id": "industrial-vibration",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "process-attention",
+      "expression": {
+        "kind": "OR",
+        "condition_id": null,
+        "children": [
+          {
+            "kind": "ATOM",
+            "condition_id": "environmental-hot",
+            "children": []
+          },
+          {
+            "kind": "ATOM",
+            "condition_id": "industrial-vibration",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "expression": {
+        "kind": "ATOM",
+        "condition_id": "security-repeat",
+        "children": []
+      }
+    }
+  ]
+}

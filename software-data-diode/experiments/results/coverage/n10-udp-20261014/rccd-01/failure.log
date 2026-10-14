@@ -1,0 +1,180 @@
+postgres-1  | The files belonging to this database system will be owned by user "postgres".
+postgres-1  | This user must also own the server process.
+postgres-1  | 
+postgres-1  | The database cluster will be initialized with locale "en_US.utf8".
+postgres-1  | The default database encoding has accordingly been set to "UTF8".
+postgres-1  | The default text search configuration will be set to "english".
+postgres-1  | 
+postgres-1  | Data page checksums are disabled.
+postgres-1  | 
+postgres-1  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-1  | creating subdirectories ... ok
+postgres-1  | selecting dynamic shared memory implementation ... posix
+postgres-1  | selecting default max_connections ... 100
+postgres-1  | selecting default shared_buffers ... 128MB
+postgres-1  | selecting default time zone ... UTC
+postgres-1  | creating configuration files ... ok
+postgres-1  | running bootstrap script ... ok
+postgres-1  | sh: locale: not found
+postgres-1  | 2026-10-14 18:06:41.301 UTC [35] WARNING:  no usable system locales were found
+postgres-1  | performing post-bootstrap initialization ... ok
+postgres-1  | initdb: warning: enabling "trust" authentication for local connections
+postgres-1  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-1  | syncing data to disk ... ok
+postgres-1  | 
+postgres-1  | 
+postgres-1  | Success. You can now start the database server using:
+postgres-1  | 
+postgres-1  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-1  | 
+postgres-1  | waiting for server to start....2026-10-14 18:06:43.586 UTC [47] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1  | 2026-10-14 18:06:43.594 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-10-14 18:06:43.621 UTC [50] LOG:  database system was shut down at 2026-10-14 18:06:42 UTC
+postgres-1  | 2026-10-14 18:06:43.636 UTC [47] LOG:  database system is ready to accept connections
+postgres-1  |  done
+postgres-1  | server started
+postgres-1  | CREATE DATABASE
+postgres-1  | 
+postgres-1  | 
+postgres-1  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-1  | 
+postgres-1  | waiting for server to shut down...2026-10-14 18:06:43.921 UTC [47] LOG:  received fast shutdown request
+postgres-1  | .2026-10-14 18:06:43.930 UTC [47] LOG:  aborting any active transactions
+postgres-1  | 2026-10-14 18:06:43.934 UTC [47] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+postgres-1  | 2026-10-14 18:06:43.935 UTC [48] LOG:  shutting down
+postgres-1  | 2026-10-14 18:06:43.942 UTC [48] LOG:  checkpoint starting: shutdown immediate
+postgres-1  | 2026-10-14 18:06:44.220 UTC [48] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.119 s, sync=0.107 s, total=0.286 s; sync files=301, longest=0.014 s, average=0.001 s; distance=4283 kB, estimate=4283 kB; lsn=0/1925D58, redo lsn=0/1925D58
+postgres-1  | 2026-10-14 18:06:44.233 UTC [47] LOG:  database system is shut down
+postgres-1  |  done
+postgres-1  | server stopped
+postgres-1  | 
+postgres-1  | PostgreSQL init process complete; ready for start up.
+postgres-1  | 
+postgres-1  | 2026-10-14 18:06:44.372 UTC [1] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1  | 2026-10-14 18:06:44.372 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2026-10-14 18:06:44.373 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2026-10-14 18:06:44.395 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-10-14 18:06:44.413 UTC [63] LOG:  database system was shut down at 2026-10-14 18:06:44 UTC
+postgres-1  | 2026-10-14 18:06:44.429 UTC [1] LOG:  database system is ready to accept connections
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:51.319663+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:51.319848+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:51.320260+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:51.383247+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:52.583199+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:52.585222+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:43950 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:52.598375+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:52.600136+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.52:45530 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:56.418716+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:56.421054+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:43988 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:56.610694+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:06:56.612235+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.52:45546 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:07:00.241369+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:07:00.277853+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:41276 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:07:00.398911+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:07:00.400405+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.52:60404 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:07:04.291917+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1  | {"timestamp":"2026-10-14T18:07:04.294965+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:41350 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | psql:/migrations/002_phase5_observability.sql:9: NOTICE:  column "acknowledged_at" of relation "alerts" already exists, skipping
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | BEGIN
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | COMMIT
+database-migrator-1  | BEGIN
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE FUNCTION
+database-migrator-1  | CREATE FUNCTION
+database-migrator-1  | DROP TRIGGER
+database-migrator-1  | psql:/migrations/004_n7_rules.sql:78: NOTICE:  trigger "coverage_revision_before" for relation "coverage_rule_verdicts" does not exist, skipping
+database-migrator-1  | CREATE TRIGGER
+database-migrator-1  | DROP TRIGGER
+database-migrator-1  | psql:/migrations/004_n7_rules.sql:80: NOTICE:  trigger "coverage_revision_after" for relation "coverage_rule_verdicts" does not exist, skipping
+database-migrator-1  | CREATE TRIGGER
+database-migrator-1  | COMMIT
+database-migrator-1  | BEGIN
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | COMMIT
+data-diode-1         | {"timestamp":"2026-10-14T18:06:43.169581+00:00","service":"data-diode","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:43.169808+00:00","service":"data-diode","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:43.560671+00:00","service":"data-diode","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:43.562180+00:00","service":"data-diode","level":"INFO","event":"log","message":"Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:43.761669+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:49820 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:47.399134+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:49822 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:51.065520+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:43918 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:54.759970+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:43974 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:06:58.288838+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:44026 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T18:07:01.896803+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:41318 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:51.319662+00:00","service":"event-processor","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:51.319864+00:00","service":"event-processor","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:51.320704+00:00","service":"event-processor","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:51.384382+00:00","service":"event-processor","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:52.601672+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:52.603736+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:43956 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:56.613422+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:06:56.615513+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:44002 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:07:00.401262+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1    | {"timestamp":"2026-10-14T18:07:00.402702+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:41288 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:51.172038+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:51.172247+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:51.172675+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:51.181353+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:52.200261+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:43934 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:52.508206+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:49430 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:52.597152+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:49442 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:56.090375+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:43982 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:56.417464+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:49450 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:56.609676+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:49454 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:06:59.762921+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:44066 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:07:00.240026+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:41350 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:07:00.398041+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:41356 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:07:03.465964+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:41334 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T18:07:04.290429+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:41366 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+validation-init-1    | Disposable N9 project initialized; no user credentials mounted
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:50.462689+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:50.462977+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:50.738324+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:50.740752+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:51.931826+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:43940 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:55.336131+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:43976 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:06:58.731442+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:44044 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1       | {"timestamp":"2026-10-14T18:07:02.121876+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:41320 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}

@@ -1,0 +1,18 @@
+# N10 artifact replay override of the disposable N9 test topology, not baseline.
+services:
+  edge-gateway:
+    command: [python, -c, "import time; time.sleep(1200)"]
+    healthcheck: {disable: true}
+  data-diode:
+    environment: {COVERAGE_LINK_BYTES_PER_SECOND: "16384"}
+  security-test-client:
+    user: "10001:10001"
+    cap_add: !override []
+    network_mode: service:edge-gateway
+    command: [python, -m, app.n10]
+    environment:
+      N10_ARM: ${N10_ARM:?required}
+      N10_TRIAL: ${N10_TRIAL:?required}
+    volumes:
+      - ./experiments:/app/experiments:ro
+      - ./config:/app/config:ro

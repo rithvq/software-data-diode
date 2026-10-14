@@ -1,0 +1,36 @@
+# N10 Actual Docker/UDP Replay
+
+Five paired trials per arm. Recomputed from signed artifacts and retained PostgreSQL receipts, separately from simulation.
+Sender admission and schedule are precomputed using N4; only transport/receiver persistence are actual live measurements. Not native online gateway throughput.
+The receipt time is the stored receiver timestamp, not a database-commit completion measurement. Local send success is not receipt.
+Docker resource snapshots are reduced to one sample mean CPU / observed maximum memory per trial within replay time; snapshots are not independent replicates.
+Different aligned UTC origins and ephemeral epochs/keys are declared; relative traces are paired. No synthetic packet faults are claimed in this live matrix.
+
+| Arm | Metric | n | Mean | Median | Sample SD | 95% Student-t CI |
+|---|---|---:|---:|---:|---:|---|
+| rccd | decision_yield | 5 | 0.7 | 0.7222222222222222 | 0.1009216784699164 | [0.5747092743818365, 0.8252907256181634] |
+| rccd | unknown_rate | 5 | 0.3 | 0.2777777777777778 | 0.10092167846991638 | [0.17470927438183653, 0.42529072561816345] |
+| rccd | raw_detail_availability | 5 | 0.9186055200112082 | 0.9736842105263158 | 0.09079528765939804 | [0.8058863535642603, 1.031324686458156] |
+| rccd | critical_latency_p95_seconds | 4 | 1.0584167689085007 | 0.9967086255550385 | 0.549845519141785 | [0.18361254795392068, 1.9332209898630808] |
+| rccd | attempted_model_wire_bytes | 5 | 353590.4 | 350464 | 23160.092957499113 | [324837.9565604653, 382342.8434395348] |
+| rccd | data_diode_sample_mean_cpu_percent | 5 | 9.718733333333333 | 7.758 | 4.756632354466293 | [3.8135410275239847, 15.62392563914268] |
+| rccd | data_diode_sample_max_memory_bytes | 5 | 51357155.328 | 50541363.2 | 6220545.770439657 | [43634565.83944224, 59079744.816557765] |
+| rccd | fog_receiver_sample_mean_cpu_percent | 5 | 27.548933333333334 | 25.4 | 4.371781085044807 | [22.121520386051625, 32.97634628061505] |
+| rccd | fog_receiver_sample_max_memory_bytes | 5 | 76260835.328 | 75822530.56 | 2961400.287046331 | [72584360.69504516, 79937309.96095483] |
+| rccd | postgres_sample_mean_cpu_percent | 5 | 27.6238 | 26.718 | 2.659169310559636 | [24.32253452847019, 30.92506547152981] |
+| rccd | postgres_sample_max_memory_bytes | 5 | 40558919.68 | 40569405.44 | 814420.2781462853 | [39547845.457354054, 41569993.902645946] |
+| fixed_summary | decision_yield | 5 | 0.7 | 0.6666666666666666 | 0.07453559924999299 | [0.6074666666666666, 0.7925333333333333] |
+| fixed_summary | unknown_rate | 5 | 0.3 | 0.3333333333333333 | 0.07453559924999299 | [0.20746666666666666, 0.3925333333333333] |
+| fixed_summary | raw_detail_availability | 5 | 0.9186055200112082 | 0.9736842105263158 | 0.09079528765939804 | [0.8058863535642603, 1.031324686458156] |
+| fixed_summary | critical_latency_p95_seconds | 4 | 1.1263596892356873 | 1.120030814409256 | 0.532382961200692 | [0.2793383979653864, 1.973380980505988] |
+| fixed_summary | attempted_model_wire_bytes | 5 | 353661.6 | 350992 | 23220.137807515268 | [324834.6129842761, 382488.58701572387] |
+| fixed_summary | data_diode_sample_mean_cpu_percent | 5 | 8.6488 | 9.054 | 2.2181751083066255 | [5.895013369799143, 11.402586630200856] |
+| fixed_summary | data_diode_sample_max_memory_bytes | 5 | 49067065.344 | 45738885.12 | 5233784.101548388 | [42569505.872599855, 55564624.81540014] |
+| fixed_summary | fog_receiver_sample_mean_cpu_percent | 5 | 26.834533333333333 | 26.916666666666668 | 2.909731656203215 | [23.222203494125267, 30.4468631725414] |
+| fixed_summary | fog_receiver_sample_max_memory_bytes | 5 | 82451628.032 | 83529564.16 | 7521065.867128159 | [73114488.43819724, 91788767.62580277] |
+| fixed_summary | postgres_sample_mean_cpu_percent | 5 | 26.771933333333333 | 26.24 | 0.796619468615836 | [25.78295819164278, 27.760908475023886] |
+| fixed_summary | postgres_sample_max_memory_bytes | 5 | 40575696.896 | 40359690.24 | 962453.4046740781 | [39380844.73664721, 41770549.055352785] |
+
+RCCD minus fixed-summary decision-yield paired mean: 0.0; 95% CI [-0.09753869760697131, 0.09753869760697131].
+No superiority claim is implied. Attempted wire bytes add a modeled 28-byte IPv4/UDP overhead, not captured NIC traffic.
+Fog socket instrumentation recorded zero UDP sends; UDP/shared-host bidirectionality remains a limitation.

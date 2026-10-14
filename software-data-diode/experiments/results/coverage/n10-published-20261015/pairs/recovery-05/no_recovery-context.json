@@ -1,0 +1,56 @@
+{
+  "static": {
+    "arm": "no_recovery",
+    "budget": 16384,
+    "generated": 46,
+    "upstream_lost": 0,
+    "accepted": 21,
+    "admission_refused": 25,
+    "refusal_reasons": {
+      "UNSUPPORTED_RECOVERED_FACTS": 25
+    },
+    "accepted_trace_hash": "8af373c240521009117516f6efaf7bc178fed5f0d79753780209a8070d27114a",
+    "generated_bytes": 243836,
+    "modeled_capacity_bytes": 393216.0,
+    "storage_bytes": 598016,
+    "outbox_final_bytes": 0,
+    "unsupported_scopes": 5,
+    "raw_dropped_originals": 21,
+    "raw_reduced_originals": 0,
+    "queue_max_items": 8,
+    "queue_max_bytes": 48800,
+    "queue_average_items": 4.828125,
+    "charged_local_bytes": 112215,
+    "wire_bytes": 112215,
+    "state_bytes": 1202,
+    "repeat_bytes": 629,
+    "lost_frames": 0,
+    "framing_bytes": 12800,
+    "raw_bytes": 108213,
+    "runner_cpu_seconds": 0.8356126070000016,
+    "runner_wall_seconds": 0.8364487170001667,
+    "runner_cpu_percent": 99.90004049463263,
+    "runner_peak_python_bytes": null,
+    "runner_sampled_rss_bytes": 67715072,
+    "evidence_bytes": 0,
+    "cancelled_charged_grants": 0
+  },
+  "events": [
+    {
+      "kind": "restart",
+      "at_seconds": 7,
+      "durable": false,
+      "admission_unavailable_reason": "UNSUPPORTED_RECOVERED_FACTS"
+    }
+  ],
+  "profile": {
+    "protocol": "rccd-udp-v1",
+    "gateway_id": "coverage-gateway",
+    "signing_key_id": "coverage-key",
+    "ledger_epoch": "83e9386e-1917-52b1-ac30-074c832d2b9b",
+    "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+    "public_key_sha256": "d1475f69a8a1f702195b7f3772e0e0789c6a1c1372bd5f545d25bf9e38b6446d"
+  },
+  "public_key": "g3mNxglVkF/iLPjA/TsJ18eeEidqCGA//afhovNSqys=",
+  "epoch_utc": "2026-01-01T00:00:00+00:00"
+}

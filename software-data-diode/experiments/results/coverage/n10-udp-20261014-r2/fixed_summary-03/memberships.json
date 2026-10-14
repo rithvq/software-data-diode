@@ -1,0 +1,301 @@
+{
+  "/software-data-diode-n9-1eb2e2327d9d-alert-engine-1": {
+    "software-data-diode-n9-1eb2e2327d9d_fog-services-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-alert-engine-1",
+        "alert-engine"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2b12492d598aa3e7de6efb04b2b2a620c28d80abfde5362ddd6b70ca6be7d32a",
+      "EndpointID": "c9878ee72eb6e4bdd1b2e607667a498fcb87e9cf358b11adb0c08b5a4e2bd5b8",
+      "Gateway": "",
+      "IPAddress": "10.0.0.52",
+      "MacAddress": "a6:38:3f:b8:fe:50",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-alert-engine-1",
+        "alert-engine",
+        "fe044ffddbab"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-fog-receiver-1": {
+    "software-data-diode-n9-1eb2e2327d9d_fog-ingress-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-fog-receiver-1",
+        "fog-receiver"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "0c4b199340693a68f167be8989bfb6e884c82fe39565d0ae0af5555ceff4e0f9",
+      "EndpointID": "38f345034697da3ceff8db5269c60e05ff0b67f98944b67110b99fd10d77bb01",
+      "Gateway": "",
+      "IPAddress": "10.0.0.35",
+      "MacAddress": "76:3b:50:2f:93:78",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-fog-receiver-1",
+        "fog-receiver",
+        "c53b043c92c3"
+      ]
+    },
+    "software-data-diode-n9-1eb2e2327d9d_fog-services-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-fog-receiver-1",
+        "fog-receiver"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2b12492d598aa3e7de6efb04b2b2a620c28d80abfde5362ddd6b70ca6be7d32a",
+      "EndpointID": "5cce78142e6f1fb99a388455cbc683f333e2133d7d1874894335990629eb4745",
+      "Gateway": "",
+      "IPAddress": "10.0.0.54",
+      "MacAddress": "3a:eb:70:7b:bb:dd",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-fog-receiver-1",
+        "fog-receiver",
+        "c53b043c92c3"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-event-processor-1": {
+    "software-data-diode-n9-1eb2e2327d9d_fog-services-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-event-processor-1",
+        "event-processor"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2b12492d598aa3e7de6efb04b2b2a620c28d80abfde5362ddd6b70ca6be7d32a",
+      "EndpointID": "137d06efcb80f986d9ae47a5716630fb63a3ec3fe8db058f5e815d841020fd05",
+      "Gateway": "",
+      "IPAddress": "10.0.0.53",
+      "MacAddress": "22:85:10:26:02:29",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-event-processor-1",
+        "event-processor",
+        "bced28333cb7"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-fog-analytics-1": {
+    "software-data-diode-n9-1eb2e2327d9d_fog-services-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-fog-analytics-1",
+        "fog-analytics"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2b12492d598aa3e7de6efb04b2b2a620c28d80abfde5362ddd6b70ca6be7d32a",
+      "EndpointID": "14ed26c7ea77d948da83e6910b8a5f4ba2a5ce9cbf41f0c7bc14be8cfb0600a0",
+      "Gateway": "",
+      "IPAddress": "10.0.0.51",
+      "MacAddress": "a6:bb:18:97:4f:2f",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-fog-analytics-1",
+        "fog-analytics",
+        "6437e4bd0249"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-database-migrator-1": {
+    "software-data-diode-n9-1eb2e2327d9d_fog-services-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-database-migrator-1",
+        "database-migrator"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2b12492d598aa3e7de6efb04b2b2a620c28d80abfde5362ddd6b70ca6be7d32a",
+      "EndpointID": "",
+      "Gateway": "",
+      "IPAddress": "",
+      "MacAddress": "",
+      "IPPrefixLen": 0,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-database-migrator-1",
+        "database-migrator",
+        "0aa05beb7915"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-edge-gateway-1": {
+    "software-data-diode-n9-1eb2e2327d9d_diode-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-edge-gateway-1",
+        "edge-gateway"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2ce3585b55e54e0a7eff785874b6f10c55efeeddf358b071004696dbfc7553aa",
+      "EndpointID": "b8fc35cff25811d2d59a17648ee38b17fc0638d79e66ba03ce48d41ad32d994a",
+      "Gateway": "",
+      "IPAddress": "10.0.0.19",
+      "MacAddress": "a2:38:2d:71:52:e8",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-edge-gateway-1",
+        "edge-gateway",
+        "5de7d5d65315"
+      ]
+    },
+    "software-data-diode-n9-1eb2e2327d9d_edge-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-edge-gateway-1",
+        "edge-gateway"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "3641f4c14cc3361d51ff717e2d0931bb273f1725b263efc7606f0275bf9e15c0",
+      "EndpointID": "0f10b0ca7bb379ae4c8eaa08afadc47485c6daa3f00035aa9b296c09d984c334",
+      "Gateway": "",
+      "IPAddress": "10.0.0.2",
+      "MacAddress": "ce:9e:71:14:87:bc",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-edge-gateway-1",
+        "edge-gateway",
+        "5de7d5d65315"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-postgres-1": {
+    "software-data-diode-n9-1eb2e2327d9d_fog-services-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-postgres-1",
+        "postgres"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2b12492d598aa3e7de6efb04b2b2a620c28d80abfde5362ddd6b70ca6be7d32a",
+      "EndpointID": "aff86b25fe8f86f49a35255b4671dc761f4ec25de96903cc5671c3171ba1c3f7",
+      "Gateway": "",
+      "IPAddress": "10.0.0.50",
+      "MacAddress": "c6:35:31:7a:15:06",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-postgres-1",
+        "postgres",
+        "6ff288f87c55"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-data-diode-1": {
+    "software-data-diode-n9-1eb2e2327d9d_diode-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-data-diode-1",
+        "data-diode"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "2ce3585b55e54e0a7eff785874b6f10c55efeeddf358b071004696dbfc7553aa",
+      "EndpointID": "bd3fde72929cc23ccda9c5833a5731c5b7c0be410f0a2938724328e263bd831d",
+      "Gateway": "",
+      "IPAddress": "10.0.0.18",
+      "MacAddress": "f2:0a:80:a9:eb:6c",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-data-diode-1",
+        "data-diode",
+        "15f0c83687ef"
+      ]
+    },
+    "software-data-diode-n9-1eb2e2327d9d_fog-ingress-network": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": [
+        "software-data-diode-n9-1eb2e2327d9d-data-diode-1",
+        "data-diode"
+      ],
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "0c4b199340693a68f167be8989bfb6e884c82fe39565d0ae0af5555ceff4e0f9",
+      "EndpointID": "c3495d2b71fb02579fbcbb1a94ef904b8eca5231326b28a3737a70d4a433c16b",
+      "Gateway": "",
+      "IPAddress": "10.0.0.34",
+      "MacAddress": "02:a9:93:ff:b5:c8",
+      "IPPrefixLen": 28,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": [
+        "software-data-diode-n9-1eb2e2327d9d-data-diode-1",
+        "data-diode",
+        "15f0c83687ef"
+      ]
+    }
+  },
+  "/software-data-diode-n9-1eb2e2327d9d-validation-init-1": {
+    "none": {
+      "IPAMConfig": null,
+      "Links": null,
+      "Aliases": null,
+      "DriverOpts": null,
+      "GwPriority": 0,
+      "NetworkID": "b5eaf7109ad7112d30ba7429fa77b3ebad44f057a8e3b7c3b87a0a97e35c7a14",
+      "EndpointID": "",
+      "Gateway": "",
+      "IPAddress": "",
+      "MacAddress": "",
+      "IPPrefixLen": 0,
+      "IPv6Gateway": "",
+      "GlobalIPv6Address": "",
+      "GlobalIPv6PrefixLen": 0,
+      "DNSNames": null
+    }
+  }
+}

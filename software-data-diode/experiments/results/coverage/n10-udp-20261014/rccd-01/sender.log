@@ -1,0 +1,27 @@
+ Container software-data-diode-n9-154ea61d496c-security-test-client-run-7b6610ac30aa Creating 
+ Container software-data-diode-n9-154ea61d496c-security-test-client-run-7b6610ac30aa Created 
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/app/n10.py", line 150, in <module>
+    main()
+  File "/app/app/n10.py", line 76, in main
+    modeled, _ = replay(result, doc, contract)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/experiments/runners/coverage_simulation.py", line 206, in replay
+    observer=Observer(framer,result["static"]["arm"])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/experiments/runners/coverage_receiver.py", line 28, in __init__
+    self.detector=AnomalyDetector(DetectionConfig.from_file(ROOT/"config/anomaly_rules.json"))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/shared/analytics/detection.py", line 49, in from_file
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/config/anomaly_rules.json'
+

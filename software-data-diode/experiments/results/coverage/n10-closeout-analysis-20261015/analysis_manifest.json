@@ -1,0 +1,6 @@
+{
+  "recomputed_from_signed_artifacts": true,
+  "trial_rows": 840,
+  "method": "paired-trial Student-t; no incompatible-stratum pooling",
+  "source_directory": "experiments\\results\\coverage\\n10-published-20261015"
+}

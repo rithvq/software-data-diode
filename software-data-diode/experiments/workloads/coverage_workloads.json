@@ -1,0 +1,31 @@
+{
+  "schema_version": "coverage-experiment-v1",
+  "seed": 101000,
+  "runs_per_configuration": 5,
+  "duration_seconds": 20,
+  "deadline_seconds": 4,
+  "reference_bytes_per_second": 16384,
+  "evidence_share_percent": 50,
+  "protected_share_percent": 25,
+  "memory_tracing": false,
+  "padding_bytes": 5000,
+  "upstream_loss_probability": 0.02,
+  "max_trace_records": 1600,
+  "configurations": ["fifo_gap", "legacy", "heartbeat", "compact_summary", "fixed_summary", "rccd", "always_unknown", "no_semantics", "no_advance", "no_service", "no_repeats", "no_recovery"],
+  "cases": [
+    {"id": "light", "trace_group": "light", "load": 0.25, "budget": 16384, "fault": "none"},
+    {"id": "moderate", "trace_group": "moderate", "load": 0.50, "budget": 16384, "fault": "none"},
+    {"id": "near_capacity", "trace_group": "near_capacity", "load": 0.90, "budget": 16384, "fault": "none"},
+    {"id": "overload", "trace_group": "overload", "load": 1.50, "budget": 16384, "fault": "none"},
+    {"id": "burst", "trace_group": "burst", "load": 0.50, "burst_multiplier": 3, "budget": 16384, "fault": "none"},
+    {"id": "critical_storm", "trace_group": "critical_storm", "load": 0.90, "critical_fraction": 0.60, "budget": 16384, "fault": "none"},
+    {"id": "loss_10", "trace_group": "moderate", "load": 0.50, "budget": 16384, "fault": "independent", "loss": 0.10},
+    {"id": "loss_25", "trace_group": "moderate", "load": 0.50, "budget": 16384, "fault": "independent", "loss": 0.25},
+    {"id": "burst_loss", "trace_group": "near_capacity", "load": 0.90, "budget": 16384, "fault": "burst_loss"},
+    {"id": "evidence_loss", "trace_group": "near_capacity", "load": 0.90, "budget": 16384, "fault": "evidence_only", "loss": 1.0},
+    {"id": "reorder_delay", "trace_group": "near_capacity", "load": 0.90, "budget": 16384, "fault": "delay", "max_delay_seconds": 6},
+    {"id": "capacity_step", "trace_group": "near_capacity", "load": 0.90, "budget": 16384, "fault": "none", "capacity_multiplier": 0.50},
+    {"id": "recovery", "trace_group": "near_capacity", "load": 0.90, "budget": 16384, "fault": "none", "restart_seconds": 7},
+    {"id": "moderate_double_budget", "trace_group": "moderate", "load": 0.50, "budget": 32768, "fault": "none"}
+  ]
+}

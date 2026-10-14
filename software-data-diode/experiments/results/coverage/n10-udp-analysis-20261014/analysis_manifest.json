@@ -1,0 +1,6 @@
+{
+  "measurement_scope": "ACTUAL_DOCKER_UDP_ARTIFACT_REPLAY_NOT_ONLINE_POLICY",
+  "recomputed_from_receipts": true,
+  "paired_trials": 5,
+  "source_directory": "experiments\\results\\coverage\\n10-udp-20261014-r2"
+}

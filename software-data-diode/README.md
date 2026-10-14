@@ -314,6 +314,8 @@ is inferred from one environment.
 - [Limitations](docs/limitations.md)
 - [Future work](docs/future_work.md)
 - [Generated experiment report](experiments/results/phase7/experiment_summary.md)
+- [N10 coverage experiments and local commands](experiments/README-coverage.md)
+- [N10 repeated-trial findings and limitations](docs/novelty-roadmap/reports/N10.md)
 
 ## Known Limitations
 

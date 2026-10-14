@@ -1,0 +1,53 @@
+{
+  "datagrams_received": 311,
+  "received_payload_bytes": 325695,
+  "forward_attempts": 311,
+  "queue_frames": 0,
+  "max_queue_frames": 256,
+  "application_replies_sent": 0,
+  "socket_audit": {
+    "installed": true,
+    "udp_send_calls": 311,
+    "last_destinations": [
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ],
+      [
+        "10.0.0.35",
+        9002
+      ]
+    ]
+  },
+  "live": true,
+  "sender": {
+    "attempts": 311,
+    "attempted_payload_bytes": 325695,
+    "local_send_calls_succeeded": 311
+  },
+  "forwarding": "PASSIVE_FIFO_LOCAL_ATTEMPTS"
+}
