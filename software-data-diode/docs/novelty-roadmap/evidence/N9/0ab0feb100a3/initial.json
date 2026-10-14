@@ -1,0 +1,921 @@
+{
+  "timestamp": "2026-10-14T16:32:23.590203+00:00",
+  "fog": {
+    "datagrams_received": 52,
+    "received_payload_bytes": 48029,
+    "durably_spooled_artifacts": 6,
+    "verified_artifacts": 6,
+    "postgres_accepted": 5,
+    "duplicate_artifacts": 5,
+    "coverage_evidence_window": 5,
+    "coverage_alert_delivery_attempts": 10,
+    "queue_frames": 0,
+    "max_queue_frames": 256,
+    "application_replies_sent": 0,
+    "socket_audit": {
+      "installed": true,
+      "udp_send_calls": 0,
+      "last_destinations": []
+    },
+    "live": true,
+    "partial_artifacts": 0,
+    "partial_bytes": 0,
+    "expired_partial_artifacts": 0,
+    "evidence_database_available": true,
+    "coverage_rule_monitor_enabled": true,
+    "received_artifacts": 1,
+    "pending_internal_processing": 0,
+    "retired_epoch": false,
+    "edge_state_stale": false,
+    "edge_state": {
+      "baseline_policy": "legacy_information_engine_v1",
+      "confirmed_receipt": "NOT_OBSERVED",
+      "devices": [
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-01"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-02"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-03"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-04"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-05"
+        }
+      ],
+      "forward_byte_accounting": {
+        "EVIDENCE": 36680,
+        "RAW": 4224,
+        "STATE": 1491,
+        "scope": "N8_LOCAL_GRANTS_SINCE_START",
+        "start_utc_us": 1791995532050683,
+        "total": 42395
+      },
+      "local_lease_unresolved": false,
+      "mode": "coupled",
+      "modeled_scheduled_bytes": 42395,
+      "outbox_bytes": 12396,
+      "outbox_items": 2,
+      "pending_evidence_obligations": 2,
+      "queue_depth": 0,
+      "refused_unaccepted": 0,
+      "reserved_wire_bytes": 19072,
+      "unsupported_scopes": 0
+    },
+    "evidence_freshness": [
+      {
+        "device_id": "edge-device-01",
+        "last_closed_window": 179199553,
+        "age_seconds": 4.008886,
+        "stale_or_missing": false
+      },
+      {
+        "device_id": "edge-device-02",
+        "last_closed_window": 179199553,
+        "age_seconds": 3.999997,
+        "stale_or_missing": false
+      },
+      {
+        "device_id": "edge-device-03",
+        "last_closed_window": 179199553,
+        "age_seconds": 4.006003,
+        "stale_or_missing": false
+      },
+      {
+        "device_id": "edge-device-04",
+        "last_closed_window": 179199553,
+        "age_seconds": 4.012448,
+        "stale_or_missing": false
+      },
+      {
+        "device_id": "edge-device-05",
+        "last_closed_window": 179199553,
+        "age_seconds": 4.003244,
+        "stale_or_missing": false
+      }
+    ],
+    "coverage_evidence_stale_or_missing": false,
+    "coverage": "AUTHENTICATED_SUMMARY_NOT_RULE_VERDICTS",
+    "receipt_scope": "FOG_DURABLE_SPOOL_NOT_POSTGRES_COMMIT",
+    "pending_evidence": 0,
+    "pending_verification_outcomes": 0,
+    "evidence_spool_records": 5,
+    "evidence_spool_max_records": 1024,
+    "evidence_spool_max_bytes": 8388608,
+    "local_admission_available": true,
+    "postgres_verified_scopes": 5,
+    "quarantined_scopes": 0,
+    "pending_coverage_publications": 0,
+    "rule_evaluation": "RCCD_SCOPED_RULES_V1"
+  },
+  "diode": {
+    "datagrams_received": 59,
+    "received_payload_bytes": 53548,
+    "forward_attempts": 59,
+    "queue_frames": 0,
+    "max_queue_frames": 256,
+    "application_replies_sent": 0,
+    "socket_audit": {
+      "installed": true,
+      "udp_send_calls": 57,
+      "last_destinations": [
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ]
+      ]
+    },
+    "live": true,
+    "sender": {
+      "attempts": 59,
+      "attempted_payload_bytes": 53548,
+      "local_send_errors": 2,
+      "local_send_calls_succeeded": 57
+    },
+    "forwarding": "PASSIVE_FIFO_LOCAL_ATTEMPTS"
+  },
+  "gateway": {
+    "traffic": {
+      "total_bytes_generated": 0,
+      "bytes_filtered": 0,
+      "bytes_transmitted": 0,
+      "latency_sample_count": 0,
+      "average_latency": null,
+      "latency_p95": null,
+      "throughput_messages_per_second": 0.0,
+      "queue_utilization": 0.0,
+      "congestion_state": "NORMAL",
+      "by_priority": {}
+    },
+    "devices": [
+      {
+        "device_id": "edge-device-01",
+        "health": "ACTIVE",
+        "last_seen": "2026-10-14T16:32:16.369811Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 1.0,
+        "recent_activity_count": 1,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "health": "ACTIVE",
+        "last_seen": "2026-10-14T16:32:16.660652Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 1.0,
+        "recent_activity_count": 1,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "MEDIUM": 1
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "health": "ACTIVE",
+        "last_seen": "2026-10-14T16:32:16.518160Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 1.0,
+        "recent_activity_count": 1,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "health": "ACTIVE",
+        "last_seen": "2026-10-14T16:32:16.144984Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 1.0,
+        "recent_activity_count": 1,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "health": "ACTIVE",
+        "last_seen": "2026-10-14T16:32:16.614969Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 1.0,
+        "recent_activity_count": 1,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      }
+    ],
+    "information_policy": null,
+    "coverage_ledger": {
+      "epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+      "generation": 0,
+      "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+      "retained_records": 5,
+      "pending_outbox_bytes": 0,
+      "unsized_obligations": 0,
+      "last_limitation": "RECOVERY_DOWNTIME",
+      "clock_halted": false,
+      "admission_blocked": false,
+      "database_bytes": 221184
+    },
+    "coverage_admission": {
+      "mode": "coupled",
+      "baseline_policy": "legacy_information_engine_v1",
+      "outbox_items": 0,
+      "outbox_bytes": 0,
+      "reserved_wire_bytes": 0,
+      "pending_evidence_obligations": 0,
+      "unsupported_scopes": 0,
+      "refused_unaccepted": 0,
+      "local_lease_unresolved": false,
+      "modeled_scheduled_bytes": 55200,
+      "confirmed_receipt": "NOT_OBSERVED",
+      "forward_byte_accounting": {
+        "EVIDENCE": 47968,
+        "RAW": 4224,
+        "STATE": 3008,
+        "scope": "N8_LOCAL_GRANTS_SINCE_START",
+        "start_utc_us": 1791995532050683,
+        "total": 55200
+      }
+    },
+    "coverage_udp": {
+      "live": true,
+      "sender": {
+        "attempts": 59,
+        "attempted_payload_bytes": 53548,
+        "local_send_calls_succeeded": 59
+      },
+      "socket_audit": {
+        "installed": true,
+        "udp_send_calls": 59,
+        "last_destinations": [
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ]
+        ]
+      },
+      "confirmed_receipt": "NOT_OBSERVED"
+    }
+  },
+  "database": {
+    "capsules": [
+      {
+        "artifact_digest": "2845d5916af0b616b0b2c74462dcc491c729dcd96538b4e88d40af0c1616e971",
+        "scope_id": "a1de5256a985aba64b5e92dbd04f86990fb9648c18772ff66f59333a040f420d",
+        "received_at_us": 1791995540256330,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "a1de5256a985aba64b5e92dbd04f86990fb9648c18772ff66f59333a040f420d",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "2845d5916af0b616b0b2c74462dcc491c729dcd96538b4e88d40af0c1616e971",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4776,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995540002155,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995540256330,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "b281ea937f92aaf9a2a4086ed272db9bdd8be0cb35c90784a6c5b55986f5b73e",
+        "scope_id": "4008bb160b7e5b1d81e0dabd954007783338a21af0869e9143ffc1a855dfc2ce",
+        "received_at_us": 1791995540792161,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "4008bb160b7e5b1d81e0dabd954007783338a21af0869e9143ffc1a855dfc2ce",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "b281ea937f92aaf9a2a4086ed272db9bdd8be0cb35c90784a6c5b55986f5b73e",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4628,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995540005665,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995540792161,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "a8b3bcc61bdefdb85118e3b669509802d4c41dcda915e72dd4d9f2b8e1a97f06",
+        "scope_id": "a3419865cee15e13a6aa3e6855e4cfb13e475fc2f92d39b5fe31d2fbc60e695f",
+        "received_at_us": 1791995541287992,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "a3419865cee15e13a6aa3e6855e4cfb13e475fc2f92d39b5fe31d2fbc60e695f",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "a8b3bcc61bdefdb85118e3b669509802d4c41dcda915e72dd4d9f2b8e1a97f06",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995540008586,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995541287992,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "4f71310dec7be6fef5a51d7f2d3d48b22484dbba06c289c62a88e25f3102e86a",
+        "scope_id": "7968720418523d6ae527b7a9417d4bc846e7e3dd986541bc9cedc776efd535ed",
+        "received_at_us": 1791995541890604,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "7968720418523d6ae527b7a9417d4bc846e7e3dd986541bc9cedc776efd535ed",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "4f71310dec7be6fef5a51d7f2d3d48b22484dbba06c289c62a88e25f3102e86a",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4632,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995540011372,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995541890604,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "76134999b24a20242e3eaf8475ed954a99ff293ad91a6788e6e8f4cdd75fb73f",
+        "scope_id": "4f54eb4c9322903e348716669358ac23d452d6369e5e155e1c9ad86e54617a1f",
+        "received_at_us": 1791995542429845,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "4f54eb4c9322903e348716669358ac23d452d6369e5e155e1c9ad86e54617a1f",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "76134999b24a20242e3eaf8475ed954a99ff293ad91a6788e6e8f4cdd75fb73f",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995540014577,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995542429845,
+          "replay_width_windows": 30
+        }
+      }
+    ],
+    "scopes": [
+      {
+        "scope_id": "a1de5256a985aba64b5e92dbd04f86990fb9648c18772ff66f59333a040f420d",
+        "device_id": "edge-device-04",
+        "window_index": 179199553,
+        "quarantined": false
+      },
+      {
+        "scope_id": "4008bb160b7e5b1d81e0dabd954007783338a21af0869e9143ffc1a855dfc2ce",
+        "device_id": "edge-device-01",
+        "window_index": 179199553,
+        "quarantined": false
+      },
+      {
+        "scope_id": "a3419865cee15e13a6aa3e6855e4cfb13e475fc2f92d39b5fe31d2fbc60e695f",
+        "device_id": "edge-device-03",
+        "window_index": 179199553,
+        "quarantined": false
+      },
+      {
+        "scope_id": "7968720418523d6ae527b7a9417d4bc846e7e3dd986541bc9cedc776efd535ed",
+        "device_id": "edge-device-05",
+        "window_index": 179199553,
+        "quarantined": false
+      },
+      {
+        "scope_id": "4f54eb4c9322903e348716669358ac23d452d6369e5e155e1c9ad86e54617a1f",
+        "device_id": "edge-device-02",
+        "window_index": 179199553,
+        "quarantined": false
+      }
+    ],
+    "outcomes": [
+      {
+        "timestamp_us": 1791995540256330,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "a1de5256a985aba64b5e92dbd04f86990fb9648c18772ff66f59333a040f420d",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "2845d5916af0b616b0b2c74462dcc491c729dcd96538b4e88d40af0c1616e971",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4776,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995540002155,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995540256330,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995540792161,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "4008bb160b7e5b1d81e0dabd954007783338a21af0869e9143ffc1a855dfc2ce",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "b281ea937f92aaf9a2a4086ed272db9bdd8be0cb35c90784a6c5b55986f5b73e",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4628,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995540005665,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995540792161,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995541287992,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "a3419865cee15e13a6aa3e6855e4cfb13e475fc2f92d39b5fe31d2fbc60e695f",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "a8b3bcc61bdefdb85118e3b669509802d4c41dcda915e72dd4d9f2b8e1a97f06",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995540008586,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995541287992,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995541890604,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "7968720418523d6ae527b7a9417d4bc846e7e3dd986541bc9cedc776efd535ed",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "4f71310dec7be6fef5a51d7f2d3d48b22484dbba06c289c62a88e25f3102e86a",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4632,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995540011372,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995541890604,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995542429845,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "4f54eb4c9322903e348716669358ac23d452d6369e5e155e1c9ad86e54617a1f",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "be32ab84-8ad5-4330-8021-eac9c2ed1598",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199553,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "76134999b24a20242e3eaf8475ed954a99ff293ad91a6788e6e8f4cdd75fb73f",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995540014577,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "d1b082c20609c56f78ec4bc1644a10b7762fd237953a86b0cfc7d72bc08e211f",
+          "received_at_utc_us": 1791995542429845,
+          "replay_width_windows": 30
+        }
+      }
+    ],
+    "conflicts": [],
+    "verdicts": [
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199553,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      }
+    ],
+    "latency": [],
+    "tables": [
+      {
+        "tablename": "accepted_telemetry"
+      },
+      {
+        "tablename": "alerts"
+      },
+      {
+        "tablename": "anomalies"
+      },
+      {
+        "tablename": "coverage_alert_cooldowns"
+      },
+      {
+        "tablename": "coverage_alert_history"
+      },
+      {
+        "tablename": "coverage_alert_intents"
+      },
+      {
+        "tablename": "coverage_alert_states"
+      },
+      {
+        "tablename": "coverage_capsules"
+      },
+      {
+        "tablename": "coverage_conflicts"
+      },
+      {
+        "tablename": "coverage_epochs"
+      },
+      {
+        "tablename": "coverage_facts"
+      },
+      {
+        "tablename": "coverage_heads"
+      },
+      {
+        "tablename": "coverage_monitor_gaps"
+      },
+      {
+        "tablename": "coverage_monitor_state"
+      },
+      {
+        "tablename": "coverage_original_witnesses"
+      },
+      {
+        "tablename": "coverage_outcomes"
+      },
+      {
+        "tablename": "coverage_parts"
+      },
+      {
+        "tablename": "coverage_performance"
+      },
+      {
+        "tablename": "coverage_publications"
+      },
+      {
+        "tablename": "coverage_rule_history"
+      },
+      {
+        "tablename": "coverage_rule_verdicts"
+      },
+      {
+        "tablename": "coverage_scopes"
+      },
+      {
+        "tablename": "experiment_metadata"
+      },
+      {
+        "tablename": "observability_snapshots"
+      },
+      {
+        "tablename": "performance_metrics"
+      },
+      {
+        "tablename": "rejected_messages"
+      },
+      {
+        "tablename": "security_events"
+      }
+    ]
+  }
+}

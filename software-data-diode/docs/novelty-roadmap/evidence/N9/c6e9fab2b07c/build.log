@@ -1,0 +1,434 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 7.80kB done
+#1 DONE 0.0s
+
+#2 [edge-device-02 internal] load build definition from Dockerfile
+#2 DONE 0.0s
+
+#3 [edge-gateway internal] load build definition from Dockerfile
+#3 transferring dockerfile: 817B 0.0s done
+#3 DONE 0.1s
+
+#4 [fog-analytics internal] load build definition from Dockerfile
+#4 transferring dockerfile: 684B done
+#4 DONE 0.1s
+
+#5 [validation-init internal] load metadata for docker.io/library/python:3.11.11-slim-bookworm
+#5 ...
+
+#2 [edge-device-01 internal] load build definition from Dockerfile
+#2 transferring dockerfile: 679B done
+#2 DONE 0.1s
+
+#6 [data-diode internal] load build definition from Dockerfile
+#6 transferring dockerfile: 717B done
+#6 DONE 0.1s
+
+#5 [data-diode internal] load metadata for docker.io/library/python:3.11.11-slim-bookworm
+#5 ...
+
+#7 [fog-receiver internal] load build definition from Dockerfile
+#7 transferring dockerfile: 767B done
+#7 DONE 0.2s
+
+#8 [auth] library/python:pull token for registry-1.docker.io
+#8 DONE 0.0s
+
+#9 [event-processor internal] load build definition from Dockerfile
+#9 transferring dockerfile: 651B done
+#9 DONE 0.3s
+
+#10 [security-test-client internal] load build definition from Dockerfile
+#10 transferring dockerfile: 610B done
+#10 DONE 0.3s
+
+#11 [alert-engine internal] load build definition from Dockerfile
+#11 transferring dockerfile: 645B done
+#11 DONE 0.3s
+
+#5 [event-processor internal] load metadata for docker.io/library/python:3.11.11-slim-bookworm
+#5 DONE 1.5s
+
+#12 [validation-init internal] load .dockerignore
+#12 transferring context: 206B done
+#12 DONE 0.0s
+
+#13 [security-test-client 1/7] FROM docker.io/library/python:3.11.11-slim-bookworm@sha256:081075da77b2b55c23c088251026fb69a7b2bf92471e491ff5fd75c192fd38e5
+#13 resolve docker.io/library/python:3.11.11-slim-bookworm@sha256:081075da77b2b55c23c088251026fb69a7b2bf92471e491ff5fd75c192fd38e5
+#13 resolve docker.io/library/python:3.11.11-slim-bookworm@sha256:081075da77b2b55c23c088251026fb69a7b2bf92471e491ff5fd75c192fd38e5 0.1s done
+#13 DONE 0.1s
+
+#14 [validation-init internal] load build context
+#14 transferring context: 29.83kB 0.0s done
+#14 DONE 0.1s
+
+#15 [edge-device-01 internal] load build context
+#15 transferring context: 3.41kB done
+#15 DONE 0.1s
+
+#16 [data-diode internal] load build context
+#16 transferring context: 22.12kB done
+#16 DONE 0.2s
+
+#17 [alert-engine internal] load build context
+#17 transferring context: 3.41kB 0.0s done
+#17 DONE 0.2s
+
+#18 [fog-receiver internal] load build context
+#18 transferring context: 18.59kB 0.0s done
+#18 DONE 0.2s
+
+#19 [fog-analytics internal] load build context
+#19 transferring context: 19.47kB 0.0s done
+#19 DONE 0.3s
+
+#20 [security-test-client internal] load build context
+#20 transferring context: 37.70kB 0.0s done
+#20 DONE 0.4s
+
+#21 [event-processor internal] load build context
+#21 transferring context: 8.25kB 0.0s done
+#21 DONE 0.4s
+
+#22 [alert-engine 2/7] WORKDIR /app
+#22 CACHED
+
+#23 [alert-engine 3/7] COPY constraints.txt /tmp/constraints.txt
+#23 CACHED
+
+#24 [alert-engine 6/7] COPY --chown=app:app shared ./shared
+#24 CACHED
+
+#25 [alert-engine 4/7] COPY alert-engine/requirements.txt /tmp/requirements.txt
+#25 CACHED
+
+#26 [alert-engine 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+#26 CACHED
+
+#27 [alert-engine 7/7] COPY --chown=app:app alert-engine/app ./app
+#27 CACHED
+
+#28 [fog-receiver 3/7] COPY constraints.txt /tmp/constraints.txt
+#28 CACHED
+
+#29 [fog-receiver 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app     && mkdir -p /logs /state/research-replay     && chown app:app /logs /state/research-replay
+#29 CACHED
+
+#30 [fog-receiver 4/7] COPY fog-receiver/requirements.txt /tmp/requirements.txt
+#30 CACHED
+
+#31 [fog-receiver 6/7] COPY --chown=app:app shared ./shared
+#31 CACHED
+
+#32 [security-test-client 6/7] COPY --chown=app:app shared ./shared
+#32 CACHED
+
+#33 [security-test-client 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+#33 CACHED
+
+#34 [security-test-client 3/7] COPY constraints.txt /tmp/constraints.txt
+#34 CACHED
+
+#35 [security-test-client 4/7] COPY security-test-client/requirements.txt /tmp/requirements.txt
+#35 CACHED
+
+#36 [security-test-client 7/7] COPY --chown=app:app security-test-client/app ./app
+#36 CACHED
+
+#37 [fog-receiver 7/7] COPY --chown=app:app fog-receiver/app ./app
+#37 CACHED
+
+#38 [validation-init 3/7] COPY constraints.txt /tmp/constraints.txt
+#38 CACHED
+
+#39 [validation-init 4/7] COPY edge-gateway/requirements.txt /tmp/requirements.txt
+#39 CACHED
+
+#40 [validation-init 6/7] COPY --chown=app:app shared ./shared
+#40 CACHED
+
+#41 [validation-init 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app     && mkdir -p /logs /state/coverage-ledger /state/coverage-trust /state/n9-key     && chown app:app /logs /state/coverage-ledger /state/coverage-trust /state/n9-key
+#41 CACHED
+
+#42 [validation-init 7/7] COPY --chown=app:app edge-gateway/app ./app
+#42 CACHED
+
+#43 [edge-device-01 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app     && mkdir -p /state/research-device     && chown app:app /state/research-device
+#43 CACHED
+
+#44 [edge-device-01 3/7] COPY constraints.txt /tmp/constraints.txt
+#44 CACHED
+
+#45 [edge-device-01 6/7] COPY --chown=app:app shared ./shared
+#45 CACHED
+
+#46 [edge-device-01 4/7] COPY edge-device/requirements.txt /tmp/requirements.txt
+#46 CACHED
+
+#47 [edge-device-01 7/7] COPY --chown=app:app edge-device/app ./app
+#47 CACHED
+
+#48 [data-diode 4/7] COPY data-diode/requirements.txt /tmp/requirements.txt
+#48 CACHED
+
+#49 [data-diode 6/7] COPY --chown=app:app shared ./shared
+#49 CACHED
+
+#50 [data-diode 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app     && mkdir -p /logs     && chown app:app /logs
+#50 CACHED
+
+#51 [data-diode 3/7] COPY constraints.txt /tmp/constraints.txt
+#51 CACHED
+
+#52 [data-diode 7/7] COPY --chown=app:app data-diode/app ./app
+#52 CACHED
+
+#22 [event-processor 2/7] WORKDIR /app
+#22 CACHED
+
+#53 [event-processor 5/7] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+#53 CACHED
+
+#54 [event-processor 3/7] COPY constraints.txt /tmp/constraints.txt
+#54 CACHED
+
+#55 [event-processor 6/7] COPY --chown=app:app shared ./shared
+#55 CACHED
+
+#56 [event-processor 4/7] COPY event-processor/requirements.txt /tmp/requirements.txt
+#56 CACHED
+
+#57 [event-processor 7/7] COPY --chown=app:app event-processor/app ./app
+#57 CACHED
+
+#58 [security-test-client] exporting to image
+#58 exporting layers done
+#58 exporting manifest sha256:e49c289b072f3cdfa1609ff939fe2c5af8f58219dc602b228002146d3330f670
+#58 ...
+
+#59 [fog-analytics 7/8] COPY --chown=app:app config ./config
+#59 CACHED
+
+#60 [fog-analytics 3/8] COPY constraints.txt /tmp/constraints.txt
+#60 CACHED
+
+#61 [fog-analytics 6/8] COPY --chown=app:app shared ./shared
+#61 CACHED
+
+#22 [fog-analytics 2/7] WORKDIR /app
+#22 CACHED
+
+#62 [fog-analytics 4/8] COPY fog-analytics/requirements.txt /tmp/requirements.txt
+#62 CACHED
+
+#63 [fog-analytics 5/8] RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+#63 CACHED
+
+#64 [fog-analytics 8/8] COPY --chown=app:app fog-analytics/app ./app
+#64 CACHED
+
+#65 [fog-analytics] exporting to image
+#65 exporting layers done
+#65 exporting manifest sha256:98db9a56f3bde2b95c2c25208442ff6138775ff362734d8ad856c925eb8e7397
+#65 exporting manifest sha256:98db9a56f3bde2b95c2c25208442ff6138775ff362734d8ad856c925eb8e7397 0.5s done
+#65 exporting config sha256:bb0fca6d8caefb2b7f06b803ffa09d4b532cc27d649fd6a6182811a94c83baf2
+#65 exporting config sha256:bb0fca6d8caefb2b7f06b803ffa09d4b532cc27d649fd6a6182811a94c83baf2 0.5s done
+#65 exporting attestation manifest sha256:0dc6246b571f3160544acca213d732236e4e49d0f99f6a30727696e09fa431a8
+#65 exporting attestation manifest sha256:0dc6246b571f3160544acca213d732236e4e49d0f99f6a30727696e09fa431a8 0.6s done
+#65 exporting manifest list sha256:8dac2daa2ac647cef058679fd8841f3d49bf6a6a1b568a1041948a7e4086e7f2
+#65 exporting manifest list sha256:8dac2daa2ac647cef058679fd8841f3d49bf6a6a1b568a1041948a7e4086e7f2 0.2s done
+#65 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-fog-analytics:latest
+#65 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-fog-analytics:latest 0.2s done
+#65 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-fog-analytics:latest
+#65 ...
+
+#66 [edge-device-05] exporting to image
+#66 exporting layers done
+#66 exporting manifest sha256:dc85e6c95b99f55e1ba67121cfc44edb128654ac515ea8b94a912ffdde1343b8 0.5s done
+#66 exporting config sha256:a78135e6af23b2b6c81bb0143416db5cd320b15167bccb85c22351810a1ca7e3 0.5s done
+#66 exporting attestation manifest sha256:043cea17dfa3744cb561ef4cf74e22fe978cf652d91e48adf14b0c1605928a32 0.7s done
+#66 exporting manifest list sha256:7b6f424c88b123108e780f582c38f11f347594cb408c7f379ec78ce4c9be63a2 0.3s done
+#66 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-05:latest 0.3s done
+#66 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-05:latest 0.2s done
+#66 DONE 3.2s
+
+#67 [edge-device-03] exporting to image
+#67 exporting layers done
+#67 exporting manifest sha256:a158093aecbb845c80dc01d7ed6bcea028911eb1580920a7c75d8a5e7ce99b9e 0.3s done
+#67 exporting config sha256:445dbc43da531f8e5e037e6eeec5d9cc1e9612c02e8997e2d4136d33c2825189 0.5s done
+#67 exporting attestation manifest sha256:5bdcf76c6b83e3e6d7587b2312b13d8e16636a28d08e8e01207fef8c7dba5bf5 0.7s done
+#67 exporting manifest list sha256:fa3e509e021dcce95737e5e30d8dc2e03f799c8f4ef8ce02c5a6c34aa5c7c66a 0.5s done
+#67 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-03:latest 0.2s done
+#67 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-03:latest 0.2s done
+#67 DONE 3.3s
+
+#68 [edge-device-04] exporting to image
+#68 exporting layers done
+#68 exporting manifest sha256:093a439849f6876a9b81232a321cbc1e25e79a0f6835050433e926e6f970b75c 0.4s done
+#68 exporting config sha256:9c8cb7890d3817b5f9b1cc6067112b0ce124162bb7d806250b26aa14fc80d268 0.5s done
+#68 exporting attestation manifest sha256:ba3fa9c78134d1be3122de5ba66945b1e92590b919af94905a1bc58470fae8ab 0.7s done
+#68 exporting manifest list sha256:d5b9e1f319d611b80674835bf56651fdc635bff00328dfcf295e2bbfe1034a40 0.5s done
+#68 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-04:latest 0.2s done
+#68 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-04:latest 0.2s done
+#68 DONE 3.3s
+
+#69 [edge-device-01] exporting to image
+#69 exporting layers done
+#69 exporting manifest sha256:d0343d31944a61b6932af0784ef6fc6f18696faca8976370f8be5eb3ea33b7b8 0.4s done
+#69 exporting config sha256:24d234b0e69d455385584d2f32df1dc109472c29c9dc2eed76fbcebfd5a9d15d 0.5s done
+#69 exporting attestation manifest sha256:7cb0bb3b247d4bb590b2ab24751b0c808de99bff375f1b3e9b465e6f9344d8f6 0.7s done
+#69 exporting manifest list sha256:ca53727717dbf66fc291e650bf6b613029a508532b6699d5f0cf2de884992ff7 0.5s done
+#69 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-01:latest 0.2s done
+#69 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-01:latest 0.2s done
+#69 DONE 3.3s
+
+#70 [edge-device-02] exporting to image
+#70 exporting layers done
+#70 exporting manifest sha256:1ac5add95c265686de58771c716ec97694952f291b367548b321e6abf89a500e 0.3s done
+#70 exporting config sha256:ded053fe7860754e02efb3e2ce6da0d8233cf285badfc1d23f2658796b879a56 0.5s done
+#70 exporting attestation manifest sha256:e1c2371daaf1ab16ae0187060e2dd7080347a4d9b52d9e430ff99d4e2529146e 0.7s done
+#70 exporting manifest list sha256:eaea490071c21dc48485c90ace3fd86e95fb67dc7cda2ad3093d09277c37123e 0.5s done
+#70 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-02:latest 0.3s done
+#70 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-device-02:latest 0.2s done
+#70 DONE 3.3s
+
+#71 [validation-init] exporting to image
+#71 exporting layers done
+#71 exporting manifest sha256:48b9afe08ea25cf8dbc991645eb61706bf701c0360a5301aa7a1f1b301d4b65a 0.4s done
+#71 exporting config sha256:98fd2fac935df34c55a8e60679a804db2e3eeb68a95a3c035fb9c5ab83569153 0.5s done
+#71 exporting attestation manifest sha256:2ed840eb757c4b7f2a1b92c3c863aabf8aaacda7cd4893b44200c9375d28e902 0.7s done
+#71 exporting manifest list sha256:509cc9a7a8c6c8da538f1c03872e96cc9da8c8c2ce14326a9a1c6a607c1ffc3b 0.4s done
+#71 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-validation-init:latest 0.3s done
+#71 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-validation-init:latest 0.2s done
+#71 DONE 3.2s
+
+#72 [edge-gateway] exporting to image
+#72 exporting layers done
+#72 exporting manifest sha256:9a658c551d2c72259fbe51aea971a16ca849a9e860e306b67acb2e3df113e50d 0.4s done
+#72 exporting config sha256:f02005cc08ec215d930e031a5009b64a7447b4aad48866140bde49e3af2eff54 0.5s done
+#72 exporting attestation manifest sha256:de6c4c4b51db1020493c23af25885a12d5c039bed4c6aeaba69cc39c49bd38db 0.7s done
+#72 exporting manifest list sha256:c05665c41a91026fdbc2ec9a6a47760e92ba22b60023dd126ccc5053d6ce5118 0.5s done
+#72 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-gateway:latest 0.2s done
+#72 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-edge-gateway:latest 0.2s done
+#72 DONE 3.3s
+
+#73 [alert-engine] exporting to image
+#73 exporting layers done
+#73 exporting manifest sha256:8a53bfe4e035632b94c5c4fb496748729f8d9ef6e3d39991af4e458bde4adb90 0.4s done
+#73 exporting config sha256:7a0af90e4e39e531218d70c83b31c58a5044df392d27db9502de6ff58f4fac51 0.5s done
+#73 exporting attestation manifest sha256:2db51f87e5fce493ea8592cd5ed69751ff881b7aaa20add407c071f9742bac1c 0.7s done
+#73 exporting manifest list sha256:f76408a9338590dfed65e29f2189914eac6d4d060a37c450f560dfe5dc6ebd7d 0.5s done
+#73 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-alert-engine:latest 0.2s done
+#73 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-alert-engine:latest 0.2s done
+#73 DONE 3.3s
+
+#74 [data-diode] exporting to image
+#74 exporting layers done
+#74 exporting manifest sha256:0c4ad91fff330e68100c78a3bb7039214c9ba7f6a130cf571b483a5ce79013a3 0.5s done
+#74 exporting config sha256:f3791f94d84b905fdb85b448dde1623d157672574d89a74476916b4b14a99f83 0.5s done
+#74 exporting attestation manifest sha256:6c0feff081971b624b3bd1cfab82ddba8763bf68a5467e8d41fbb35742a75f56 0.7s done
+#74 exporting manifest list sha256:371482ac19b9b5ce47d120841b86c0191a07d1732d712e5569204b36578c287a 0.5s done
+#74 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-data-diode:latest 0.2s done
+#74 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-data-diode:latest 0.2s done
+#74 DONE 3.3s
+
+#58 [security-test-client] exporting to image
+#58 exporting manifest sha256:e49c289b072f3cdfa1609ff939fe2c5af8f58219dc602b228002146d3330f670 0.5s done
+#58 exporting config sha256:cfff228f00375a09263a71a8d3256d05bf0dcd491cf3efbd6f09cd1777d4e367 0.5s done
+#58 exporting attestation manifest sha256:ab38367878993da86dd243a1320939d8ee98df31b9d83e6df7eb7ed3cca4b1be 0.7s done
+#58 exporting manifest list sha256:efcbc2eae53b68bb7e87c4364952e230ef4180038e3eaed035ca347a4a541448 0.4s done
+#58 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-security-test-client:latest 0.1s done
+#58 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-security-test-client:latest 0.2s done
+#58 DONE 3.3s
+
+#75 [fog-receiver] exporting to image
+#75 exporting layers done
+#75 exporting manifest sha256:0b43a5a4197250c33bd4eaeabcba12dafddbc31a2d9c7af1b8ccc42cd6e8f921 0.5s done
+#75 exporting config sha256:5b5795577d86507dc0f86f43ba5a80fc05ac4ad5509117ee8c781f3c5fdf96e0 0.5s done
+#75 exporting attestation manifest sha256:d059ba911324a95ed77d4dfc3e2e235328d07eec9b9ca7aea7da1f8099735148 0.6s done
+#75 exporting manifest list sha256:b719e7a447c0ef491c8b112d0948d6dcf691153582fc998618e0812b44eedd2c 0.3s done
+#75 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-fog-receiver:latest 0.2s done
+#75 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-fog-receiver:latest 0.2s done
+#75 DONE 3.3s
+
+#65 [fog-analytics] exporting to image
+#65 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-fog-analytics:latest 0.2s done
+#65 DONE 3.0s
+
+#76 [event-processor] exporting to image
+#76 exporting layers done
+#76 exporting manifest sha256:54c2f7092159ff4b9ba9a7d7326f278403b077cf6ce2383480602931974c37d7 0.5s done
+#76 exporting config sha256:71160e0340943a1e6c0a84ca3d8eb337045771007962ba5252f8f036ca50a7eb 0.5s done
+#76 exporting attestation manifest sha256:3f08eecffad830a65d1b5130562e53326ab3eb6a7da60c8d61d0387a9ab149f1 0.6s done
+#76 exporting manifest list sha256:6dce40d98d52b0aa024cf550a2712b354a3d1f3e81ce54843a51f7d347ac0140 0.3s done
+#76 naming to docker.io/library/software-data-diode-n9-c6e9fab2b07c-event-processor:latest 0.2s done
+#76 unpacking to docker.io/library/software-data-diode-n9-c6e9fab2b07c-event-processor:latest 0.2s done
+#76 DONE 3.1s
+
+#77 [edge-device-05] resolving provenance for metadata file
+#77 ...
+
+#78 [edge-device-03] resolving provenance for metadata file
+#78 DONE 1.9s
+
+#77 [edge-device-05] resolving provenance for metadata file
+#77 DONE 1.9s
+
+#79 [alert-engine] resolving provenance for metadata file
+#79 DONE 0.2s
+
+#80 [validation-init] resolving provenance for metadata file
+#80 DONE 0.5s
+
+#81 [edge-device-02] resolving provenance for metadata file
+#81 DONE 0.8s
+
+#82 [security-test-client] resolving provenance for metadata file
+#82 DONE 1.6s
+
+#83 [data-diode] resolving provenance for metadata file
+#83 DONE 1.4s
+
+#84 [event-processor] resolving provenance for metadata file
+#84 DONE 0.7s
+
+#85 [fog-receiver] resolving provenance for metadata file
+#85 DONE 1.2s
+
+#86 [fog-analytics] resolving provenance for metadata file
+#86 DONE 1.0s
+
+#87 [edge-gateway] resolving provenance for metadata file
+#87 DONE 0.3s
+
+#88 [edge-device-01] resolving provenance for metadata file
+#88 DONE 1.7s
+
+#89 [edge-device-04] resolving provenance for metadata file
+#89 DONE 0.0s
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-04 Building 
+ Image software-data-diode-n9-c6e9fab2b07c-security-test-client Building 
+ Image software-data-diode-n9-c6e9fab2b07c-event-processor Building 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-03 Building 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-05 Building 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-02 Building 
+ Image software-data-diode-n9-c6e9fab2b07c-validation-init Building 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-gateway Building 
+ Image software-data-diode-n9-c6e9fab2b07c-fog-receiver Building 
+ Image software-data-diode-n9-c6e9fab2b07c-alert-engine Building 
+ Image software-data-diode-n9-c6e9fab2b07c-data-diode Building 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-01 Building 
+ Image software-data-diode-n9-c6e9fab2b07c-fog-analytics Building 
+ Image software-data-diode-n9-c6e9fab2b07c-fog-receiver Built 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-01 Built 
+ Image software-data-diode-n9-c6e9fab2b07c-validation-init Built 
+ Image software-data-diode-n9-c6e9fab2b07c-event-processor Built 
+ Image software-data-diode-n9-c6e9fab2b07c-fog-analytics Built 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-02 Built 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-gateway Built 
+ Image software-data-diode-n9-c6e9fab2b07c-security-test-client Built 
+ Image software-data-diode-n9-c6e9fab2b07c-data-diode Built 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-04 Built 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-05 Built 
+ Image software-data-diode-n9-c6e9fab2b07c-alert-engine Built 
+ Image software-data-diode-n9-c6e9fab2b07c-edge-device-03 Built 

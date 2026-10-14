@@ -1,0 +1,10 @@
+{
+  "forward_udp": 0,
+  "reverse_udp": 0,
+  "reverse_tcp": 0,
+  "reverse_icmp": 0,
+  "captured_bytes": 0,
+  "error": null,
+  "capture_scope": "TEST_DIODE_NAMESPACE_IPV4_TO_FROM_PINNED_FOG_ONLY",
+  "truncated": false
+}

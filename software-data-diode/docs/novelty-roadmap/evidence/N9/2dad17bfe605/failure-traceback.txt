@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 249, in run
+    campaign.ready(["edge-gateway","data-diode","fog-receiver","event-processor","fog-analytics","alert-engine","postgres"])
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 85, in ready
+    rows=self.guard()
+         ^^^^^^^^^^^^
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 75, in guard
+    raise ValueError("foreign state volume mounted")
+ValueError: foreign state volume mounted

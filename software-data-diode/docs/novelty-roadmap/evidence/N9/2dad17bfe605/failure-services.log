@@ -1,0 +1,166 @@
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:38.209087+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:38.209243+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:38.390446+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:38.397118+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:40.085856+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:34192 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:43.394173+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.3:60546 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:43.492111+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.4:53834 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:43.524673+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.5:45402 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:43.564386+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.7:47676 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:43.617203+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.6:60920 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1  | {"timestamp":"2026-10-14T16:25:43.650958+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:34880 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1  | {"timestamp":"2026-10-14T16:25:43.186752+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-02 type=system","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1  | {"timestamp":"2026-10-14T16:25:43.186972+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1  | {"timestamp":"2026-10-14T16:25:43.290879+00:00","service":"edge-device-02","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=resource status=degraded","message_id":null,"device_id":"edge-device-02","correlation_id":"edge-device-02:2026-10-14T16:25:43.290598+00:00","telemetry_type":"system"}
+edge-device-02-1  | {"timestamp":"2026-10-14T16:25:43.618954+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1  | {"timestamp":"2026-10-14T16:25:43.620395+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '28c00ac9-938e-4f12-b7a4-c79b9f57937b', 'device_id': 'edge-device-02', 'ingress_sequence': 1, 'window_index': 179199514, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': 'b25367697ad9989e0b2aa944935546f264e8a59319dcf9840394a65a2fb65d5a', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+postgres-1           | The files belonging to this database system will be owned by user "postgres".
+postgres-1           | This user must also own the server process.
+postgres-1           | 
+postgres-1           | The database cluster will be initialized with locale "en_US.utf8".
+postgres-1           | The default database encoding has accordingly been set to "UTF8".
+postgres-1           | The default text search configuration will be set to "english".
+postgres-1           | 
+postgres-1           | Data page checksums are disabled.
+postgres-1           | 
+postgres-1           | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-1           | creating subdirectories ... ok
+postgres-1           | selecting dynamic shared memory implementation ... posix
+postgres-1           | selecting default max_connections ... 100
+postgres-1           | selecting default shared_buffers ... 128MB
+postgres-1           | selecting default time zone ... UTC
+postgres-1           | creating configuration files ... ok
+postgres-1           | running bootstrap script ... ok
+postgres-1           | sh: locale: not found
+postgres-1           | 2026-10-14 16:25:35.554 UTC [34] WARNING:  no usable system locales were found
+postgres-1           | performing post-bootstrap initialization ... ok
+postgres-1           | initdb: warning: enabling "trust" authentication for local connections
+postgres-1           | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-1           | syncing data to disk ... ok
+postgres-1           | 
+postgres-1           | 
+postgres-1           | Success. You can now start the database server using:
+postgres-1           | 
+postgres-1           |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-1           | 
+postgres-1           | waiting for server to start....2026-10-14 16:25:37.308 UTC [46] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1           | 2026-10-14 16:25:37.314 UTC [46] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1           | 2026-10-14 16:25:37.337 UTC [49] LOG:  database system was shut down at 2026-10-14 16:25:36 UTC
+postgres-1           | 2026-10-14 16:25:37.347 UTC [46] LOG:  database system is ready to accept connections
+postgres-1           |  done
+postgres-1           | server started
+postgres-1           | CREATE DATABASE
+postgres-1           | 
+postgres-1           | 
+postgres-1           | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-1           | 
+postgres-1           | waiting for server to shut down...2026-10-14 16:25:37.495 UTC [46] LOG:  received fast shutdown request
+postgres-1           | .2026-10-14 16:25:37.503 UTC [46] LOG:  aborting any active transactions
+postgres-1           | 2026-10-14 16:25:37.506 UTC [46] LOG:  background worker "logical replication launcher" (PID 52) exited with exit code 1
+postgres-1           | 2026-10-14 16:25:37.515 UTC [47] LOG:  shutting down
+postgres-1           | 2026-10-14 16:25:37.522 UTC [47] LOG:  checkpoint starting: shutdown immediate
+postgres-1           | 2026-10-14 16:25:37.683 UTC [47] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.036 s, sync=0.103 s, total=0.168 s; sync files=301, longest=0.014 s, average=0.001 s; distance=4283 kB, estimate=4283 kB; lsn=0/1925D58, redo lsn=0/1925D58
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | CREATE TABLE
+postgres-1           | 2026-10-14 16:25:37.691 UTC [46] LOG:  database system is shut down
+postgres-1           |  done
+postgres-1           | server stopped
+postgres-1           | 
+postgres-1           | PostgreSQL init process complete; ready for start up.
+postgres-1           | 
+postgres-1           | 2026-10-14 16:25:37.734 UTC [1] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1           | 2026-10-14 16:25:37.734 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1           | 2026-10-14 16:25:37.734 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1           | 2026-10-14 16:25:37.749 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1           | 2026-10-14 16:25:37.766 UTC [62] LOG:  database system was shut down at 2026-10-14 16:25:37 UTC
+postgres-1           | 2026-10-14 16:25:37.777 UTC [1] LOG:  database system is ready to accept connections
+database-migrator-1  | psql:/migrations/002_phase5_observability.sql:9: NOTICE:  column "acknowledged_at" of relation "alerts" already exists, skipping
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | BEGIN
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | COMMIT
+database-migrator-1  | BEGIN
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE FUNCTION
+database-migrator-1  | CREATE FUNCTION
+database-migrator-1  | DROP TRIGGER
+database-migrator-1  | psql:/migrations/004_n7_rules.sql:78: NOTICE:  trigger "coverage_revision_before" for relation "coverage_rule_verdicts" does not exist, skipping
+database-migrator-1  | CREATE TRIGGER
+database-migrator-1  | DROP TRIGGER
+database-migrator-1  | psql:/migrations/004_n7_rules.sql:80: NOTICE:  trigger "coverage_revision_after" for relation "coverage_rule_verdicts" does not exist, skipping
+database-migrator-1  | CREATE TRIGGER
+database-migrator-1  | COMMIT
+database-migrator-1  | BEGIN
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | COMMIT
+validation-init-1    | Disposable N9 project initialized; no user credentials mounted
+edge-device-05-1     | {"timestamp":"2026-10-14T16:25:42.911969+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-05 type=industrial","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1     | {"timestamp":"2026-10-14T16:25:43.046904+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-04 type=security","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:25:42.912182+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1     | {"timestamp":"2026-10-14T16:25:43.047049+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1     | {"timestamp":"2026-10-14T16:25:43.182077+00:00","service":"edge-device-04","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=security status=normal","message_id":null,"device_id":"edge-device-04","correlation_id":"edge-device-04:2026-10-14T16:25:43.181866+00:00","telemetry_type":"security"}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:25:43.031143+00:00","service":"edge-device-05","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=industrial_process status=normal","message_id":null,"device_id":"edge-device-05","correlation_id":"edge-device-05:2026-10-14T16:25:43.030993+00:00","telemetry_type":"industrial"}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:25:43.396197+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:25:42.961712+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-03 type=network","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:25:42.961866+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:25:43.087741+00:00","service":"edge-device-03","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=network status=normal","message_id":null,"device_id":"edge-device-03","correlation_id":"edge-device-03:2026-10-14T16:25:43.087502+00:00","telemetry_type":"network"}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:25:43.493512+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:25:43.494528+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '28c00ac9-938e-4f12-b7a4-c79b9f57937b', 'device_id': 'edge-device-03', 'ingress_sequence': 1, 'window_index': 179199514, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '007a9b86948320a5b322c7a61f0d8094da16fde7bbdc8e69994672cf5e6ca53c', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1     | {"timestamp":"2026-10-14T16:25:43.565622+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1     | {"timestamp":"2026-10-14T16:25:43.566662+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '28c00ac9-938e-4f12-b7a4-c79b9f57937b', 'device_id': 'edge-device-04', 'ingress_sequence': 1, 'window_index': 179199514, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': 'a9c6b5db1537a165491e4c8421422fa947bc3a000359de6505fe48c2febbb7e2', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:25:43.397761+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '28c00ac9-938e-4f12-b7a4-c79b9f57937b', 'device_id': 'edge-device-05', 'ingress_sequence': 1, 'window_index': 179199514, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '5b80b8db79118185f9e96d33be9cd4068d027ce29986a4c18ada53094839a330', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T16:25:37.031603+00:00","service":"data-diode","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+data-diode-1         | {"timestamp":"2026-10-14T16:25:37.031864+00:00","service":"data-diode","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1     | {"timestamp":"2026-10-14T16:25:42.956087+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-01 type=environmental","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1     | {"timestamp":"2026-10-14T16:25:42.956244+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1     | {"timestamp":"2026-10-14T16:25:43.083647+00:00","service":"edge-device-01","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=environmental_telemetry status=normal","message_id":null,"device_id":"edge-device-01","correlation_id":"edge-device-01:2026-10-14T16:25:43.083412+00:00","telemetry_type":"environmental"}
+edge-device-01-1     | {"timestamp":"2026-10-14T16:25:43.525950+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1     | {"timestamp":"2026-10-14T16:25:43.527059+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '28c00ac9-938e-4f12-b7a4-c79b9f57937b', 'device_id': 'edge-device-01', 'ingress_sequence': 1, 'window_index': 179199514, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': 'faba87d267a74bc6e01eb814d69a1ecf695e9640386c77bd917a19320715eca6', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T16:25:37.304375+00:00","service":"data-diode","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T16:25:37.305381+00:00","service":"data-diode","level":"INFO","event":"log","message":"Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+data-diode-1         | {"timestamp":"2026-10-14T16:25:37.693343+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:34184 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1         | {"timestamp":"2026-10-14T16:25:41.424247+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:34856 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}

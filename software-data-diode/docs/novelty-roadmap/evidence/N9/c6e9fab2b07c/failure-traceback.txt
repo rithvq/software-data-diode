@@ -1,0 +1,57 @@
+Traceback (most recent call last):
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 227, in run
+    campaign.call(["up","-d",*services],timeout=180,log="startup.log")
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 54, in call
+    raise RuntimeError("Docker command failed: "+" ".join(args[:5])+"\n"+(result.stdout+result.stderr)[-3500:])
+RuntimeError: Docker command failed: up -d alert-engine data-diode database-migrator
+-data-diode-n9-c6e9fab2b07c_fog-ingress-network Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_edge-network Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_device04 Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_ledger Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_replay Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_replay Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_fog-services-network Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_audit Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_fog-services-network Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_device02 Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_device02 Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_diode-network Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_diode-network Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_device04 Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_fog-ingress-network Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_private Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_private Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_private Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_postgres-data Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_postgres-data Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_trust Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_trust Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device03 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device03 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_ledger Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_ledger Created 
+ Container software-data-diode-n9-c6e9fab2b07c-validation-init-1 Creating 
+ Volume software-data-diode-n9-c6e9fab2b07c_device01 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device01 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device04 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device04 Created 
+ Network software-data-diode-n9-c6e9fab2b07c_edge-network Created 
+ Network software-data-diode-n9-c6e9fab2b07c_edge-network Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device05 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device05 Created 
+ Network software-data-diode-n9-c6e9fab2b07c_diode-network Created 
+ Network software-data-diode-n9-c6e9fab2b07c_diode-network Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_replay Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_replay Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_audit Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_audit Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device02 Created 
+ Volume software-data-diode-n9-c6e9fab2b07c_device02 Created 
+ Network software-data-diode-n9-c6e9fab2b07c_fog-ingress-network Created 
+ Network software-data-diode-n9-c6e9fab2b07c_fog-ingress-network Created 
+ Container software-data-diode-n9-c6e9fab2b07c-data-diode-1 Creating 
+ service:validation-init:1 Error response from daemon: invalid mount path: 'mode=1777' mount path must be absolute 
+ Container software-data-diode-n9-c6e9fab2b07c-edge-gateway-1 Creating 
+ Network software-data-diode-n9-c6e9fab2b07c_fog-services-network Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/networks/create": Error response from daemon: invalid mount path: 'mode=1777' mount path must be absolute
+Error response from daemon: invalid mount path: 'mode=1777' mount path must be absolute
+

@@ -1,0 +1,25 @@
+scenario,attack_type,expected_result,actual_result,passed,detected,scope,timestamp,latency_seconds,queue_data,resource_data,reason
+docker-reverse-path,APPLICATION_ISOLATION,ALL_EDGE_PROBES_FAIL,ALL_EDGE_PROBES_FAIL,True,NOT_APPLICABLE,DOCKER_ISOLATION,2026-10-14T16:28:25.917684+00:00,,"{""no_shared_edge_network"": true, ""probes"": [{""failed"": true, ""kind"": ""DNS"", ""service"": ""edge-gateway""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 8000, ""service"": ""edge-gateway""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 9001, ""service"": ""edge-gateway""}, {""failed"": true, ""kind"": ""DNS"", ""service"": ""edge-device-01""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 8000, ""service"": ""edge-device-01""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 9001, ""service"": ""edge-device-01""}, {""failed"": true, ""kind"": ""DNS"", ""service"": ""edge-device-02""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 8000, ""service"": ""edge-device-02""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 9001, ""service"": ""edge-device-02""}, {""failed"": true, ""kind"": ""DNS"", ""service"": ""edge-device-03""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 8000, ""service"": ""edge-device-03""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 9001, ""service"": ""edge-device-03""}, {""failed"": true, ""kind"": ""DNS"", ""service"": ""edge-device-04""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 8000, ""service"": ""edge-device-04""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 9001, ""service"": ""edge-device-04""}, {""failed"": true, ""kind"": ""DNS"", ""service"": ""edge-device-05""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 8000, ""service"": ""edge-device-05""}, {""failed"": true, ""kind"": ""TCP"", ""port"": 9001, ""service"": ""edge-device-05""}]}",{},
+campaign-execution,HARNESS_OR_RUNTIME,COMPLETED,"Docker command failed: exec -T fog-receiver python -c
+Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+  File ""/usr/local/lib/python3.11/urllib/request.py"", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/urllib/request.py"", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/urllib/request.py"", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/urllib/request.py"", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/urllib/request.py"", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File ""/usr/local/lib/python3.11/urllib/request.py"", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+",False,NOT_APPLICABLE,CHECK_FAILURE,2026-10-14T16:28:26.867149+00:00,,{},{},
+baseline-preservation,STATE_PRESERVATION,UNCHANGED,UNCHANGED,True,NOT_APPLICABLE,PRESERVATION,2026-10-14T16:28:32.381870+00:00,,{},{},Original container IDs/images/start states/mounts/network memberships and credentials/key bytes compared; no secret bytes exported

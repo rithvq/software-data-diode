@@ -1,0 +1,63 @@
+{
+  "metadata": {
+    "project": "software-data-diode-n9-d96e30503021",
+    "run_id": "d96e30503021",
+    "seed": 909,
+    "started_at": "2026-10-14T16:16:29.170778+00:00",
+    "software_version": "1eaa6fbf2a30a745995c757c13626ab3c67ea03e",
+    "source_sha256": {
+      "docker-compose.n9.yml": "685308baaba81f8b452913b2ab09073775f488ad5c5b009db302414b58bedaa7",
+      "shared\\security\\n9_cases.py": "5dfa71cbbfc70d720fb56c8fe54b7934eac8eee631d700e33e372b9816d0e7bb",
+      "shared\\security\\n9_crash.py": "912260e52208c437ee6c404104e7642e3faffec9f2bdc41228f7ef7e44a66fbe",
+      "shared\\security\\n9_init.py": "b793af4d3867e9ae0f764f887d98ec542d9ebdee4c017ff240af70658cdf8986",
+      "shared\\security\\n9_support.py": "d2ce63931a864e16c3b0f044bb85a9ebf75194337b4fcd417dac883823c4e843",
+      "security-test-client\\app\\n9.py": "a4dfb691b5678b1b8a020f6f231f93a978a2b7d907ae5847cbb1269a49663487",
+      "scripts\\run_n9_validation.py": "4e4e5a376adfd7533744b694ad3695160460a235f34c03a3726ccee1c910a303",
+      "config\\rule_coverage.json": "86b944ea6efd235aab5a75d4434b31535e3257089dffe24b19b09cd3962d58ed",
+      "config\\rule_coverage_admission.json": "593918601bf428a2c3132f91778f8bfa3582e267af9c2adc178533ba974d32e9",
+      "config\\rule_coverage_monitoring.json": "2d5d968a4df26607f0e15feb25c32244508f66020e7f5f5771e1735732d8c43b",
+      "config\\rule_coverage_transport.json": "ee24acff83e14663c13082a52d20d95667ab4a2679c89a4eac3d8323649761c8"
+    },
+    "baseline_container_count": 75,
+    "application_feedback_used": false,
+    "synthetic_attack_injection_bytes": "NOT_N4_SCHEDULED_WORK; separately recorded in PCAP",
+    "baseline_changed_ids": [],
+    "ended_at": "2026-10-14T16:16:46.220131+00:00",
+    "baseline_preserved": true,
+    "test_containers_remaining": 0
+  },
+  "results": [
+    {
+      "scenario": "campaign-execution",
+      "attack_type": "HARNESS_OR_RUNTIME",
+      "expected_result": "COMPLETED",
+      "actual_result": "Docker command failed: up -d alert-engine data-diode database-migrator\n-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_trust Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_device02 Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_postgres-data Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_device04 Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_device05 Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_ledger Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_audit Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_private Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_device01 Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n Volume software-data-diode-n9-d96e30503021_replay Error error during connect: Post \"http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create\": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\nfailed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted\n",
+      "passed": false,
+      "detected": null,
+      "scope": "CHECK_FAILURE",
+      "timestamp": "2026-10-14T16:16:44.377881+00:00",
+      "latency_seconds": null,
+      "queue_data": {},
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "baseline-preservation",
+      "attack_type": "STATE_PRESERVATION",
+      "expected_result": "UNCHANGED",
+      "actual_result": "UNCHANGED",
+      "passed": true,
+      "detected": null,
+      "scope": "PRESERVATION",
+      "timestamp": "2026-10-14T16:16:46.220131+00:00",
+      "latency_seconds": null,
+      "queue_data": {},
+      "resource_data": {},
+      "reason": "Original container IDs/images/start states/mounts/network memberships and credentials/key bytes compared; no secret bytes exported"
+    }
+  ],
+  "passed": false,
+  "detected_in_scope": 0,
+  "in_scope_attack_cases": 0,
+  "out_of_scope_cases": 0
+}

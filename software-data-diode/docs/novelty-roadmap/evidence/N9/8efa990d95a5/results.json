@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "project": "software-data-diode-n9-8efa990d95a5",
+    "run_id": "8efa990d95a5",
+    "seed": 909,
+    "started_at": "2026-10-14T16:27:59.644443+00:00",
+    "software_version": "1eaa6fbf2a30a745995c757c13626ab3c67ea03e",
+    "source_sha256": {
+      "docker-compose.n9.yml": "498355a06451a5ff314aef7a1092bac31ab6aa418ccd5449ea9cd6db5250c5c8",
+      "shared\\security\\n9_cases.py": "a357b0c235d2cf9059517f3de0b0e3c9c66317b2aa42f2926f1641d4e333a228",
+      "shared\\security\\n9_crash.py": "912260e52208c437ee6c404104e7642e3faffec9f2bdc41228f7ef7e44a66fbe",
+      "shared\\security\\n9_init.py": "b793af4d3867e9ae0f764f887d98ec542d9ebdee4c017ff240af70658cdf8986",
+      "shared\\security\\n9_support.py": "d2ce63931a864e16c3b0f044bb85a9ebf75194337b4fcd417dac883823c4e843",
+      "security-test-client\\app\\n9.py": "7d5af68b5d46972f68479909618b630bb1dbded75a257be7263f4eebdd724f30",
+      "scripts\\run_n9_validation.py": "ef0c1a86b7a0b8a7924cc5128d3762e20efa118eff495a217fceb8e0a893323d",
+      "config\\rule_coverage.json": "86b944ea6efd235aab5a75d4434b31535e3257089dffe24b19b09cd3962d58ed",
+      "config\\rule_coverage_admission.json": "593918601bf428a2c3132f91778f8bfa3582e267af9c2adc178533ba974d32e9",
+      "config\\rule_coverage_monitoring.json": "2d5d968a4df26607f0e15feb25c32244508f66020e7f5f5771e1735732d8c43b",
+      "config\\rule_coverage_transport.json": "ee24acff83e14663c13082a52d20d95667ab4a2679c89a4eac3d8323649761c8"
+    },
+    "baseline_container_count": 75,
+    "application_feedback_used": false,
+    "synthetic_attack_injection_bytes": "NOT_N4_SCHEDULED_WORK; separately recorded in PCAP",
+    "cached_images": {
+      "alert-engine": "sha256:2408e106d4a9463d706e1ac89d0383e6a15d250dcbe8dc24d257883e4a9d454e",
+      "data-diode": "sha256:b708113329b8ffd696083ce0b88562c775cf1afb3b5c9f57b383ecc7b65e4e90",
+      "edge-device-01": "sha256:f0791f818060cb8180add43e5f3a6fce4ed65a4633381ed65b8758d7facf9bd7",
+      "edge-device-02": "sha256:939da51cddc1e8a25fe2d516d2a90cd1b3e7635d768c4abca0e47e0017f962a8",
+      "edge-device-03": "sha256:3c82c859a2994bb827c242ededce811f55c1e5dc28c7502887a03aa56f0f8f68",
+      "edge-device-04": "sha256:c2405dccee05bce647ce14df3ba5f01ec3a2900234318cd9a680557a09f4b5ab",
+      "edge-device-05": "sha256:7d47320193cad707b6a9c2f145777321fd5d218eb462f8cf69054aa80f5bd38f",
+      "edge-gateway": "sha256:935f280f0fe0244479d8858b0436888c684e3c87bd12e8d63e978f04b1781ceb",
+      "event-processor": "sha256:b757f82a1a1fcb581b9194843563a9286a9b40e680c1d7e6943dfd069759f3cd",
+      "fog-analytics": "sha256:1c95dd27c631bebd1a41a7d13881bc6ec2d62ca00cb93b11741f51895190ed79",
+      "fog-receiver": "sha256:97a5442feb68da6d9c96488d61dae493782d6aa39ea596bc0bb228dfb326b91e",
+      "security-test-client": "sha256:2025def6bfe8214160588ff9751df657ee51068691cf136115319604485f0333",
+      "validation-init": "sha256:0719da6153f332d3f3223711058f4391261cfb518eea2b8efa4bb9dd7eb79c30"
+    },
+    "baseline_changed_ids": [],
+    "ended_at": "2026-10-14T16:28:32.381870+00:00",
+    "baseline_preserved": true,
+    "test_containers_remaining": 0
+  },
+  "results": [
+    {
+      "scenario": "docker-reverse-path",
+      "attack_type": "APPLICATION_ISOLATION",
+      "expected_result": "ALL_EDGE_PROBES_FAIL",
+      "actual_result": "ALL_EDGE_PROBES_FAIL",
+      "passed": true,
+      "detected": null,
+      "scope": "DOCKER_ISOLATION",
+      "timestamp": "2026-10-14T16:28:25.917684+00:00",
+      "latency_seconds": null,
+      "queue_data": {
+        "probes": [
+          {
+            "service": "edge-gateway",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-gateway",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-gateway",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          }
+        ],
+        "no_shared_edge_network": true
+      },
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "campaign-execution",
+      "attack_type": "HARNESS_OR_RUNTIME",
+      "expected_result": "COMPLETED",
+      "actual_result": "Docker command failed: exec -T fog-receiver python -c\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 404: Not Found\n",
+      "passed": false,
+      "detected": null,
+      "scope": "CHECK_FAILURE",
+      "timestamp": "2026-10-14T16:28:26.867149+00:00",
+      "latency_seconds": null,
+      "queue_data": {},
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "baseline-preservation",
+      "attack_type": "STATE_PRESERVATION",
+      "expected_result": "UNCHANGED",
+      "actual_result": "UNCHANGED",
+      "passed": true,
+      "detected": null,
+      "scope": "PRESERVATION",
+      "timestamp": "2026-10-14T16:28:32.381870+00:00",
+      "latency_seconds": null,
+      "queue_data": {},
+      "resource_data": {},
+      "reason": "Original container IDs/images/start states/mounts/network memberships and credentials/key bytes compared; no secret bytes exported"
+    }
+  ],
+  "passed": false,
+  "detected_in_scope": 0,
+  "in_scope_attack_cases": 0,
+  "out_of_scope_cases": 0
+}

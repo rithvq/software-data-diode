@@ -1,0 +1,48 @@
+ Network software-data-diode-n9-d96e30503021_edge-network Creating 
+ Network software-data-diode-n9-d96e30503021_fog-ingress-network Creating 
+ Volume software-data-diode-n9-d96e30503021_device05 Creating 
+ Network software-data-diode-n9-d96e30503021_fog-services-network Creating 
+ Volume software-data-diode-n9-d96e30503021_audit Creating 
+ Volume software-data-diode-n9-d96e30503021_device01 Creating 
+ Volume software-data-diode-n9-d96e30503021_device02 Creating 
+ Volume software-data-diode-n9-d96e30503021_device02 Creating 
+ Volume software-data-diode-n9-d96e30503021_ledger Creating 
+ Volume software-data-diode-n9-d96e30503021_ledger Creating 
+ Volume software-data-diode-n9-d96e30503021_replay Creating 
+ Volume software-data-diode-n9-d96e30503021_replay Creating 
+ Volume software-data-diode-n9-d96e30503021_private Creating 
+ Volume software-data-diode-n9-d96e30503021_private Creating 
+ Volume software-data-diode-n9-d96e30503021_device03 Creating 
+ Volume software-data-diode-n9-d96e30503021_device03 Creating 
+ Volume software-data-diode-n9-d96e30503021_device01 Creating 
+ Volume software-data-diode-n9-d96e30503021_device05 Creating 
+ Network software-data-diode-n9-d96e30503021_edge-network Creating 
+ Network software-data-diode-n9-d96e30503021_fog-ingress-network Creating 
+ Network software-data-diode-n9-d96e30503021_fog-services-network Creating 
+ Volume software-data-diode-n9-d96e30503021_device04 Creating 
+ Volume software-data-diode-n9-d96e30503021_device04 Creating 
+ Volume software-data-diode-n9-d96e30503021_postgres-data Creating 
+ Volume software-data-diode-n9-d96e30503021_postgres-data Creating 
+ Volume software-data-diode-n9-d96e30503021_audit Creating 
+ Network software-data-diode-n9-d96e30503021_diode-network Creating 
+ Volume software-data-diode-n9-d96e30503021_trust Creating 
+ Network software-data-diode-n9-d96e30503021_diode-network Creating 
+ Volume software-data-diode-n9-d96e30503021_trust Creating 
+ Network software-data-diode-n9-d96e30503021_fog-services-network Error Error response from daemon: all predefined address pools have been fully subnetted
+ Network software-data-diode-n9-d96e30503021_fog-ingress-network Error Error response from daemon: all predefined address pools have been fully subnetted
+ network:fog-ingress-network failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted 
+ network:fog-services-network failed to create network software-data-diode-n9-d96e30503021_fog-services-network: Error response from daemon: all predefined address pools have been fully subnetted 
+ Network software-data-diode-n9-d96e30503021_diode-network Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/networks/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Network software-data-diode-n9-d96e30503021_edge-network Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/networks/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_device03 Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_trust Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_device02 Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_postgres-data Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_device04 Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_device05 Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_ledger Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_audit Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_private Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_device01 Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+ Volume software-data-diode-n9-d96e30503021_replay Error error during connect: Post "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.55/volumes/create": failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted
+failed to create network software-data-diode-n9-d96e30503021_fog-ingress-network: Error response from daemon: all predefined address pools have been fully subnetted

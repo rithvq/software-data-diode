@@ -1,0 +1,18 @@
+{
+  "project": "software-data-diode-n9-0ab0feb100a3",
+  "run_id": "0ab0feb100a3",
+  "targets": {
+    "edge-gateway": {
+      "address": "10.0.0.19",
+      "ports": [
+        8000
+      ]
+    },
+    "fog-receiver": {
+      "address": "10.0.0.35",
+      "ports": [
+        9002
+      ]
+    }
+  }
+}

@@ -1,0 +1,620 @@
+{
+  "metadata": {
+    "project": "software-data-diode-n9-6b251187f93c",
+    "run_id": "6b251187f93c",
+    "seed": 909,
+    "started_at": "2026-10-14T16:29:40.333839+00:00",
+    "software_version": "1eaa6fbf2a30a745995c757c13626ab3c67ea03e",
+    "source_sha256": {
+      "docker-compose.n9.yml": "498355a06451a5ff314aef7a1092bac31ab6aa418ccd5449ea9cd6db5250c5c8",
+      "shared\\security\\n9_cases.py": "a357b0c235d2cf9059517f3de0b0e3c9c66317b2aa42f2926f1641d4e333a228",
+      "shared\\security\\n9_crash.py": "912260e52208c437ee6c404104e7642e3faffec9f2bdc41228f7ef7e44a66fbe",
+      "shared\\security\\n9_init.py": "b793af4d3867e9ae0f764f887d98ec542d9ebdee4c017ff240af70658cdf8986",
+      "shared\\security\\n9_support.py": "d2ce63931a864e16c3b0f044bb85a9ebf75194337b4fcd417dac883823c4e843",
+      "security-test-client\\app\\n9.py": "7d5af68b5d46972f68479909618b630bb1dbded75a257be7263f4eebdd724f30",
+      "scripts\\run_n9_validation.py": "53785ffcc740c310957473df78d87f318574d3188a404c463e0912e93457bcb6",
+      "config\\rule_coverage.json": "86b944ea6efd235aab5a75d4434b31535e3257089dffe24b19b09cd3962d58ed",
+      "config\\rule_coverage_admission.json": "593918601bf428a2c3132f91778f8bfa3582e267af9c2adc178533ba974d32e9",
+      "config\\rule_coverage_monitoring.json": "2d5d968a4df26607f0e15feb25c32244508f66020e7f5f5771e1735732d8c43b",
+      "config\\rule_coverage_transport.json": "ee24acff83e14663c13082a52d20d95667ab4a2679c89a4eac3d8323649761c8"
+    },
+    "baseline_container_count": 75,
+    "application_feedback_used": false,
+    "synthetic_attack_injection_bytes": "NOT_N4_SCHEDULED_WORK; separately recorded in PCAP",
+    "cached_images": {
+      "alert-engine": "sha256:2408e106d4a9463d706e1ac89d0383e6a15d250dcbe8dc24d257883e4a9d454e",
+      "data-diode": "sha256:b708113329b8ffd696083ce0b88562c775cf1afb3b5c9f57b383ecc7b65e4e90",
+      "edge-device-01": "sha256:f0791f818060cb8180add43e5f3a6fce4ed65a4633381ed65b8758d7facf9bd7",
+      "edge-device-02": "sha256:939da51cddc1e8a25fe2d516d2a90cd1b3e7635d768c4abca0e47e0017f962a8",
+      "edge-device-03": "sha256:3c82c859a2994bb827c242ededce811f55c1e5dc28c7502887a03aa56f0f8f68",
+      "edge-device-04": "sha256:c2405dccee05bce647ce14df3ba5f01ec3a2900234318cd9a680557a09f4b5ab",
+      "edge-device-05": "sha256:7d47320193cad707b6a9c2f145777321fd5d218eb462f8cf69054aa80f5bd38f",
+      "edge-gateway": "sha256:935f280f0fe0244479d8858b0436888c684e3c87bd12e8d63e978f04b1781ceb",
+      "event-processor": "sha256:b757f82a1a1fcb581b9194843563a9286a9b40e680c1d7e6943dfd069759f3cd",
+      "fog-analytics": "sha256:1c95dd27c631bebd1a41a7d13881bc6ec2d62ca00cb93b11741f51895190ed79",
+      "fog-receiver": "sha256:97a5442feb68da6d9c96488d61dae493782d6aa39ea596bc0bb228dfb326b91e",
+      "security-test-client": "sha256:2025def6bfe8214160588ff9751df657ee51068691cf136115319604485f0333",
+      "validation-init": "sha256:0719da6153f332d3f3223711058f4391261cfb518eea2b8efa4bb9dd7eb79c30"
+    },
+    "baseline_changed_ids": [],
+    "ended_at": "2026-10-14T16:30:33.224447+00:00",
+    "baseline_preserved": true,
+    "test_containers_remaining": 0
+  },
+  "results": [
+    {
+      "scenario": "docker-reverse-path",
+      "attack_type": "APPLICATION_ISOLATION",
+      "expected_result": "ALL_EDGE_PROBES_FAIL",
+      "actual_result": "ALL_EDGE_PROBES_FAIL",
+      "passed": true,
+      "detected": null,
+      "scope": "DOCKER_ISOLATION",
+      "timestamp": "2026-10-14T16:30:06.873064+00:00",
+      "latency_seconds": null,
+      "queue_data": {
+        "probes": [
+          {
+            "service": "edge-gateway",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-gateway",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-gateway",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "kind": "DNS",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "port": 8000,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "port": 9001,
+            "kind": "TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-03",
+            "address": "10.0.0.6",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-05",
+            "address": "10.0.0.4",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-01",
+            "address": "10.0.0.7",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-04",
+            "address": "10.0.0.3",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-device-02",
+            "address": "10.0.0.5",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-gateway",
+            "address": "10.0.0.19",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          },
+          {
+            "service": "edge-gateway",
+            "address": "10.0.0.2",
+            "port": 8000,
+            "kind": "KNOWN_IP_TCP",
+            "failed": true
+          }
+        ],
+        "no_shared_edge_network": true
+      },
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "docker-n6-transactions",
+      "attack_type": "POSTGRES_MIGRATIONS_FAILURE_RECOVERY",
+      "expected_result": "ALL_REPOSITORY_CHECKS_PASS",
+      "actual_result": "ALL_REPOSITORY_CHECKS_PASS",
+      "passed": true,
+      "detected": null,
+      "scope": "DOCKER_CORRECTNESS",
+      "timestamp": "2026-10-14T16:30:15.805943+00:00",
+      "latency_seconds": null,
+      "queue_data": {
+        "phase": "N6",
+        "schema": "n6_check_c1008b00221d45039771e81cb8b41eed",
+        "checks": [
+          {
+            "check": "all additive migrations applied twice",
+            "passed": true
+          },
+          {
+            "check": "evidence committed to durable Fog spool",
+            "passed": true
+          },
+          {
+            "check": "failed fact transaction rolls back identity/replay/publication",
+            "passed": true
+          },
+          {
+            "check": "failed DB commit leaves durable pending evidence",
+            "passed": true
+          },
+          {
+            "check": "restart recovers pending evidence",
+            "passed": true
+          },
+          {
+            "check": "duplicate delivery does not repeat acceptance",
+            "passed": true
+          },
+          {
+            "check": "invalid signature outcome committed independently",
+            "passed": true
+          },
+          {
+            "check": "unrelated invalid injection cannot overwrite valid evidence",
+            "passed": true
+          },
+          {
+            "check": "reassembly expiry persisted in PostgreSQL",
+            "passed": true
+          },
+          {
+            "check": "second scope admitted",
+            "passed": true
+          },
+          {
+            "check": "DB committed before lost spool completion",
+            "passed": true
+          },
+          {
+            "check": "lost completion recovery is idempotent",
+            "passed": true
+          },
+          {
+            "check": "concurrent valid fork quarantined exactly once",
+            "passed": true
+          },
+          {
+            "check": "both valid bodies are quarantined",
+            "passed": true
+          },
+          {
+            "check": "no usable facts from conflicted scope",
+            "passed": true
+          },
+          {
+            "check": "previously stored decisions reassessed on conflict",
+            "passed": true
+          },
+          {
+            "check": "later independent facts survive predecessor conflict",
+            "passed": true
+          },
+          {
+            "check": "signed parts retained exactly",
+            "passed": true
+          },
+          {
+            "check": "publication recovers after consumer transaction rollback",
+            "passed": true
+          },
+          {
+            "check": "duplicate publication does not duplicate consumer effects",
+            "passed": true
+          },
+          {
+            "check": "duplicate processing creates exactly one synthetic alert",
+            "passed": true
+          },
+          {
+            "check": "independent later window with missing predecessor accepted",
+            "passed": true
+          },
+          {
+            "check": "gap stored separately from scope validity",
+            "passed": true
+          },
+          {
+            "check": "new repository connection preserves durable window floor",
+            "passed": true
+          },
+          {
+            "check": "bounded evidence inspection exposes typed assurance and quarantine",
+            "passed": true
+          },
+          {
+            "check": "durable epoch retirement blocks even duplicates after restart",
+            "passed": true
+          }
+        ],
+        "synthetic_keys": "ephemeral in-memory only",
+        "timestamp_us": 1791995415125089,
+        "existing_rows_modified": false
+      },
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "docker-n7-transactions",
+      "attack_type": "POSTGRES_MIGRATIONS_FAILURE_RECOVERY",
+      "expected_result": "ALL_REPOSITORY_CHECKS_PASS",
+      "actual_result": "ALL_REPOSITORY_CHECKS_PASS",
+      "passed": true,
+      "detected": null,
+      "scope": "DOCKER_CORRECTNESS",
+      "timestamp": "2026-10-14T16:30:23.874225+00:00",
+      "latency_seconds": null,
+      "queue_data": {
+        "phase": "N7",
+        "checks": [
+          {
+            "check": "additive migrations repeat without deleting existing schema rows",
+            "passed": true
+          },
+          {
+            "check": "rule outbox failure occurs after decision writes",
+            "passed": true
+          },
+          {
+            "check": "rule transaction rolls back verdict history and publication completion",
+            "passed": true
+          },
+          {
+            "check": "missing login evidence yields UNKNOWN with partial coverage",
+            "passed": true
+          },
+          {
+            "check": "incomplete authenticated parts do not become facts",
+            "passed": true
+          },
+          {
+            "check": "incomplete authenticated parts do not become facts",
+            "passed": true
+          },
+          {
+            "check": "incomplete authenticated parts do not become facts",
+            "passed": true
+          },
+          {
+            "check": "incomplete authenticated parts do not become facts",
+            "passed": true
+          },
+          {
+            "check": "incomplete authenticated parts do not become facts",
+            "passed": true
+          },
+          {
+            "check": "late complete RCC commits to durable Fog spool",
+            "passed": true
+          },
+          {
+            "check": "spooled late facts commit to PostgreSQL",
+            "passed": true
+          },
+          {
+            "check": "late evidence refines UNKNOWN to TRUE",
+            "passed": true
+          },
+          {
+            "check": "rule complete is not globally complete observation",
+            "passed": true
+          },
+          {
+            "check": "versioned history retains UNKNOWN then TRUE",
+            "passed": true
+          },
+          {
+            "check": "definite resource-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite incident-correlation matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite network-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite repeated-security-observations matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite security-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "authenticated original witness persisted",
+            "passed": true
+          },
+          {
+            "check": "original witness retry is idempotent",
+            "passed": true
+          },
+          {
+            "check": "one original and its RCC do not become two COUNT_GE hits",
+            "passed": true
+          },
+          {
+            "check": "witness references survive rule publication",
+            "passed": true
+          },
+          {
+            "check": "alert fault injected",
+            "passed": true
+          },
+          {
+            "check": "failed alert transaction leaves no stored alert or delivery receipt",
+            "passed": true
+          },
+          {
+            "check": "TRUE incident stored by Alert Engine authority",
+            "passed": true
+          },
+          {
+            "check": "delivery replay creates no second incident",
+            "passed": true
+          },
+          {
+            "check": "duplicate capsule creates no new publication",
+            "passed": true
+          },
+          {
+            "check": "signed immutable scope fork quarantined",
+            "passed": true
+          },
+          {
+            "check": "conflict immediately invalidates verdict and preserves revision",
+            "passed": true
+          },
+          {
+            "check": "queued old TRUE delivery is rejected after conflict",
+            "passed": true
+          },
+          {
+            "check": "affected correlation stays UNKNOWN while scope quarantined",
+            "passed": true
+          },
+          {
+            "check": "previously delivered incident gets inactive state",
+            "passed": true
+          },
+          {
+            "check": "incident row retained but retracted without duplicate",
+            "passed": true
+          },
+          {
+            "check": "visibility alert identifies degraded observation",
+            "passed": true
+          },
+          {
+            "check": "visibility severity is independent from UNKNOWN status",
+            "passed": true
+          },
+          {
+            "check": "monitor restart does not duplicate same rule revision",
+            "passed": true
+          },
+          {
+            "check": "FALSE AND does not certify missing devices observed",
+            "passed": true
+          },
+          {
+            "check": "definite incident-correlation matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite resource-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "no-input scope stays UNKNOWN",
+            "passed": true
+          },
+          {
+            "check": "cooldown survives independent monitor instances",
+            "passed": true
+          },
+          {
+            "check": "definite environmental-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite incident-correlation matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite resource-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite process-attention matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite process-attention matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "definite environmental-threshold matches independent original-ingress oracle",
+            "passed": true
+          },
+          {
+            "check": "checked original contradicting signed matching assertion quarantines scope",
+            "passed": true
+          },
+          {
+            "check": "contradictory original cannot generate a definite incident",
+            "passed": true
+          },
+          {
+            "check": "authenticated expiry is explained as missing observation not attack",
+            "passed": true
+          },
+          {
+            "check": "persisted monitor config cannot change silently on restart",
+            "passed": true
+          },
+          {
+            "check": "long monitor downtime records a gap rather than historical normality",
+            "passed": true
+          },
+          {
+            "check": "Fog clock regression does not reopen completed deadlines",
+            "passed": true
+          },
+          {
+            "check": "epoch retirement rejects a queued old incident revision",
+            "passed": true
+          },
+          {
+            "check": "retirement retains decision history and invalidates current truth",
+            "passed": true
+          }
+        ],
+        "oracle_comparisons": 54,
+        "schema": "n7_check_661fb95cd62b407d87382c14b2705812",
+        "ephemeral_test_trust": true,
+        "existing_rows_modified": false,
+        "http_alert_engine": false
+      },
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "campaign-execution",
+      "attack_type": "HARNESS_OR_RUNTIME",
+      "expected_result": "COMPLETED",
+      "actual_result": "Docker command failed: run --rm --no-deps security-test-client python\n Container software-data-diode-n9-6b251187f93c-security-test-client-run-66d25c44d9be Creating \n Container software-data-diode-n9-6b251187f93c-security-test-client-run-66d25c44d9be Created \nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/app/app/n9.py\", line 226, in <module>\n    main()\n  File \"/app/app/n9.py\", line 202, in main\n    framer = load_framer(\"/run/coverage/profile.json\",key.public_key(),\"/app/config/rule_coverage.json\",\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/shared/coverage/transport.py\", line 251, in load_framer\n    return ResearchFramer(profile, key, load_contract(contract_path), config=TransportConfig.load(config_path))\n                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/shared/coverage/transport.py\", line 40, in load\n    encoded = Path(path).read_bytes()\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/pathlib.py\", line 1050, in read_bytes\n    with self.open(mode='rb') as f:\n         ^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/pathlib.py\", line 1044, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/app/config/rule_coverage_transport.json'\n\n",
+      "passed": false,
+      "detected": null,
+      "scope": "CHECK_FAILURE",
+      "timestamp": "2026-10-14T16:30:26.781540+00:00",
+      "latency_seconds": null,
+      "queue_data": {},
+      "resource_data": {},
+      "reason": ""
+    },
+    {
+      "scenario": "baseline-preservation",
+      "attack_type": "STATE_PRESERVATION",
+      "expected_result": "UNCHANGED",
+      "actual_result": "UNCHANGED",
+      "passed": true,
+      "detected": null,
+      "scope": "PRESERVATION",
+      "timestamp": "2026-10-14T16:30:33.224447+00:00",
+      "latency_seconds": null,
+      "queue_data": {},
+      "resource_data": {},
+      "reason": "Original container IDs/images/start states/mounts/network memberships and credentials/key bytes compared; no secret bytes exported"
+    }
+  ],
+  "passed": false,
+  "detected_in_scope": 0,
+  "in_scope_attack_cases": 0,
+  "out_of_scope_cases": 0
+}

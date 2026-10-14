@@ -1,0 +1,3483 @@
+{
+  "timestamp": "2026-10-14T16:39:52.910660+00:00",
+  "fog": {
+    "coverage_deadline_windows": 4,
+    "datagrams_received": 18,
+    "received_payload_bytes": 15372,
+    "durably_spooled_artifacts": 5,
+    "verified_artifacts": 5,
+    "duplicate_artifacts": 1,
+    "coverage_alert_delivery_errors": 33,
+    "coverage_rule_storage_errors": 33,
+    "evidence_database_errors": 4,
+    "postgres_accepted": 1,
+    "coverage_evidence_window": 1,
+    "coverage_alert_delivery_attempts": 2,
+    "queue_frames": 0,
+    "max_queue_frames": 256,
+    "application_replies_sent": 0,
+    "socket_audit": {
+      "installed": true,
+      "udp_send_calls": 0,
+      "last_destinations": []
+    },
+    "live": true,
+    "partial_artifacts": 0,
+    "partial_bytes": 0,
+    "expired_partial_artifacts": 0,
+    "evidence_database_available": true,
+    "coverage_rule_monitor_enabled": true,
+    "received_artifacts": 63,
+    "pending_internal_processing": 0,
+    "retired_epoch": false,
+    "edge_state_stale": false,
+    "edge_state": {
+      "baseline_policy": "legacy_information_engine_v1",
+      "confirmed_receipt": "NOT_OBSERVED",
+      "devices": [
+        {
+          "accepted_observations": 14,
+          "device_id": "edge-device-01"
+        },
+        {
+          "accepted_observations": 34,
+          "device_id": "edge-device-02"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-03"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-04"
+        },
+        {
+          "accepted_observations": 1,
+          "device_id": "edge-device-05"
+        }
+      ],
+      "forward_byte_accounting": {
+        "EVIDENCE": 79912,
+        "RAW": 311396,
+        "STATE": 25726,
+        "scope": "N8_LOCAL_GRANTS_SINCE_START",
+        "start_utc_us": 1791995821354029,
+        "total": 417034
+      },
+      "local_lease_unresolved": false,
+      "mode": "coupled",
+      "modeled_scheduled_bytes": 417034,
+      "outbox_bytes": 0,
+      "outbox_items": 0,
+      "pending_evidence_obligations": 0,
+      "queue_depth": 0,
+      "refused_unaccepted": 8,
+      "reserved_wire_bytes": 0,
+      "unsupported_scopes": 0
+    },
+    "evidence_freshness": [
+      {
+        "device_id": "edge-device-01",
+        "last_closed_window": 179199591,
+        "age_seconds": 73.310583,
+        "stale_or_missing": true
+      },
+      {
+        "device_id": "edge-device-02",
+        "last_closed_window": 179199592,
+        "age_seconds": 63.261501,
+        "stale_or_missing": true
+      },
+      {
+        "device_id": "edge-device-03",
+        "last_closed_window": 179199586,
+        "age_seconds": 123.349449,
+        "stale_or_missing": true
+      },
+      {
+        "device_id": "edge-device-04",
+        "last_closed_window": 179199587,
+        "age_seconds": 113.349463,
+        "stale_or_missing": true
+      },
+      {
+        "device_id": "edge-device-05",
+        "last_closed_window": 179199582,
+        "age_seconds": 163.337265,
+        "stale_or_missing": true
+      }
+    ],
+    "coverage_evidence_stale_or_missing": true,
+    "coverage": "AUTHENTICATED_SUMMARY_NOT_RULE_VERDICTS",
+    "receipt_scope": "FOG_DURABLE_SPOOL_NOT_POSTGRES_COMMIT",
+    "pending_evidence": 0,
+    "pending_verification_outcomes": 0,
+    "evidence_spool_records": 13,
+    "evidence_spool_max_records": 1024,
+    "evidence_spool_max_bytes": 8388608,
+    "local_admission_available": true,
+    "postgres_verified_scopes": 12,
+    "quarantined_scopes": 1,
+    "pending_coverage_publications": 0,
+    "rule_evaluation": "RCCD_SCOPED_RULES_V1"
+  },
+  "diode": {
+    "datagrams_received": 401,
+    "received_payload_bytes": 407323,
+    "forward_attempts": 401,
+    "queue_frames": 0,
+    "max_queue_frames": 256,
+    "application_replies_sent": 0,
+    "socket_audit": {
+      "installed": true,
+      "udp_send_calls": 394,
+      "last_destinations": [
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ],
+        [
+          "10.0.0.35",
+          9002
+        ]
+      ]
+    },
+    "live": true,
+    "sender": {
+      "attempts": 401,
+      "attempted_payload_bytes": 407323,
+      "local_send_errors": 7,
+      "local_send_calls_succeeded": 394
+    },
+    "forwarding": "PASSIVE_FIFO_LOCAL_ATTEMPTS"
+  },
+  "gateway": {
+    "traffic": {
+      "total_bytes_generated": 0,
+      "bytes_filtered": 0,
+      "bytes_transmitted": 0,
+      "latency_sample_count": 0,
+      "average_latency": null,
+      "latency_p95": null,
+      "throughput_messages_per_second": 0.0,
+      "queue_utilization": 0.0,
+      "congestion_state": "NORMAL",
+      "by_priority": {}
+    },
+    "devices": [
+      {
+        "device_id": "edge-device-01",
+        "health": "STALE",
+        "last_seen": "2026-10-14T16:38:32.786985Z",
+        "last_sequence_number": 0,
+        "received_count": 14,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 0.0,
+        "recent_activity_count": 0,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 14
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "health": "STALE",
+        "last_seen": "2026-10-14T16:38:47.665194Z",
+        "last_sequence_number": 0,
+        "received_count": 34,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 0.0,
+        "recent_activity_count": 0,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "MEDIUM": 1,
+          "CRITICAL": 33
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "health": "STALE",
+        "last_seen": "2026-10-14T16:37:05.782831Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 0.0,
+        "recent_activity_count": 0,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "health": "STALE",
+        "last_seen": "2026-10-14T16:37:05.339775Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 0.0,
+        "recent_activity_count": 0,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "health": "STALE",
+        "last_seen": "2026-10-14T16:37:05.683494Z",
+        "last_sequence_number": 0,
+        "received_count": 1,
+        "forwarded_count": 0,
+        "filtered_count": 0,
+        "rejected_count": 0,
+        "message_rate_per_minute": 0.0,
+        "recent_activity_count": 0,
+        "filtering_statistics": {},
+        "priority_statistics": {
+          "LOW": 1
+        }
+      }
+    ],
+    "information_policy": null,
+    "coverage_ledger": {
+      "epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+      "generation": 0,
+      "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+      "retained_records": 51,
+      "pending_outbox_bytes": 0,
+      "unsized_obligations": 0,
+      "last_limitation": "RECOVERY_DOWNTIME",
+      "clock_halted": false,
+      "admission_blocked": false,
+      "database_bytes": 1732608
+    },
+    "coverage_admission": {
+      "mode": "coupled",
+      "baseline_policy": "legacy_information_engine_v1",
+      "outbox_items": 0,
+      "outbox_bytes": 0,
+      "reserved_wire_bytes": 0,
+      "pending_evidence_obligations": 0,
+      "unsupported_scopes": 0,
+      "refused_unaccepted": 8,
+      "local_lease_unresolved": false,
+      "modeled_scheduled_bytes": 418551,
+      "confirmed_receipt": "NOT_OBSERVED",
+      "forward_byte_accounting": {
+        "EVIDENCE": 79912,
+        "RAW": 311396,
+        "STATE": 27243,
+        "scope": "N8_LOCAL_GRANTS_SINCE_START",
+        "start_utc_us": 1791995821354029,
+        "total": 418551
+      }
+    },
+    "coverage_udp": {
+      "live": true,
+      "sender": {
+        "attempts": 401,
+        "attempted_payload_bytes": 407323,
+        "local_send_calls_succeeded": 401
+      },
+      "socket_audit": {
+        "installed": true,
+        "udp_send_calls": 401,
+        "last_destinations": [
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ],
+          [
+            "10.0.0.18",
+            9001
+          ]
+        ]
+      },
+      "confirmed_receipt": "NOT_OBSERVED"
+    }
+  },
+  "database": {
+    "capsules": [
+      {
+        "artifact_digest": "bb7096b7fe0e4403d5cc180781774fa975587436396f18607dc7e08eb8f43d78",
+        "scope_id": "198bef6984ccce1d204b63511b82bf325ba59359da08f231b4f8a8380f2ad2fe",
+        "received_at_us": 1791995830260080,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "198bef6984ccce1d204b63511b82bf325ba59359da08f231b4f8a8380f2ad2fe",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "bb7096b7fe0e4403d5cc180781774fa975587436396f18607dc7e08eb8f43d78",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4776,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995830007460,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995830260080,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "1efe63905d02d6f70dbe5ccf37ab515fc97f548de9c25ceaf3fea95afd8a3bca",
+        "scope_id": "7fb2d21cac7c09939ccb8855cd8c259e6465cbd6f9abcc840bfafa1b68a83300",
+        "received_at_us": 1791995830733773,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "7fb2d21cac7c09939ccb8855cd8c259e6465cbd6f9abcc840bfafa1b68a83300",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "1efe63905d02d6f70dbe5ccf37ab515fc97f548de9c25ceaf3fea95afd8a3bca",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4628,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995830010464,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995830733773,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "5625253a6eec8fcefacd3faa63f97410005647b111b1c7333d2a4b944d151741",
+        "scope_id": "b19e130cab3473e0d32b7bce13a3289123d9b257e5f9e9e1cbab4007a88b838f",
+        "received_at_us": 1791995831284945,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "b19e130cab3473e0d32b7bce13a3289123d9b257e5f9e9e1cbab4007a88b838f",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "5625253a6eec8fcefacd3faa63f97410005647b111b1c7333d2a4b944d151741",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4632,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995830012235,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995831284945,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "3d55aa61cf0857ed015fb6f401f51a9deaf429a14ed28004236e704c109f27d7",
+        "scope_id": "249c814c9d09dd67e5ab255845b0eaf1e13394190b02267c4ad860efe00d30bb",
+        "received_at_us": 1791995831818104,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "249c814c9d09dd67e5ab255845b0eaf1e13394190b02267c4ad860efe00d30bb",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "3d55aa61cf0857ed015fb6f401f51a9deaf429a14ed28004236e704c109f27d7",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995830013962,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995831818104,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "78b4ddc088ee5033e68b5aea40148c1f248fe8386e3fcaa73d9da35b38c40cb9",
+        "scope_id": "aee48126eff5b183d40f9b70a3c6c3312234751cdee02abfe5a0e6a7c63d85b7",
+        "received_at_us": 1791995832389972,
+        "verification": {
+          "status": "LIMITED",
+          "scope_id": "aee48126eff5b183d40f9b70a3c6c3312234751cdee02abfe5a0e6a7c63d85b7",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "78b4ddc088ee5033e68b5aea40148c1f248fe8386e3fcaa73d9da35b38c40cb9",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995830015647,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995832389972,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "7bcd3d2ad48bf7cbfdbeee5dba7b493a8a73450a8263cfef97ba93d53079036a",
+        "scope_id": "36e7e8acc9d6d2474d37f633a748ee96cbe695811a9123ed5fad30e7831d6028",
+        "received_at_us": 1791995904873309,
+        "verification": {
+          "status": "VALID",
+          "scope_id": "36e7e8acc9d6d2474d37f633a748ee96cbe695811a9123ed5fad30e7831d6028",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199588,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "7bcd3d2ad48bf7cbfdbeee5dba7b493a8a73450a8263cfef97ba93d53079036a",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4760,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995890000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995904873309,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "7f18fb3f5d3e2c38005e76653048354cb83caa7306c311962c54670859b55eb1",
+        "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+        "received_at_us": 1791995905042606,
+        "verification": {
+          "status": "CONFLICT",
+          "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "VALID_SIGNED_SCOPE_FORK",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199587,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "7f18fb3f5d3e2c38005e76653048354cb83caa7306c311962c54670859b55eb1",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4764,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "CONFLICT",
+          "created_at_utc_us": 1791995880000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995905042606,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "c0b77e03a2fa20fca26123e115258bb1167d18c647d038b509a5fadaa2a48c4d",
+        "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+        "received_at_us": 1791995905133726,
+        "verification": {
+          "status": "CONFLICT",
+          "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "VALID_SIGNED_SCOPE_FORK",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199587,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "c0b77e03a2fa20fca26123e115258bb1167d18c647d038b509a5fadaa2a48c4d",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5528,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "CONFLICT",
+          "created_at_utc_us": 1791995880000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995905133726,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "9f19159327544de2b2b5a9af9f10d13637cc46976a2f7d6948c25182be33fc90",
+        "scope_id": "32c6240dd8fbb733e6267b46e4f195fffc649a940cab77f492efe634a96e4ddc",
+        "received_at_us": 1791995905212995,
+        "verification": {
+          "status": "VALID",
+          "scope_id": "32c6240dd8fbb733e6267b46e4f195fffc649a940cab77f492efe634a96e4ddc",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199586,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "9f19159327544de2b2b5a9af9f10d13637cc46976a2f7d6948c25182be33fc90",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4844,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "GAP",
+          "created_at_utc_us": 1791995870000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995905212995,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "58b598c3e8f7c80854a697b8d0bb4f6a86064c26f4ed19823e4efab4dd7cae49",
+        "scope_id": "58f8abb0e54ddc7fa6a43ef50e306d904611227166d8110dce49e0b595d88fc4",
+        "received_at_us": 1791995920685550,
+        "verification": {
+          "status": "VALID",
+          "scope_id": "58f8abb0e54ddc7fa6a43ef50e306d904611227166d8110dce49e0b595d88fc4",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199591,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "58b598c3e8f7c80854a697b8d0bb4f6a86064c26f4ed19823e4efab4dd7cae49",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4676,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "COMPLETE",
+          "created_at_utc_us": 1791995920038835,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995920685550,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "85857d53a4704d1d7e504f7271eef518f0df4709b557b39ad4dfcf9021f5bc04",
+        "scope_id": "698ec7c45220a886a390481be782a4ceb99c692e81714c955b35efd4816233d2",
+        "received_at_us": 1791995922583779,
+        "verification": {
+          "status": "VALID",
+          "scope_id": "698ec7c45220a886a390481be782a4ceb99c692e81714c955b35efd4816233d2",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199591,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "85857d53a4704d1d7e504f7271eef518f0df4709b557b39ad4dfcf9021f5bc04",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5408,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "COMPLETE",
+          "created_at_utc_us": 1791995920045656,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995922583779,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "1f01960618de3dabd7268ec4cc20bc3962c420eb0e32f89f3f0005735b68ec99",
+        "scope_id": "8a6ab0523ea08c154aa5110150c9941f7973556feae2d8b19c5e9b6f6896bbe5",
+        "received_at_us": 1791995931484469,
+        "verification": {
+          "status": "VALID",
+          "scope_id": "8a6ab0523ea08c154aa5110150c9941f7973556feae2d8b19c5e9b6f6896bbe5",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199592,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "1f01960618de3dabd7268ec4cc20bc3962c420eb0e32f89f3f0005735b68ec99",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "COMPLETE",
+          "created_at_utc_us": 1791995930087934,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995931484469,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "artifact_digest": "8e565b7ff49955919339aca1f71bc99591865e5b1249add1301386d286cc2844",
+        "scope_id": "813ac42a3fd179d77c3348581e12e76cfac27f3bfc827056c819fa7fac5172aa",
+        "received_at_us": 1791995977967029,
+        "verification": {
+          "status": "VALID",
+          "scope_id": "813ac42a3fd179d77c3348581e12e76cfac27f3bfc827056c819fa7fac5172aa",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199580,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "8e565b7ff49955919339aca1f71bc99591865e5b1249add1301386d286cc2844",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4768,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "ROOT",
+          "created_at_utc_us": 1791995810000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995977967029,
+          "replay_width_windows": 30
+        }
+      }
+    ],
+    "scopes": [
+      {
+        "scope_id": "813ac42a3fd179d77c3348581e12e76cfac27f3bfc827056c819fa7fac5172aa",
+        "device_id": "edge-device-05",
+        "window_index": 179199580,
+        "quarantined": false
+      },
+      {
+        "scope_id": "7fb2d21cac7c09939ccb8855cd8c259e6465cbd6f9abcc840bfafa1b68a83300",
+        "device_id": "edge-device-01",
+        "window_index": 179199582,
+        "quarantined": false
+      },
+      {
+        "scope_id": "b19e130cab3473e0d32b7bce13a3289123d9b257e5f9e9e1cbab4007a88b838f",
+        "device_id": "edge-device-05",
+        "window_index": 179199582,
+        "quarantined": false
+      },
+      {
+        "scope_id": "249c814c9d09dd67e5ab255845b0eaf1e13394190b02267c4ad860efe00d30bb",
+        "device_id": "edge-device-02",
+        "window_index": 179199582,
+        "quarantined": false
+      },
+      {
+        "scope_id": "aee48126eff5b183d40f9b70a3c6c3312234751cdee02abfe5a0e6a7c63d85b7",
+        "device_id": "edge-device-03",
+        "window_index": 179199582,
+        "quarantined": false
+      },
+      {
+        "scope_id": "198bef6984ccce1d204b63511b82bf325ba59359da08f231b4f8a8380f2ad2fe",
+        "device_id": "edge-device-04",
+        "window_index": 179199582,
+        "quarantined": false
+      },
+      {
+        "scope_id": "32c6240dd8fbb733e6267b46e4f195fffc649a940cab77f492efe634a96e4ddc",
+        "device_id": "edge-device-03",
+        "window_index": 179199586,
+        "quarantined": false
+      },
+      {
+        "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+        "device_id": "edge-device-04",
+        "window_index": 179199587,
+        "quarantined": true
+      },
+      {
+        "scope_id": "36e7e8acc9d6d2474d37f633a748ee96cbe695811a9123ed5fad30e7831d6028",
+        "device_id": "edge-device-02",
+        "window_index": 179199588,
+        "quarantined": false
+      },
+      {
+        "scope_id": "58f8abb0e54ddc7fa6a43ef50e306d904611227166d8110dce49e0b595d88fc4",
+        "device_id": "edge-device-01",
+        "window_index": 179199591,
+        "quarantined": false
+      },
+      {
+        "scope_id": "698ec7c45220a886a390481be782a4ceb99c692e81714c955b35efd4816233d2",
+        "device_id": "edge-device-02",
+        "window_index": 179199591,
+        "quarantined": false
+      },
+      {
+        "scope_id": "8a6ab0523ea08c154aa5110150c9941f7973556feae2d8b19c5e9b6f6896bbe5",
+        "device_id": "edge-device-02",
+        "window_index": 179199592,
+        "quarantined": false
+      }
+    ],
+    "outcomes": [
+      {
+        "timestamp_us": 1791995830260080,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "198bef6984ccce1d204b63511b82bf325ba59359da08f231b4f8a8380f2ad2fe",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "bb7096b7fe0e4403d5cc180781774fa975587436396f18607dc7e08eb8f43d78",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4776,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995830007460,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995830260080,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995830733773,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "7fb2d21cac7c09939ccb8855cd8c259e6465cbd6f9abcc840bfafa1b68a83300",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "1efe63905d02d6f70dbe5ccf37ab515fc97f548de9c25ceaf3fea95afd8a3bca",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4628,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995830010464,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995830733773,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995831284945,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "b19e130cab3473e0d32b7bce13a3289123d9b257e5f9e9e1cbab4007a88b838f",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "5625253a6eec8fcefacd3faa63f97410005647b111b1c7333d2a4b944d151741",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4632,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995830012235,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995831284945,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995831818104,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "249c814c9d09dd67e5ab255845b0eaf1e13394190b02267c4ad860efe00d30bb",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "3d55aa61cf0857ed015fb6f401f51a9deaf429a14ed28004236e704c109f27d7",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995830013962,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995831818104,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995832389972,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "LIMITED",
+          "scope_id": "aee48126eff5b183d40f9b70a3c6c3312234751cdee02abfe5a0e6a7c63d85b7",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [
+            "STARTUP_PARTIAL",
+            "INTERRUPTED"
+          ],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199582,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "78b4ddc088ee5033e68b5aea40148c1f248fe8386e3fcaa73d9da35b38c40cb9",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4624,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995830015647,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995832389972,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995904070931,
+        "reason_code": "INVALID_ARTIFACT_SCHEMA",
+        "details": {
+          "input_digest": "54fc6e15c9fa60b458e30ee3a8494c0687e7c763867648490f78aa7b32df3e14"
+        }
+      },
+      {
+        "timestamp_us": 1791995904148703,
+        "reason_code": "INVALID_ARTIFACT_SCHEMA",
+        "details": {
+          "input_digest": "759f616072f8c2a4b804bf8fc27204be45959ff47ff14982bf4a7cdd78599dc8"
+        }
+      },
+      {
+        "timestamp_us": 1791995904226310,
+        "reason_code": "INVALID_ARTIFACT_SCHEMA",
+        "details": {
+          "input_digest": "8169dd5ec908d28e8b2acfd2b33b09c6f5fcd2efc04fe08b0f14938ecf1919dc"
+        }
+      },
+      {
+        "timestamp_us": 1791995904302799,
+        "reason_code": "INVALID_ARTIFACT_SCHEMA",
+        "details": {
+          "input_digest": "16d70c2b39b472030bb08375b4b069f7daaef63907630fba8ef21cf44521fa8f"
+        }
+      },
+      {
+        "timestamp_us": 1791995904379610,
+        "reason_code": "INVALID_ARTIFACT_SCHEMA",
+        "details": {
+          "input_digest": "c6868d5490c294f5a4bd80477dc0dc57bd99827d699f53dcb4584db142fe4abc"
+        }
+      },
+      {
+        "timestamp_us": 1791995904457864,
+        "reason_code": "INVALID_SIGNATURE",
+        "details": {
+          "input_digest": "bbcdcd3e3a2d1202a914f912d2dd14bf13f7e72e4c2f019fafc343423c6d2c45"
+        }
+      },
+      {
+        "timestamp_us": 1791995904534701,
+        "reason_code": "UNPROVISIONED_CONTRACT",
+        "details": {
+          "input_digest": "928694219dc22076e694f0e59dc575001fdb60ea4a7b1a1c9b6a72f191921555"
+        }
+      },
+      {
+        "timestamp_us": 1791995904611458,
+        "reason_code": "UNAPPROVED_RESEARCH_EPOCH",
+        "details": {
+          "input_digest": "1d47f09d8430f2929336bd2cb8c5ca7b9dfae81877a867ff782c499d2d9a7707"
+        }
+      },
+      {
+        "timestamp_us": 1791995904702950,
+        "reason_code": "INVALID_ARTIFACT_SCHEMA",
+        "details": {
+          "input_digest": "b5532601258b6c35dfaf70b8ca543ad190d3d67bdc524c92d91ef7402d05a916"
+        }
+      },
+      {
+        "timestamp_us": 1791995904733289,
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "a4e6a088fcd7da72d81e11bbe95fb211a7d494a5f1aff3743536047c9b037c79"
+        }
+      },
+      {
+        "timestamp_us": 1791995904748648,
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "0b58cdc6ba7e0e5e83cb5154c5ff1cfc189a09ffcff5a60671fcaea65a18d19b"
+        }
+      },
+      {
+        "timestamp_us": 1791995904771075,
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "d761959e5d832672435627d5052ebeb4710cd5bd00aeb45ca5e5a257fd1a5e21"
+        }
+      },
+      {
+        "timestamp_us": 1791995904784168,
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "bc2e6d154cda2bd79d1995b85c8878f46bb4688f9db03c3b08af3cfba0aefcd8"
+        }
+      },
+      {
+        "timestamp_us": 1791995904800005,
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "bdeb085f0467af450734fc5f6de146030800f9d0f8a811d6e916cae404b7d7d5"
+        }
+      },
+      {
+        "timestamp_us": 1791995904873309,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "36e7e8acc9d6d2474d37f633a748ee96cbe695811a9123ed5fad30e7831d6028",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199588,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "7bcd3d2ad48bf7cbfdbeee5dba7b493a8a73450a8263cfef97ba93d53079036a",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4760,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995890000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995904873309,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995905042606,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199587,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "7f18fb3f5d3e2c38005e76653048354cb83caa7306c311962c54670859b55eb1",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4764,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995880000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995905042606,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995905133726,
+        "reason_code": "VALID_SIGNED_SCOPE_FORK",
+        "details": {
+          "status": "CONFLICT",
+          "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED",
+            "VALID_SIGNED_SCOPE_FORK"
+          ],
+          "window_index": 179199587,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "c0b77e03a2fa20fca26123e115258bb1167d18c647d038b509a5fadaa2a48c4d",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5528,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "CONFLICT",
+          "created_at_utc_us": 1791995880000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995905133726,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995905212995,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "32c6240dd8fbb733e6267b46e4f195fffc649a940cab77f492efe634a96e4ddc",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199586,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "9f19159327544de2b2b5a9af9f10d13637cc46976a2f7d6948c25182be33fc90",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4844,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995870000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995905212995,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995905289040,
+        "reason_code": "EXPIRED_EVIDENCE",
+        "details": {
+          "input_digest": "03c34252f9132ca683a6d249d9cbf0cd614ae4add617704b54759d0a5fa5656e",
+          "authenticated_scope": {
+            "device_id": "edge-device-01",
+            "gateway_id": "coverage-gateway",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "window_index": 179199548,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd"
+          }
+        }
+      },
+      {
+        "timestamp_us": 1791995905834715,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "9c836f7654d576054677c373143ec324e2868e44b5a39cf0490a04394524c319"
+        }
+      },
+      {
+        "timestamp_us": 1791995905867455,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "9b9afe4d42c935c00498509ccc952e70adb1e77cb15c3b1607ae58f127cfc5b6"
+        }
+      },
+      {
+        "timestamp_us": 1791995905882358,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "edc4d0b0c2739f468b7c252a531ad45322c3371fd00c40d1af58976e4d65cc13"
+        }
+      },
+      {
+        "timestamp_us": 1791995905897743,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "8a0628d8a444c5ce4a6ff17c66ad44f1144943df43bcdadf8ce4533453720c56"
+        }
+      },
+      {
+        "timestamp_us": 1791995905911625,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "f7319918128ed1de893b7b579c3deb37137155bd3d9c3b9155887404c0482660"
+        }
+      },
+      {
+        "timestamp_us": 1791995905925168,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "758b12460508fd15f0ce55bd0e69107be8c1ca11bb27a943504e79a535316fb7"
+        }
+      },
+      {
+        "timestamp_us": 1791995905950425,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "ed97327615878aaa3d3e030f7b9c4bc128bc4b7886093b2cb34022c2240cb042"
+        }
+      },
+      {
+        "timestamp_us": 1791995905975361,
+        "reason_code": "PARTIAL_ARTIFACT_CAPACITY",
+        "details": {
+          "input_digest": "487ce0b13736a90430b84e5e3293bac8adcf8b59227ddd7abf107942db7df282"
+        }
+      },
+      {
+        "timestamp_us": 1791995910508524,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "403d11ea1cf20c5bcda460cded969309518d02203d06a273396d4bdb468e4b8a",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910521881,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "630ce8b74860414214c41a97275fa2538f8bc0072fa2aae6bfda1337fb55f3cd",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910549167,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "e86bec6cb0901abaf61b153b54f66de69d8aa84acbbd31270739b089661b1839",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910565058,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "c421e6689b9b43aa0e8f2e891eb4582d3b14933c0af26d024a2267fa549cbbb9",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910592303,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "444525a50df2143aee4edd44f7731514ca40c0ade10d0eb0d370739b8693a3d8",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910611617,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "33d81924eef3e68529c6e1fce953f9517cba9f6f6bbc248f5237fb937e103c98",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910625225,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "bfb783b93ecea3bf91f63bdecd5508bd57d5116bbd7ee90449971606283b5910",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910640294,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "5231fe10e3dcddebdccc4f44adfd68fa3cbdc0d80638c91ebf6d212ba77ee701",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910653299,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "f7550afb6d112c054a6e0bb1926b41016326bac90a9f8198b47fc65a2e4a46d4",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910665845,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "9129f97115f437ef65ba56c12feb7f6a348d29fa10317792d72ce666d04503f0",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910679192,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "b3626112752c8a2e3fbb54e4d951cb26515aa3a4224e2cc5f224042d2cc84b2d",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910692624,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "e4ea7b4a3b21f2d925eff927905ef29a46dfe12348f4965e8e29b137739e305e",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995910715437,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "ac1c5eb494e2ef13db81c2142de3535cbff7fb4328fd6d4f613e179238ff0b89",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911265352,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "a46821858fc30001847909cc44ea0661d653857fa931bef9827817340230cf4e",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911278590,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "88aa0e75e291e11fb3b8c0331314008cb280c68a3d9bf1f8b47bb86e43ae6d35",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911291627,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "fb28aa19dd655e6199243b7fa37bf6b62bbf8036675a685bfaf773c994520595",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911304125,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "83f73cd33b28c3a54941e1b53ca3b9189595fd959f44f5143c33009b85b16e73",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911319168,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "b8e23631d031838d38d29baafb066312ad792d795339d2d75bf2430ab567c1a3",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911337917,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "4a6e518e796b9709462e1354e7fb50458d1549b7579dd0dbff099e070e68660f",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911353920,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "b4e726c03f3ce926af360c1fdc42a63b8aab1b8df2564bb7f801a51988b256ee",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911382185,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "b8f7ec50ea3df0121694cf484f1b4658962c803b066034a02721d73e8786ca46",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911397330,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "9060ffe21fb8ddfa099c8568af41e065f25ede1c2a4d1712f2f617c40f9da8f2",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911416634,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "1e44b591012a4960b960bc79b6601eab31cdb32b856472617c7ed0ab4c054460",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911431581,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "17c748fa480a3dc0ce577cb65bf42a9b16363c4e9459721a32cd52978b38ab16",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911453154,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "53352db107ef0a876f6ae09b880204ff6c3f41c8fcbe358bbd91d93e9d3aa585",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911488948,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "25175a4b75af0a22f8a609cc658e499ef7389086e4bfe621c085c6277553cbe9",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911532289,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "a9c40b4dbe8dd4864d1f0c245f3efc1e55b46bb01aaa599142050b42caa93e72",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911591124,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "d86d801d04d718ed08da5344cdb27fa4801ec7ba03c5aacbf18f2242a9cecb46",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911627339,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "bad9f6b2f6a7b95fd2e783a1df750c172e29361f3b46ba21bf173cc431da0b4d",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911664585,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "83949db6cc67bd235c045a6611b26ac6f277b98685a65a915a8b3af7901cfd58",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911693844,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "f115e71d8ddaa2b0169734135b8712761984080a795c4fa02d50698853418039",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995911715296,
+        "reason_code": "REASSEMBLY_EXPIRED",
+        "details": {
+          "digest": "ccd79510edba79a1b9f9471817ce962b760f79b5967431a5bd7ec1beb1bd64f0",
+          "identity": "5f73b415238f630784d29a4299a57a5024f12938307be2d53927b6cf8b390bbf",
+          "input_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "expected_parts": 5,
+          "received_parts": 1
+        }
+      },
+      {
+        "timestamp_us": 1791995920685550,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "58f8abb0e54ddc7fa6a43ef50e306d904611227166d8110dce49e0b595d88fc4",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199591,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "58b598c3e8f7c80854a697b8d0bb4f6a86064c26f4ed19823e4efab4dd7cae49",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4676,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995920038835,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995920685550,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995922583779,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "698ec7c45220a886a390481be782a4ceb99c692e81714c955b35efd4816233d2",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199591,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "85857d53a4704d1d7e504f7271eef518f0df4709b557b39ad4dfcf9021f5bc04",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5408,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995920045656,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995922583779,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995931484469,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "8a6ab0523ea08c154aa5110150c9941f7973556feae2d8b19c5e9b6f6896bbe5",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199592,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "1f01960618de3dabd7268ec4cc20bc3962c420eb0e32f89f3f0005735b68ec99",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995930087934,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995931484469,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "timestamp_us": 1791995977967029,
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "813ac42a3fd179d77c3348581e12e76cfac27f3bfc827056c819fa7fac5172aa",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179199580,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "8e565b7ff49955919339aca1f71bc99591865e5b1249add1301386d286cc2844",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4768,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1791995810000000,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "02e10fb9f3786950d79b11dfc832b0cd8961356e13a0c657f49d4ab27156f31e",
+          "received_at_utc_us": 1791995977967029,
+          "replay_width_windows": 30
+        }
+      }
+    ],
+    "conflicts": [
+      {
+        "scope_id": "30a96f5c022773ae025582acf1190ba113da3544e52ade6ab3a588bb3db1efbd",
+        "first_digest": "7f18fb3f5d3e2c38005e76653048354cb83caa7306c311962c54670859b55eb1",
+        "second_digest": "c0b77e03a2fa20fca26123e115258bb1167d18c647d038b509a5fadaa2a48c4d"
+      }
+    ],
+    "verdicts": [
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199580,
+        "verdict": "TRUE",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_LOWER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_LOWER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199580,
+        "verdict": "TRUE",
+        "verification_status": "VERIFIED",
+        "reasons": [
+          "MATCHING_LOWER_BOUND"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199580,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199581,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199582,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "INCOMPLETE_SCOPE",
+          "LIMITED_EVIDENCE"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199583,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199584,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199585,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199586,
+        "verdict": "TRUE",
+        "verification_status": "VERIFIED",
+        "reasons": [
+          "MATCHING_LOWER_BOUND"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199586,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_LOWER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "CONFLICT_PRESENT",
+        "reasons": [
+          "CONFLICTING_SIGNED_SCOPE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "CONFLICT_PRESENT",
+        "reasons": [
+          "CONFLICTING_SIGNED_SCOPE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "CONFLICT_PRESENT",
+        "reasons": [
+          "CONFLICTING_SIGNED_SCOPE",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199587,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_LOWER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199588,
+        "verdict": "TRUE",
+        "verification_status": "VERIFIED",
+        "reasons": [
+          "MATCHING_LOWER_BOUND"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199588,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199589,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199590,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199591,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199591,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199591,
+        "verdict": "FALSE",
+        "verification_status": "VERIFIED",
+        "reasons": [
+          "MATCHING_UPPER_BOUND"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199591,
+        "verdict": "TRUE",
+        "verification_status": "VERIFIED",
+        "reasons": [
+          "MATCHING_LOWER_BOUND"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199591,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_UPPER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199591,
+        "verdict": "FALSE",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_UPPER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199591,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_LOWER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199591,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199591,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199592,
+        "verdict": "TRUE",
+        "verification_status": "VERIFIED",
+        "reasons": [
+          "MATCHING_LOWER_BOUND"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199592,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MATCHING_LOWER_BOUND",
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199593,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199594,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199595,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179199596,
+        "verdict": "UNKNOWN",
+        "verification_status": "PARTIAL_OR_MISSING",
+        "reasons": [
+          "MISSING_EVIDENCE",
+          "MISSING_FACTS"
+        ]
+      }
+    ],
+    "latency": [
+      {
+        "priority": "CRITICAL",
+        "scenario": "campaign-low-then-critical",
+        "received": 11,
+        "min_seconds": "1.5593510000000000",
+        "mean_seconds": "3.8427075454545455",
+        "max_seconds": "6.0113960000000000"
+      },
+      {
+        "priority": "CRITICAL",
+        "scenario": "campaign-critical-only",
+        "received": 22,
+        "min_seconds": "2.6665060000000000",
+        "mean_seconds": "11.5877032272727273",
+        "max_seconds": "18.3630360000000000"
+      },
+      {
+        "priority": "LOW",
+        "scenario": "campaign-low-then-critical",
+        "received": 13,
+        "min_seconds": "1.8508600000000000",
+        "mean_seconds": "10.9425163076923077",
+        "max_seconds": "17.1256580000000000"
+      }
+    ],
+    "tables": [
+      {
+        "tablename": "accepted_telemetry"
+      },
+      {
+        "tablename": "alerts"
+      },
+      {
+        "tablename": "anomalies"
+      },
+      {
+        "tablename": "coverage_alert_cooldowns"
+      },
+      {
+        "tablename": "coverage_alert_history"
+      },
+      {
+        "tablename": "coverage_alert_intents"
+      },
+      {
+        "tablename": "coverage_alert_states"
+      },
+      {
+        "tablename": "coverage_capsules"
+      },
+      {
+        "tablename": "coverage_conflicts"
+      },
+      {
+        "tablename": "coverage_epochs"
+      },
+      {
+        "tablename": "coverage_facts"
+      },
+      {
+        "tablename": "coverage_heads"
+      },
+      {
+        "tablename": "coverage_monitor_gaps"
+      },
+      {
+        "tablename": "coverage_monitor_state"
+      },
+      {
+        "tablename": "coverage_original_witnesses"
+      },
+      {
+        "tablename": "coverage_outcomes"
+      },
+      {
+        "tablename": "coverage_parts"
+      },
+      {
+        "tablename": "coverage_performance"
+      },
+      {
+        "tablename": "coverage_publications"
+      },
+      {
+        "tablename": "coverage_rule_history"
+      },
+      {
+        "tablename": "coverage_rule_verdicts"
+      },
+      {
+        "tablename": "coverage_scopes"
+      },
+      {
+        "tablename": "experiment_metadata"
+      },
+      {
+        "tablename": "observability_snapshots"
+      },
+      {
+        "tablename": "performance_metrics"
+      },
+      {
+        "tablename": "rejected_messages"
+      },
+      {
+        "tablename": "security_events"
+      }
+    ]
+  }
+}

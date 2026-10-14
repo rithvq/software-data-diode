@@ -1,0 +1,3 @@
+scenario,attack_type,expected_result,actual_result,passed,detected,scope,timestamp,latency_seconds,queue_data,resource_data,reason
+campaign-execution,HARNESS_OR_RUNTIME,COMPLETED,unsupported operand type(s) for +: 'NoneType' and 'str',False,NOT_APPLICABLE,CHECK_FAILURE,2026-10-14T16:15:03.903609+00:00,,{},{},
+baseline-preservation,STATE_PRESERVATION,UNCHANGED,CHANGED,False,NOT_APPLICABLE,PRESERVATION,2026-10-14T16:15:05.268311+00:00,,{},{},Original container IDs/images/start states/mounts/network memberships and credentials/key bytes compared; no secret bytes exported

@@ -1,0 +1,239 @@
+[
+  {
+    "scenario": "altered-facts",
+    "expected": "REJECTED",
+    "body_digest": "6e2e4bc6dc3edad67f01a1bde003b58cfdac308523119fff0b9d591b66e7e353",
+    "frame_digests": [
+      "5269fe7c17446ffb1c720253f42d0ff97fc902f99e7c05d74671fe45d749f981",
+      "a46d62c29dd75662dcb20f442ebb0caf6fb94ffb9e5fae3e0c2179f5734c1a8e",
+      "6ccb9b0a225aefbe777496bf3932e22b1a26709c698944a108d8f9527bb0484b",
+      "896eb24e00a64abafaa40ee9b24b99b0007bd166c85c86128196a5acd9363ded",
+      "e3dfc753ddada9be657460d96a383d3ffd197f737a0b4ba46d0c3a0d8bebdb16"
+    ],
+    "sent_at": 1791995607.9779751
+  },
+  {
+    "scenario": "unsigned-scope-field",
+    "expected": "REJECTED",
+    "body_digest": "cd2e4a03cdecaafbda546ac2504dd392d758de6135d8b3e4cefa89d1dd0581b0",
+    "frame_digests": [
+      "aba617cf1d088699a09dfd05e48fa67ca6dc78aded4c420a2e88dd51f2940e5e",
+      "6213bbaaab4e3b0c488af12ef76cfb77a383ae7c330f0d63333727e847e03cf3",
+      "f95dd7bf4c2ec6427814d8f8560cb68b21d63220266e26eb6fb2a22fa1d663e3",
+      "871783026e93173437cf38b3de4462c1b966d053593a75cc8ad87a97fadcd4c1",
+      "1fe3cdad41af02adca96050b41d001c2f89153e1c361503e8897b2f463472e95"
+    ],
+    "sent_at": 1791995608.0544848
+  },
+  {
+    "scenario": "wrong-device",
+    "expected": "REJECTED",
+    "body_digest": "341ebbc7cb31f79f54ba62d7f30e6154c341e09f64e7787c61052fcf38508b58",
+    "frame_digests": [
+      "fbd962c3c0724bf366eebbc6bcfba377736da72710b2ace7bd384b123ee1b2fe",
+      "5e79ff5d494cd88f2f0c14d2219a799e85e6b6d63b3ed73419b732091ec097ef",
+      "4d249a1733eb385c19ecd49b8cab9ce914b8a2d73189fabb3c436a7a4729aac3",
+      "920c9b2498ad361a7188324d5de00992fac26149ff80adb91c293614b9f7d39d",
+      "1d9586580447adae0e215838c423a3f90d9bbf022655b65c9a16a479be296ce8"
+    ],
+    "sent_at": 1791995608.131029
+  },
+  {
+    "scenario": "wrong-window",
+    "expected": "REJECTED",
+    "body_digest": "a547d646c62c47776ec3cd520bec828d88a89ff140906f08d5f1c3d724e8cc2d",
+    "frame_digests": [
+      "7a9be55c1f4559e3a5609df066c0e1b355a099c7fde37f6d0d8d17fb0ef59258",
+      "18f1cfbb243f1d055383ea927c14e0a90d3b224109d0d6305af83085f1b2c16a",
+      "48d52c1a2ee437104e66533f95b11946f94ae687653cfc7a1894841e861e2851",
+      "5a2d163d1c67947040f8966e576d8807f78d076f989be9217f5dc1d2c1773b0d",
+      "55d201c9b5b0919b470bf3fcb8d30b436fca0202de2cef89cc74748b18e9d918"
+    ],
+    "sent_at": 1791995608.2073183
+  },
+  {
+    "scenario": "count-inconsistency",
+    "expected": "REJECTED",
+    "body_digest": "cb2ce0ba3337f4f146c217fcbe8796626cefb674f34eb3c7c02495031a6ce3e1",
+    "frame_digests": [
+      "06695323ab4a2a36958e672d890630271687a67b248a76bc506744fc356add88",
+      "3568f537995c94e8c09626eeadfe20226bb285dce5b27c889005327b3771bd70",
+      "d5bdd4228cd348074248c5ba0f549c32e017683699c3c9631a8ebe542d0ac6e9",
+      "fd6ade243632ea0e6def36031b9d76f13c7ed80085d1bcf31c2f9d3f545bd52c",
+      "568423c710972b98183d534aea76550c9fd053b977ef2a444fe7044a84ea973f"
+    ],
+    "sent_at": 1791995608.283794
+  },
+  {
+    "scenario": "invalid-signature",
+    "expected": "REJECTED",
+    "body_digest": "07cbafbae633aaec8b86b7e3a49861f53bfbeb47e88b26d3370e952c73f384c9",
+    "frame_digests": [
+      "13815668f9af61f1291ff6f3819deaf820457770a4e7312543836837d38a5047",
+      "f2c7e53040d50619bb1b3c9f2e739b97ad75de05ea6754550bce1710043f5543",
+      "91d88eb9e882c195087d66b07de0b91bef526911ab024d85bdddc3c5e8ecb35b",
+      "2816e176997a50ec4cce2f42147de335e5463e81326af3a349c65920a10b5375",
+      "01b8ea158afe4ec5705f83d3683856d2ac62ea020a1d970e6472779b64de6f35"
+    ],
+    "sent_at": 1791995608.3603084
+  },
+  {
+    "scenario": "contract-substitution",
+    "expected": "REJECTED",
+    "body_digest": "f1485d867b304a94c864f471f598284125c52964e54dee71f90593f7f4b0ca46",
+    "frame_digests": [
+      "975b436cb15484e31d9986e9654fbc9786e22679ca8813128478e32d6d3680c2",
+      "0157707b42213075bd980f77e81bbbf78eedd07201ded96a62309c4fc877df70",
+      "da12cc9fed4005e9d7d5fd9b24f97c4400e32efc9cea50796fcc6184acbecf38",
+      "c2950ae3dd4cd768a9343ba911e287af1a4542767f8add470053c163ed08b0a1",
+      "e18b11c3ad4ee4b37b37cbd1dcb2ec5b174f3678a8dfea8d03c8d12b42196c07"
+    ],
+    "sent_at": 1791995608.43715
+  },
+  {
+    "scenario": "replay-across-epoch",
+    "expected": "REJECTED",
+    "body_digest": "89511dc22d1603c7717a982ada9a13535db9c9fe56d5ae05f4a5cbbc0207b90a",
+    "frame_digests": [
+      "4603963f1ab76e1ea420259ac649c03307a019eab4ea1a48c7b55aee17182236",
+      "1809e0daf7c3124803841196afa8c00ff64b5ddc9a82776412b31eca7f12f475",
+      "e9276f081a08e737c6f4278e1715ad7f6387d730a5f9b4f4b4f498572f721823",
+      "8911f2956e45873b130ed21456bdd9d6cd6591cd716134c52dca302d487740eb",
+      "36ae75af014f0e6dac8a322ac3f807f0e12c28bf8f2c069f79c5b845a3dde061"
+    ],
+    "sent_at": 1791995608.5136595
+  },
+  {
+    "scenario": "deep-input",
+    "expected": "REJECTED",
+    "body_digest": "7478f91c6ff85802489866cb68211c152830a58fa83043cd6e134cd50eff8125",
+    "frame_digests": [
+      "3bb21da5aa6ed24cd8039b09141b7fc6d87967acc7e3798e8ca368e131978d55",
+      "a2b161adf6b7064fa22de0ab136816d0fecf02c44477af94903f6c7041a9df53",
+      "26403281c5b58b2c631a5e04a0df5ca36b9cff21e66f3475411f6a9f7900ca26",
+      "51b1332f581fd06494bc209c4a71d4c45d664d8a56d19e4edfc5e9a61aa6db8a",
+      "35e3cfe551f49dc0f46e3e356aa8ca98ef2b7797e4fadae127132a582450f094",
+      "e83a425f4b20227b94dada59f276f65190d996cb8598ea9a0490399f986a497c"
+    ],
+    "sent_at": 1791995608.590183
+  },
+  {
+    "scenario": "oversized-datagram",
+    "expected": "REJECTED",
+    "body_digest": "76fa544c2080e847cd46c0abafcf2850dc7ddd3589fdd1592a8aeee0321867dc",
+    "frame_digests": [
+      "76fa544c2080e847cd46c0abafcf2850dc7ddd3589fdd1592a8aeee0321867dc"
+    ],
+    "sent_at": 1791995608.6818085
+  },
+  {
+    "scenario": "wrong-key",
+    "expected": "REJECTED",
+    "body_digest": "f068dfaa3d66fc35b2e4ee8ee788923ac9fbed6301e66da96303ff332db327c4",
+    "frame_digests": [
+      "4d18a3b1ac6a19d7bbfc225e72a011861102a77a8ba634c11c58a211794a57b9",
+      "194092524743e1525febd88ddf2874e3cec64edf1677f8a6bca9b9e6e0a6e9bb",
+      "66412f89fa32b4659bbbdd07bb01e20ff510cee12e2d70cb86decfabe04366c6",
+      "fbca72ee128a31bd0b926f5e6ca5accbc079cea2459eb1f64c21e90df9034f4e",
+      "c2265a9d7c3b80e78c4e07ad48eebd3b9f2f047a4c168824b1d662211a056ec8"
+    ],
+    "sent_at": 1791995608.6976545
+  },
+  {
+    "scenario": "reordered-valid-parts",
+    "expected": "COMMITTED",
+    "artifact_digest": "f330c363367beed80e0b1283b31380faa6656990a1ddbfc09fa8a062a814f695",
+    "scope_id": "6b1d321a60c28f7d58e1da109e5deba99c0fbedfa94fb272a22c6a3507a29d25",
+    "device_id": "edge-device-02",
+    "window_index": 179199558,
+    "sent_at": 1791995608.7740965,
+    "frame_digests": [
+      "582b8673d54edc8218af6c55abe9a705838ee41457deab7c7a267b65445da844",
+      "b7c7060dd8b91806ca63dff493e2f0bc503d9e9bba73d7307762cdebe895999c",
+      "b7d7ffc1b1b30691b6550c420c3511c0162842f1b2b5928d60ce970a677d1b0f",
+      "509a8d314ab5017bde76cda1f5ed0182d585ef3c3cdf778f3b5bf1648bbeed36",
+      "a6c7ece8e7531feca95dc94b817156cc6aa4fc1187143ab963014b634ad99884"
+    ],
+    "frames": [
+      "eyJib2R5Ijp7ImFydGlmYWN0X2RpZ2VzdCI6ImYzMzBjMzYzMzY3YmVlZDgwZTBiMTI4M2IzMTM4MGZhYTY2NTY5OTBhMWRkYmZjMDlmYThhMDYyYTgxNGY2OTUiLCJhcnRpZmFjdF9pZCI6IjZiMWQzMjFhNjBjMjhmN2Q1OGUxZGExMDllNWRlYmE5OWMwZmJlZGZhOTRmYjI3MmEyMmM2YTM1MDdhMjlkMjUiLCJhcnRpZmFjdF9raW5kIjoiUkNDX1BBUlQiLCJjaHVuayI6ImV5SmhiR2R2Y21sMGFHMGlPaUpGWkRJMU5URTVJaXdpWW05a2VTSTZleUpoWTJObGNIUmxaRjl2WW5ObGNuWmhkR2x2Ymw5amIzVnVkQ0k2TVN3aVlYSjBhV1poWTNSZmEybHVaQ0k2SWxKRFF5SXNJbU5oY0hOMWJHVmZhV1FpT2lJMllqRmtNekl4WVRZd1l6STRaamRrTlRobE1XUmhNVEE1WlRWa1pXSmhPVGxqTUdaaVpXUm1ZVGswWm1JeU56SmhNakpqTm1Fek5UQTNZVEk1WkRJMUlpd2lZMnh2YzNWeVpWOXlaV0Z6YjI0aU9pSlhTVTVFVDFkZlJVNUVJaXdpWTI5dWRISmhZM1JmYUdGemFDSTZJalZoWXpsa01qUTJaRFF3Wm1NMllUTXpNMk0yT0dabE9UZzBNREkxWkRkbU5qRTJPV0psWXpKbVpUTmxPRFUxT0Rsak5XRm1NMk5sWlRVeE1qQTBZbVFpTENKamIyNTBjbUZqZEY5d2NtOW1hV3hsSWpvaWNtTmpaQzFqYjI1MGNtRmpkQzEyTVNJc0ltTnZkbVZ5WVdkbFgyeHBiV2wwWVhScGIyNXpJanBiWFN3aVkzSmxZWFJsWkY5aGRGOTFkR05mZFhNaU9qRTNPVEU1T1RVMU9UQXdNREF3TURBc0ltUmxkbWxqIiwiZ2F0ZXdheV9pZCI6ImNvdmVyYWdlLWdhdGV3YXkiLCJwYXJ0X2NvdW50Ijo1LCJwYXJ0X2luZGV4IjowLCJwcm90b2NvbF92ZXJzaW9uIjoicmNjZC1wYXJ0LXYxIiwic2lnbmluZ19rZXlfaWQiOiJjb3ZlcmFnZS1rZXkiLCJ0b3RhbF9ieXRlcyI6MTgyOX0sInNpZ25hdHVyZSI6IjNRSFArREwrVHNpNHJkYlJ0d25GcUt0dlF4UTZzckk5VDdqOW1IM241Ynp3UzY1QWxyTXpVMHhROE5KaEgySys5UStlL0tBUWxGUk5tVUJFR0RwNERBPT0ifQ==",
+      "eyJib2R5Ijp7ImFydGlmYWN0X2RpZ2VzdCI6ImYzMzBjMzYzMzY3YmVlZDgwZTBiMTI4M2IzMTM4MGZhYTY2NTY5OTBhMWRkYmZjMDlmYThhMDYyYTgxNGY2OTUiLCJhcnRpZmFjdF9pZCI6IjZiMWQzMjFhNjBjMjhmN2Q1OGUxZGExMDllNWRlYmE5OWMwZmJlZGZhOTRmYjI3MmEyMmM2YTM1MDdhMjlkMjUiLCJhcnRpZmFjdF9raW5kIjoiUkNDX1BBUlQiLCJjaHVuayI6IlpWOXBaQ0k2SW1Wa1oyVXRaR1YyYVdObExUQXlJaXdpWjJGMFpYZGhlVjlwWkNJNkltTnZkbVZ5WVdkbExXZGhkR1YzWVhraUxDSnBibWR5WlhOelgyWnBjbk4wWDNObGNYVmxibU5sSWpveE56a3hPVGsxTlRnd01ERXNJbWx1WjNKbGMzTmZiR0Z6ZEY5elpYRjFaVzVqWlNJNk1UYzVNVGs1TlRVNE1EQXhMQ0pwYm5CMWRGOWpiMjF0YVhSdFpXNTBJanA3SW1OdmJuTjBjblZqZEdsdmJpSTZJbk5vWVRJMU5pMXpZMjl3WlMxelpXVmtaV1F0YVc1d2RYUXRabTlzWkMxMk1TSXNJbkpsWTI5eVpGOWpiM1Z1ZENJNk1Td2ljbTl2ZENJNklqUTBNRE15TmpRMU1XVmpZV0V4WkRNME5XVTNNVEl3Tm1SbE5XVTNaak5sTnpVNU56ZzBaV0psTWpoa1l6UTJZV1l5WlRBNU5UZ3dNemt5WXpCbU9EWWlmU3dpYkdWa1oyVnlYMlZ3YjJOb0lqb2lZbVV6TW1GaU9EUXRPR0ZrTlMwME16TXdMVGd3TWpFdFpXRmpPV015WldReE5UazRJaXdpYjJKelpYSjJZWFJwYjI1ZmMyTnZjR1VpT2lKaFkyTmxjSFJsWkY5dWIzSnRZV3hwIiwiZ2F0ZXdheV9pZCI6ImNvdmVyYWdlLWdhdGV3YXkiLCJwYXJ0X2NvdW50Ijo1LCJwYXJ0X2luZGV4IjoxLCJwcm90b2NvbF92ZXJzaW9uIjoicmNjZC1wYXJ0LXYxIiwic2lnbmluZ19rZXlfaWQiOiJjb3ZlcmFnZS1rZXkiLCJ0b3RhbF9ieXRlcyI6MTgyOX0sInNpZ25hdHVyZSI6IlhZU200TkNzVGl0RW5uc2swUWhXazljRlRrZW5waW14K3ZmcWhXN2trcXJaUVZOQnhnNWswNjJURkVyL2FXa0Y5b2ptNXZMVzJQWmhKdFNEb1dLWENnPT0ifQ==",
+      "eyJib2R5Ijp7ImFydGlmYWN0X2RpZ2VzdCI6ImYzMzBjMzYzMzY3YmVlZDgwZTBiMTI4M2IzMTM4MGZhYTY2NTY5OTBhMWRkYmZjMDlmYThhMDYyYTgxNGY2OTUiLCJhcnRpZmFjdF9pZCI6IjZiMWQzMjFhNjBjMjhmN2Q1OGUxZGExMDllNWRlYmE5OWMwZmJlZGZhOTRmYjI3MmEyMmM2YTM1MDdhMjlkMjUiLCJhcnRpZmFjdF9raW5kIjoiUkNDX1BBUlQiLCJjaHVuayI6ImVtVmtYMmRoZEdWM1lYbGZhVzVuY21WemN5SXNJbTl1YkdsdVpWOWhjM04xY21GdVkyVWlPaUpCVlZSSVJVNVVTVU5CVkVWRVgxTlZUVTFCVWxraUxDSndaWEpmWTI5dVpHbDBhVzl1WDJaaFkzUnpJanBiZXlKamIyNWthWFJwYjI1ZmFXUWlPaUp5WlhOdmRYSmpaUzFpZFhONUlpd2liV0YwWTJocGJtZGZZMjkxYm5RaU9qRXNJbTV2Ym0xaGRHTm9hVzVuWDJOdmRXNTBJam93TENKMWJuSmxjMjlzZG1Wa1gyTnZkVzUwSWpvd0xDSjNhWFJ1WlhOelpYTWlPbHQ3SW1sdVozSmxjM05mYzJWeGRXVnVZMlVpT2pFM09URTVPVFUxT0RBd01Td2lhVzV3ZFhSZmFHRnphQ0k2SWpFeU56a3dOR1UxTldReVlXVXpaRE13TXpWbU9UUmhNamRsWlRJeVl6WTBaalJoTkdSbU1qaGhaVGhoT0dNME1Ea3hPREEzWW1aaVpEbG1NV1V3TjJRaWZWMTlYU3dpY0c5d2RXeGhkR2x2Ymw5amIyMXdiR1YwWlNJNmRISjFaU3dpY0hKbGRtbHZkWE5mWTJGd2MzVnNaVjlrYVdkbGMzUWlPbTUxYkd3c0luQnliM1J2WTI5c1gzWmxjbk5wIiwiZ2F0ZXdheV9pZCI6ImNvdmVyYWdlLWdhdGV3YXkiLCJwYXJ0X2NvdW50Ijo1LCJwYXJ0X2luZGV4IjoyLCJwcm90b2NvbF92ZXJzaW9uIjoicmNjZC1wYXJ0LXYxIiwic2lnbmluZ19rZXlfaWQiOiJjb3ZlcmFnZS1rZXkiLCJ0b3RhbF9ieXRlcyI6MTgyOX0sInNpZ25hdHVyZSI6IitXeDE5ZzZGWm5HS2p6VE02ekV1K2VZVkRIVnB6Q0tVVUFLZTdQL2JTMUVkam1kY0FiQ1NlbVZxbmwraHRXQjJPa3RHMXlVWXFYS3kvRzdNa25SSENnPT0ifQ==",
+      "eyJib2R5Ijp7ImFydGlmYWN0X2RpZ2VzdCI6ImYzMzBjMzYzMzY3YmVlZDgwZTBiMTI4M2IzMTM4MGZhYTY2NTY5OTBhMWRkYmZjMDlmYThhMDYyYTgxNGY2OTUiLCJhcnRpZmFjdF9pZCI6IjZiMWQzMjFhNjBjMjhmN2Q1OGUxZGExMDllNWRlYmE5OWMwZmJlZGZhOTRmYjI3MmEyMmM2YTM1MDdhMjlkMjUiLCJhcnRpZmFjdF9raW5kIjoiUkNDX1BBUlQiLCJjaHVuayI6ImIyNGlPaUp5WTJOa0xXTmhjSE4xYkdVdGRqRWlMQ0p5WldSMVkzUnBiMjVmWVdOamIzVnVkR2x1WnlJNmV5SmhjbU5vYVhabFpGOXNiMk5oYkNJNk1Dd2lZMjl1Wm1seWJXVmtYM0psWTJWcGNIUmZZMjkxYm5RaU9tNTFiR3dzSW1SeWIzQndaV1JmY21GM0lqb3dMQ0p3Wlc1a2FXNW5YM0J2YkdsamVTSTZNU3dpY1hWbGRXVmZiM1psY21ac2IzZGZaSEp2Y0hNaU9qQXNJbkpoZDE5a2FYTndZWFJqYUY5aGRIUmxiWEIwY3lJNk1Dd2ljbVZqWldsd2RGOWhjM04xY21GdVkyVWlPaUpPVDFSZlQwSlRSVkpXUlVRaUxDSnlaV1IxWTJWa1gzSmhkeUk2TUN3aWMyVnNaV04wWldSZmNtRjNJam93ZlN3aWMyTnZjR1ZmYTJsdVpDSTZJbGRKVGtSUFZ5SXNJbk5wWjI1cGJtZGZhMlY1WDJsa0lqb2lZMjkyWlhKaFoyVXRhMlY1SWl3aWRHbHRaVjlpWVhOcGN5STZJbWRoZEdWM1lYbGZhVzVuY21WemMxOTFkR05mYldsamNtOXpaV052Ym1Seklpd2lkMmx1Wkc5M1gyVnVaRjkxZEdOZmRYTWlPakUzT1RFNU9UVTFPVEF3IiwiZ2F0ZXdheV9pZCI6ImNvdmVyYWdlLWdhdGV3YXkiLCJwYXJ0X2NvdW50Ijo1LCJwYXJ0X2luZGV4IjozLCJwcm90b2NvbF92ZXJzaW9uIjoicmNjZC1wYXJ0LXYxIiwic2lnbmluZ19rZXlfaWQiOiJjb3ZlcmFnZS1rZXkiLCJ0b3RhbF9ieXRlcyI6MTgyOX0sInNpZ25hdHVyZSI6IlBqZWdjVHFzMHcrOTFvWVJHM3Z5ZmxKa0JLWXgrOHJQN0JwZWErY2IwY3N6SmUyakNVcTd3MExrMlVicUpXT01VaXJENk95eEl2TUUwZEFjNzlMRkJ3PT0ifQ==",
+      "eyJib2R5Ijp7ImFydGlmYWN0X2RpZ2VzdCI6ImYzMzBjMzYzMzY3YmVlZDgwZTBiMTI4M2IzMTM4MGZhYTY2NTY5OTBhMWRkYmZjMDlmYThhMDYyYTgxNGY2OTUiLCJhcnRpZmFjdF9pZCI6IjZiMWQzMjFhNjBjMjhmN2Q1OGUxZGExMDllNWRlYmE5OWMwZmJlZGZhOTRmYjI3MmEyMmM2YTM1MDdhMjlkMjUiLCJhcnRpZmFjdF9raW5kIjoiUkNDX1BBUlQiLCJjaHVuayI6Ik1EQXdNREFzSW5kcGJtUnZkMTlwYm1SbGVDSTZNVGM1TVRrNU5UVTRMQ0ozYVc1a2IzZGZjM1JoY25SZmRYUmpYM1Z6SWpveE56a3hPVGsxTlRnd01EQXdNREF3ZlN3aVltOWtlVjlrYVdkbGMzUWlPaUk0WW1ZeU5qa3lZelV4TW1NM1lXVXhaREF4WlROaE9ERTFOR015TkdZM1pHSXlZVGxrT1RZNE4yUTFOR00zTkdNelpUazNOVFUwWm1ZMU16RTRORFV6SWl3aWMybG5ibUYwZFhKbElqb2labk5tVFZwd1V6aEtTR2sxVVhScFR6UmtPVVpEVTJwT1lqVllWMUJvY0VkVmVuaDFWRkpyUm1vME5HVlVlRWRhU0RaR1FsZzNaa3RJUWxoTGJXdFlhRmhDZVRSWVNVUnpkekJQUmpsR2VrNW9hMjVqUkVFOVBTSXNJbk5wWjI1aGRIVnlaVjlrYjIxaGFXNGlPaUpTUTBORUxVVldTVVJGVGtORkxWWXhJbjA9IiwiZ2F0ZXdheV9pZCI6ImNvdmVyYWdlLWdhdGV3YXkiLCJwYXJ0X2NvdW50Ijo1LCJwYXJ0X2luZGV4Ijo0LCJwcm90b2NvbF92ZXJzaW9uIjoicmNjZC1wYXJ0LXYxIiwic2lnbmluZ19rZXlfaWQiOiJjb3ZlcmFnZS1rZXkiLCJ0b3RhbF9ieXRlcyI6MTgyOX0sInNpZ25hdHVyZSI6InZpMENOaHo4MEhvdDB6OWlNSDc5WmMyeXlFR3Vva1VURCs2MDhreXAyT29SNURGQm9oMmJ0eU5HSklLYXd5S3lwSkVaU003c1c2U0lKNmdycmJ3c0RBPT0ifQ=="
+    ]
+  },
+  {
+    "scenario": "fork-original",
+    "expected": "COMMITTED",
+    "artifact_digest": "92db64f83af57e80609bac00b2ba22c70bfcdabddfe952918a8095519a4dabd8",
+    "scope_id": "0a02fc9517184cae9c876b6e3d783e3a50ed53e82ebc097d6aadbf32a86e988d",
+    "device_id": "edge-device-04",
+    "window_index": 179199557,
+    "sent_at": 1791995608.9422195,
+    "frame_digests": [
+      "3a341f55bf3b0912a818c3ac1b593f5013744c5676b8e68d580804024f584ac6",
+      "59740d43dc6dd8619ac40b230bf7c0326effbf5c3d02f9db1e3c30cf759aad41",
+      "54e0061bf93cd382006a856af83734e9ecba709336ef9065d91a5dc2b66b3162",
+      "1d3bf2c51571c9a63237b0cd4b435b4988514aaec05755a05a32a0357fab5188",
+      "6f70b51158feb83ce043f9f4e9a7ba8d7b2addb9ceedb0cb7c7016471b3e5bb4"
+    ],
+    "frames": []
+  },
+  {
+    "scenario": "fork-variant",
+    "expected": "COMMITTED",
+    "artifact_digest": "b6961611e088f31ab2005912e7f355dfe0c66ee6787b00973cb29ab8d909b97e",
+    "scope_id": "0a02fc9517184cae9c876b6e3d783e3a50ed53e82ebc097d6aadbf32a86e988d",
+    "device_id": "edge-device-04",
+    "window_index": 179199557,
+    "sent_at": 1791995609.0190928,
+    "frame_digests": [
+      "cc9c49b23c2b106d95309732ccf482e5d8ab28c88697ee7813f41bf8fa7d5613",
+      "704e9e7895b2bfe0dcf89419673baf0d277794cd7e0f72ab1be20a40beb821e2",
+      "383dc5f4486cc615e38e6b644f6623488f98d01d50c229722c118036ed69fe1a",
+      "8417f2b7ed215565266588572b63e4b1bacbb898c18942d58ef55af29a5e45b7",
+      "7267a8807ccb4f63e0647cccccbfa9d126451608b8fda469fa7ca2d77274142e",
+      "3e3baff0bdf107de88106247015c32dbeb5eee7abdc5e116b395280ed5e1a01a"
+    ],
+    "frames": []
+  },
+  {
+    "scenario": "later-independent-gap",
+    "expected": "COMMITTED",
+    "artifact_digest": "a3252c4b4af28bd0f5067e17ef666f04f9f9a845a8188ec726402bed4fe5f1e4",
+    "scope_id": "79165b6ec7c99aa7ae1a2f09f03b5c1592a0a96f7112269edd033ced78f15af7",
+    "device_id": "edge-device-03",
+    "window_index": 179199556,
+    "sent_at": 1791995609.111057,
+    "frame_digests": [
+      "80b1c177e7277dac3d6c5348aac58ddd602a55713f7177cacdb4860b7bbe421f",
+      "0fbd187e321f1470f9165a5933b750e8a43625c579345dd843797869315f99e9",
+      "00d079d755475492aca945410d2032d3191dc121e76fee4604bd932d04d60bf7",
+      "1be930c6f54c3e176766d1118266c65ef0e9b08b3f6fb8f7260b06ceaa947225",
+      "461d89d82b9897ae55cc4e2e59fa468a6d728c7008f72ba98e28600742ca42ed"
+    ],
+    "frames": []
+  },
+  {
+    "scenario": "expired-capsule",
+    "expected": "EXPIRED",
+    "artifact_digest": "791088bab6904e041686852fff47e34b488bbb34142ee7d68c01d104f70da242",
+    "scope_id": "50249daae0609fdd114b833bf41609a6489eb74c76ce51d3c91af3a615b209f1",
+    "device_id": "edge-device-01",
+    "window_index": 179199518,
+    "sent_at": 1791995609.187986,
+    "frame_digests": [
+      "68f913c3b47f37391363744e38d5cb6b97939513bb38a0bd9b6977a05218f7b9",
+      "02f05e295c6297298f20ec5b9fb8e87d1b85d7c8fdbe06a7e0d3ed998a70d57e",
+      "95f6536c61512becdd3102e1d242f1fef4583730f565425bc641c15e677a0de0",
+      "ec4eca1cc224de1fb4dbce35c48ce57952aaeb051e12a44756fca2d2dc557e7d",
+      "cc8af02b1c2e84f0a834ac6513442f6e49192a8f12ea2261d66e0354d8099fe8"
+    ],
+    "frames": []
+  },
+  {
+    "scenario": "partial-assembly-flood-expiry",
+    "expected": "BOUNDED_EXPIRED",
+    "sent_at": 1791995609.9203646
+  }
+]

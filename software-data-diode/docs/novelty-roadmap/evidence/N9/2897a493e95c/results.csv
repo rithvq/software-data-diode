@@ -1,0 +1,3 @@
+scenario,attack_type,expected_result,actual_result,passed,detected,scope,timestamp,latency_seconds,queue_data,resource_data,reason
+campaign-execution,HARNESS_OR_RUNTIME,COMPLETED,'NoneType' object is not iterable,False,NOT_APPLICABLE,CHECK_FAILURE,2026-10-14T16:18:39.963857+00:00,,{},{},
+baseline-preservation,STATE_PRESERVATION,UNCHANGED,UNCHANGED,True,NOT_APPLICABLE,PRESERVATION,2026-10-14T16:18:40.535780+00:00,,{},{},Original container IDs/images/start states/mounts/network memberships and credentials/key bytes compared; no secret bytes exported

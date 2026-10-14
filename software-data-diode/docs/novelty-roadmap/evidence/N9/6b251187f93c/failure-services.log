@@ -1,0 +1,322 @@
+edge-device-04-1  | {"timestamp":"2026-10-14T16:29:58.831652+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-04 type=security","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1  | {"timestamp":"2026-10-14T16:29:58.831821+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1  | {"timestamp":"2026-10-14T16:29:58.996486+00:00","service":"edge-device-04","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=security status=normal","message_id":null,"device_id":"edge-device-04","correlation_id":"edge-device-04:2026-10-14T16:29:58.996249+00:00","telemetry_type":"security"}
+edge-device-04-1  | {"timestamp":"2026-10-14T16:29:59.323936+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-04-1  | {"timestamp":"2026-10-14T16:29:59.325195+00:00","service":"edge-device-04","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '6fe00dc5-eba2-4c30-a8f5-98b1dd54d951', 'device_id': 'edge-device-04', 'ingress_sequence': 1, 'window_index': 179199539, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '5ec8574483ce7d54dbbd453130985ff6f7ac01f21dbadc47f8268e6e8c32dbb2', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:01.070601+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:01.070751+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:01.071054+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:01.079379+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:02.677097+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:02.678473+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:02.679132+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:42696 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:02.679915+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:55658 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:06.257402+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:06.258787+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:42758 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:06.344105+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:06.345032+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:55660 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:09.762533+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:09.763559+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:42878 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:09.939587+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:09.940565+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:55672 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:13.453480+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:13.454850+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:33328 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:13.614489+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:13.615558+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:36896 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:17.056704+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:17.058307+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:33402 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:17.329170+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:17.330714+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:36904 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:20.705072+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:20.706454+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:52012 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:21.102676+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:21.103522+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:54088 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:24.347501+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:24.348748+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"127.0.0.1:52070 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:24.815730+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"HTTP Request: GET http://alert-engine:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-analytics-1   | {"timestamp":"2026-10-14T16:30:24.817006+00:00","service":"fog-analytics","level":"INFO","event":"log","message":"10.0.0.51:54096 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+validation-init-1  | Disposable N9 project initialized; no user credentials mounted
+edge-device-01-1   | {"timestamp":"2026-10-14T16:29:59.130898+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-01 type=environmental","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1   | {"timestamp":"2026-10-14T16:29:59.131155+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1   | {"timestamp":"2026-10-14T16:29:59.232704+00:00","service":"edge-device-01","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=environmental_telemetry status=normal","message_id":null,"device_id":"edge-device-01","correlation_id":"edge-device-01:2026-10-14T16:29:59.232544+00:00","telemetry_type":"environmental"}
+edge-device-01-1   | {"timestamp":"2026-10-14T16:29:59.508290+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-01-1   | {"timestamp":"2026-10-14T16:29:59.509585+00:00","service":"edge-device-01","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '6fe00dc5-eba2-4c30-a8f5-98b1dd54d951', 'device_id': 'edge-device-01', 'ingress_sequence': 1, 'window_index': 179199539, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '910c8a6ddec1e3a1ab35a6fb5a620f05ae6bac876d44568bc43ec6b1467be06c', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:29:52.597584+00:00","service":"data-diode","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+data-diode-1       | {"timestamp":"2026-10-14T16:29:52.597787+00:00","service":"data-diode","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:29:52.704943+00:00","service":"data-diode","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:29:52.706262+00:00","service":"data-diode","level":"INFO","event":"log","message":"Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+data-diode-1       | {"timestamp":"2026-10-14T16:29:53.411670+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:42086 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:29:57.135574+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:42122 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:00.921520+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:42682 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:04.425422+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:42732 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:07.811402+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:42816 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:08.422015+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:42828 - \"GET /metrics/runtime HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:11.226988+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:33276 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:14.731761+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:33360 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:18.322147+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:33446 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:22.018187+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:52028 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+data-diode-1       | {"timestamp":"2026-10-14T16:30:25.521405+00:00","service":"data-diode","level":"INFO","event":"log","message":"127.0.0.1:52106 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:54.500449+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:54.500580+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:54.695459+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:54.701278+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:56.331980+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:42106 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:59.188392+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.4:54344 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:59.322345+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.3:56968 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:59.408879+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.5:50228 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:59.433536+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.6:43668 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:59.506872+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"10.0.0.7:54132 - \"POST /telemetry HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:29:59.690910+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:42148 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:03.063799+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:42708 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:06.324228+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:42778 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:09.322244+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:42842 - \"GET /metrics/runtime HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:09.594716+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:42864 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:13.031287+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:33304 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:16.314166+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:33386 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:19.590187+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:33472 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:22.865586+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:52050 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-gateway-1     | {"timestamp":"2026-10-14T16:30:26.145896+00:00","service":"edge-gateway","level":"INFO","event":"log","message":"127.0.0.1:52124 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:00.245994+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:00.246179+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:00.634443+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:01.070580+00:00","service":"event-processor","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:00.637526+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:02.292124+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:02.296251+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:42688 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:02.606205+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:02.952936+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:03.214689+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:03.470748+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:03.731676+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:03.991864+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:04.246709+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:04.506845+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:04.767165+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:05.027189+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:05.280192+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:05.537478+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:05.589762+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:42736 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:05.890164+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"HTTP Request: POST http://alert-engine:8000/coverage-alerts \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:07.338783+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:42790 - \"GET /research/status HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:08.871425+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:42830 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:12.482280+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:33292 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:15.836701+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:33376 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:19.209358+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:33450 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:22.483313+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:52036 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+fog-receiver-1     | {"timestamp":"2026-10-14T16:30:25.806422+00:00","service":"fog-receiver","level":"INFO","event":"log","message":"127.0.0.1:52116 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:01.070753+00:00","service":"event-processor","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:01.071069+00:00","service":"event-processor","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:01.079374+00:00","service":"event-processor","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:02.681411+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:02.683145+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:42684 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:06.345705+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:06.346694+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:42770 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:09.941323+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:09.942758+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:42894 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:13.616454+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:13.617882+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:33342 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:17.331494+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:17.332355+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:33418 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:21.104132+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:21.105063+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:52016 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:24.817762+00:00","service":"event-processor","level":"INFO","event":"log","message":"HTTP Request: GET http://fog-analytics:8000/ready \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+event-processor-1  | {"timestamp":"2026-10-14T16:30:24.819078+00:00","service":"event-processor","level":"INFO","event":"log","message":"127.0.0.1:52092 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:01.091095+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Started server process [7]","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Started server process [\u001b[36m%d\u001b[0m]"}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:01.091234+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Waiting for application startup.","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:01.091503+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Application startup complete.","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-05-1   | {"timestamp":"2026-10-14T16:29:58.851916+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-05 type=industrial","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:01.097168+00:00","service":"alert-engine","level":"INFO","event":"log","message":"Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)","message_id":null,"device_id":null,"correlation_id":null,"color_message":"Uvicorn running on \u001b[1m%s://%s:%d\u001b[0m (Press CTRL+C to quit)"}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:02.290513+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54072 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:02.511080+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:42698 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:02.605410+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54078 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:02.675888+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:55684 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:02.676832+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:55690 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:02.951787+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54090 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:03.213831+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54092 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:03.469553+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54100 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:03.730807+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54114 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:03.990868+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54120 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:04.245818+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54122 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:04.506119+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54128 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:04.766396+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54144 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:05.026467+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54146 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:05.279558+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54148 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1     | {"timestamp":"2026-10-14T16:30:05.536588+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54150 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:05.889272+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.54:54156 - \"POST /coverage-alerts HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | psql:/migrations/002_phase5_observability.sql:9: NOTICE:  column "acknowledged_at" of relation "alerts" already exists, skipping
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE VIEW
+edge-device-05-1   | {"timestamp":"2026-10-14T16:29:58.852151+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:29:58.964097+00:00","service":"edge-device-05","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=industrial_process status=normal","message_id":null,"device_id":"edge-device-05","correlation_id":"edge-device-05:2026-10-14T16:29:58.963942+00:00","telemetry_type":"industrial"}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:29:59.190293+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-05-1     | {"timestamp":"2026-10-14T16:29:59.191746+00:00","service":"edge-device-05","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '6fe00dc5-eba2-4c30-a8f5-98b1dd54d951', 'device_id': 'edge-device-05', 'ingress_sequence': 1, 'window_index': 179199539, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '6fda420c0cc3208e5d608cdd15b40179385d3b63c1eba49c7412c8346a4297ac', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | BEGIN
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE VIEW
+database-migrator-1  | COMMIT
+database-migrator-1  | BEGIN
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | ALTER TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:06.016843+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:42750 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:06.256653+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:55694 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE TABLE
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE FUNCTION
+database-migrator-1  | CREATE FUNCTION
+database-migrator-1  | DROP TRIGGER
+database-migrator-1  | psql:/migrations/004_n7_rules.sql:78: NOTICE:  trigger "coverage_revision_before" for relation "coverage_rule_verdicts" does not exist, skipping
+database-migrator-1  | CREATE TRIGGER
+database-migrator-1  | psql:/migrations/004_n7_rules.sql:80: NOTICE:  trigger "coverage_revision_after" for relation "coverage_rule_verdicts" does not exist, skipping
+database-migrator-1  | DROP TRIGGER
+database-migrator-1  | CREATE TRIGGER
+database-migrator-1  | COMMIT
+database-migrator-1  | BEGIN
+database-migrator-1  | CREATE INDEX
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:06.343455+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:55702 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:09.502291+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:42850 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:09.761872+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:55714 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:09.938859+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:55720 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:13.187403+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:33312 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | CREATE INDEX
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:13.452781+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:57930 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:13.613737+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:57942 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE INDEX
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:16.708890+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:33400 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:17.055843+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:57948 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:17.328204+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:57960 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+database-migrator-1  | CREATE INDEX
+database-migrator-1  | COMMIT
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:20.201471+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:33484 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:20.704185+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:45792 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:21.101636+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:45802 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:23.709183+00:00","service":"alert-engine","level":"INFO","event":"log","message":"127.0.0.1:52054 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:24.346733+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:45806 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+alert-engine-1       | {"timestamp":"2026-10-14T16:30:24.814521+00:00","service":"alert-engine","level":"INFO","event":"log","message":"10.0.0.53:45814 - \"GET /ready HTTP/1.1\" 200","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:29:58.972139+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-03 type=network","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:29:58.972405+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:29:59.073229+00:00","service":"edge-device-03","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=network status=normal","message_id":null,"device_id":"edge-device-03","correlation_id":"edge-device-03:2026-10-14T16:29:59.073041+00:00","telemetry_type":"network"}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:29:59.435003+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-03-1     | {"timestamp":"2026-10-14T16:29:59.435731+00:00","service":"edge-device-03","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '6fe00dc5-eba2-4c30-a8f5-98b1dd54d951', 'device_id': 'edge-device-03', 'ingress_sequence': 1, 'window_index': 179199539, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '853edc6b9f314ea2e2e127ae56041f08d00da145e2228462bc5c40d95590554b', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+postgres-1           | 
+postgres-1           | The database cluster will be initialized with locale "en_US.utf8".
+postgres-1           | The default database encoding has accordingly been set to "UTF8".
+postgres-1           | The default text search configuration will be set to "english".
+postgres-1           | 
+postgres-1           | Data page checksums are disabled.
+postgres-1           | 
+postgres-1           | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres-1           | creating subdirectories ... ok
+postgres-1           | selecting dynamic shared memory implementation ... posix
+postgres-1           | selecting default max_connections ... 100
+postgres-1           | selecting default shared_buffers ... 128MB
+postgres-1           | selecting default time zone ... UTC
+edge-device-02-1     | {"timestamp":"2026-10-14T16:29:58.923400+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"[EDGE DEVICE] Starting traffic profile=normal device_id=edge-device-02 type=system","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1     | {"timestamp":"2026-10-14T16:29:58.923775+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"[EDGE DEVICE] Sending to http://edge-gateway:8000/telemetry","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1     | {"timestamp":"2026-10-14T16:29:59.041387+00:00","service":"edge-device-02","level":"INFO","event":"telemetry_generated","message":"[EDGE DEVICE] Generated unsigned telemetry event_type=resource status=degraded","message_id":null,"device_id":"edge-device-02","correlation_id":"edge-device-02:2026-10-14T16:29:59.041164+00:00","telemetry_type":"system"}
+edge-device-02-1     | {"timestamp":"2026-10-14T16:29:59.410371+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"HTTP Request: POST http://edge-gateway:8000/telemetry \"HTTP/1.1 200 OK\"","message_id":null,"device_id":null,"correlation_id":null}
+edge-device-02-1     | {"timestamp":"2026-10-14T16:29:59.411524+00:00","service":"edge-device-02","level":"INFO","event":"log","message":"[EDGE DEVICE] Gateway response={'status': 'accepted', 'mode': 'coupled', 'ledger_epoch': '6fe00dc5-eba2-4c30-a8f5-98b1dd54d951', 'device_id': 'edge-device-02', 'ingress_sequence': 1, 'window_index': 179199539, 'contract_hash': '5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd', 'input_hash': '5f0a60d077160d48b15450f3e13bbb996d2f8ff5d0d3e4f765c81a9c3d0785f2', 'duplicate': False, 'disposition': 'SELECTED_RAW'}","message_id":null,"device_id":null,"correlation_id":null}
+postgres-1           | creating configuration files ... ok
+postgres-1           | running bootstrap script ... ok
+postgres-1           | sh: locale: not found
+postgres-1           | 2026-10-14 16:29:51.034 UTC [35] WARNING:  no usable system locales were found
+postgres-1           | performing post-bootstrap initialization ... ok
+postgres-1           | syncing data to disk ... ok
+postgres-1           | 
+postgres-1           | 
+postgres-1           | Success. You can now start the database server using:
+postgres-1           | 
+postgres-1           |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres-1           | 
+postgres-1           | initdb: warning: enabling "trust" authentication for local connections
+postgres-1           | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres-1           | waiting for server to start....2026-10-14 16:29:52.743 UTC [47] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1           | 2026-10-14 16:29:52.751 UTC [47] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1           | 2026-10-14 16:29:52.776 UTC [50] LOG:  database system was shut down at 2026-10-14 16:29:52 UTC
+postgres-1           | 2026-10-14 16:29:52.790 UTC [47] LOG:  database system is ready to accept connections
+postgres-1           |  done
+postgres-1           | server started
+postgres-1           | CREATE DATABASE
+postgres-1           | 
+postgres-1           | 
+postgres-1           | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres-1           | 
+postgres-1           | waiting for server to shut down...2026-10-14 16:29:52.946 UTC [47] LOG:  received fast shutdown request
+postgres-1           | .2026-10-14 16:29:52.954 UTC [47] LOG:  aborting any active transactions
+postgres-1           | 2026-10-14 16:29:52.956 UTC [47] LOG:  background worker "logical replication launcher" (PID 53) exited with exit code 1
+postgres-1           | 2026-10-14 16:29:52.998 UTC [48] LOG:  shutting down
+postgres-1           | 2026-10-14 16:29:53.004 UTC [48] LOG:  checkpoint starting: shutdown immediate
+postgres-1           | 2026-10-14 16:29:53.183 UTC [48] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.047 s, sync=0.103 s, total=0.186 s; sync files=301, longest=0.012 s, average=0.001 s; distance=4283 kB, estimate=4283 kB; lsn=0/1925D58, redo lsn=0/1925D58
+postgres-1           | 2026-10-14 16:29:53.195 UTC [47] LOG:  database system is shut down
+postgres-1           |  done
+postgres-1           | server stopped
+postgres-1           | 
+postgres-1           | PostgreSQL init process complete; ready for start up.
+postgres-1           | 
+postgres-1           | 2026-10-14 16:29:53.287 UTC [1] LOG:  starting PostgreSQL 16.15 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1           | 2026-10-14 16:29:53.287 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1           | 2026-10-14 16:29:53.287 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1           | 2026-10-14 16:29:53.303 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1           | 2026-10-14 16:29:53.320 UTC [63] LOG:  database system was shut down at 2026-10-14 16:29:53 UTC
+postgres-1           | 2026-10-14 16:29:53.334 UTC [1] LOG:  database system is ready to accept connections
+postgres-1           | 2026-10-14 16:30:13.167 UTC [353] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:13.440 UTC [353] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:13.682 UTC [353] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:13.748 UTC [353] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:13.758 UTC [353] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:13.769 UTC [353] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:13.908 UTC [382] ERROR:  N6 injected fact failure
+postgres-1           | 2026-10-14 16:30:13.908 UTC [382] CONTEXT:  PL/pgSQL function fail_fact() line 1 at RAISE
+postgres-1           | 2026-10-14 16:30:13.908 UTC [382] STATEMENT:  INSERT INTO coverage_facts VALUES ($1,$2,$3::jsonb)
+postgres-1           | 2026-10-14 16:30:17.808 UTC [491] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:18.037 UTC [491] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:18.218 UTC [491] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:18.262 UTC [491] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:18.269 UTC [491] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:18.277 UTC [491] WARNING:  there is already a transaction in progress
+postgres-1           | 2026-10-14 16:30:18.523 UTC [512] ERROR:  N7 injected rule outbox failure
+postgres-1           | 2026-10-14 16:30:18.523 UTC [512] CONTEXT:  PL/pgSQL function fail_rule_outbox() line 1 at RAISE
+postgres-1           | 2026-10-14 16:30:18.523 UTC [512] STATEMENT:  INSERT INTO coverage_alert_intents (alert_id,decision_id,kind,active,payload,reason,delivered_revision)
+postgres-1           | 	            VALUES ($1,$2,$3,$4,$5::jsonb,$6,$7) ON CONFLICT (alert_id) DO UPDATE SET active=excluded.active,
+postgres-1           | 	            payload=excluded.payload,reason=excluded.reason,delivery_revision=coverage_alert_intents.delivery_revision+1
+postgres-1           | 2026-10-14 16:30:19.610 UTC [551] ERROR:  N7 injected alert failure
+postgres-1           | 2026-10-14 16:30:19.610 UTC [551] CONTEXT:  PL/pgSQL function fail_alert() line 1 at RAISE
+postgres-1           | 2026-10-14 16:30:19.610 UTC [551] STATEMENT:  INSERT INTO alerts (alert_id,timestamp,source_devices,alert_type,severity,evidence,description)
+postgres-1           | 	                VALUES ($1,$2,$3,$4,$5,$6::jsonb,$7) ON CONFLICT (alert_id) DO NOTHING

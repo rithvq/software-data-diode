@@ -1,0 +1,19 @@
+[
+  {
+    "scenario": "database-outage-evidence",
+    "expected": "COMMITTED",
+    "artifact_digest": "8e565b7ff49955919339aca1f71bc99591865e5b1249add1301386d286cc2844",
+    "scope_id": "813ac42a3fd179d77c3348581e12e76cfac27f3bfc827056c819fa7fac5172aa",
+    "device_id": "edge-device-05",
+    "window_index": 179199580,
+    "sent_at": 1791995977.902556,
+    "frame_digests": [
+      "1e4fcbba977d2d36fee17c937ff3d9cd60fd7e5986407fcbfeaf24f927dbede8",
+      "9df93de79dcb4ba0f08764b4abbef4f40ebf6ec778458e1fb577f43fa281f851",
+      "7e88355c76d0ceec0c5e333c08807cc8e59b6383959a43e7401b9e1c4e3e45ec",
+      "9852ef319503c8ea9b5c2b87b149ac2929cf56cadb892ffb8a8dea7693b9c75c",
+      "a8e18f6c2016ef27ef4a68bb1fc9682d65f64bc2af54dd1feafda31a28203c80"
+    ],
+    "frames": []
+  }
+]

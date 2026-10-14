@@ -1,0 +1,12 @@
+ Container software-data-diode-n9-0ab0feb100a3-security-test-client-run-5ad82c8d6b77 Creating 
+ Container software-data-diode-n9-0ab0feb100a3-security-test-client-run-5ad82c8d6b77 Created 
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/app/n9.py", line 226, in <module>
+    main()
+  File "/app/app/n9.py", line 221, in main
+    if not all(r.passed for r in rows): raise RuntimeError("live admission failure")
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: live admission failure
+

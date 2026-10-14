@@ -1,0 +1,208 @@
+# Standalone test file: deliberately does not merge baseline secrets/state/ports.
+name: ${N9_PROJECT_NAME:?unique N9 project required}
+x-hardening: &hardening
+  read_only: true
+  init: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs: ["/tmp:size=128m,mode=1777"]
+  mem_limit: 256m
+  cpus: "0.5"
+  pids_limit: 128
+  logging: {driver: json-file, options: {max-size: "5m", max-file: "2"}}
+x-research: &research
+  # Library anchor category is unchanged; actual Docker project is guarded separately.
+  COVERAGE_PROJECT_NAME: software-data-diode-coverage
+  N9_PROJECT_NAME: ${N9_PROJECT_NAME:?required}
+  N9_RUN_ID: ${N9_RUN_ID:?required}
+  COVERAGE_TRUST_PATH: /run/coverage/profile.json
+  COVERAGE_CONTRACT_PATH: /app/config/rule_coverage.json
+  COVERAGE_TRANSPORT_CONFIG: /app/config/rule_coverage_transport.json
+  DIODE_FORWARD_TRANSPORT: udp
+  COVERAGE_SOCKET_AUDIT: "true"
+x-db: &db
+  DATABASE_URL: postgresql://n9:${N9_DB_PASSWORD:?ephemeral password required}@postgres:5432/n9
+x-health: &health
+  test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready', timeout=2)"]
+  interval: 3s
+  timeout: 3s
+  retries: 20
+x-device: &device
+  <<: *hardening
+  build: {context: ., dockerfile: edge-device/Dockerfile}
+  networks: [edge-network]
+  depends_on: {edge-gateway: {condition: service_healthy}}
+x-device-env: &device-env
+  RULE_COVERAGE_ENABLED: "true"
+  COVERAGE_TRUST_PATH: /run/coverage/profile.json
+  COVERAGE_DEVICE_STATE_PATH: /state/research-device/counter.sqlite3
+  EDGE_GATEWAY_URL: http://edge-gateway:8000/telemetry
+  TELEMETRY_INTERVAL_SECONDS: "3600"
+
+services:
+  validation-init:
+    <<: *hardening
+    build: {context: ., dockerfile: edge-gateway/Dockerfile}
+    command: [python, -m, shared.security.n9_init]
+    environment: *research
+    network_mode: none
+    volumes:
+      - ledger:/state/coverage-ledger
+      - trust:/state/coverage-trust
+      - private:/state/n9-key
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+  postgres:
+    image: postgres:16-alpine
+    mem_limit: 256m
+    cpus: "0.5"
+    environment: {POSTGRES_USER: n9, POSTGRES_DB: n9, POSTGRES_PASSWORD: "${N9_DB_PASSWORD:?required}"}
+    volumes: [postgres-data:/var/lib/postgresql/data]
+    networks: [fog-services-network]
+    healthcheck: {test: [CMD-SHELL, "pg_isready -U n9 -d n9"], interval: 3s, timeout: 3s, retries: 20}
+  database-migrator:
+    image: postgres:16-alpine
+    tmpfs: ["/var/lib/postgresql/data:size=16m"]
+    environment: {PGPASSWORD: "${N9_DB_PASSWORD:?required}"}
+    command: [sh, -ec, "for f in /migrations/*.sql; do psql -h postgres -U n9 -d n9 -v ON_ERROR_STOP=1 -f \"$$f\"; done"]
+    volumes: [./database/migrations:/migrations:ro]
+    networks: [fog-services-network]
+    depends_on: {postgres: {condition: service_healthy}}
+  edge-gateway:
+    <<: *hardening
+    cpus: "1.0"
+    build: {context: ., dockerfile: edge-gateway/Dockerfile}
+    environment:
+      <<: *research
+      RULE_COVERAGE_ENABLED: "true"
+      COVERAGE_ADMISSION_MODE: coupled
+      COVERAGE_LEDGER_PATH: /state/coverage-ledger/observations.sqlite3
+      COVERAGE_ADMISSION_CONFIG: /app/config/rule_coverage_admission.json
+      EDGE_PRIVATE_KEY_PATH: /state/n9-key/private.pem
+      INFORMATION_POLICY_CONFIG: /app/config/information_policy.json
+      GATEWAY_SEQUENCE_STATE_PATH: /logs/n9-sequences.json
+      AUDIT_LOG_PATH: /logs/n9-gateway.jsonl
+    volumes:
+      - ledger:/state/coverage-ledger
+      - private:/state/n9-key:ro
+      - trust:/run/coverage:ro
+      - audit:/logs
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+      - ./config/rule_coverage_admission.json:/app/config/rule_coverage_admission.json:ro
+      - ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro
+      - ./config/information_policy.json:/app/config/information_policy.json:ro
+    networks: [edge-network, diode-network]
+    depends_on: {validation-init: {condition: service_completed_successfully}}
+    healthcheck: *health
+  data-diode:
+    <<: *hardening
+    build: {context: ., dockerfile: data-diode/Dockerfile}
+    command: [uvicorn, app.main:app, --host, "127.0.0.1", --port, "8000"]
+    environment: {<<: *research, COVERAGE_LINK_BYTES_PER_SECOND: "131072", AUDIT_LOG_PATH: /logs/n9-diode.jsonl}
+    volumes: [audit:/logs, ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro]
+    networks: [diode-network, fog-ingress-network]
+    healthcheck: *health
+  fog-receiver:
+    <<: *hardening
+    cpus: "1.0"
+    mem_limit: 384m
+    build: {context: ., dockerfile: fog-receiver/Dockerfile}
+    environment:
+      <<: [*research, *db]
+      FOG_PUBLIC_KEY_PATH: /run/coverage/public.pem
+      COVERAGE_REPLAY_PATH: /state/research-replay/replay.sqlite3
+      COVERAGE_RULE_MONITOR_CONFIG: /app/config/rule_coverage_monitoring.json
+      EVENT_PROCESSOR_URL: http://event-processor:8000/events
+      AUDIT_LOG_PATH: /logs/n9-fog.jsonl
+    volumes:
+      - replay:/state/research-replay
+      - audit:/logs
+      - trust:/run/coverage:ro
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+      - ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro
+      - ./config/rule_coverage_monitoring.json:/app/config/rule_coverage_monitoring.json:ro
+    networks: [fog-ingress-network, fog-services-network]
+    depends_on:
+      validation-init: {condition: service_completed_successfully}
+      database-migrator: {condition: service_completed_successfully}
+    healthcheck: *health
+  event-processor:
+    <<: *hardening
+    build: {context: ., dockerfile: event-processor/Dockerfile}
+    environment: {<<: *db, ANALYTICS_URL: "http://fog-analytics:8000/analyze"}
+    networks: [fog-services-network]
+    depends_on: {database-migrator: {condition: service_completed_successfully}}
+    healthcheck: *health
+  fog-analytics:
+    <<: *hardening
+    build: {context: ., dockerfile: fog-analytics/Dockerfile}
+    environment: {<<: *db, ALERT_ENGINE_URL: "http://alert-engine:8000/alerts"}
+    networks: [fog-services-network]
+    depends_on: {database-migrator: {condition: service_completed_successfully}}
+    healthcheck: *health
+  alert-engine:
+    <<: *hardening
+    build: {context: ., dockerfile: alert-engine/Dockerfile}
+    environment: {<<: *db, COVERAGE_ALERTS_ENABLED: "true"}
+    networks: [fog-services-network]
+    depends_on: {database-migrator: {condition: service_completed_successfully}}
+    healthcheck: *health
+  edge-device-01:
+    <<: *device
+    environment: {<<: *device-env, DEVICE_ID: edge-device-01, DEVICE_TYPE: environmental, DEVICE_SEED: "101"}
+    volumes: [trust:/run/coverage:ro, device01:/state/research-device]
+  edge-device-02:
+    <<: *device
+    environment: {<<: *device-env, DEVICE_ID: edge-device-02, DEVICE_TYPE: system, DEVICE_SEED: "202"}
+    volumes: [trust:/run/coverage:ro, device02:/state/research-device]
+  edge-device-03:
+    <<: *device
+    environment: {<<: *device-env, DEVICE_ID: edge-device-03, DEVICE_TYPE: network, DEVICE_SEED: "303"}
+    volumes: [trust:/run/coverage:ro, device03:/state/research-device]
+  edge-device-04:
+    <<: *device
+    environment: {<<: *device-env, DEVICE_ID: edge-device-04, DEVICE_TYPE: security, DEVICE_SEED: "404"}
+    volumes: [trust:/run/coverage:ro, device04:/state/research-device]
+  edge-device-05:
+    <<: *device
+    environment: {<<: *device-env, DEVICE_ID: edge-device-05, DEVICE_TYPE: industrial, DEVICE_SEED: "505"}
+    volumes: [trust:/run/coverage:ro, device05:/state/research-device]
+  security-test-client:
+    <<: *hardening
+    mem_limit: 768m
+    cpus: "1.0"
+    build: {context: ., dockerfile: security-test-client/Dockerfile}
+    command: [python, -m, app.n9]
+    # Authorized adversary at this disposable forwarder's source, not a new Fog reply path.
+    network_mode: service:data-diode
+    # Open the capture socket, then irrevocably drop UID/GID before reading keys/sending.
+    user: "0:0"
+    cap_add: [NET_RAW, SETUID, SETGID]
+    environment: {<<: *research, N9_ALLOWLIST: /reports/allowlist.json}
+    volumes:
+      - private:/state/n9-key:ro
+      - trust:/run/coverage:ro
+      - ${N9_OUTPUT_DIR:?fresh report directory required}:/reports
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+      - ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro
+    depends_on:
+      edge-gateway: {condition: service_healthy}
+      data-diode: {condition: service_healthy}
+      fog-receiver: {condition: service_healthy}
+
+networks:
+  edge-network: {internal: true}
+  diode-network: {internal: true}
+  fog-ingress-network: {internal: true}
+  fog-services-network: {internal: true}
+volumes:
+  ledger:
+  trust:
+  private:
+  postgres-data:
+  replay:
+  audit:
+  device01:
+  device02:
+  device03:
+  device04:
+  device05:

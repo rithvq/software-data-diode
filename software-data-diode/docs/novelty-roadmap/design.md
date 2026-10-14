@@ -1,6 +1,6 @@
 # RCCD technical specification
 
-Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N8 implemented and verified. N8 has local and real PostgreSQL/API/scrape/network/browser evidence. Research mode remains disabled in the baseline deployment. N9-N11 remain proposed.
+Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N9 implemented and locally verified. N9 has scoped adversarial, process-crash, oracle, PostgreSQL and packet evidence. Research mode remains disabled in the baseline deployment. N10-N11 remain proposed.
 Version: roadmap-1 + N0-contract-v1. Date: 2026-10-13.
 The normative v1 decisions are in [N0 contract freeze](reports/N0-contract-v1.md).
 N0 adds baseline evidence only. N1 adds pure contracts and semantics. N2 adds a ledger-only opt-in path, not a coverage pipeline. See [N2 scope and recovery limits](reports/N2.md).
@@ -9,6 +9,7 @@ N5 adds isolated UDP deployment, charged signed raw/state/evidence parts and bou
 N6 adds typed authenticated-summary verification, bounded Fog evidence spooling, additive PostgreSQL persistence, conflict quarantine and transactional publication. See [N6 report](reports/N6.md). It does not execute coverage rules, activate received contract transitions or remove N4 retention limits.
 N7 integrates N1 semantics with signed persisted facts, checked original-witness references, revision history and idempotent/cooldown-controlled Alert Engine delivery. See [N7 report](reports/N7.md). Observation coverage remains independent of rule truth. Legacy received-payload analytics remains a named baseline; N8 visualization and N4 archival/retirement are not implemented here.
 N8 adds opt-in Fog-persistence queries, bounded window/capsule/witness inspection, stable fragment controls and scope-specific metrics. See [N8 report](reports/N8.md) for local and real-deployment evidence. Sender grant accounting starts explicitly at N8 activation; it does not establish receipt. N4 archival/retirement remains outside N8.
+N9 adds an allowlisted, disposable software-data-diode-n9-<run-id> test project with fresh trust/state and no host ports. It validates finite traces, seeded loss/reorder patterns, real crash boundaries, scoped attacks, finite floods and no-feedback behavior. See [N9 report](reports/N9.md). A trusted signer's consistent lie and pre-admission loss remain outside assurance. No all-executions proof, hardware one-way enforcement, performance advantage or patentability is established.
 
 ## 1. Main mechanism
 

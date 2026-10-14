@@ -1,0 +1,5091 @@
+[
+  {
+    "scenario": "no-receiver-low-then-critical",
+    "attack_type": "LIVE_FINITE_CAPACITY",
+    "expected_result": "BOUNDED_ACCEPT_OR_REFUSE",
+    "actual_result": "BOUNDED_ACCEPT_OR_REFUSE",
+    "passed": true,
+    "detected": null,
+    "scope": "DOCKER_FAILURE",
+    "timestamp": "2026-10-14T16:40:14.975627+00:00",
+    "latency_seconds": 14.39054513300016,
+    "queue_data": {
+      "offered": 200,
+      "accepted": 19,
+      "refused": 181,
+      "retry_conflicts": 4,
+      "busy_or_capacity_refusals": 177,
+      "before": {
+        "traffic": {
+          "total_bytes_generated": 0,
+          "bytes_filtered": 0,
+          "bytes_transmitted": 0,
+          "latency_sample_count": 0,
+          "average_latency": null,
+          "latency_p95": null,
+          "throughput_messages_per_second": 0.0,
+          "queue_utilization": 0.0,
+          "congestion_state": "NORMAL",
+          "by_priority": {}
+        },
+        "devices": [
+          {
+            "device_id": "edge-device-01",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:38:32.786985Z",
+            "last_sequence_number": 0,
+            "received_count": 14,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 14
+            }
+          },
+          {
+            "device_id": "edge-device-02",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:38:47.665194Z",
+            "last_sequence_number": 0,
+            "received_count": 34,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "MEDIUM": 1,
+              "CRITICAL": 33
+            }
+          },
+          {
+            "device_id": "edge-device-03",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.782831Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-04",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.339775Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-05",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.683494Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          }
+        ],
+        "information_policy": null,
+        "coverage_ledger": {
+          "epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "generation": 0,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "retained_records": 51,
+          "pending_outbox_bytes": 0,
+          "unsized_obligations": 0,
+          "last_limitation": "RECOVERY_DOWNTIME",
+          "clock_halted": false,
+          "admission_blocked": false,
+          "database_bytes": 1732608
+        },
+        "coverage_admission": {
+          "mode": "coupled",
+          "baseline_policy": "legacy_information_engine_v1",
+          "outbox_items": 0,
+          "outbox_bytes": 0,
+          "reserved_wire_bytes": 0,
+          "pending_evidence_obligations": 0,
+          "unsupported_scopes": 0,
+          "refused_unaccepted": 8,
+          "local_lease_unresolved": false,
+          "modeled_scheduled_bytes": 418551,
+          "confirmed_receipt": "NOT_OBSERVED",
+          "forward_byte_accounting": {
+            "EVIDENCE": 79912,
+            "RAW": 311396,
+            "STATE": 27243,
+            "scope": "N8_LOCAL_GRANTS_SINCE_START",
+            "start_utc_us": 1791995821354029,
+            "total": 418551
+          }
+        },
+        "coverage_udp": {
+          "live": true,
+          "sender": {
+            "attempts": 401,
+            "attempted_payload_bytes": 407323,
+            "local_send_calls_succeeded": 401
+          },
+          "socket_audit": {
+            "installed": true,
+            "udp_send_calls": 401,
+            "last_destinations": [
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ]
+            ]
+          },
+          "confirmed_receipt": "NOT_OBSERVED"
+        }
+      },
+      "after": {
+        "traffic": {
+          "total_bytes_generated": 0,
+          "bytes_filtered": 0,
+          "bytes_transmitted": 0,
+          "latency_sample_count": 0,
+          "average_latency": null,
+          "latency_p95": null,
+          "throughput_messages_per_second": 0.0,
+          "queue_utilization": 0.0,
+          "congestion_state": "NORMAL",
+          "by_priority": {}
+        },
+        "devices": [
+          {
+            "device_id": "edge-device-01",
+            "health": "ACTIVE",
+            "last_seen": "2026-10-14T16:40:01.405996Z",
+            "last_sequence_number": 0,
+            "received_count": 23,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 9.0,
+            "recent_activity_count": 9,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 23
+            }
+          },
+          {
+            "device_id": "edge-device-02",
+            "health": "ACTIVE",
+            "last_seen": "2026-10-14T16:40:02.901218Z",
+            "last_sequence_number": 0,
+            "received_count": 44,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 10.0,
+            "recent_activity_count": 10,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "MEDIUM": 1,
+              "CRITICAL": 43
+            }
+          },
+          {
+            "device_id": "edge-device-03",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.782831Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-04",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.339775Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-05",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.683494Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          }
+        ],
+        "information_policy": null,
+        "coverage_ledger": {
+          "epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "generation": 0,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "retained_records": 70,
+          "pending_outbox_bytes": 0,
+          "unsized_obligations": 0,
+          "last_limitation": "RECOVERY_DOWNTIME",
+          "clock_halted": false,
+          "admission_blocked": false,
+          "database_bytes": 2277376
+        },
+        "coverage_admission": {
+          "mode": "coupled",
+          "baseline_policy": "legacy_information_engine_v1",
+          "outbox_items": 1,
+          "outbox_bytes": 8707,
+          "reserved_wire_bytes": 0,
+          "pending_evidence_obligations": 0,
+          "unsupported_scopes": 0,
+          "refused_unaccepted": 12,
+          "local_lease_unresolved": false,
+          "modeled_scheduled_bytes": 567594,
+          "confirmed_receipt": "NOT_OBSERVED",
+          "forward_byte_accounting": {
+            "EVIDENCE": 100696,
+            "RAW": 436600,
+            "STATE": 30298,
+            "scope": "N8_LOCAL_GRANTS_SINCE_START",
+            "start_utc_us": 1791995821354029,
+            "total": 567594
+          }
+        },
+        "coverage_udp": {
+          "live": true,
+          "sender": {
+            "attempts": 539,
+            "attempted_payload_bytes": 552502,
+            "local_send_calls_succeeded": 539
+          },
+          "socket_audit": {
+            "installed": true,
+            "udp_send_calls": 539,
+            "last_destinations": [
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ]
+            ]
+          },
+          "confirmed_receipt": "NOT_OBSERVED"
+        }
+      },
+      "replies": [
+        {
+          "status": 200,
+          "critical": false,
+          "index": 0,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 15,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "7b1b5f0d1f198d958433f1037fa17dbb8195293cbf21e578a56e99154b37c617",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000619692,
+          "elapsed": 0.107516
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 1,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 16,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "e6f81dae1cb2b86d61dfe6f2e1b97047e882d2d3ce94169902302bc8c3523dd0",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000620935,
+          "elapsed": 0.360082
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 2,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 17,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "726e6e03e7162404318c07984b69340545edca4284ae3020ae7becf3b1f71913",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000622031,
+          "elapsed": 0.449708
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 3,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 18,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "019077ffc75a46ab4b6c324e8d0a6ece02682f1ba8675fbc3870f1a8f49f0e24",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000623061,
+          "elapsed": 0.508979
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 4,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 19,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "11f5a93be8cc4200e1542c9ba617463b64fd69ef97852a1f46067c718bcc12de",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000623965,
+          "elapsed": 0.56492
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 5,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 20,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "f212e5eba308da277c7aac903036c76f47151e684a0303c321f776eb1a8b2393",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000624915,
+          "elapsed": 0.632798
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 6,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 21,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "17dfe5fda5c680d3cb0e4e6ec12ec4fe61f961e42d8c5e4c7966e59965eb5e70",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000625692,
+          "elapsed": 0.682423
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 7,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 22,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "bf2d6680498a4f84374a80359db6cad6fc7fe3536911e4b507ec76ff2bd401b5",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000626291,
+          "elapsed": 0.731248
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 8,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000626797,
+          "elapsed": 0.032542
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 9,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000627244,
+          "elapsed": 0.037622
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 10,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000627649,
+          "elapsed": 0.039042
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 11,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628015,
+          "elapsed": 0.039851
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 12,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628615,
+          "elapsed": 0.046446
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 13,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628648,
+          "elapsed": 0.049019
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 14,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628658,
+          "elapsed": 0.051125
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 15,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628681,
+          "elapsed": 0.051308
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 16,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628687,
+          "elapsed": 0.056997
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 17,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628697,
+          "elapsed": 0.059451
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 18,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628704,
+          "elapsed": 0.061841
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 19,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628714,
+          "elapsed": 0.065332
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 20,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628720,
+          "elapsed": 0.065514
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 21,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628727,
+          "elapsed": 0.068747
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 22,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628732,
+          "elapsed": 0.071568
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 23,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628738,
+          "elapsed": 0.076537
+        },
+        {
+          "status": 200,
+          "critical": false,
+          "index": 24,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-01",
+            "ingress_sequence": 23,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "1a06d3688a3a8473e596ad7f671444181925da59a28a4908584363c470e205da",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996000628747,
+          "elapsed": 0.779333
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 25,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628753,
+          "elapsed": 0.078598
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 26,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628758,
+          "elapsed": 0.084735
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 27,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628767,
+          "elapsed": 0.09475
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 28,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628772,
+          "elapsed": 0.10094
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 29,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628778,
+          "elapsed": 0.102918
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 30,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628787,
+          "elapsed": 0.11189
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 31,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628792,
+          "elapsed": 0.114923
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 32,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628797,
+          "elapsed": 0.118125
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 33,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628802,
+          "elapsed": 0.117866
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 34,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628808,
+          "elapsed": 0.123033
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 35,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628813,
+          "elapsed": 0.12524
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 36,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628820,
+          "elapsed": 0.127567
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 37,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628826,
+          "elapsed": 0.129471
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 38,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628833,
+          "elapsed": 0.133243
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 39,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628839,
+          "elapsed": 0.13505
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 40,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628850,
+          "elapsed": 0.137101
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 41,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628856,
+          "elapsed": 0.139505
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 42,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628861,
+          "elapsed": 0.141831
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 43,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628869,
+          "elapsed": 0.144494
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 44,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628874,
+          "elapsed": 0.146986
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 45,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628880,
+          "elapsed": 0.14988
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 46,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628885,
+          "elapsed": 0.15389
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 47,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628891,
+          "elapsed": 0.151965
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 48,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628899,
+          "elapsed": 0.156543
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 49,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628904,
+          "elapsed": 0.157981
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 50,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628910,
+          "elapsed": 0.160428
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 51,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628916,
+          "elapsed": 0.163446
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 52,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628921,
+          "elapsed": 0.16755
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 53,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628928,
+          "elapsed": 0.167801
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 54,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628934,
+          "elapsed": 0.184601
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 55,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628939,
+          "elapsed": 0.186837
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 56,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628947,
+          "elapsed": 0.23419
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 57,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628955,
+          "elapsed": 0.245434
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 58,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628962,
+          "elapsed": 0.249403
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 59,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628971,
+          "elapsed": 0.252542
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 60,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628978,
+          "elapsed": 0.254682
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 61,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628987,
+          "elapsed": 0.266861
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 62,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000628994,
+          "elapsed": 0.269883
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 63,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629003,
+          "elapsed": 0.271836
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 64,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629009,
+          "elapsed": 0.273694
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 65,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629016,
+          "elapsed": 0.281819
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 66,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629030,
+          "elapsed": 0.284594
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 67,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629040,
+          "elapsed": 0.287931
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 68,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629047,
+          "elapsed": 0.287632
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 69,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629059,
+          "elapsed": 0.293436
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 70,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629069,
+          "elapsed": 0.296664
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 71,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629080,
+          "elapsed": 0.299417
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 72,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629087,
+          "elapsed": 0.303751
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 73,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629094,
+          "elapsed": 0.30743
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 74,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629101,
+          "elapsed": 0.316612
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 75,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629113,
+          "elapsed": 0.310838
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 76,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629123,
+          "elapsed": 0.319493
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 77,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629130,
+          "elapsed": 0.320815
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 78,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629138,
+          "elapsed": 0.338475
+        },
+        {
+          "status": 429,
+          "critical": false,
+          "index": 79,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996000629148,
+          "elapsed": 0.341061
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 80,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 35,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "2a00003c674049827b8e5d0fe3f1c80780a078d4df9381533ffc7456e85759cb",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001408677,
+          "elapsed": 0.091123
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 81,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 36,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "14497ea7e839a34b8e9f63b962053795047501e1ebcd3e3cca276a1242201b3a",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001409356,
+          "elapsed": 0.171051
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 82,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996001409875,
+          "elapsed": 0.629191
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 83,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996001410408,
+          "elapsed": 0.420293
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 84,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 37,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "e39e944d0fd2e09c22fe6b977a88ff82dbcec264dbe3f0ece60c71111d5aff7f",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001410873,
+          "elapsed": 0.26902
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 85,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996001411329,
+          "elapsed": 0.515194
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 86,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996001411744,
+          "elapsed": 0.579064
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 87,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 38,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "7ca881f43e9fd1ac101b9986e95226438a4271b7aceed6538af01917e697e01a",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001412140,
+          "elapsed": 0.370994
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 88,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001412691,
+          "elapsed": 0.029544
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 89,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001413348,
+          "elapsed": 0.024931
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 90,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001414697,
+          "elapsed": 0.025882
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 91,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415144,
+          "elapsed": 0.034567
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 92,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415555,
+          "elapsed": 0.036632
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 93,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415570,
+          "elapsed": 0.036831
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 94,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415576,
+          "elapsed": 0.038567
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 95,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415582,
+          "elapsed": 0.042296
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 96,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415588,
+          "elapsed": 0.044375
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 97,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415594,
+          "elapsed": 0.046097
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 98,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415599,
+          "elapsed": 0.049051
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 99,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415604,
+          "elapsed": 0.050902
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 100,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415609,
+          "elapsed": 0.054683
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 101,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415615,
+          "elapsed": 0.052716
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 102,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415629,
+          "elapsed": 0.056948
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 103,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415635,
+          "elapsed": 0.058583
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 104,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415640,
+          "elapsed": 0.060279
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 105,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415645,
+          "elapsed": 0.062128
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 106,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415650,
+          "elapsed": 0.063544
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 107,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415655,
+          "elapsed": 0.082182
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 108,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 39,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "5948ee1eb3c793aa7f93c96a95e92fd314278e7191ad90bc0f81a0d85500b842",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001415660,
+          "elapsed": 0.918436
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 109,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415665,
+          "elapsed": 0.086231
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 110,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415670,
+          "elapsed": 0.08759
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 111,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415675,
+          "elapsed": 0.089196
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 112,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415680,
+          "elapsed": 0.091875
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 113,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415685,
+          "elapsed": 0.098509
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 114,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415690,
+          "elapsed": 0.100987
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 115,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415695,
+          "elapsed": 0.103123
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 116,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415700,
+          "elapsed": 0.104877
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 117,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415705,
+          "elapsed": 0.106087
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 118,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415710,
+          "elapsed": 0.109572
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 119,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415714,
+          "elapsed": 0.111584
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 120,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415719,
+          "elapsed": 0.114067
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 121,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415724,
+          "elapsed": 0.116235
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 122,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415734,
+          "elapsed": 0.118581
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 123,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415739,
+          "elapsed": 0.120479
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 124,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415744,
+          "elapsed": 0.12245
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 125,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415750,
+          "elapsed": 0.125352
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 126,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415755,
+          "elapsed": 0.128173
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 127,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415760,
+          "elapsed": 0.130325
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 128,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415765,
+          "elapsed": 0.133699
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 129,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415770,
+          "elapsed": 0.13902
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 130,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415775,
+          "elapsed": 0.160511
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 131,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 40,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "223807360a5a58c1ea597b1f298871c809d32d873b37d972718d88259659a426",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001415780,
+          "elapsed": 1.11048
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 132,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415785,
+          "elapsed": 0.166405
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 133,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415791,
+          "elapsed": 0.168101
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 134,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415796,
+          "elapsed": 0.170003
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 135,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415801,
+          "elapsed": 0.181007
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 136,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415806,
+          "elapsed": 0.184965
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 137,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415811,
+          "elapsed": 0.189279
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 138,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415817,
+          "elapsed": 0.187593
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 139,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415821,
+          "elapsed": 0.191449
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 140,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415827,
+          "elapsed": 0.19587
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 141,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415835,
+          "elapsed": 0.206184
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 142,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415840,
+          "elapsed": 0.199336
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 143,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415845,
+          "elapsed": 0.201822
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 144,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415850,
+          "elapsed": 0.206388
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 145,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415856,
+          "elapsed": 0.209981
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 146,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415861,
+          "elapsed": 0.212421
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 147,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415866,
+          "elapsed": 0.218483
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 148,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415870,
+          "elapsed": 0.227458
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 149,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415875,
+          "elapsed": 0.221295
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 150,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415880,
+          "elapsed": 0.223453
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 151,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415885,
+          "elapsed": 0.230069
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 152,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415890,
+          "elapsed": 0.231824
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 153,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415895,
+          "elapsed": 0.234431
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 154,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415900,
+          "elapsed": 0.261101
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 155,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 41,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "232c11417a3833ccfd3d21fed1c4874f01c5f23cc7768a9dc671aeda5fbc253b",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001415905,
+          "elapsed": 1.221489
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 156,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415910,
+          "elapsed": 0.267256
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 157,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415915,
+          "elapsed": 0.270214
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 158,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415919,
+          "elapsed": 0.284292
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 159,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415924,
+          "elapsed": 0.287106
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 160,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415929,
+          "elapsed": 0.291359
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 161,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415953,
+          "elapsed": 0.291747
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 162,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415959,
+          "elapsed": 0.299757
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 163,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415967,
+          "elapsed": 0.303842
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 164,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415974,
+          "elapsed": 0.307557
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 165,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415980,
+          "elapsed": 0.314239
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 166,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415988,
+          "elapsed": 0.318344
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 167,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001415996,
+          "elapsed": 0.348371
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 168,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416003,
+          "elapsed": 0.322633
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 169,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416010,
+          "elapsed": 0.355612
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 170,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416017,
+          "elapsed": 0.36197
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 171,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416026,
+          "elapsed": 0.364562
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 172,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 42,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "7a957c473a19d3080cb8ee3366b35430688fe959dffc49432783b011a0342804",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001416033,
+          "elapsed": 1.331479
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 173,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416040,
+          "elapsed": 0.367336
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 174,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416046,
+          "elapsed": 0.381263
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 175,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416055,
+          "elapsed": 0.383622
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 176,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416062,
+          "elapsed": 0.387961
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 177,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416070,
+          "elapsed": 0.389029
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 178,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416076,
+          "elapsed": 0.398722
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 179,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416085,
+          "elapsed": 0.40143
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 180,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416107,
+          "elapsed": 0.404256
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 181,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416114,
+          "elapsed": 0.409397
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 182,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 43,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "ecb396b7590a1da71ca23a35a7c2fd8c6f5ec350976119f9c08d1983a540eaef",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001416124,
+          "elapsed": 1.433513
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 183,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416133,
+          "elapsed": 0.426819
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 184,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416148,
+          "elapsed": 0.430037
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 185,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416156,
+          "elapsed": 0.433914
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 186,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416163,
+          "elapsed": 0.436595
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 187,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416169,
+          "elapsed": 0.456998
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 188,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416207,
+          "elapsed": 0.460159
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 189,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416224,
+          "elapsed": 0.462483
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 190,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416233,
+          "elapsed": 0.464242
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 191,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416241,
+          "elapsed": 0.471686
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 192,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416251,
+          "elapsed": 0.476282
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 193,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416258,
+          "elapsed": 0.484078
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 194,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416265,
+          "elapsed": 0.479022
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 195,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416272,
+          "elapsed": 0.484522
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 196,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416281,
+          "elapsed": 0.489457
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 197,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416287,
+          "elapsed": 0.492158
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 198,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 44,
+            "window_index": 179199600,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "474324f744ebc3eafe0b150a0d8932639416e21d2c14c9374579f12eeba05359",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996001416294,
+          "elapsed": 1.486891
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 199,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996001416300,
+          "elapsed": 0.513867
+        }
+      ]
+    },
+    "resource_data": {},
+    "reason": "HTTP durable admission outcomes; local dispatch is not receipt. Observer measures Fog receipt separately."
+  },
+  {
+    "scenario": "no-receiver-critical-only",
+    "attack_type": "LIVE_FINITE_CAPACITY",
+    "expected_result": "BOUNDED_ACCEPT_OR_REFUSE",
+    "actual_result": "BOUNDED_ACCEPT_OR_REFUSE",
+    "passed": true,
+    "detected": null,
+    "scope": "DOCKER_FAILURE",
+    "timestamp": "2026-10-14T16:40:28.626417+00:00",
+    "latency_seconds": 13.652065453999967,
+    "queue_data": {
+      "offered": 200,
+      "accepted": 15,
+      "refused": 185,
+      "retry_conflicts": 5,
+      "busy_or_capacity_refusals": 180,
+      "before": {
+        "traffic": {
+          "total_bytes_generated": 0,
+          "bytes_filtered": 0,
+          "bytes_transmitted": 0,
+          "latency_sample_count": 0,
+          "average_latency": null,
+          "latency_p95": null,
+          "throughput_messages_per_second": 0.0,
+          "queue_utilization": 0.0,
+          "congestion_state": "NORMAL",
+          "by_priority": {}
+        },
+        "devices": [
+          {
+            "device_id": "edge-device-01",
+            "health": "ACTIVE",
+            "last_seen": "2026-10-14T16:40:01.405996Z",
+            "last_sequence_number": 0,
+            "received_count": 23,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 9.0,
+            "recent_activity_count": 9,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 23
+            }
+          },
+          {
+            "device_id": "edge-device-02",
+            "health": "ACTIVE",
+            "last_seen": "2026-10-14T16:40:02.901218Z",
+            "last_sequence_number": 0,
+            "received_count": 44,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 10.0,
+            "recent_activity_count": 10,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "MEDIUM": 1,
+              "CRITICAL": 43
+            }
+          },
+          {
+            "device_id": "edge-device-03",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.782831Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-04",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.339775Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-05",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.683494Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          }
+        ],
+        "information_policy": null,
+        "coverage_ledger": {
+          "epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "generation": 0,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "retained_records": 70,
+          "pending_outbox_bytes": 0,
+          "unsized_obligations": 0,
+          "last_limitation": "RECOVERY_DOWNTIME",
+          "clock_halted": false,
+          "admission_blocked": false,
+          "database_bytes": 2277376
+        },
+        "coverage_admission": {
+          "mode": "coupled",
+          "baseline_policy": "legacy_information_engine_v1",
+          "outbox_items": 1,
+          "outbox_bytes": 8707,
+          "reserved_wire_bytes": 0,
+          "pending_evidence_obligations": 0,
+          "unsupported_scopes": 0,
+          "refused_unaccepted": 12,
+          "local_lease_unresolved": false,
+          "modeled_scheduled_bytes": 567594,
+          "confirmed_receipt": "NOT_OBSERVED",
+          "forward_byte_accounting": {
+            "EVIDENCE": 100696,
+            "RAW": 436600,
+            "STATE": 30298,
+            "scope": "N8_LOCAL_GRANTS_SINCE_START",
+            "start_utc_us": 1791995821354029,
+            "total": 567594
+          }
+        },
+        "coverage_udp": {
+          "live": true,
+          "sender": {
+            "attempts": 539,
+            "attempted_payload_bytes": 552502,
+            "local_send_calls_succeeded": 539
+          },
+          "socket_audit": {
+            "installed": true,
+            "udp_send_calls": 539,
+            "last_destinations": [
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ]
+            ]
+          },
+          "confirmed_receipt": "NOT_OBSERVED"
+        }
+      },
+      "after": {
+        "traffic": {
+          "total_bytes_generated": 0,
+          "bytes_filtered": 0,
+          "bytes_transmitted": 0,
+          "latency_sample_count": 0,
+          "average_latency": null,
+          "latency_p95": null,
+          "throughput_messages_per_second": 0.0,
+          "queue_utilization": 0.0,
+          "congestion_state": "NORMAL",
+          "by_priority": {}
+        },
+        "devices": [
+          {
+            "device_id": "edge-device-01",
+            "health": "ACTIVE",
+            "last_seen": "2026-10-14T16:40:01.405996Z",
+            "last_sequence_number": 0,
+            "received_count": 23,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 9.0,
+            "recent_activity_count": 9,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 23
+            }
+          },
+          {
+            "device_id": "edge-device-02",
+            "health": "ACTIVE",
+            "last_seen": "2026-10-14T16:40:16.569786Z",
+            "last_sequence_number": 0,
+            "received_count": 59,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 25.0,
+            "recent_activity_count": 25,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "MEDIUM": 1,
+              "CRITICAL": 58
+            }
+          },
+          {
+            "device_id": "edge-device-03",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.782831Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-04",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.339775Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          },
+          {
+            "device_id": "edge-device-05",
+            "health": "STALE",
+            "last_seen": "2026-10-14T16:37:05.683494Z",
+            "last_sequence_number": 0,
+            "received_count": 1,
+            "forwarded_count": 0,
+            "filtered_count": 0,
+            "rejected_count": 0,
+            "message_rate_per_minute": 0.0,
+            "recent_activity_count": 0,
+            "filtering_statistics": {},
+            "priority_statistics": {
+              "LOW": 1
+            }
+          }
+        ],
+        "information_policy": null,
+        "coverage_ledger": {
+          "epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+          "generation": 0,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "retained_records": 85,
+          "pending_outbox_bytes": 0,
+          "unsized_obligations": 0,
+          "last_limitation": "RECOVERY_DOWNTIME",
+          "clock_halted": false,
+          "admission_blocked": false,
+          "database_bytes": 2580480
+        },
+        "coverage_admission": {
+          "mode": "coupled",
+          "baseline_policy": "legacy_information_engine_v1",
+          "outbox_items": 0,
+          "outbox_bytes": 0,
+          "reserved_wire_bytes": 0,
+          "pending_evidence_obligations": 0,
+          "unsupported_scopes": 0,
+          "refused_unaccepted": 17,
+          "local_lease_unresolved": false,
+          "modeled_scheduled_bytes": 682227,
+          "confirmed_receipt": "NOT_OBSERVED",
+          "forward_byte_accounting": {
+            "EVIDENCE": 111856,
+            "RAW": 538550,
+            "STATE": 31821,
+            "scope": "N8_LOCAL_GRANTS_SINCE_START",
+            "start_utc_us": 1791995821354029,
+            "total": 682227
+          }
+        },
+        "coverage_udp": {
+          "live": true,
+          "sender": {
+            "attempts": 645,
+            "attempted_payload_bytes": 664167,
+            "local_send_calls_succeeded": 645
+          },
+          "socket_audit": {
+            "installed": true,
+            "udp_send_calls": 645,
+            "last_destinations": [
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ],
+              [
+                "10.0.0.18",
+                9001
+              ]
+            ]
+          },
+          "confirmed_receipt": "NOT_OBSERVED"
+        }
+      },
+      "replies": [
+        {
+          "status": 200,
+          "critical": true,
+          "index": 0,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 45,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "11cfcb4162fe4df118185fd33f7401dfc61d31a6a755dc7da4e2a4fb9e536870",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014979382,
+          "elapsed": 0.176352
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 1,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 46,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "a317d6183dd58d373054c01b26c9ea618df2b97ccf1e1fa940b849fc331dbd56",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014979878,
+          "elapsed": 0.242058
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 2,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 47,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "88f036bc65521bf1b5cfc157dd22f3017b8f56ddcccdae1ffc296f21b40a7ec1",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014980198,
+          "elapsed": 0.305378
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 3,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 48,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "64dd953f4db83c903dec7ff9f8d2851e2559ee32dfdc7c6f3959b8f9a869797b",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014980532,
+          "elapsed": 0.359308
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 4,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 49,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "201ea43b7eaea914c2b012cafddbcc2665c18fa258f2459ed5e0a39b6bb5ff64",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014980863,
+          "elapsed": 0.430221
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 5,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 50,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "f8cae132641ba5e83a12711b0e547d167d5d242a4585152fa375dead79997607",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014981558,
+          "elapsed": 0.484938
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 6,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 51,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "646c934e756a11b06aec2e4b9baba950378aa09dc02e913de29cc0ae0dfb6e9d",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014981842,
+          "elapsed": 0.551655
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 7,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 52,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "7d9435e4806d95ecd0c66fe45ae890a978a859b302866391d50f653cc746acae",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014982157,
+          "elapsed": 0.600359
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 8,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014982454,
+          "elapsed": 0.020669
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 9,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014982768,
+          "elapsed": 0.022174
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 10,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983053,
+          "elapsed": 0.024061
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 11,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983405,
+          "elapsed": 0.023865
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 12,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983697,
+          "elapsed": 0.026771
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 13,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983711,
+          "elapsed": 0.02823
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 14,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983717,
+          "elapsed": 0.029648
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 15,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983723,
+          "elapsed": 0.032314
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 16,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983729,
+          "elapsed": 0.032455
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 17,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983734,
+          "elapsed": 0.03439
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 18,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983738,
+          "elapsed": 0.036265
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 19,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983743,
+          "elapsed": 0.039049
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 20,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983748,
+          "elapsed": 0.054926
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 21,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983753,
+          "elapsed": 0.040742
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 22,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983758,
+          "elapsed": 0.042288
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 23,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983763,
+          "elapsed": 0.060854
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 24,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983768,
+          "elapsed": 0.073054
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 25,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983773,
+          "elapsed": 0.076223
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 26,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983777,
+          "elapsed": 0.077935
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 27,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983782,
+          "elapsed": 0.079631
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 28,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983787,
+          "elapsed": 0.080773
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 29,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983791,
+          "elapsed": 0.081815
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 30,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983796,
+          "elapsed": 0.087207
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 31,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983802,
+          "elapsed": 0.088767
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 32,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983807,
+          "elapsed": 0.091024
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 33,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983813,
+          "elapsed": 0.089876
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 34,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983818,
+          "elapsed": 0.094304
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 35,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983823,
+          "elapsed": 0.095672
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 36,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983828,
+          "elapsed": 0.099641
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 37,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983833,
+          "elapsed": 0.097455
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 38,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983838,
+          "elapsed": 0.101826
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 39,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983842,
+          "elapsed": 0.106567
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 40,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983848,
+          "elapsed": 0.103666
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 41,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983852,
+          "elapsed": 0.109143
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 42,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983857,
+          "elapsed": 0.112754
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 43,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983862,
+          "elapsed": 0.111203
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 44,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983867,
+          "elapsed": 0.115481
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 45,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983872,
+          "elapsed": 0.115621
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 46,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983877,
+          "elapsed": 0.117594
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 47,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983882,
+          "elapsed": 0.118955
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 48,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983887,
+          "elapsed": 0.162938
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 49,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983892,
+          "elapsed": 0.169389
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 50,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983898,
+          "elapsed": 0.164651
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 51,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983903,
+          "elapsed": 0.165657
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 52,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 53,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "2e4988c9a26c0beb677705f18d1202331495c7fc6cfbeebbb9270d118be399aa",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996014983908,
+          "elapsed": 0.680645
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 53,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983912,
+          "elapsed": 0.174305
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 54,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983917,
+          "elapsed": 0.174461
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 55,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983922,
+          "elapsed": 0.1769
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 56,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983927,
+          "elapsed": 0.178341
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 57,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983932,
+          "elapsed": 0.184722
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 58,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983936,
+          "elapsed": 0.188697
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 59,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983941,
+          "elapsed": 0.18637
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 60,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983946,
+          "elapsed": 0.187504
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 61,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983951,
+          "elapsed": 0.191752
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 62,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983956,
+          "elapsed": 0.193281
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 63,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014983993,
+          "elapsed": 0.194695
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 64,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984006,
+          "elapsed": 0.19639
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 65,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984013,
+          "elapsed": 0.198054
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 66,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984019,
+          "elapsed": 0.199817
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 67,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984025,
+          "elapsed": 0.201362
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 68,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984030,
+          "elapsed": 0.203149
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 69,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984035,
+          "elapsed": 0.204882
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 70,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984047,
+          "elapsed": 0.206177
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 71,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984052,
+          "elapsed": 0.207956
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 72,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984057,
+          "elapsed": 0.209764
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 73,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984062,
+          "elapsed": 0.211574
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 74,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984067,
+          "elapsed": 0.213668
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 75,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984073,
+          "elapsed": 0.215411
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 76,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984078,
+          "elapsed": 0.217257
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 77,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984083,
+          "elapsed": 0.218681
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 78,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984089,
+          "elapsed": 0.219711
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 79,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996014984094,
+          "elapsed": 0.220775
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 80,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 54,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "34b73395204b95ce32539360497035a0936ba7fe0617042ff7003689703e1d7a",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996015664989,
+          "elapsed": 0.162954
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 81,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 55,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "bcafa715b65cc341b91d4ca15b2e97503a24520293194f3f82f697737928566d",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996015665594,
+          "elapsed": 0.24484
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 82,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996015666017,
+          "elapsed": 0.609607
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 83,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996015666449,
+          "elapsed": 0.467068
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 84,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 56,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "b401cc67ea8aa301a150b037206b320fd118b1a0a4449ded286dff9f136b10ea",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996015666856,
+          "elapsed": 0.329485
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 85,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996015667295,
+          "elapsed": 0.502591
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 86,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996015667684,
+          "elapsed": 0.578425
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 87,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 57,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "eef40706717e0ad5ee185323e13663a23beca5cf6dbd51bb84d3b98f59931957",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996015668061,
+          "elapsed": 0.428972
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 88,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015668506,
+          "elapsed": 0.031359
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 89,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015668975,
+          "elapsed": 0.024766
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 90,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015669816,
+          "elapsed": 0.026724
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 91,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670231,
+          "elapsed": 0.031673
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 92,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670613,
+          "elapsed": 0.035409
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 93,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670627,
+          "elapsed": 0.032762
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 94,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670633,
+          "elapsed": 0.035554
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 95,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670639,
+          "elapsed": 0.037305
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 96,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670644,
+          "elapsed": 0.056388
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 97,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670649,
+          "elapsed": 0.06471
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 98,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670654,
+          "elapsed": 0.073085
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 99,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670668,
+          "elapsed": 0.070562
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 100,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670674,
+          "elapsed": 0.074906
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 101,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670679,
+          "elapsed": 0.076432
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 102,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670685,
+          "elapsed": 0.078199
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 103,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670690,
+          "elapsed": 0.079522
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 104,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670696,
+          "elapsed": 0.087746
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 105,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670701,
+          "elapsed": 0.089515
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 106,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670706,
+          "elapsed": 0.090723
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 107,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670711,
+          "elapsed": 0.091725
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 108,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670716,
+          "elapsed": 0.094431
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 109,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670722,
+          "elapsed": 0.096214
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 110,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670727,
+          "elapsed": 0.09759
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 111,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670731,
+          "elapsed": 0.099346
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 112,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670737,
+          "elapsed": 0.101001
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 113,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670742,
+          "elapsed": 0.102605
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 114,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670747,
+          "elapsed": 0.103936
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 115,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670752,
+          "elapsed": 0.10561
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 116,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670757,
+          "elapsed": 0.10741
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 117,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670762,
+          "elapsed": 0.108977
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 118,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670771,
+          "elapsed": 0.110766
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 119,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670776,
+          "elapsed": 0.112303
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 120,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670781,
+          "elapsed": 0.114141
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 121,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670786,
+          "elapsed": 0.115745
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 122,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670791,
+          "elapsed": 0.117388
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 123,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670796,
+          "elapsed": 0.119152
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 124,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670801,
+          "elapsed": 0.121098
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 125,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670806,
+          "elapsed": 0.123529
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 126,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670811,
+          "elapsed": 0.124649
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 127,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670815,
+          "elapsed": 0.126966
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 128,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670820,
+          "elapsed": 0.128758
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 129,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670825,
+          "elapsed": 0.131743
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 130,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670830,
+          "elapsed": 0.131898
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 131,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670835,
+          "elapsed": 0.134084
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 132,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670840,
+          "elapsed": 0.155173
+        },
+        {
+          "status": 409,
+          "critical": true,
+          "index": 133,
+          "reply": {
+            "detail": {
+              "status": "refused",
+              "reason": "RETIRED_OR_OLD_RETRY"
+            }
+          },
+          "sent_us": 1791996015670844,
+          "elapsed": 0.941019
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 134,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670849,
+          "elapsed": 0.15983
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 135,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670854,
+          "elapsed": 0.158649
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 136,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670859,
+          "elapsed": 0.169364
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 137,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670864,
+          "elapsed": 0.171146
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 138,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670871,
+          "elapsed": 0.172791
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 139,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670877,
+          "elapsed": 0.172609
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 140,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670882,
+          "elapsed": 0.176108
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 141,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670887,
+          "elapsed": 0.177676
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 142,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670891,
+          "elapsed": 0.178615
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 143,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670896,
+          "elapsed": 0.180054
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 144,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670901,
+          "elapsed": 0.183085
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 145,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670906,
+          "elapsed": 0.18489
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 146,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670911,
+          "elapsed": 0.186417
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 147,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670916,
+          "elapsed": 0.189401
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 148,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670921,
+          "elapsed": 0.189626
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 149,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670926,
+          "elapsed": 0.192005
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 150,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670930,
+          "elapsed": 0.193562
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 151,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670936,
+          "elapsed": 0.196648
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 152,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670941,
+          "elapsed": 0.202867
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 153,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670946,
+          "elapsed": 0.198663
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 154,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670951,
+          "elapsed": 0.200078
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 155,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670956,
+          "elapsed": 0.203
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 156,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670961,
+          "elapsed": 0.20497
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 157,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670968,
+          "elapsed": 0.206437
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 158,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670975,
+          "elapsed": 0.210154
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 159,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670981,
+          "elapsed": 0.235804
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 160,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670986,
+          "elapsed": 0.212434
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 161,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015670990,
+          "elapsed": 0.214942
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 162,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 58,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "05e953666c0de2c29ac93cf232a52de88add70ae5f2f5c01565da441854730a8",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996015670995,
+          "elapsed": 0.834422
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 163,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671000,
+          "elapsed": 0.242087
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 164,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671006,
+          "elapsed": 0.244027
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 165,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671010,
+          "elapsed": 0.2459
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 166,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671015,
+          "elapsed": 0.248011
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 167,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671039,
+          "elapsed": 0.256598
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 168,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671056,
+          "elapsed": 0.260289
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 169,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671064,
+          "elapsed": 0.258791
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 170,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671071,
+          "elapsed": 0.260435
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 171,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671076,
+          "elapsed": 0.263951
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 172,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671082,
+          "elapsed": 0.265421
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 173,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671087,
+          "elapsed": 0.266363
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 174,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671092,
+          "elapsed": 0.267772
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 175,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671097,
+          "elapsed": 0.270712
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 176,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671102,
+          "elapsed": 0.276682
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 177,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671113,
+          "elapsed": 0.272726
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 178,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671119,
+          "elapsed": 0.274472
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 179,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671126,
+          "elapsed": 0.277871
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 180,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671131,
+          "elapsed": 0.280081
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 181,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671138,
+          "elapsed": 0.281728
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 182,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671143,
+          "elapsed": 0.284481
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 183,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671148,
+          "elapsed": 0.284631
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 184,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671153,
+          "elapsed": 0.286621
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 185,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671157,
+          "elapsed": 0.289011
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 186,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671162,
+          "elapsed": 0.292574
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 187,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671167,
+          "elapsed": 0.29886
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 188,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671172,
+          "elapsed": 0.294213
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 189,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671177,
+          "elapsed": 0.296193
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 190,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671182,
+          "elapsed": 0.298996
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 191,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671187,
+          "elapsed": 0.300361
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 192,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671193,
+          "elapsed": 0.313981
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 193,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671198,
+          "elapsed": 0.319677
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 194,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671202,
+          "elapsed": 0.323961
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 195,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671207,
+          "elapsed": 0.322176
+        },
+        {
+          "status": 200,
+          "critical": true,
+          "index": 196,
+          "reply": {
+            "status": "accepted",
+            "mode": "coupled",
+            "ledger_epoch": "272a62f9-1414-4854-a5c1-8f998556d693",
+            "device_id": "edge-device-02",
+            "ingress_sequence": 59,
+            "window_index": 179199601,
+            "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+            "input_hash": "20e7bac70a7b656f3bad9742ed0b3e28fc2fb2149273dd55e98efa2c627184f6",
+            "duplicate": false,
+            "disposition": "SELECTED_RAW"
+          },
+          "sent_us": 1791996015671217,
+          "elapsed": 0.902336
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 197,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671222,
+          "elapsed": 0.326122
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 198,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671226,
+          "elapsed": 0.327562
+        },
+        {
+          "status": 429,
+          "critical": true,
+          "index": 199,
+          "reply": {
+            "detail": "coverage admission workers busy"
+          },
+          "sent_us": 1791996015671235,
+          "elapsed": 0.328204
+        }
+      ]
+    },
+    "resource_data": {},
+    "reason": "HTTP durable admission outcomes; local dispatch is not receipt. Observer measures Fog receipt separately."
+  }
+]

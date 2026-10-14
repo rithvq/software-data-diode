@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 282, in run
+    campaign.client("campaign")
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 116, in client
+    self.call(["run","--rm","--no-deps","security-test-client","python","-m","app.n9","--operation",operation],
+  File "C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode\scripts\run_n9_validation.py", line 54, in call
+    raise RuntimeError("Docker command failed: "+" ".join(args[:5])+"\n"+(result.stdout+result.stderr)[-3500:])
+RuntimeError: Docker command failed: run --rm --no-deps security-test-client python
+ Container software-data-diode-n9-0ab0feb100a3-security-test-client-run-5ad82c8d6b77 Creating 
+ Container software-data-diode-n9-0ab0feb100a3-security-test-client-run-5ad82c8d6b77 Created 
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/app/n9.py", line 226, in <module>
+    main()
+  File "/app/app/n9.py", line 221, in main
+    if not all(r.passed for r in rows): raise RuntimeError("live admission failure")
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: live admission failure
+
+

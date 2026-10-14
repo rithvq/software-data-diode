@@ -1,0 +1,24 @@
+ Container software-data-diode-n9-6b251187f93c-security-test-client-run-66d25c44d9be Creating 
+ Container software-data-diode-n9-6b251187f93c-security-test-client-run-66d25c44d9be Created 
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/app/app/n9.py", line 226, in <module>
+    main()
+  File "/app/app/n9.py", line 202, in main
+    framer = load_framer("/run/coverage/profile.json",key.public_key(),"/app/config/rule_coverage.json",
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/shared/coverage/transport.py", line 251, in load_framer
+    return ResearchFramer(profile, key, load_contract(contract_path), config=TransportConfig.load(config_path))
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/shared/coverage/transport.py", line 40, in load
+    encoded = Path(path).read_bytes()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/config/rule_coverage_transport.json'
+
