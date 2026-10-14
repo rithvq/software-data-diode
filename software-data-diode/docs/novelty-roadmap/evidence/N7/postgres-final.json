@@ -1,0 +1,234 @@
+{
+  "phase": "N7",
+  "checks": [
+    {
+      "check": "additive migrations repeat without deleting existing schema rows",
+      "passed": true
+    },
+    {
+      "check": "rule outbox failure occurs after decision writes",
+      "passed": true
+    },
+    {
+      "check": "rule transaction rolls back verdict history and publication completion",
+      "passed": true
+    },
+    {
+      "check": "missing login evidence yields UNKNOWN with partial coverage",
+      "passed": true
+    },
+    {
+      "check": "incomplete authenticated parts do not become facts",
+      "passed": true
+    },
+    {
+      "check": "incomplete authenticated parts do not become facts",
+      "passed": true
+    },
+    {
+      "check": "incomplete authenticated parts do not become facts",
+      "passed": true
+    },
+    {
+      "check": "incomplete authenticated parts do not become facts",
+      "passed": true
+    },
+    {
+      "check": "incomplete authenticated parts do not become facts",
+      "passed": true
+    },
+    {
+      "check": "late complete RCC commits to durable Fog spool",
+      "passed": true
+    },
+    {
+      "check": "spooled late facts commit to PostgreSQL",
+      "passed": true
+    },
+    {
+      "check": "late evidence refines UNKNOWN to TRUE",
+      "passed": true
+    },
+    {
+      "check": "rule complete is not globally complete observation",
+      "passed": true
+    },
+    {
+      "check": "versioned history retains UNKNOWN then TRUE",
+      "passed": true
+    },
+    {
+      "check": "definite incident-correlation matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite resource-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite network-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite security-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite repeated-security-observations matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "authenticated original witness persisted",
+      "passed": true
+    },
+    {
+      "check": "original witness retry is idempotent",
+      "passed": true
+    },
+    {
+      "check": "one original and its RCC do not become two COUNT_GE hits",
+      "passed": true
+    },
+    {
+      "check": "witness references survive rule publication",
+      "passed": true
+    },
+    {
+      "check": "alert fault injected",
+      "passed": true
+    },
+    {
+      "check": "failed alert transaction leaves no stored alert or delivery receipt",
+      "passed": true
+    },
+    {
+      "check": "TRUE incident stored by Alert Engine authority",
+      "passed": true
+    },
+    {
+      "check": "delivery replay creates no second incident",
+      "passed": true
+    },
+    {
+      "check": "duplicate capsule creates no new publication",
+      "passed": true
+    },
+    {
+      "check": "signed immutable scope fork quarantined",
+      "passed": true
+    },
+    {
+      "check": "conflict immediately invalidates verdict and preserves revision",
+      "passed": true
+    },
+    {
+      "check": "queued old TRUE delivery is rejected after conflict",
+      "passed": true
+    },
+    {
+      "check": "affected correlation stays UNKNOWN while scope quarantined",
+      "passed": true
+    },
+    {
+      "check": "previously delivered incident gets inactive state",
+      "passed": true
+    },
+    {
+      "check": "incident row retained but retracted without duplicate",
+      "passed": true
+    },
+    {
+      "check": "visibility alert identifies degraded observation",
+      "passed": true
+    },
+    {
+      "check": "visibility severity is independent from UNKNOWN status",
+      "passed": true
+    },
+    {
+      "check": "monitor restart does not duplicate same rule revision",
+      "passed": true
+    },
+    {
+      "check": "FALSE AND does not certify missing devices observed",
+      "passed": true
+    },
+    {
+      "check": "definite resource-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite incident-correlation matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "no-input scope stays UNKNOWN",
+      "passed": true
+    },
+    {
+      "check": "cooldown survives independent monitor instances",
+      "passed": true
+    },
+    {
+      "check": "definite environmental-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite incident-correlation matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite process-attention matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite resource-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite environmental-threshold matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "definite process-attention matches independent original-ingress oracle",
+      "passed": true
+    },
+    {
+      "check": "checked original contradicting signed matching assertion quarantines scope",
+      "passed": true
+    },
+    {
+      "check": "contradictory original cannot generate a definite incident",
+      "passed": true
+    },
+    {
+      "check": "authenticated expiry is explained as missing observation not attack",
+      "passed": true
+    },
+    {
+      "check": "persisted monitor config cannot change silently on restart",
+      "passed": true
+    },
+    {
+      "check": "long monitor downtime records a gap rather than historical normality",
+      "passed": true
+    },
+    {
+      "check": "Fog clock regression does not reopen completed deadlines",
+      "passed": true
+    },
+    {
+      "check": "epoch retirement rejects a queued old incident revision",
+      "passed": true
+    },
+    {
+      "check": "retirement retains decision history and invalidates current truth",
+      "passed": true
+    }
+  ],
+  "oracle_comparisons": 54,
+  "schema": "n7_check_9a811e6f04d7438983967518b76b9c71",
+  "ephemeral_test_trust": true,
+  "existing_rows_modified": false,
+  "http_alert_engine": false
+}

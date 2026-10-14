@@ -1,0 +1,850 @@
+{
+  "assurance": "Tested CPython UDP send instrumentation and memberships; not physical/privileged-host enforcement",
+  "diode": {
+    "application_replies_sent": 0,
+    "datagrams_received": 883,
+    "forward_attempts": 883,
+    "forwarding": "PASSIVE_FIFO_LOCAL_ATTEMPTS",
+    "live": true,
+    "max_queue_frames": 256,
+    "queue_frames": 0,
+    "received_payload_bytes": 1009178,
+    "sender": {
+      "attempted_payload_bytes": 1009178,
+      "attempts": 883,
+      "local_send_calls_succeeded": 881,
+      "local_send_errors": 2
+    },
+    "socket_audit": {
+      "installed": true,
+      "last_destinations": [
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ],
+        [
+          "192.168.208.3",
+          9002
+        ]
+      ],
+      "udp_send_calls": 881
+    }
+  },
+  "fog": {
+    "application_replies_sent": 0,
+    "coverage": "AUTHENTICATED_SUMMARY_NOT_RULE_VERDICTS",
+    "coverage_evidence_stale_or_missing": true,
+    "datagrams_received": 23,
+    "durably_spooled_artifacts": 23,
+    "edge_state": {
+      "baseline_policy": "legacy_information_engine_v1",
+      "confirmed_receipt": "NOT_OBSERVED",
+      "devices": [
+        {
+          "accepted_observations": 242,
+          "device_id": "edge-device-01"
+        },
+        {
+          "accepted_observations": 198,
+          "device_id": "edge-device-02"
+        },
+        {
+          "accepted_observations": 321,
+          "device_id": "edge-device-03"
+        },
+        {
+          "accepted_observations": 162,
+          "device_id": "edge-device-04"
+        },
+        {
+          "accepted_observations": 242,
+          "device_id": "edge-device-05"
+        }
+      ],
+      "local_lease_unresolved": false,
+      "mode": "coupled",
+      "modeled_scheduled_bytes": 4590454,
+      "outbox_bytes": 0,
+      "outbox_items": 0,
+      "queue_depth": 0,
+      "refused_unaccepted": 19675,
+      "reserved_wire_bytes": 0,
+      "unsupported_scopes": 0
+    },
+    "edge_state_stale": false,
+    "evidence_database_available": true,
+    "evidence_freshness": [
+      {
+        "age_seconds": null,
+        "device_id": "edge-device-01",
+        "last_closed_window": null,
+        "stale_or_missing": true
+      },
+      {
+        "age_seconds": null,
+        "device_id": "edge-device-02",
+        "last_closed_window": null,
+        "stale_or_missing": true
+      },
+      {
+        "age_seconds": null,
+        "device_id": "edge-device-03",
+        "last_closed_window": null,
+        "stale_or_missing": true
+      },
+      {
+        "age_seconds": null,
+        "device_id": "edge-device-04",
+        "last_closed_window": null,
+        "stale_or_missing": true
+      },
+      {
+        "age_seconds": null,
+        "device_id": "edge-device-05",
+        "last_closed_window": null,
+        "stale_or_missing": true
+      }
+    ],
+    "evidence_spool_max_bytes": 8388608,
+    "evidence_spool_max_records": 1024,
+    "evidence_spool_records": 0,
+    "expired_partial_artifacts": 0,
+    "live": true,
+    "local_admission_available": true,
+    "max_queue_frames": 256,
+    "partial_artifacts": 0,
+    "partial_bytes": 0,
+    "pending_coverage_publications": 0,
+    "pending_evidence": 0,
+    "pending_internal_processing": 0,
+    "pending_verification_outcomes": 0,
+    "postgres_verified_scopes": 0,
+    "quarantined_scopes": 0,
+    "queue_frames": 0,
+    "receipt_scope": "FOG_DURABLE_SPOOL_NOT_POSTGRES_COMMIT",
+    "received_artifacts": 30,
+    "received_payload_bytes": 26611,
+    "retired_epoch": false,
+    "rule_evaluation": "NOT_IMPLEMENTED_N6",
+    "socket_audit": {
+      "installed": true,
+      "last_destinations": [],
+      "udp_send_calls": 0
+    },
+    "verified_artifacts": 23
+  },
+  "gateway": {
+    "coverage_admission": {
+      "baseline_policy": "legacy_information_engine_v1",
+      "confirmed_receipt": "NOT_OBSERVED",
+      "local_lease_unresolved": false,
+      "mode": "coupled",
+      "modeled_scheduled_bytes": 4591639,
+      "outbox_bytes": 0,
+      "outbox_items": 0,
+      "refused_unaccepted": 19681,
+      "reserved_wire_bytes": 0,
+      "unsupported_scopes": 0
+    },
+    "coverage_ledger": {
+      "admission_blocked": false,
+      "clock_halted": false,
+      "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+      "database_bytes": 2408448,
+      "epoch": "cecca469-308c-4027-bfef-7d7e0402071a",
+      "generation": 0,
+      "last_limitation": "RECOVERY_DOWNTIME",
+      "pending_outbox_bytes": 0,
+      "retained_records": 1165,
+      "unsized_obligations": 0
+    },
+    "coverage_udp": {
+      "confirmed_receipt": "NOT_OBSERVED",
+      "live": true,
+      "sender": {
+        "attempted_payload_bytes": 1712944,
+        "attempts": 1654,
+        "local_send_calls_succeeded": 1654
+      },
+      "socket_audit": {
+        "installed": true,
+        "last_destinations": [
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ],
+          [
+            "192.168.192.3",
+            9001
+          ]
+        ],
+        "udp_send_calls": 1654
+      }
+    },
+    "devices": [
+      {
+        "device_id": "edge-device-01",
+        "filtered_count": 0,
+        "filtering_statistics": {},
+        "forwarded_count": 0,
+        "health": "STALE",
+        "last_seen": "2026-10-14T07:31:38.760999Z",
+        "last_sequence_number": 0,
+        "message_rate_per_minute": 0.0,
+        "priority_statistics": {
+          "HIGH": 3,
+          "LOW": 30,
+          "MEDIUM": 15
+        },
+        "received_count": 48,
+        "recent_activity_count": 0,
+        "rejected_count": 0
+      },
+      {
+        "device_id": "edge-device-02",
+        "filtered_count": 0,
+        "filtering_statistics": {},
+        "forwarded_count": 0,
+        "health": "STALE",
+        "last_seen": "2026-10-14T07:31:48.220350Z",
+        "last_sequence_number": 0,
+        "message_rate_per_minute": 0.0,
+        "priority_statistics": {
+          "CRITICAL": 1,
+          "LOW": 30,
+          "MEDIUM": 12
+        },
+        "received_count": 43,
+        "recent_activity_count": 0,
+        "rejected_count": 0
+      },
+      {
+        "device_id": "edge-device-03",
+        "filtered_count": 0,
+        "filtering_statistics": {},
+        "forwarded_count": 0,
+        "health": "STALE",
+        "last_seen": "2026-10-14T07:31:39.171492Z",
+        "last_sequence_number": 0,
+        "message_rate_per_minute": 0.0,
+        "priority_statistics": {
+          "CRITICAL": 2,
+          "HIGH": 11,
+          "LOW": 40,
+          "MEDIUM": 11
+        },
+        "received_count": 64,
+        "recent_activity_count": 0,
+        "rejected_count": 0
+      },
+      {
+        "device_id": "edge-device-04",
+        "filtered_count": 0,
+        "filtering_statistics": {},
+        "forwarded_count": 0,
+        "health": "STALE",
+        "last_seen": "2026-10-14T07:31:38.383915Z",
+        "last_sequence_number": 0,
+        "message_rate_per_minute": 0.0,
+        "priority_statistics": {
+          "CRITICAL": 2,
+          "LOW": 22,
+          "MEDIUM": 8
+        },
+        "received_count": 32,
+        "recent_activity_count": 0,
+        "rejected_count": 0
+      },
+      {
+        "device_id": "edge-device-05",
+        "filtered_count": 0,
+        "filtering_statistics": {},
+        "forwarded_count": 0,
+        "health": "STALE",
+        "last_seen": "2026-10-14T07:31:38.441399Z",
+        "last_sequence_number": 0,
+        "message_rate_per_minute": 0.0,
+        "priority_statistics": {
+          "CRITICAL": 1,
+          "HIGH": 5,
+          "LOW": 33,
+          "MEDIUM": 9
+        },
+        "received_count": 48,
+        "recent_activity_count": 0,
+        "rejected_count": 0
+      }
+    ],
+    "information_policy": {
+      "actions": {},
+      "config": {
+        "aggregation_max_samples": 5,
+        "congested_threshold": 0.75,
+        "critical_threshold": 0.9,
+        "elevated_threshold": 0.5,
+        "envelope_overhead_bytes": 512,
+        "freshness_seconds": 120.0,
+        "link_bytes_per_second": 16384.0,
+        "low_novelty_threshold": 0.15,
+        "max_message_bytes": 8192,
+        "max_queue_size": 250,
+        "max_streams": 1024,
+        "messages_per_second": 25.0,
+        "novelty_scales": {
+          "environmental": {
+            "air_quality_index": 50.0,
+            "humidity": 10.0,
+            "temperature": 5.0
+          },
+          "industrial": {
+            "pressure_bar": 4.0,
+            "rpm": 300.0,
+            "vibration_mm_s": 3.0
+          },
+          "network": {
+            "network_latency_ms": 100.0,
+            "packet_loss_percent": 2.0,
+            "packets_per_second": 3000.0
+          },
+          "security": {
+            "blocked_connections": 5.0,
+            "failed_logins": 3.0
+          },
+          "system": {
+            "cpu_usage": 20.0,
+            "load_average": 3.0,
+            "memory_usage": 20.0
+          }
+        },
+        "prediction_enabled": true,
+        "prediction_horizon_seconds": 5.0,
+        "preserve_novelty_threshold": 0.75,
+        "reduction_enabled": true,
+        "routine_events": [
+          "telemetry",
+          "resource",
+          "network",
+          "security",
+          "industrial_process",
+          "environmental_telemetry",
+          "system_telemetry",
+          "network_telemetry",
+          "security_telemetry",
+          "industrial_telemetry"
+        ],
+        "sample_every": 4,
+        "security_events": [
+          "intrusion",
+          "attack",
+          "intrusion_detected"
+        ],
+        "security_scales": {
+          "blocked_connections": 10.0,
+          "failed_logins": 5.0
+        },
+        "starvation_seconds": 15.0,
+        "strategy": "utility",
+        "weights": {
+          "freshness": 1.0,
+          "novelty": 3.0,
+          "obsolescence": 2.0,
+          "priority": 4.0,
+          "security_risk": 4.0,
+          "starvation": 2.0,
+          "transmission_cost": 0.2,
+          "waiting_age": 1.0
+        },
+        "window_seconds": 10.0
+      },
+      "dispatched_bytes": 0,
+      "generated_bytes": 0,
+      "local_state": {
+        "aggregation_rate": 0.0,
+        "arrival_rate": 0.0,
+        "average_message_size": 512.0,
+        "burst_intensity": 0.0,
+        "configured_service_rate": 25.0,
+        "congestion_state": "NORMAL",
+        "drain_rate": 0.0,
+        "drop_rate": 0.0,
+        "predicted_queue_length": 0.0,
+        "priority_distribution": {
+          "CRITICAL": 0.0,
+          "HIGH": 0.0,
+          "LOW": 0.0,
+          "MEDIUM": 0.0
+        },
+        "queue_growth_rate": 0.0,
+        "queue_length": 0,
+        "queue_utilization": 0.0,
+        "service_time_seconds": 0.0
+      },
+      "pending_generated_bytes": 0,
+      "recent_decisions": [],
+      "strategy": "utility"
+    },
+    "traffic": {
+      "average_latency": null,
+      "by_priority": {},
+      "bytes_filtered": 0,
+      "bytes_transmitted": 0,
+      "congestion_state": "NORMAL",
+      "latency_p95": null,
+      "latency_sample_count": 0,
+      "queue_utilization": 0.0,
+      "throughput_messages_per_second": 0.0,
+      "total_bytes_generated": 0
+    }
+  },
+  "memberships": {
+    "containers": {
+      "alert-engine": {
+        "addresses": {
+          "software-data-diode-coverage_fog-services-network": "192.168.144.4"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {},
+        "volumes": []
+      },
+      "dashboard": {
+        "addresses": {
+          "software-data-diode-coverage_fog-host-network": "192.168.224.2",
+          "software-data-diode-coverage_fog-services-network": "192.168.144.7"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-host-network",
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {
+          "8501/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "38501"
+            }
+          ]
+        },
+        "volumes": []
+      },
+      "data-diode": {
+        "addresses": {
+          "software-data-diode-coverage_diode-network": "192.168.192.3",
+          "software-data-diode-coverage_fog-ingress-network": "192.168.208.2"
+        },
+        "networks": [
+          "software-data-diode-coverage_diode-network",
+          "software-data-diode-coverage_fog-ingress-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_audit-logs",
+            "target": "/logs",
+            "writable": true
+          }
+        ]
+      },
+      "edge-device-01": {
+        "addresses": {
+          "software-data-diode-coverage_edge-network": "192.168.160.3"
+        },
+        "networks": [
+          "software-data-diode-coverage_edge-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_coverage-device-01",
+            "target": "/state/research-device",
+            "writable": true
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          }
+        ]
+      },
+      "edge-device-02": {
+        "addresses": {
+          "software-data-diode-coverage_edge-network": "192.168.160.6"
+        },
+        "networks": [
+          "software-data-diode-coverage_edge-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-device-02",
+            "target": "/state/research-device",
+            "writable": true
+          }
+        ]
+      },
+      "edge-device-03": {
+        "addresses": {
+          "software-data-diode-coverage_edge-network": "192.168.160.7"
+        },
+        "networks": [
+          "software-data-diode-coverage_edge-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_coverage-device-03",
+            "target": "/state/research-device",
+            "writable": true
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          }
+        ]
+      },
+      "edge-device-04": {
+        "addresses": {
+          "software-data-diode-coverage_edge-network": "192.168.160.5"
+        },
+        "networks": [
+          "software-data-diode-coverage_edge-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-device-04",
+            "target": "/state/research-device",
+            "writable": true
+          }
+        ]
+      },
+      "edge-device-05": {
+        "addresses": {
+          "software-data-diode-coverage_edge-network": "192.168.160.4"
+        },
+        "networks": [
+          "software-data-diode-coverage_edge-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-device-05",
+            "target": "/state/research-device",
+            "writable": true
+          }
+        ]
+      },
+      "edge-gateway": {
+        "addresses": {
+          "software-data-diode-coverage_diode-network": "192.168.192.2",
+          "software-data-diode-coverage_edge-host-network": "192.168.176.2",
+          "software-data-diode-coverage_edge-network": "192.168.160.2"
+        },
+        "networks": [
+          "software-data-diode-coverage_diode-network",
+          "software-data-diode-coverage_edge-host-network",
+          "software-data-diode-coverage_edge-network"
+        ],
+        "ports": {
+          "8000/tcp": [
+            {
+              "HostIp": "127.0.0.1",
+              "HostPort": "38000"
+            }
+          ]
+        },
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          },
+          {
+            "name": "software-data-diode-coverage_audit-logs",
+            "target": "/logs",
+            "writable": true
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-ledger",
+            "target": "/state/coverage-ledger",
+            "writable": true
+          }
+        ]
+      },
+      "event-processor": {
+        "addresses": {
+          "software-data-diode-coverage_fog-services-network": "192.168.144.8"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {},
+        "volumes": []
+      },
+      "fog-analytics": {
+        "addresses": {
+          "software-data-diode-coverage_fog-services-network": "192.168.144.6"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {},
+        "volumes": []
+      },
+      "fog-receiver": {
+        "addresses": {
+          "software-data-diode-coverage_fog-ingress-network": "192.168.208.3",
+          "software-data-diode-coverage_fog-services-network": "192.168.144.3"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-ingress-network",
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_audit-logs",
+            "target": "/logs",
+            "writable": true
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-replay",
+            "target": "/state/research-replay",
+            "writable": true
+          },
+          {
+            "name": "software-data-diode-coverage_coverage-trust",
+            "target": "/run/coverage",
+            "writable": false
+          }
+        ]
+      },
+      "monitoring-api": {
+        "addresses": {
+          "software-data-diode-coverage_fog-services-network": "192.168.144.5"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_audit-logs",
+            "target": "/logs",
+            "writable": false
+          }
+        ]
+      },
+      "postgres": {
+        "addresses": {
+          "software-data-diode-coverage_fog-services-network": "192.168.144.2"
+        },
+        "networks": [
+          "software-data-diode-coverage_fog-services-network"
+        ],
+        "ports": {},
+        "volumes": [
+          {
+            "name": "software-data-diode-coverage_fog-postgres-data",
+            "target": "/var/lib/postgresql/data",
+            "writable": true
+          }
+        ]
+      }
+    },
+    "networks": [
+      {
+        "internal": true,
+        "members": [
+          "software-data-diode-coverage-data-diode-1",
+          "software-data-diode-coverage-edge-gateway-1"
+        ],
+        "name": "software-data-diode-coverage_diode-network"
+      },
+      {
+        "internal": false,
+        "members": [
+          "software-data-diode-coverage-edge-gateway-1"
+        ],
+        "name": "software-data-diode-coverage_edge-host-network"
+      },
+      {
+        "internal": true,
+        "members": [
+          "software-data-diode-coverage-edge-device-01-1",
+          "software-data-diode-coverage-edge-device-02-1",
+          "software-data-diode-coverage-edge-device-03-1",
+          "software-data-diode-coverage-edge-device-04-1",
+          "software-data-diode-coverage-edge-device-05-1",
+          "software-data-diode-coverage-edge-gateway-1"
+        ],
+        "name": "software-data-diode-coverage_edge-network"
+      },
+      {
+        "internal": false,
+        "members": [
+          "software-data-diode-coverage-dashboard-1"
+        ],
+        "name": "software-data-diode-coverage_fog-host-network"
+      },
+      {
+        "internal": true,
+        "members": [
+          "software-data-diode-coverage-data-diode-1",
+          "software-data-diode-coverage-fog-receiver-1"
+        ],
+        "name": "software-data-diode-coverage_fog-ingress-network"
+      },
+      {
+        "internal": true,
+        "members": [
+          "software-data-diode-coverage-alert-engine-1",
+          "software-data-diode-coverage-dashboard-1",
+          "software-data-diode-coverage-event-processor-1",
+          "software-data-diode-coverage-fog-analytics-1",
+          "software-data-diode-coverage-fog-receiver-1",
+          "software-data-diode-coverage-monitoring-api-1",
+          "software-data-diode-coverage-postgres-1"
+        ],
+        "name": "software-data-diode-coverage_fog-services-network"
+      }
+    ]
+  },
+  "project": "software-data-diode-coverage",
+  "reverse_path": [
+    {
+      "connected": false,
+      "resolved": false,
+      "service": "edge-gateway"
+    },
+    {
+      "connected": false,
+      "resolved": false,
+      "service": "edge-device-01"
+    },
+    {
+      "connected": false,
+      "resolved": false,
+      "service": "edge-device-02"
+    },
+    {
+      "connected": false,
+      "resolved": false,
+      "service": "edge-device-03"
+    },
+    {
+      "connected": false,
+      "resolved": false,
+      "service": "edge-device-04"
+    },
+    {
+      "connected": false,
+      "resolved": false,
+      "service": "edge-device-05"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.160.3",
+      "service": "edge-device-01"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.160.6",
+      "service": "edge-device-02"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.160.7",
+      "service": "edge-device-03"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.160.5",
+      "service": "edge-device-04"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.160.4",
+      "service": "edge-device-05"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.192.2",
+      "service": "edge-gateway"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.176.2",
+      "service": "edge-gateway"
+    },
+    {
+      "connected": false,
+      "known_ip": "192.168.160.2",
+      "service": "edge-gateway"
+    }
+  ]
+}

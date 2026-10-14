@@ -50,6 +50,12 @@ class AlertRecord(BaseModel):
     description: str
 
 
+class CoverageAlertDelivery(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True)
+    alert_id: UUID
+    revision: int = Field(strict=True,ge=1,le=2**63-1)
+
+
 class SecurityEvent(BaseModel):
     model_config = ConfigDict(extra="forbid")
 

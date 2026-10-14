@@ -1,0 +1,15 @@
+{
+  "evidence_grace_seconds": 20,
+  "visibility_cooldown_windows": 30,
+  "policies": [
+    {"rule_id": "environmental-threshold", "severity": "HIGH", "cooldown_windows": 3},
+    {"rule_id": "resource-threshold", "severity": "WARNING", "cooldown_windows": 3},
+    {"rule_id": "network-threshold", "severity": "WARNING", "cooldown_windows": 3},
+    {"rule_id": "security-threshold", "severity": "HIGH", "cooldown_windows": 3},
+    {"rule_id": "industrial-threshold", "severity": "HIGH", "cooldown_windows": 3},
+    {"rule_id": "incident-correlation", "severity": "CRITICAL", "cooldown_windows": 6},
+    {"rule_id": "process-correlation", "severity": "HIGH", "cooldown_windows": 3},
+    {"rule_id": "process-attention", "severity": "WARNING", "cooldown_windows": 3},
+    {"rule_id": "repeated-security-observations", "severity": "HIGH", "cooldown_windows": 3}
+  ]
+}

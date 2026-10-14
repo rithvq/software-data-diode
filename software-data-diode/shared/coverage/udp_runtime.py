@@ -185,36 +185,89 @@ class GatewayUDP:
 
 
 class FogUDP(IngressRuntime):
-    def __init__(self, framer, store, repository, processor_url):
+    def __init__(self, framer, store, repository, processor_url, *, monitor=None):
         super().__init__(framer.config, "data-diode")
         self.framer, self.store, self.repository, self.processor_url = framer, store, repository, processor_url
         self.assembler = PartAssembler(framer)
+        self.storage_work = set()
+        self.database_evidence_available = None
+        self.coverage_monitor = monitor
+
+    async def _offload(self, method, *args):
+        task = asyncio.create_task(asyncio.to_thread(method, *args))
+        self.storage_work.add(task)
+        def finished(work):
+            self.storage_work.discard(work)
+            if not work.cancelled():
+                work.exception()
+        task.add_done_callback(finished)
+        return await asyncio.shield(task)
 
     async def start(self, port=9002):
         await super().start(port)
         self.tasks.append(asyncio.create_task(self._internal_processing()))
+        self.tasks.append(asyncio.create_task(self._evidence_processing()))
+        if self.coverage_monitor is not None:
+            self.tasks.append(asyncio.create_task(self._rule_processing()))
+            self.tasks.append(asyncio.create_task(self._alert_processing()))
 
     async def _process(self):
         while True:
             try:
+                artifact = None
                 frame = await asyncio.wait_for(self.queue.get(), .5)
             except asyncio.TimeoutError:
-                self.assembler.expire()
+                await self._offload(self.assembler.expire)
+                await self._record_expiry()
                 continue
             try:
-                artifact = self.assembler.add(frame)
+                artifact = await self._offload(self.assembler.add, frame)
                 if artifact is not None:
-                    accepted = await asyncio.to_thread(self.store.accept, artifact)
-                    self.counts["verified_artifacts" if accepted else "duplicate_artifacts"] += 1
+                    accepted = await self._offload(self.store.accept, artifact)
+                    self.counts["durably_spooled_artifacts" if accepted else "duplicate_artifacts"] += 1
+                    if accepted:
+                        self.counts["verified_artifacts"] += 1
+                await self._record_expiry()
             except Exception as exc:
                 self.counts["rejections"] += 1
                 self.counts[type(exc).__name__] += 1
+                try:
+                    from .capsules import EvidenceError
+                    reason = str(exc) if isinstance(exc, EvidenceError) else "LOCAL_INTAKE_STORAGE_OR_SCHEMA_FAILURE"
+                    details = {}
+                    if artifact is not None and artifact.kind == "EVIDENCE" and reason in {"EXPIRED_EVIDENCE","EXPIRED_EVIDENCE_WINDOW"}:
+                        from .capsules import verify_artifact
+                        body = (await self._offload(verify_artifact,artifact.encoded,self.framer.keys,self.framer.contracts)).body
+                        details = {"authenticated_scope": {k:getattr(body,k) for k in ("gateway_id","ledger_epoch","contract_hash","device_id","window_index")}}
+                    await self._offload(self.store.record_outcome, reason, frame, details)
+                except Exception:
+                    self.counts["unpersisted_outcome_limits"] += 1
             finally:
                 self.queue.task_done()
 
+    async def _record_expiry(self):
+        while self.assembler.expiry_events:
+            event = self.assembler.expiry_events.pop(0)
+            try:
+                await self._offload(self.store.record_outcome, "REASSEMBLY_EXPIRED", b"", event)
+            except Exception:
+                self.counts["unpersisted_outcome_limits"] += 1
+
+    async def _evidence_processing(self):
+        while True:
+            try:
+                result = await self._offload(self.store.publish_one, self.repository)
+                if result:
+                    self.counts["postgres_"+result.lower()] += 1
+                self.database_evidence_available = await self._offload(self.repository.coverage_ready)
+            except Exception:
+                self.database_evidence_available = False
+                self.counts["evidence_database_errors"] += 1
+            await asyncio.sleep(.1 if self.database_evidence_available else 1)
+
     async def _internal_processing(self):
         while True:
-            row = await asyncio.to_thread(self.store.pending)
+            row = await self._offload(self.store.pending)
             try:
                 if row:
                     body = json.loads(row["body"])
@@ -228,12 +281,44 @@ class FogUDP(IngressRuntime):
                         from datetime import datetime, timedelta, timezone
                         snapshot = ObservabilitySnapshot(timestamp=datetime(1970,1,1,tzinfo=timezone.utc)+timedelta(microseconds=body["timestamp_us"]),
                             service="edge-gateway", metrics=body["metrics"], labels={"scope": "accepted_gateway_ingress", "assurance": "AUTHENTICATED_FORWARD_STATE"})
-                        await asyncio.to_thread(self.repository.save_observability_snapshot, snapshot)
-                    await asyncio.to_thread(self.store.completed, row["kind"], row["id"])
+                        await self._offload(self.repository.save_observability_snapshot, snapshot)
+                    await self._offload(self.store.completed, row["kind"], row["id"])
             except Exception:
                 self.counts["internal_fog_processing_errors"] += 1
             await asyncio.sleep(.05 if row else .2)
 
+    async def _rule_processing(self):
+        while True:
+            try:
+                result = await self._offload(self.repository.process_coverage_rules,self.coverage_monitor)
+                if result:
+                    self.counts["coverage_"+result.lower()] += 1
+            except Exception:
+                self.counts["coverage_rule_storage_errors"] += 1
+            await asyncio.sleep(.2)
+
+    async def _alert_processing(self):
+        # This HTTP request stays entirely within Fog. Its result is never
+        # exported to the gateway's reservation, scoring or reduction policy.
+        while True:
+            try:
+                request = await self._offload(self.repository.pending_coverage_alert)
+                if request:
+                    async with httpx.AsyncClient(timeout=3) as client:
+                        response = await client.post("http://alert-engine:8000/coverage-alerts",json=request)
+                        response.raise_for_status()
+                        self.counts["coverage_alert_delivery_attempts"] += 1
+            except Exception:
+                self.counts["coverage_alert_delivery_errors"] += 1
+            await asyncio.sleep(.2)
+
     def status(self):
         return {**super().status(), "partial_artifacts": len(self.assembler.pending), "partial_bytes": self.assembler.bytes,
-                "expired_partial_artifacts": self.assembler.expired, **self.store.status()}
+                "expired_partial_artifacts": self.assembler.expired, "evidence_database_available": self.database_evidence_available,
+                "coverage_rule_monitor_enabled": self.coverage_monitor is not None, **self.store.status()}
+
+    async def close(self):
+        await super().close()
+        # Cancellation cannot stop a SQLite/PG thread midway through COMMIT.
+        # Finish outstanding storage before lifespan closes its writer connection.
+        await asyncio.gather(*tuple(self.storage_work), return_exceptions=True)

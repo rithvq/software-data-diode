@@ -1,5 +1,6 @@
 import logging
 import asyncio
+import os
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import Response
@@ -8,14 +9,29 @@ from shared.models import AlertRecord
 from shared.http import BodyLimitMiddleware
 from shared.observability import ServiceMetrics, configure_json_logging, log_context
 from shared.persistence import repository_from_env
+from shared.models.fog import CoverageAlertDelivery as AlertDelivery
 
 configure_json_logging("alert-engine")
 logger = logging.getLogger("alert-engine")
 
 app = FastAPI(title="Fog Alert Engine", version="0.4.0")
 app.add_middleware(BodyLimitMiddleware, paths=["/alerts"], limit=65536)
+app.add_middleware(BodyLimitMiddleware, paths=["/coverage-alerts"], limit=4096)
 repository = repository_from_env()
 prometheus_metrics = ServiceMetrics("alert-engine")
+COVERAGE_ALERTS_ENABLED = os.getenv("COVERAGE_ALERTS_ENABLED","false").lower() == "true"
+
+
+@app.post("/coverage-alerts")
+async def deliver_coverage_alert(delivery: AlertDelivery):
+    if not COVERAGE_ALERTS_ENABLED:
+        raise HTTPException(status_code=404,detail="coverage alerts disabled in baseline")
+    try:
+        result = await asyncio.to_thread(repository.deliver_coverage_alert,delivery)
+    except Exception as exc:
+        logger.exception("coverage alert database transaction failed")
+        raise HTTPException(status_code=503,detail="durable alert repository unavailable") from exc
+    return {"status":result,"alert_id":str(delivery.alert_id)}
 
 
 @app.get("/health")

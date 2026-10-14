@@ -60,6 +60,7 @@ class ReceivedArtifact:
     sequence: int
     stamp_us: int
     encoded: bytes
+    frames: tuple[bytes, ...] = ()
 
 
 class ResearchFramer:
@@ -167,13 +168,14 @@ class ResearchFramer:
         body = verify_artifact(encoded, self.keys, self.contracts).body
         if body.artifact_kind != "RCC" or body.ledger_epoch != self.profile.ledger_epoch:
             raise EvidenceError("UNAPPROVED_RESEARCH_EPOCH")
-        return ReceivedArtifact("EVIDENCE", body.capsule_id, body.device_id, body.window_index, body.created_at_utc_us, encoded)
+        return ReceivedArtifact("EVIDENCE", body.capsule_id, body.device_id, body.window_index, body.created_at_utc_us, encoded, tuple(frames))
 
 
 class PartAssembler:
     def __init__(self, framer, *, monotonic=time.monotonic):
         self.framer, self.clock, self.pending = framer, monotonic, {}
         self.expired = 0
+        self.expiry_events = []
 
     @property
     def bytes(self):
@@ -181,10 +183,13 @@ class PartAssembler:
 
     def expire(self):
         now = self.clock()
-        for key, (started, _) in list(self.pending.items()):
+        for key, (started, parts) in list(self.pending.items()):
             if now-started >= self.framer.config.assembly_timeout_seconds:
                 del self.pending[key]
                 self.expired += 1
+                self.expiry_events.append({"identity": key[1], "digest": key[2], "received_parts": len(parts),
+                                           "expected_parts": key[3]})
+                self.expiry_events = self.expiry_events[-self.framer.config.partial_artifacts:]
 
     def add(self, frame):
         self.expire()

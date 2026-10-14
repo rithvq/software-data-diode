@@ -286,7 +286,7 @@ def test_diode_udp_readiness_never_queries_fog_http(monkeypatch):
     for name in ("data-diode", "fog-receiver"):
         service = load_service_module(name)
         monkeypatch.setattr(service, "research_udp_enabled", lambda: True)
-        monkeypatch.setattr(service, "_research_udp", Mock(status=lambda: {"live": True}))
+        monkeypatch.setattr(service, "_research_udp", Mock(status=lambda: {"live": True, "local_admission_available": True}))
         monkeypatch.setattr(service.httpx, "AsyncClient", Mock(side_effect=AssertionError("no cross-boundary readiness")))
         client = TestClient(service.app)
         assert client.get("/ready").status_code == 200

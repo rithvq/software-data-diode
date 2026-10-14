@@ -10,10 +10,11 @@ from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import Response
 
 from shared.analytics import AnomalyDetector, CorrelationEngine, DetectionConfig
-from shared.models import AlertRecord, AlertSeverity, FogEvent
+from shared.models import AlertRecord, FogEvent
 from shared.http import BodyLimitMiddleware
 from shared.observability import ServiceMetrics, configure_json_logging, log_context
 from shared.persistence import repository_from_env
+from shared.analytics import LEGACY_ANALYTICS_BASELINE
 
 configure_json_logging("fog-analytics")
 logger = logging.getLogger("fog-analytics")
@@ -37,7 +38,7 @@ _analyses = OrderedDict()
 
 @app.get("/health")
 async def health() -> dict[str, str]:
-    return {"status": "ok", "service": "fog-analytics"}
+    return {"status": "ok", "service": "fog-analytics", "analytics_mode": LEGACY_ANALYTICS_BASELINE}
 
 
 @app.get("/ready")

@@ -7,7 +7,7 @@ import os
 from collections import OrderedDict
 
 import httpx
-from fastapi import FastAPI, HTTPException, Request, status
+from fastapi import FastAPI, HTTPException, Query, Request, status
 from fastapi.responses import Response
 from pydantic import ValidationError
 
@@ -49,19 +49,27 @@ async def lifespan(app):
     global _research_udp
     if research_udp_enabled():
         from shared.coverage.transport import load_framer
-        from shared.coverage.research_replay import ResearchReplayStore
+        from shared.coverage.fog_store import FogEvidenceStore
+        from shared.persistence.repository import PostgresRepository
         from shared.coverage.udp_runtime import FogUDP
         framer = load_framer(os.environ["COVERAGE_TRUST_PATH"], _get_public_key(),
             os.environ["COVERAGE_CONTRACT_PATH"], os.environ["COVERAGE_TRANSPORT_CONFIG"])
-        store = ResearchReplayStore(os.environ["COVERAGE_REPLAY_PATH"], framer)
-        _research_udp = FogUDP(framer, store, repository, EVENT_PROCESSOR_URL)
-        await _research_udp.start()
+        if not isinstance(repository, PostgresRepository):
+            raise RuntimeError("N6 requires PostgreSQL configuration; no in-memory evidence fallback")
+        monitor = None
+        if os.getenv("COVERAGE_RULE_MONITOR_CONFIG"):
+            from shared.coverage.monitoring import CoverageMonitor, MonitoringConfig
+            monitor = CoverageMonitor(framer,MonitoringConfig.load(os.environ["COVERAGE_RULE_MONITOR_CONFIG"]))
+        store = await asyncio.to_thread(FogEvidenceStore, os.environ["COVERAGE_REPLAY_PATH"], framer)
+        _research_udp = FogUDP(framer, store, repository, EVENT_PROCESSOR_URL, monitor=monitor)
     try:
+        if _research_udp is not None:
+            await _research_udp.start()
         yield
     finally:
         if _research_udp is not None:
             await _research_udp.close()
-            _research_udp.store.close()
+            await asyncio.to_thread(_research_udp.store.close)
             _research_udp = None
 
 
@@ -83,7 +91,8 @@ async def health() -> dict[str, str]:
 @app.get("/ready")
 async def ready() -> dict[str, str]:
     if research_udp_enabled():
-        if _research_udp is None or not _research_udp.status()["live"]:
+        local = await asyncio.to_thread(_research_udp.status) if _research_udp is not None else {}
+        if not local.get("live") or not local.get("local_admission_available"):
             raise HTTPException(status_code=503, detail="local research intake unavailable")
         return {"status": "ready", "service": "fog-receiver", "assurance": "LOCAL_INTAKE_NOT_PIPELINE_DELIVERY"}
     try:
@@ -252,7 +261,39 @@ def _get_public_key():
 async def research_status():
     if _research_udp is None:
         raise HTTPException(status_code=404, detail="research mode not active")
-    return await asyncio.to_thread(_research_udp.status)
+    result = await asyncio.to_thread(_research_udp.status)
+    try:
+        result.update(await asyncio.to_thread(repository.coverage_status))
+    except Exception:
+        result["postgres_verification_status"] = "UNAVAILABLE_NOT_ACKNOWLEDGED"
+    result["rule_evaluation"] = _coverage_rule_mode()
+    return result
+
+
+def _coverage_rule_mode():
+    from shared.coverage.monitoring import CoverageMonitor
+    return "RCCD_SCOPED_RULES_V1" if isinstance(getattr(_research_udp,"coverage_monitor",None),CoverageMonitor) else "NOT_IMPLEMENTED_N6"
+
+
+@app.get("/research/evidence")
+async def research_evidence(limit: int = Query(default=20, ge=1, le=100)):
+    if _research_udp is None:
+        raise HTTPException(status_code=404, detail="research mode not active")
+    try:
+        return {"evidence": await asyncio.to_thread(repository.coverage_evidence, limit),
+                "rule_evaluation": _coverage_rule_mode()}
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail="durable evidence repository unavailable") from exc
+
+
+@app.get("/research/rules")
+async def research_rules(limit: int = Query(default=20,ge=1,le=100), history: bool = False):
+    if _research_udp is None:
+        raise HTTPException(status_code=404,detail="research mode not active")
+    try:
+        return {"mode":"RCCD_SCOPED_RULES_V1","decisions":await asyncio.to_thread(repository.coverage_rules,limit,history)}
+    except Exception as exc:
+        raise HTTPException(status_code=503,detail="durable rule repository unavailable") from exc
 
 
 def _client_allowed(client_host: str, allowed_cidr: str) -> bool:

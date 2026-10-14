@@ -1,0 +1,131 @@
+N6_DB_OUTAGE_READY
+N6_DB_OUTAGE_SPOOLED
+{
+  "phase": "N6",
+  "schema": "n6_check_e22f2515b62d4c3086c4c4018184cffb",
+  "checks": [
+    {
+      "check": "all additive migrations applied twice",
+      "passed": true
+    },
+    {
+      "check": "evidence committed to durable Fog spool",
+      "passed": true
+    },
+    {
+      "check": "failed fact transaction rolls back identity/replay/publication",
+      "passed": true
+    },
+    {
+      "check": "failed DB commit leaves durable pending evidence",
+      "passed": true
+    },
+    {
+      "check": "restart recovers pending evidence",
+      "passed": true
+    },
+    {
+      "check": "duplicate delivery does not repeat acceptance",
+      "passed": true
+    },
+    {
+      "check": "invalid signature outcome committed independently",
+      "passed": true
+    },
+    {
+      "check": "unrelated invalid injection cannot overwrite valid evidence",
+      "passed": true
+    },
+    {
+      "check": "reassembly expiry persisted in PostgreSQL",
+      "passed": true
+    },
+    {
+      "check": "second scope admitted",
+      "passed": true
+    },
+    {
+      "check": "DB committed before lost spool completion",
+      "passed": true
+    },
+    {
+      "check": "lost completion recovery is idempotent",
+      "passed": true
+    },
+    {
+      "check": "concurrent valid fork quarantined exactly once",
+      "passed": true
+    },
+    {
+      "check": "both valid bodies are quarantined",
+      "passed": true
+    },
+    {
+      "check": "no usable facts from conflicted scope",
+      "passed": true
+    },
+    {
+      "check": "previously stored decisions reassessed on conflict",
+      "passed": true
+    },
+    {
+      "check": "later independent facts survive predecessor conflict",
+      "passed": true
+    },
+    {
+      "check": "signed parts retained exactly",
+      "passed": true
+    },
+    {
+      "check": "publication recovers after consumer transaction rollback",
+      "passed": true
+    },
+    {
+      "check": "duplicate publication does not duplicate consumer effects",
+      "passed": true
+    },
+    {
+      "check": "duplicate processing creates exactly one synthetic alert",
+      "passed": true
+    },
+    {
+      "check": "independent later window with missing predecessor accepted",
+      "passed": true
+    },
+    {
+      "check": "gap stored separately from scope validity",
+      "passed": true
+    },
+    {
+      "check": "new repository connection preserves durable window floor",
+      "passed": true
+    },
+    {
+      "check": "real UDP evidence durably spooled while PostgreSQL is stopped",
+      "passed": true
+    },
+    {
+      "check": "Fog intake remains locally live during DB outage",
+      "passed": true
+    },
+    {
+      "check": "UDP intake sends no application reply",
+      "passed": true
+    },
+    {
+      "check": "database restoration drains evidence without sender feedback",
+      "passed": true
+    },
+    {
+      "check": "live duplicate does not duplicate capsule or publication",
+      "passed": true
+    },
+    {
+      "check": "durable epoch retirement blocks even duplicates after restart",
+      "passed": true
+    }
+  ],
+  "synthetic_keys": "ephemeral in-memory only",
+  "timestamp_us": 1791970949462779,
+  "existing_rows_modified": false
+}
