@@ -1,0 +1,142 @@
+name: software-data-diode-coverage
+
+x-research: &research
+  COVERAGE_PROJECT_NAME: software-data-diode-coverage
+  COVERAGE_TRUST_PATH: /run/coverage/profile.json
+  COVERAGE_CONTRACT_PATH: /app/config/rule_coverage.json
+  COVERAGE_TRANSPORT_CONFIG: /app/config/rule_coverage_transport.json
+  DIODE_FORWARD_TRANSPORT: udp
+  COVERAGE_SOCKET_AUDIT: "true"
+
+x-device: &device
+  RULE_COVERAGE_ENABLED: "true"
+  COVERAGE_TRUST_PATH: /run/coverage/profile.json
+  COVERAGE_DEVICE_STATE_PATH: /state/research-device/counter.sqlite3
+
+services:
+  runtime-state-init:
+    profiles: !override [coverage]
+    command: [python, -m, shared.coverage.provisioning]
+    environment:
+      COVERAGE_PROJECT_NAME: software-data-diode-coverage
+      COVERAGE_CONTRACT_PATH: /app/config/rule_coverage.json
+    volumes:
+      - coverage-ledger:/state/coverage-ledger
+      - coverage-trust:/state/coverage-trust
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+      - ./secrets/edge_public_key.pem:/run/secrets/edge_public_key.pem:ro
+
+  edge-gateway:
+    profiles: !override [coverage]
+    environment:
+      <<: *research
+      RULE_COVERAGE_ENABLED: "true"
+      COVERAGE_ADMISSION_MODE: coupled
+      COVERAGE_ADMISSION_CONFIG: /app/config/rule_coverage_admission.json
+      COVERAGE_LEDGER_PATH: /state/coverage-ledger/observations.sqlite3
+    ports: !override ["127.0.0.1:38000:8000"]
+    volumes:
+      - coverage-ledger:/state/coverage-ledger
+      - coverage-trust:/run/coverage:ro
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+      - ./config/rule_coverage_admission.json:/app/config/rule_coverage_admission.json:ro
+      - ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro
+    depends_on: !override
+      runtime-state-init: {condition: service_completed_successfully}
+
+  data-diode:
+    profiles: !override [coverage]
+    command: [uvicorn, app.main:app, --host, "127.0.0.1", --port, "8000"]
+    environment:
+      <<: *research
+      COVERAGE_LINK_BYTES_PER_SECOND: "131072"
+    volumes:
+      - ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro
+    depends_on: !override
+      runtime-state-init: {condition: service_completed_successfully}
+
+  fog-receiver:
+    profiles: !override [coverage]
+    environment:
+      <<: *research
+      COVERAGE_REPLAY_PATH: /state/research-replay/replay.sqlite3
+    volumes:
+      - coverage-replay:/state/research-replay
+      - coverage-trust:/run/coverage:ro
+      - ./config/rule_coverage.json:/app/config/rule_coverage.json:ro
+      - ./config/rule_coverage_transport.json:/app/config/rule_coverage_transport.json:ro
+    depends_on: !override
+      runtime-state-init: {condition: service_completed_successfully}
+
+  edge-device-01:
+    profiles: !override [coverage]
+    environment: *device
+    volumes:
+      - coverage-trust:/run/coverage:ro
+      - coverage-device-01:/state/research-device
+  edge-device-02:
+    profiles: !override [coverage]
+    environment: *device
+    volumes:
+      - coverage-trust:/run/coverage:ro
+      - coverage-device-02:/state/research-device
+  edge-device-03:
+    profiles: !override [coverage]
+    environment: *device
+    volumes:
+      - coverage-trust:/run/coverage:ro
+      - coverage-device-03:/state/research-device
+  edge-device-04:
+    profiles: !override [coverage]
+    environment: *device
+    volumes:
+      - coverage-trust:/run/coverage:ro
+      - coverage-device-04:/state/research-device
+  edge-device-05:
+    profiles: !override [coverage]
+    environment: *device
+    volumes:
+      - coverage-trust:/run/coverage:ro
+      - coverage-device-05:/state/research-device
+
+  postgres:
+    profiles: !override [coverage]
+  database-migrator:
+    profiles: !override [coverage]
+  event-processor:
+    profiles: !override [coverage]
+  fog-analytics:
+    profiles: !override [coverage]
+  alert-engine:
+    profiles: !override [coverage]
+  monitoring-api:
+    profiles: !override [coverage]
+  dashboard:
+    profiles: !override [coverage]
+    ports: !override ["127.0.0.1:38501:8501"]
+
+  prometheus-edge:
+    profiles: !override [coverage-disabled]
+    networks: !override [diode-network, edge-host-network]
+    ports: !override []
+  prometheus-fog:
+    profiles: !override [coverage-disabled]
+    networks: !override [fog-services-network]
+    ports: !override []
+  grafana:
+    profiles: !override [coverage-disabled]
+    networks: !override [fog-services-network]
+    ports: !override []
+    depends_on: !override []
+  security-test-client:
+    profiles: !override [coverage-disabled]
+
+volumes:
+  coverage-ledger:
+  coverage-trust:
+  coverage-replay:
+  coverage-device-01:
+  coverage-device-02:
+  coverage-device-03:
+  coverage-device-04:
+  coverage-device-05:

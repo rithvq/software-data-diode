@@ -96,13 +96,18 @@ class WindowSchedule:
         delta_ns = now_ns - self.last_monotonic_ns
         deviation_ns = (now_us - self.last_utc_us) * 1000 - delta_ns
         index = now_us // WINDOW_US
+        boundary_mismatch = ((index != self.active_index and now_ns < self.deadline_ns)
+                             or (now_ns >= self.deadline_ns and index <= self.active_index))
         if (delta_ns < 0 or abs(deviation_ns) > self.tolerance * 1000
-                or (index != self.active_index and now_ns < self.deadline_ns)
-                or (now_ns >= self.deadline_ns and index <= self.active_index)):
+                or (boundary_mismatch and abs(now_ns-self.deadline_ns) > self.tolerance*1000)):
             self.halted = True
             limited = tuple(dict.fromkeys((*self.limitations, CoverageLimitation.CLOCK_DISCONTINUITY)))
             return WindowUpdate(None, ClosedWindow(self.active_index, limited))
         self.last_utc_us, self.last_monotonic_ns = now_us, now_ns
+        # UTC and monotonic are sampled sequentially. Defer closure within the
+        # existing tolerance; admission separately checks its UTC window identity.
+        if boundary_mismatch:
+            return WindowUpdate(self.active_index)
         if now_ns < self.deadline_ns:
             return WindowUpdate(self.active_index)
         skipped = index - self.active_index - 1

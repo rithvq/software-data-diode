@@ -1,0 +1,13 @@
+{
+  "datagram_bytes": 1200,
+  "state_bytes": 8192,
+  "state_interval_seconds": 10,
+  "queue_frames": 256,
+  "partial_artifacts": 32,
+  "partial_bytes": 1048576,
+  "assembly_timeout_seconds": 5,
+  "replay_width": 128,
+  "replay_records": 1024,
+  "replay_bytes": 16777216,
+  "freshness_seconds": 300
+}

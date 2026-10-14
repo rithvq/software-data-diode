@@ -11,8 +11,8 @@ COPY edge-gateway/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt \
     && groupadd --gid 10001 app \
     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app \
-    && mkdir -p /logs /state/coverage-ledger \
-    && chown app:app /logs /state/coverage-ledger
+    && mkdir -p /logs /state/coverage-ledger /state/coverage-trust \
+    && chown app:app /logs /state/coverage-ledger /state/coverage-trust
 
 COPY --chown=app:app shared ./shared
 COPY --chown=app:app edge-gateway/app ./app

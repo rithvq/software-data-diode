@@ -177,9 +177,14 @@ async def _send_one(client: httpx.AsyncClient, message: EdgeTelemetryMessage) ->
         ),
     )
     try:
+        headers = None
+        if os.getenv("RULE_COVERAGE_ENABLED", "false").lower() == "true":
+            from shared.edge.coverage_client import research_headers
+            headers = research_headers(message.device_id)
         response = await client.post(
             EDGE_GATEWAY_URL,
             json=message.model_dump(mode="json"),
+            **({"headers": headers} if headers else {}),
         )
         response.raise_for_status()
         logger.info("[EDGE DEVICE] Gateway response=%s", response.json())

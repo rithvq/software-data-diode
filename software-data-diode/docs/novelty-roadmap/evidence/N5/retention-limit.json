@@ -1,0 +1,10 @@
+{
+  "phase": "N5",
+  "observed_date": "2026-10-14",
+  "project": "software-data-diode-coverage",
+  "query_mode": "read-only aggregate SQLite queries inside the Gateway",
+  "sealed_capsules": 256,
+  "retained_windows": 256,
+  "last_refusal": "SIGNED_EVIDENCE_RETENTION_CAPACITY",
+  "state_was_not_deleted_or_reset": true
+}

@@ -1,7 +1,7 @@
 # Local novelty development roadmap
 
 Prepared: 2026-10-13 (Asia/Calcutta).
-Status: N0-N3 COMPLETE: baseline/specification, pure contracts/oracle, opt-in durable Edge admission and bounded signed capsule libraries implemented. N4-N11 remain planned. Research mode remains disabled and ledger-only; capsule sealing is explicitly local and opt-in, with no coverage transport or performance result claimed.
+Status: N0-N3 reported complete; N4 code verified but its report is missing. N5 local forward-only research transport is implemented and verified; N6-N11 remain planned. Research mode remains opt-in and separate from the default HTTP deployment. See N5 for evidence, finite-retention limits and the N4 reporting gap.
 
 Project: C:\Users\Rithvik Kumar\Desktop\fogedge\software-data-diode
 
@@ -35,6 +35,8 @@ The product proposition is **less raw telemetry with explicit evidence for each 
 - [N2 durable admission, bounded state and recovery report](reports/N2.md)
 - [N3 signed capsules, offline audit and verification report](reports/N3.md)
 - [N3 artifact, commitment and signed-part format](reports/N3-format-v1.md)
+- [N5 local forward-only transport, checks and prerequisites](reports/N5.md)
+- [N5 framing, budgets and replay semantics](reports/N5-transport-v1.md)
 - [Frozen v1 contract and independent oracle definition](reports/N0-contract-v1.md)
 - [Baseline modes and local integration checklist](reports/N0-integration.md)
 
@@ -48,8 +50,8 @@ The N prefix identifies a new research track. It does not renumber the existing 
 | N1 (complete) | Rule contracts and three-valued semantics | [Independent oracle, golden hash and exhaustive contract tests](reports/N1.md) |
 | N2 (complete) | Durable observation ledger before filtering | [Crash/rollback, retry, compaction and capacity checks](reports/N2.md) |
 | N3 (complete) | Signed Rule Coverage Capsules | [Canonical vectors, immutable sealing, offline audit and bounded signed parts](reports/N3.md) |
-| N4 | Rule-preserving filtering and evidence budget reservations | Coupled admission tests under saturation |
-| N5 | Forward-only research transport | Local UDP deployment; no receiver-response dependency |
+| N4 (code verified) | Rule-preserving filtering and evidence budget reservations | 60 prerequisite tests; missing report recorded in [N5](reports/N5.md) |
+| N5 (complete) | Forward-only research transport | [Local UDP deployment, bounded replay, no-reply observations and outage tests](reports/N5.md) |
 | N6 | Fog evidence verification and persistence | Durable, idempotent verification and database tests |
 | N7 | Coverage-aware correlation and alerts | Correct definite decisions; explained unknown results |
 | N8 | Fog-only coverage dashboard and metrics | Interactive window/rule views and refresh checks |
@@ -86,6 +88,6 @@ Use local Docker Compose on this Windows machine. Provision rules and keys throu
 
 ## Deliverables and current status
 
-This folder contains the proposed design, prior-art assessment, twelve build prompts and N0-N3 reports and evidence. N2 adds a disabled opt-in, ledger-only gateway path. N3 adds pure signed-artifact/verification libraries, offline recomputation and an optional local immutable signing journal; it does not wire them into live services. Existing deployments remain unchanged. Coupled reduction, evidence-byte reservation, research transport, durable Fog verification and comparative performance results remain future work.
+This folder contains the proposed design, prior-art assessment, twelve build prompts and N0-N3/N5 reports and evidence. N4 code provides coupled admission and local byte accounting. N5 integrates an isolated UDP research path, real signed frame costs, bounded reassembly/reorder history and signed forward state. Existing HTTP/standalone deployments remain preserved. Durable PostgreSQL coverage verification, rule verdicts, coverage visualization and repeated comparative performance campaigns remain future work.
 
 Future phase reports should live in docs/novelty-roadmap/reports/Nxx.md. New experimental artifacts should use new directories under experiments/results/coverage/ and must not overwrite prior results.

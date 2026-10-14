@@ -10,7 +10,9 @@ COPY constraints.txt /tmp/constraints.txt
 COPY edge-device/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt \
     && groupadd --gid 10001 app \
-    && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+    && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app \
+    && mkdir -p /state/research-device \
+    && chown app:app /state/research-device
 
 COPY --chown=app:app shared ./shared
 COPY --chown=app:app edge-device/app ./app

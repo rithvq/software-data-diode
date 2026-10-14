@@ -6,6 +6,7 @@ import os
 import re
 import time
 from pathlib import Path
+from shared.coverage.transport_mode import research_udp_enabled
 from uuid import uuid4
 
 import httpx
@@ -90,6 +91,7 @@ _pending_envelope = None
 _last_envelope_created_at: datetime | None = None
 _coverage_ledger = None
 _coverage_controller = None
+_coverage_udp = None
 _coverage_task: asyncio.Task | None = None
 _coverage_admissions: set[asyncio.Task] = set()
 
@@ -119,9 +121,12 @@ information_engine = InformationEngine(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _observability_task, _policy_task, _coverage_ledger, _coverage_task, _coverage_controller
+    global _observability_task, _policy_task, _coverage_ledger, _coverage_task, _coverage_controller, _coverage_udp
     _observability_task = _policy_task = _coverage_task = None
     _coverage_controller = None
+    udp = research_udp_enabled()
+    if udp and (not RULE_COVERAGE_ENABLED or COVERAGE_ADMISSION_MODE != "coupled"):
+        raise ValueError("UDP gateway requires coupled durable admission")
     if RULE_COVERAGE_ENABLED:
         from shared.coverage.contracts import load_contract
         from shared.coverage.ledger import ObservationLedger, PROJECT_NAME
@@ -137,17 +142,26 @@ async def lifespan(app: FastAPI):
             try:
                 config_path = os.environ["COVERAGE_ADMISSION_CONFIG"]
                 config = AdmissionConfig.model_validate_json(Path(config_path).read_text(encoding="utf-8"))
+                framer = None
+                if udp:
+                    from shared.coverage.transport import load_framer
+                    framer = load_framer(os.environ["COVERAGE_TRUST_PATH"], _get_private_key().public_key(),
+                        os.environ["COVERAGE_CONTRACT_PATH"], os.environ["COVERAGE_TRANSPORT_CONFIG"])
+                    framer.private_key = _get_private_key()
                 _coverage_controller = await asyncio.to_thread(
                     CoupledAdmission, _coverage_ledger,
                     os.getenv("COVERAGE_GATEWAY_ID", "coverage-gateway"),
                     os.getenv("COVERAGE_SIGNING_KEY_ID", "coverage-key"), _get_private_key(),
-                    config=config, policy=information_engine.config,
+                    config=config, policy=information_engine.config, framer=framer,
                 )
             except BaseException:
                 await asyncio.to_thread(_coverage_ledger.close)
                 _coverage_ledger = None
                 raise
         _coverage_task = asyncio.create_task(_coverage_clock_loop())
+        if udp:
+            from shared.coverage.udp_runtime import GatewayUDP
+            _coverage_udp = GatewayUDP(_coverage_controller, framer.config)
     else:
         _observability_task = asyncio.create_task(_observability_loop())
     if INFORMATION_POLICY_ENABLED and not RULE_COVERAGE_ENABLED:
@@ -155,6 +169,9 @@ async def lifespan(app: FastAPI):
     try:
         yield
     finally:
+        if _coverage_udp is not None:
+            await _coverage_udp.close()
+            _coverage_udp = None
         if _observability_task is not None:
             _observability_task.cancel()
             with suppress(asyncio.CancelledError):
@@ -204,6 +221,8 @@ async def ready() -> dict[str, str]:
                 raise RuntimeError("ledger clock requires recovery")
             if _coverage_controller is not None:
                 await asyncio.to_thread(_coverage_controller.status)
+            if _coverage_udp is not None and _coverage_udp.task.done():
+                raise RuntimeError("local UDP worker stopped")
         except Exception as exc:
             raise HTTPException(status_code=503, detail="coverage ledger unavailable") from exc
         return {"status": "ready", "service": "edge-gateway", "mode": COVERAGE_ADMISSION_MODE}
@@ -238,6 +257,7 @@ async def metrics() -> dict[str, object]:
             if _coverage_ledger is not None else None} if RULE_COVERAGE_ENABLED else {}),
         **({"coverage_admission": await asyncio.to_thread(_coverage_controller.status)}
             if _coverage_controller is not None else {}),
+        **({"coverage_udp": _coverage_udp.status()} if _coverage_udp is not None else {}),
     }
 
 

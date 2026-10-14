@@ -14,6 +14,7 @@ from fastapi.responses import Response
 from pydantic import ValidationError
 
 from shared.models import ObservabilitySnapshot, RejectionReason, SecureTelemetryEnvelope
+from shared.coverage.transport_mode import research_udp_enabled
 from shared.http import peer_allowed, read_bounded_body, strict_json
 from shared.observability import ServiceMetrics, configure_json_logging, log_context
 from shared.security import AuditLog, TokenBucketRateLimiter, verify_audit_log
@@ -62,18 +63,32 @@ _egress_task: asyncio.Task | None = None
 _pending_message = None
 scheduler_scores: dict[str, deque[float]] = defaultdict(lambda: deque(maxlen=200))
 rejection_counts: dict[str, int] = defaultdict(int)
+_research_udp = None
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _egress_task
-    _egress_task = asyncio.create_task(_egress_loop())
+    global _egress_task, _research_udp
+    udp = research_udp_enabled()
+    if udp:
+        from shared.coverage.transport import TransportConfig
+        from shared.coverage.udp_runtime import PassiveDiode
+        config = TransportConfig.load(os.environ["COVERAGE_TRANSPORT_CONFIG"])
+        _research_udp = PassiveDiode(config, link_capacity=int(os.environ["COVERAGE_LINK_BYTES_PER_SECOND"]))
+        await _research_udp.start(9001)
+        _egress_task = None
+    else:
+        _egress_task = asyncio.create_task(_egress_loop())
     try:
         yield
     finally:
-        _egress_task.cancel()
-        with suppress(asyncio.CancelledError):
-            await _egress_task
+        if _research_udp is not None:
+            await _research_udp.close()
+            _research_udp = None
+        if _egress_task is not None:
+            _egress_task.cancel()
+            with suppress(asyncio.CancelledError):
+                await _egress_task
 
 
 app = FastAPI(title="Software Data Diode", version="0.3.0", lifespan=lifespan)
@@ -86,6 +101,10 @@ async def health() -> dict[str, str]:
 
 @app.get("/ready")
 async def ready() -> dict[str, str]:
+    if research_udp_enabled():
+        if _research_udp is None or not _research_udp.status()["live"]:
+            raise HTTPException(status_code=503, detail="local UDP forwarder unavailable")
+        return {"status": "ready", "service": "data-diode", "assurance": "LOCAL_ONLY_NOT_FOG_READINESS"}
     if _egress_task is not None and _egress_task.done():
         raise HTTPException(status_code=503, detail="egress worker stopped")
     try:
@@ -108,6 +127,8 @@ async def prometheus() -> Response:
 
 @app.get("/metrics/runtime")
 async def metrics() -> dict[str, object]:
+    if research_udp_enabled():
+        return _research_udp.status() if _research_udp else {"live": False}
     congestion_snapshot = congestion_monitor.snapshot(len(queue_manager), MAX_QUEUE_SIZE)
     traffic_metrics.update_queue_state(
         len(queue_manager),
@@ -123,6 +144,8 @@ async def metrics() -> dict[str, object]:
 
 @app.post("/ingest")
 async def ingest_telemetry(request: Request) -> dict[str, str]:
+    if research_udp_enabled():
+        raise HTTPException(status_code=404, detail="HTTP forwarding disabled in research mode")
     client_host = request.client.host if request.client else ""
     if not _client_allowed(client_host, DIODE_INGEST_ALLOWED_CIDR) or not await peer_allowed(client_host, DIODE_ALLOWED_HOSTS):
         logger.warning("[DATA DIODE] Rejected request from unauthorized source=%s", client_host)
@@ -218,6 +241,8 @@ async def ingest_telemetry(request: Request) -> dict[str, str]:
 
 @app.post("/ingest-metrics")
 async def ingest_metrics(snapshot: ObservabilitySnapshot, request: Request) -> dict[str, str]:
+    if research_udp_enabled():
+        raise HTTPException(status_code=404, detail="cross-boundary HTTP observability disabled")
     if not await peer_allowed(request.client.host if request.client else "", DIODE_ALLOWED_HOSTS):
         raise HTTPException(status_code=403, detail="unauthorized source")
     supplied_token = request.headers.get("x-observability-token", "")
@@ -247,6 +272,8 @@ async def ingest_metrics(snapshot: ObservabilitySnapshot, request: Request) -> d
 
 
 async def process_next_message() -> bool:
+    if research_udp_enabled():
+        return False
     global _pending_message
     now = time.monotonic()
     congestion_state = congestion_monitor.state(len(queue_manager), MAX_QUEUE_SIZE)

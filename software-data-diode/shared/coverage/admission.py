@@ -46,11 +46,18 @@ def policy_identity(epoch, device, sequence):
 
 
 class CoupledAdmission:
-    def __init__(self, ledger, gateway_id, key_id, private_key, *, config=None, policy=None, mode="coupled"):
+    def __init__(self, ledger, gateway_id, key_id, private_key, *, config=None, policy=None, mode="coupled", framer=None):
         if mode not in MODES:
             raise ValueError("unknown coverage admission mode")
         self.ledger, self.config, self.mode = ledger, config or AdmissionConfig(), mode
+        self.framer = framer
         self.costs = validate_budget(ledger.contract, gateway_id, key_id, self.config, coupled=mode == "coupled")
+        if framer is not None:
+            if (mode != "coupled" or self.config.raw_header_bytes != 128 or self.config.network_overhead_bytes != 28
+                    or framer.config.datagram_bytes != self.config.datagram_payload_bytes
+                    or (framer.profile.gateway_id, framer.profile.signing_key_id, framer.profile.ledger_epoch) != (gateway_id, key_id, ledger.epoch)
+                    or sum(cost.wire_bytes for cost in self.costs.values())+framer.state_wire_bound > self.config.quotas["evidence"]-2*self.config.max_wire_frame):
+                raise ValueError("UNDERFUNDED_OR_INCOMPATIBLE_RESEARCH_TRANSPORT")
         policy = policy or InformationPolicyConfig()
         if policy.window_seconds != 10:
             raise ValueError("research policy requires 10-second local state")
@@ -77,6 +84,18 @@ class CoupledAdmission:
                     self._initialize(binding)
                 elif ledger._meta("coupled_config_hash") != binding:
                     raise LedgerRefused("COUPLED_CONFIGURATION_MISMATCH")
+                transport = ledger.db.execute("SELECT value FROM metadata WHERE key='research_transport'").fetchone()
+                if framer is not None:
+                    profile = canonical_bytes({"profile": framer.profile.model_dump(mode="json"), "transport": framer.config.model_dump(mode="json")}).decode()
+                    if transport and transport[0] != profile:
+                        raise LedgerRefused("RESEARCH_TRANSPORT_PROFILE_CHANGED")
+                    if not transport:
+                        if ledger.db.execute("SELECT COUNT(*) FROM observations").fetchone()[0]:
+                            raise LedgerRefused("FRESH_RESEARCH_TRANSPORT_STATE_REQUIRED")
+                        ledger.db.execute("INSERT INTO metadata VALUES ('research_transport',?)", (profile,))
+                        ledger.db.execute("INSERT INTO n4_state VALUES ('forward_state_sequence','0')")
+                elif transport:
+                    raise LedgerRefused("RESEARCH_TRANSPORT_REQUIRED_FOR_RECOVERY")
                 self.engine = self._load_engine()
                 self._anchor_us = int(self._state("logical_us"))
                 self._start_ns = ledger.clock.monotonic_ns()
@@ -283,12 +302,14 @@ class CoupledAdmission:
         count, packed = db.execute("SELECT COUNT(*),COALESCE(SUM(length(body)),0) FROM n4_outbox").fetchone()
         intent = db.execute("SELECT COUNT(*),COALESCE(SUM(i.wire),0),COALESCE(SUM(i.packed),0),COALESCE(SUM(i.logical),0) FROM n4_intents i JOIN windows w USING(epoch,device,idx) WHERE w.obligation='RESERVED'").fetchone()
         cache_count, cache_bytes = db.execute("SELECT COUNT(*),COALESCE(SUM(length(body)),0) FROM sealed_capsules").fetchone()
-        if count+intent[0] > config.max_outbox_items or packed+intent[2] > config.max_outbox_bytes:
+        state_slot = int(self.framer is not None and not db.execute("SELECT 1 FROM n4_outbox WHERE kind='STATE'").fetchone())
+        state_storage = self.framer.state_storage_bound if state_slot else 0
+        if count+intent[0]+state_slot > config.max_outbox_items or packed+intent[2]+state_storage > config.max_outbox_bytes:
             raise LedgerRefused("EVIDENCE_STORAGE_UNSUPPORTED", 429)
         if cache_count+intent[0] > self.sealer.limits.max_capsules or cache_bytes+intent[3] > self.sealer.limits.max_signed_bytes:
             raise LedgerRefused("SIGNED_EVIDENCE_RETENTION_CAPACITY", 429)
-        debt = intent[1]
-        for row in db.execute("SELECT * FROM n4_outbox WHERE kind='EVIDENCE'"):
+        debt = intent[1]+(self.framer.state_wire_bound if state_slot else 0)
+        for row in db.execute("SELECT * FROM n4_outbox WHERE kind IN ('EVIDENCE','STATE')"):
             frames = unpack_frames(row["body"])
             debt += sum(len(frames[index % len(frames)])+config.network_overhead_bytes
                         for index in range(row["cursor"], len(frames)*row["repeats"]))
@@ -347,13 +368,13 @@ class CoupledAdmission:
                             or scope is None or scope["obligation"] != "EVIDENCE_READY" or scope["actual_wire"] != wire):
                         raise LedgerRefused("CORRUPT_EVIDENCE_WORK_BINDING")
                 elif row["kind"] == "RAW":
-                    encoded = b"".join(frames)
+                    encoded = self.framer.decode_binary(frames).encoded if self.framer else b"".join(frames)
                     envelope = SecureTelemetryEnvelope.model_validate_json(encoded)
                     if not verify_envelope_signature(envelope, self.key.public_key()):
                         raise LedgerRefused("CORRUPT_RAW_SIGNATURE")
                     counter = strict_json(self._state("outgoing_"+envelope.device_id))
                     refs = json.loads(row["refs"])
-                    if (len(encoded) > self.config.max_raw_artifact_bytes or row["header"] != self.config.raw_header_bytes
+                    if (len(encoded) > self.config.max_raw_artifact_bytes or row["header"] != (0 if self.framer else self.config.raw_header_bytes)
                             or row["repeats"] != 1 or row["lane"] not in {"protected", "routine"}
                             or not 1 <= len(refs) <= self.policy.aggregation_max_samples or len(set(refs)) != len(refs)
                             or envelope.sequence_number > counter["sequence"]
@@ -363,6 +384,10 @@ class CoupledAdmission:
                         source = db.execute("SELECT device FROM n4_sources WHERE id=?", (reference,)).fetchone()
                         if source is None or source["device"] != envelope.device_id:
                             raise LedgerRefused("CORRUPT_RAW_WORK_BINDING")
+                elif row["kind"] == "STATE" and self.framer is not None:
+                    artifact = self.framer.decode_binary(frames)
+                    if artifact.kind != "STATE" or row["lane"] != "evidence" or row["header"] or row["repeats"] != 1:
+                        raise LedgerRefused("CORRUPT_FORWARD_STATE")
                 else:
                     raise LedgerRefused("UNKNOWN_OUTBOX_KIND")
         if recovered != set(candidates):
@@ -433,11 +458,11 @@ class CoupledAdmission:
         if len(encoded) > self.config.max_raw_artifact_bytes:
             raise LedgerRefused("RAW_ARTIFACT_BOUND")
         chunk = self.config.datagram_payload_bytes-self.config.raw_header_bytes
-        packed = pack_frames(tuple(encoded[index:index+chunk] for index in range(0, len(encoded), chunk)))
+        packed = pack_frames(self.framer.raw_frames(encoded) if self.framer else tuple(encoded[index:index+chunk] for index in range(0, len(encoded), chunk)))
         db.execute("INSERT INTO n4_state VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value",
                    (key, canonical_bytes({"sequence": sequence, "stamp_us": stamp})))
         db.execute("UPDATE n4_outbox SET kind='RAW',body=?,digest=?,header=? WHERE id=?",
-                   (packed, hashlib.sha256(packed).hexdigest(), self.config.raw_header_bytes, selected.message_id))
+                   (packed, hashlib.sha256(packed).hexdigest(), 0 if self.framer else self.config.raw_header_bytes, selected.message_id))
         self._sync_candidates()
 
     def lease_frame(self):
@@ -489,7 +514,7 @@ class CoupledAdmission:
                 self.engine = self._load_engine()
                 self._working = None
 
-    def complete_local_attempt(self, lease_id):
+    def complete_local_attempt(self, lease_id, *, uncertain=False):
         """Local-only completion assertion; no receiver reply or success is accepted."""
         ledger = self.ledger
         with ledger._mutex, ledger._transaction():
@@ -505,7 +530,7 @@ class CoupledAdmission:
                 if row["kind"] == "EVIDENCE":
                     key = tuple(json.loads(row["refs"]))
                     ledger.db.execute("UPDATE windows SET obligation='LOCAL_ATTEMPTED',reserved_bytes=0 WHERE epoch=? AND device=? AND idx=?", key)
-                else:
+                elif row["kind"] == "RAW":
                     scopes = set()
                     for identifier in json.loads(row["refs"]):
                         source = ledger.db.execute("SELECT o.epoch,o.device,o.idx FROM n4_sources s JOIN observations o USING(epoch,device,seq) WHERE s.id=?", (identifier,)).fetchone()
@@ -515,9 +540,43 @@ class CoupledAdmission:
                 ledger.db.execute("DELETE FROM n4_outbox WHERE id=?", (row["id"],))
             else:
                 ledger.db.execute("UPDATE n4_outbox SET cursor=? WHERE id=?", (cursor, row["id"]))
-            self._event("LOCAL_ATTEMPT", {"work_id": row["id"], "modeled_wire_bytes": lease["cost"], "cursor": cursor})
+            self._event("LOCAL_ATTEMPT_UNCERTAIN" if uncertain else "LOCAL_ATTEMPT", {"work_id": row["id"], "modeled_wire_bytes": lease["cost"], "cursor": cursor})
             ledger.fault("before_attempt_commit", ledger.db)
         ledger.fault("after_attempt_commit", ledger.db)
+
+    def retire_uncertain_lease(self):
+        """Consume a previously charged crash-ambiguous grant, never send it for free."""
+        with self.ledger._mutex:
+            row = self.ledger.db.execute("SELECT lease FROM n4_inflight").fetchone()
+            if row:
+                self.complete_local_attempt(row[0], uncertain=True)
+            return bool(row)
+
+    def publish_forward_state(self):
+        if self.framer is None:
+            raise LedgerRefused("RESEARCH_FRAMER_REQUIRED")
+        with self.ledger._mutex, self.ledger._transaction():
+            self.ledger._ensure_open()
+            if self.ledger.db.execute("SELECT 1 FROM n4_outbox WHERE kind='STATE'").fetchone():
+                return False
+            sequence = int(self._state("forward_state_sequence"))+1
+            if sequence > 2**63-1:
+                raise LedgerRefused("FORWARD_STATE_SEQUENCE_EXHAUSTED")
+            metrics = self.status()
+            metrics["queue_depth"] = len(self.engine.queue)
+            metrics["devices"] = [{"device_id": row["device"], "accepted_observations": row["ingress"]}
+                                  for row in self.ledger.db.execute("SELECT * FROM devices ORDER BY device")]
+            body = canonical_bytes({"protocol": "rccd-state-v1", "kind": "EDGE_STATE",
+                "profile": self.framer.profile.model_dump(mode="json"), "sequence": sequence,
+                "timestamp_us": utc_microseconds(self.ledger.clock.utc_now()), "metrics": metrics})
+            identity = self.framer.state_identity(sequence)
+            frames = self.framer.frames(body, identity, b"RCS1")
+            packed = pack_frames(frames)
+            self.ledger.db.execute("INSERT INTO n4_outbox VALUES (?,?,?, ?,?,0,1,0,'[]',?)", (identity, "STATE", "evidence", packed,
+                                      hashlib.sha256(packed).hexdigest(), self._now()))
+            self._set_state("forward_state_sequence", str(sequence).encode())
+            self._assert_bounds()
+            return True
 
     def _retirement_guard(self, key):
         db = self.ledger.db

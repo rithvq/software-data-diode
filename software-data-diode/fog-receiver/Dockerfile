@@ -11,8 +11,8 @@ COPY fog-receiver/requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -c /tmp/constraints.txt -r /tmp/requirements.txt \
     && groupadd --gid 10001 app \
     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app \
-    && mkdir -p /logs \
-    && chown app:app /logs
+    && mkdir -p /logs /state/research-replay \
+    && chown app:app /logs /state/research-replay
 
 COPY --chown=app:app shared ./shared
 COPY --chown=app:app fog-receiver/app ./app

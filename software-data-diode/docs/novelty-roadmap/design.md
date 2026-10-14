@@ -1,10 +1,11 @@
 # RCCD technical specification
 
-Status: N0 specification frozen; N1 pure contracts/oracle, N2 opt-in durable admission and N3 bounded signed capsule libraries implemented. Coverage transport/reduction remain proposed; research mode is disabled by default.
+Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, and N5 local forward-only transport implemented. Research mode remains disabled in the baseline deployment. N6-N11 remain proposed.
 Version: roadmap-1 + N0-contract-v1. Date: 2026-10-13.
 The normative v1 decisions are in [N0 contract freeze](reports/N0-contract-v1.md).
 N0 adds baseline evidence only. N1 adds pure contracts and semantics. N2 adds a ledger-only opt-in path, not a coverage pipeline. See [N2 scope and recovery limits](reports/N2.md).
 N3 adds separate signed artifacts, offline recomputation and an optional Edge-local signing journal, not live publication or byte reservations. See [N3 implementation report](reports/N3.md) and [v1 evidence format](reports/N3-format-v1.md).
+N5 adds isolated UDP deployment, charged signed raw/state/evidence parts and bounded Fog replay/reassembly, with local no-reply/outage evidence. See [N5 report](reports/N5.md) and [transport contract](reports/N5-transport-v1.md). It records N4's missing report and does not implement N6 PostgreSQL verdict persistence.
 
 ## 1. Main mechanism
 

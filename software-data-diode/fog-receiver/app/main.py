@@ -1,4 +1,5 @@
 import asyncio
+from contextlib import asynccontextmanager
 import logging
 from ipaddress import ip_address, ip_network
 import hmac
@@ -11,6 +12,7 @@ from fastapi.responses import Response
 from pydantic import ValidationError
 
 from shared.models import ObservabilitySnapshot, RejectionReason, SecureTelemetryEnvelope
+from shared.coverage.transport_mode import research_udp_enabled
 from shared.http import peer_allowed, read_bounded_body, strict_json
 from shared.observability import ServiceMetrics, configure_json_logging, log_context
 from shared.persistence import repository_from_env
@@ -39,7 +41,31 @@ FORWARD_TIMEOUT_SECONDS = float(os.getenv("FORWARD_TIMEOUT_SECONDS", "5"))
 OBSERVABILITY_TOKEN = os.getenv("OBSERVABILITY_TOKEN", "phase5-internal-observability")
 SECURITY_TEST_MODE = os.getenv("SECURITY_TEST_MODE", "false").lower() == "true"
 
-app = FastAPI(title="Fog Receiver", version="0.4.0")
+_research_udp = None
+
+
+@asynccontextmanager
+async def lifespan(app):
+    global _research_udp
+    if research_udp_enabled():
+        from shared.coverage.transport import load_framer
+        from shared.coverage.research_replay import ResearchReplayStore
+        from shared.coverage.udp_runtime import FogUDP
+        framer = load_framer(os.environ["COVERAGE_TRUST_PATH"], _get_public_key(),
+            os.environ["COVERAGE_CONTRACT_PATH"], os.environ["COVERAGE_TRANSPORT_CONFIG"])
+        store = ResearchReplayStore(os.environ["COVERAGE_REPLAY_PATH"], framer)
+        _research_udp = FogUDP(framer, store, repository, EVENT_PROCESSOR_URL)
+        await _research_udp.start()
+    try:
+        yield
+    finally:
+        if _research_udp is not None:
+            await _research_udp.close()
+            _research_udp.store.close()
+            _research_udp = None
+
+
+app = FastAPI(title="Fog Receiver", version="0.4.0", lifespan=lifespan)
 audit_log = AuditLog(AUDIT_LOG_PATH, "fog-receiver")
 replay_detector = ReplayDetector(DUPLICATE_TTL_SECONDS, FOG_FRESHNESS_WINDOW_SECONDS)
 _public_key = None
@@ -56,6 +82,10 @@ async def health() -> dict[str, str]:
 
 @app.get("/ready")
 async def ready() -> dict[str, str]:
+    if research_udp_enabled():
+        if _research_udp is None or not _research_udp.status()["live"]:
+            raise HTTPException(status_code=503, detail="local research intake unavailable")
+        return {"status": "ready", "service": "fog-receiver", "assurance": "LOCAL_INTAKE_NOT_PIPELINE_DELIVERY"}
     try:
         _get_public_key()
         if not await asyncio.to_thread(repository.healthcheck):
@@ -80,6 +110,8 @@ async def prometheus() -> Response:
 
 @app.post("/receive")
 async def receive_telemetry(request: Request) -> dict[str, str]:
+    if research_udp_enabled():
+        raise HTTPException(status_code=404, detail="HTTP research intake disabled")
     client_host = request.client.host if request.client else ""
     if not _client_allowed(client_host, FOG_RECEIVE_ALLOWED_CIDR) or not await peer_allowed(client_host, FOG_ALLOWED_HOSTS):
         logger.warning("[FOG RECEIVER] Rejected request from unauthorized source=%s", client_host)
@@ -188,6 +220,8 @@ async def _accept_verified(envelope):
 
 @app.post("/receive-metrics")
 async def receive_metrics(snapshot: ObservabilitySnapshot, request: Request) -> dict[str, str]:
+    if research_udp_enabled():
+        raise HTTPException(status_code=404, detail="unsigned cross-boundary state disabled")
     supplied_token = request.headers.get("x-observability-token", "")
     if not hmac.compare_digest(supplied_token, OBSERVABILITY_TOKEN):
         prometheus_metrics.rejected(RejectionReason.UNAUTHORIZED_SOURCE)
@@ -212,6 +246,13 @@ def _get_public_key():
     if _public_key is None:
         _public_key = load_public_key(FOG_PUBLIC_KEY_PATH)
     return _public_key
+
+
+@app.get("/research/status")
+async def research_status():
+    if _research_udp is None:
+        raise HTTPException(status_code=404, detail="research mode not active")
+    return await asyncio.to_thread(_research_udp.status)
 
 
 def _client_allowed(client_host: str, allowed_cidr: str) -> bool:
