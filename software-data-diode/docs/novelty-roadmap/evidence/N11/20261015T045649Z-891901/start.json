@@ -1,0 +1,2554 @@
+{
+  "project": "software-data-diode-coverage-n11-1a11c0de0002",
+  "protected_sha256": {
+    "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\.env": "d33aba7d4b1532fb84282737d98092ed0e29017b574bf7ce4829e32917dcbbc5",
+    "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_private_key.pem": "5d425e7451362e2cd76c55335a2ba3eda1ce3a5786f748d1cc778a6e6971cbc5",
+    "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_public_key.pem": "80cc204fc190c552bb8ef39ad3a78ca5aea74c5dc63a3d3f3dae8c368a71bba0"
+  },
+  "baseline": {
+    "27dbc082a03277e33eaa7b32bc9ffb0140a995e034f2ff1c45b875c6e4998052": {
+      "image": "sha256:b55f2b49d98c0e68e5a90685ee27f0be33c3b384f372ff54443fd014b3c4e969",
+      "started": "2026-10-15T04:53:33.243726886Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\dashboard\\.streamlit",
+          "Destination": "/app/.streamlit",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\dashboard\\app.py",
+          "Destination": "/app/app.py",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "12e6e9e7c3a09a81a0bf6049cd2d2a69197107d70b5b34092d48742d14423fe8": {
+      "image": "sha256:31427bf64e3d482d2e6c294b389758f5e05eb6a904f85e374f4892f7e19a4136",
+      "started": "2026-10-15T04:53:29.354800506Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\monitoring-api\\app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "8321267acfc73e6c5fd8663a2bc560c26f1caea329d9cd5691c22a5b6fa65308": {
+      "image": "sha256:2408e106d4a9463d706e1ac89d0383e6a15d250dcbe8dc24d257883e4a9d454e",
+      "started": "2026-10-15T04:53:25.584713694Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\alert-engine\\app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "8f21c812c035ed4d5ab2f76e64db20471a98ab54dd01011f44988a170db363fb": {
+      "image": "sha256:b757f82a1a1fcb581b9194843563a9286a9b40e680c1d7e6943dfd069759f3cd",
+      "started": "2026-10-15T04:53:25.576077819Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\event-processor\\app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "faceaa2e5f2191ad6994b57446614d75bc9f8282ef8884186ae88a4307376757": {
+      "image": "sha256:97a5442feb68da6d9c96488d61dae493782d6aa39ea596bc0bb228dfb326b91e",
+      "started": "2026-10-15T04:53:25.595735207Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/fog-receiver/app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage_monitoring.json",
+          "Destination": "/app/config/rule_coverage_monitoring.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage_transport.json",
+          "Destination": "/app/config/rule_coverage_transport.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_audit",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_audit/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_replay",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_replay/_data",
+          "Destination": "/state/research-replay",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-ingress-network",
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "e2db7bd9e83a0af4e13ccd39dd2f53c36f8a7841767ad87ba6c86c01902a85db": {
+      "image": "sha256:1c95dd27c631bebd1a41a7d13881bc6ec2d62ca00cb93b11741f51895190ed79",
+      "started": "2026-10-15T04:53:25.592481851Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\fog-analytics\\app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "96b37015b63acf2aac6da27508c7e23f86755fd33d99c86448943dd4fb20a9aa": {
+      "image": "sha256:c2405dccee05bce647ce14df3ba5f01ec3a2900234318cd9a680557a09f4b5ab",
+      "started": "2026-10-15T04:53:24.055524529Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_device04",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_device04/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_edge-network"
+      ]
+    },
+    "8f25d964ec14205c16c3951c048cd70794d6c277ec0704cb336a5234fdb36b57": {
+      "image": "sha256:939da51cddc1e8a25fe2d516d2a90cd1b3e7635d768c4abca0e47e0017f962a8",
+      "started": "2026-10-15T04:53:24.0643437Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_device02",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_device02/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_edge-network"
+      ]
+    },
+    "3ccde63170df95eb403f36d6619d9cd14d2e582120deaa1b4f3dbb04292b0d05": {
+      "image": "sha256:7d47320193cad707b6a9c2f145777321fd5d218eb462f8cf69054aa80f5bd38f",
+      "started": "2026-10-15T04:53:24.067333172Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_device05",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_device05/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_edge-network"
+      ]
+    },
+    "08be918f975b8538766d7037c8384702bf142fcd1455448616425e46b7b5e7ef": {
+      "image": "sha256:3c82c859a2994bb827c242ededce811f55c1e5dc28c7502887a03aa56f0f8f68",
+      "started": "2026-10-15T04:53:24.048955127Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_device03",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_device03/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_edge-network"
+      ]
+    },
+    "32db4aa93433764911947482c79af6aa3a1238895ae466e5bbd63ca94aea2be1": {
+      "image": "sha256:f0791f818060cb8180add43e5f3a6fce4ed65a4633381ed65b8758d7facf9bd7",
+      "started": "2026-10-15T04:53:24.061578063Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_device01",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_device01/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_edge-network"
+      ]
+    },
+    "ae89b15c9ec18fc7c4c57c1a69f003f88bf7ee3c739f1cdf6fa108cc43ad3626": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-10-15T04:53:24.369704886Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\database\\migrations",
+          "Destination": "/migrations",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "b4681161f782110370a324e7a63223a5bd7cfe611e0d1a0a4f4bf927a4793be5": {
+      "image": "sha256:935f280f0fe0244479d8858b0436888c684e3c87bd12e8d63e978f04b1781ceb",
+      "started": "2026-10-15T04:53:20.280791882Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/edge-gateway/app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/information_policy.json",
+          "Destination": "/app/config/information_policy.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage_admission.json",
+          "Destination": "/app/config/rule_coverage_admission.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage_transport.json",
+          "Destination": "/app/config/rule_coverage_transport.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_audit",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_audit/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_ledger",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_ledger/_data",
+          "Destination": "/state/coverage-ledger",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_private",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_private/_data",
+          "Destination": "/state/n9-key",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_diode-network",
+        "software-data-diode-coverage-n11-1a11c0de0001_edge-network"
+      ]
+    },
+    "d3fbacdeab29060e982efac46c90fa21f9306adcd721469a3c7ed836010b8e5f": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-10-15T04:53:17.486015995Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_postgres-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_postgres-data/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-services-network"
+      ]
+    },
+    "19658a71e2b9adb9f5efe07b353ff3bae8c875e5b2b421438fc1dee3f830a629": {
+      "image": "sha256:b708113329b8ffd696083ce0b88562c775cf1afb3b5c9f57b383ecc7b65e4e90",
+      "started": "2026-10-15T04:53:17.489190786Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/data-diode/app",
+          "Destination": "/app/app",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage_transport.json",
+          "Destination": "/app/config/rule_coverage_transport.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_audit",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_audit/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0001_diode-network",
+        "software-data-diode-coverage-n11-1a11c0de0001_fog-ingress-network"
+      ]
+    },
+    "672c5dbac5f5a7e8a8b2decebb0e34d2ce67d53fba417b23ce2b55f727b96a80": {
+      "image": "sha256:935f280f0fe0244479d8858b0436888c684e3c87bd12e8d63e978f04b1781ceb",
+      "started": "2026-10-15T04:53:17.494158606Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/shared",
+          "Destination": "/app/shared",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_audit",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_audit/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_ledger",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_ledger/_data",
+          "Destination": "/state/coverage-ledger",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_trust/_data",
+          "Destination": "/state/coverage-trust",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage-n11-1a11c0de0001_private",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage-n11-1a11c0de0001_private/_data",
+          "Destination": "/state/n9-key",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "none"
+      ]
+    },
+    "5b207b28555536a865d72f47256a6ab57db53b501c8daafca8b6ab3e5a588270": {
+      "image": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+      "started": "2026-10-14T15:17:34.50575213Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\prometheus\\fog.yml",
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_prometheus-fog-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_prometheus-fog-data/_data",
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "f8b1c855ba4ac4dd46c6cd56ede4cf70afef2419565e65e30c4be2048c118be6": {
+      "image": "sha256:b55f2b49d98c0e68e5a90685ee27f0be33c3b384f372ff54443fd014b3c4e969",
+      "started": "2026-10-14T15:15:07.967725941Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-coverage_fog-host-network",
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "ec61d996ae20e1658b8134d6ba77de56c0f09fe4aa67d56538ca600e82523f59": {
+      "image": "sha256:31427bf64e3d482d2e6c294b389758f5e05eb6a904f85e374f4892f7e19a4136",
+      "started": "2026-10-14T15:21:47.726882074Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "4883bb0b06f0dea6853d46ccc51f430c8eda6a6d1bcbc0b00b54ea8d06bf7964": {
+      "image": "sha256:c5b667a35328edea639c277a39ddc6634c4b9a37b6c464384bfe3351d16e29a2",
+      "started": "2026-10-14T15:14:56.377245725Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\information_policy.json",
+          "Destination": "/app/config/information_policy.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_admission.json",
+          "Destination": "/app/config/rule_coverage_admission.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_transport.json",
+          "Destination": "/app/config/rule_coverage_transport.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_private_key.pem",
+          "Destination": "/run/secrets/edge_private_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-ledger",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-ledger/_data",
+          "Destination": "/state/coverage-ledger",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_diode-network",
+        "software-data-diode-coverage_edge-host-network",
+        "software-data-diode-coverage_edge-network"
+      ]
+    },
+    "551ac7fc5b8c68e6b7529db77a77542d8da8ddf0330deaf057111934f6a98176": {
+      "image": "sha256:632fe6c7f78412dcecf6cf4c5ca438e7ba85b611c3651c88d6dbeccc8514b323",
+      "started": "2026-10-14T15:14:56.362999799Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage_monitoring.json",
+          "Destination": "/app/config/rule_coverage_monitoring.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_transport.json",
+          "Destination": "/app/config/rule_coverage_transport.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_public_key.pem",
+          "Destination": "/run/secrets/edge_public_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-replay",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-replay/_data",
+          "Destination": "/state/research-replay",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_fog-ingress-network",
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "9bea11093cc6170a6f44430c3661919545783619b33cfdc9ac85d9dd135452cb": {
+      "image": "sha256:f0a44bd382d0412232beeaf16bf798d8c63a251bee7c2d0c5b68ffae816417ce",
+      "started": "2026-10-14T12:38:05.818634735Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.secrets\\document-keyring.json",
+          "Destination": "/run/secrets/document-keyring.json",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.secrets\\document-worker-token",
+          "Destination": "/run/secrets/document-worker-token",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.runtime\\operational-controls",
+          "Destination": "/run/tradetwin-controls",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "644766aea419fbad20f42d0e4276fa5128336726a70965cbc4d6f30d7be1b316": {
+      "image": "sha256:2da0d4376248aead1ccfb21b34dcc899477b0cf311b223d8fe0ebea7bb50597b",
+      "started": "2026-10-14T12:37:59.996901878Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.secrets\\document-keyring.json",
+          "Destination": "/run/secrets/document-keyring.json",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.secrets\\document-worker-token",
+          "Destination": "/run/secrets/document-worker-token",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.runtime\\operational-controls",
+          "Destination": "/run/tradetwin-controls",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "11922b0651af0d54b8c840815074c57b919b4ec9788ee6cfa92d81b14520d2a3": {
+      "image": "sha256:8d1113303c04f74a081280cab02fccabdef30465535a2ddd7bc18fdee2a24b93",
+      "started": "2026-10-14T12:17:26.481794409Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "8778a36e74b8a86cd86d92205a2ef7628d37d2e7e226d28993a30f1759792a35": {
+      "image": "sha256:bad838bcc8378ebff9336faf92bc24ff8e9ca5c3091eb412509f41c25d8d96a6",
+      "started": "2026-10-14T15:10:29.911411014Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "f249b83ebb17dd47bd535743d2b70b0120b2280435dd3de0413030e0f3f6716f": {
+      "image": "sha256:a4cb3379b323a1dc765b2ed258f4374bb44b902bbfc65910be4b05410ba89320",
+      "started": "2026-10-14T15:10:29.828747269Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "2710bb20dc8586a8c5d9485e1b1b2fb3d82088ff8ae982d405e259227e104266": {
+      "image": "sha256:e59c936a6c64b050e811660349d356768577404cc874ac8b97992659d1d73371",
+      "started": "2026-10-14T15:10:29.891025754Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\rule_coverage_transport.json",
+          "Destination": "/app/config/rule_coverage_transport.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_diode-network",
+        "software-data-diode-coverage_fog-ingress-network"
+      ]
+    },
+    "9ffd507601499138f17b8e28def44ed2d98f6574a9c3263a13b403fb81db42af": {
+      "image": "sha256:ac3bae25c62ad45857018aba783975fb3015c4886f6fa62fc55729bf2a3d8796",
+      "started": "2026-10-14T07:16:14.374072974Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/config/rule_coverage.json",
+          "Destination": "/app/config/rule_coverage.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/secrets/edge_public_key.pem",
+          "Destination": "/run/secrets/edge_public_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-ledger",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-ledger/_data",
+          "Destination": "/state/coverage-ledger",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/state/coverage-trust",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "none"
+      ]
+    },
+    "fd4b89944b9bf4c9ef49f9180243c294a57be731d60c7ab314326c6582fe1df7": {
+      "image": "sha256:47389016e0e489cbdd240268c2769b17828ea9f1a16661ecc71ae9f7298ec02b",
+      "started": "2026-10-14T15:10:29.886426764Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "c3420f165453a0c25778376d42b951ba744437f04a91e6014b46f76354d821fc": {
+      "image": "sha256:e5bf41040ef8e50dba244530028d0bcb2fc14c65684b9ad8249f770b75b35609",
+      "started": "2026-10-14T15:10:29.871230787Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-device-05",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-device-05/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_edge-network"
+      ]
+    },
+    "0b05cf9c191cfd6c7ff57b76c44120944a1bb33adcb3d4cd6d45fa46ba93d23e": {
+      "image": "sha256:dc558e09713705effe8cc71bb50e79a9031c797f5f5045c5d0a4a2f7ad8fcb78",
+      "started": "2026-10-14T15:10:29.825933914Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-device-01",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-device-01/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_edge-network"
+      ]
+    },
+    "eb24ae7180788a4fc7164811500b79ffa351c8e007eee7da66b9b6da5923f5e3": {
+      "image": "sha256:eb59061fd5618a55ee50c5ce5630e164e8b3d18e1e07694acd06553902595f37",
+      "started": "2026-10-14T15:10:29.799152886Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-device-03",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-device-03/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_edge-network"
+      ]
+    },
+    "b43b6356b5187d547032130cf52d3aa7de3ea5a24ebf3200ae03b942a281ec51": {
+      "image": "sha256:c74443b55410f87a0e0a94dae40361e58adb28f33665f85a6dd310577e6d1dfc",
+      "started": "2026-10-14T15:10:29.809890179Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-device-02",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-device-02/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_edge-network"
+      ]
+    },
+    "c1a361c5b69eba8149595fdc3082d669f7e5ed440496b12e3b12876bd60a3c4c": {
+      "image": "sha256:1bd6d44593ca14ee33c581500c031a7015cb7ebd0d04734d9368d95f2265d6c7",
+      "started": "2026-10-14T15:10:29.868101736Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-trust",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-trust/_data",
+          "Destination": "/run/coverage",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_coverage-device-04",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_coverage-device-04/_data",
+          "Destination": "/state/research-device",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_edge-network"
+      ]
+    },
+    "9df32ac602a53e7aeab9503877eda8202264b3878070fbc845e45f9da659e25d": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-10-14T15:12:23.787448779Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\database\\migrations",
+          "Destination": "/migrations",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "3dd1760d75b8bbb37f6c5f40b0bf58189fccc26eeab10cf5e74354b44455fea6",
+          "Source": "/var/lib/docker/volumes/3dd1760d75b8bbb37f6c5f40b0bf58189fccc26eeab10cf5e74354b44455fea6/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "a8875dc19ff510af25540fae7544781ffee6fb9783f35bca682ca76e28227f36": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-10-14T15:10:29.874838659Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/database/migrations",
+          "Destination": "/docker-entrypoint-initdb.d",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-coverage_fog-postgres-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-coverage_fog-postgres-data/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-coverage_fog-services-network"
+      ]
+    },
+    "6ec32f53e2c0108101c2c014d02cec5e87274af37dcf03608b6c2542acdc5a62": {
+      "image": "sha256:cec35d092dd5e3ef98849a5d11a591442eaf40eab3169aeac76a020b658fff32",
+      "started": "2026-10-14T09:21:55.410111297Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "b60927d03387678478cdfc08aabd62448d32ace5075a8641ba6a5aec5f3e7e2e": {
+      "image": "sha256:7eed9bf307805a2ab0fc29b0891b8146089354b0dd727aea605ab12ed0b8f8ba",
+      "started": "2026-10-14T09:21:55.3889487Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "69fd2be969ab9a7b66e1a8e68429ee432a7e13e533f15cc402e1a805e89c6ea6": {
+      "image": "sha256:0074c6f2dbbbd9f56ad74ddbe366e7fef72f041fefe746bd5c2ea6cd4117812d",
+      "started": "2026-10-14T09:21:37.877815374Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "405f893f2070885ebe544a95b5d5bc53342e195062052004bbbd79904715bad4": {
+      "image": "sha256:36391e53e3c0d098bf9d9a3bbc40ad313b224a7ba2d336b9b3c74824a7a5eb41",
+      "started": "2026-10-14T09:21:37.742107675Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.secrets\\document-keyring.json",
+          "Destination": "/run/secrets/document-keyring.json",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\tradetwin\\.secrets\\document-worker-token",
+          "Destination": "/run/secrets/document-worker-token",
+          "Mode": "",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "eb1fd0db91dccaffcea9c920f07f8cdf6ecd7f5cc35d577990fcc562fc19dea4": {
+      "image": "sha256:b5b910ce43d595bf8a2fe401e34db56434602b2c755b7c2b07f00c917d04d469",
+      "started": "2026-10-14T09:21:26.714300457Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "tradetwin_clamav-data",
+          "Source": "/var/lib/docker/volumes/tradetwin_clamav-data/_data",
+          "Destination": "/var/lib/clamav",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "01a09521448cd2d7bcfff7713c5c2201e004792885487687aa907f3b97856e20": {
+      "image": "sha256:ccc6e83d6e35e931dc7c5def2022729d5a6c370318d099181995567ff1fb4d6b",
+      "started": "2026-10-14T09:21:26.783564659Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/tradetwin/infra/postgres/init",
+          "Destination": "/docker-entrypoint-initdb.d",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "tradetwin_postgres-data",
+          "Source": "/var/lib/docker/volumes/tradetwin_postgres-data/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "8a404dbade242db4738f45b5854274797fbbd9083c178ea4fb12e4f9f0147470": {
+      "image": "sha256:ff02b58f971e7d7d156a1267e283fcbbeee91773b6aa36c49dac28ecfe28eadf",
+      "started": "2026-10-14T09:21:26.75301329Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "tradetwin_redis-data",
+          "Source": "/var/lib/docker/volumes/tradetwin_redis-data/_data",
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "21022a08a3d7d48519b7374a52633aaf9d987a8730261d472268431f9ad6dd8e": {
+      "image": "sha256:037cf5756f0135cbfd66b739b6df7c7c4bb100f9ce11602f6f9538e17e02c74d",
+      "started": "2026-10-14T09:21:26.792011822Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "tradetwin_neo4j-data",
+          "Source": "/var/lib/docker/volumes/tradetwin_neo4j-data/_data",
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "9f488de1fb875a9a25acee062d7c3d4da694dac5a77988b53159dbdf35a925ed",
+          "Source": "/var/lib/docker/volumes/9f488de1fb875a9a25acee062d7c3d4da694dac5a77988b53159dbdf35a925ed/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "3bb03fb97375d25e754abaddb2b5496f92478a0d4c825d9fc3f14dbaf222924c": {
+      "image": "sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e",
+      "started": "2026-10-14T09:21:26.760615145Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "tradetwin_minio-data",
+          "Source": "/var/lib/docker/volumes/tradetwin_minio-data/_data",
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "tradetwin_default"
+      ]
+    },
+    "27330ff23151168fba957d73d5e40b8d541d1aa21ce721af86e1f67cf1e9ee59": {
+      "image": "sha256:0eaefe961631c827abbb859c229a93a0edff6fd62a0c4f96bef6142cdff5671a",
+      "started": "2026-09-23T20:42:48.173548574Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_edge-network"
+      ]
+    },
+    "a516018c542a7db652bdfcdbe0858498b797aa71fcf139c28ca600531aab8799": {
+      "image": "sha256:81599444ad0c53cd7f6789d7e90b5148ae555a7f2316ad5fc8769113602ce430",
+      "started": "2026-09-23T20:42:48.167656728Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_edge-network"
+      ]
+    },
+    "5eb9f22aac718b3002318ba4e8c8e68dc55eee52f980b0971a26528e4b9cdcd3": {
+      "image": "sha256:01f4283ed7d56e2e91617d78dacc6d1434fd503c0a1d99b37e7b8497888bef72",
+      "started": "2026-09-23T20:42:48.1759659Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_edge-network"
+      ]
+    },
+    "5a78a19094c771869c56d9023d66689fa9fbe9be2576aa0e55e1edb3fd0b4670": {
+      "image": "sha256:e13a2cf3cf6ae4eec70d05579a8b3ed25d9f14fc63360f2dfd01a905f5ddfbfd",
+      "started": "2026-09-23T20:42:48.158893257Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_edge-network"
+      ]
+    },
+    "4bf3ab1c32b17d27214c3b0d144ffd25c3ea215f5f06b74e50c97f685a7ec685": {
+      "image": "sha256:aa1e058b76ec7ca6aeafea28f6d77eeac5dfdcae7a68ba95fd667cc0e0575493",
+      "started": "2026-09-23T20:42:48.151190362Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_edge-network"
+      ]
+    },
+    "980469023fcdca49529bb732f64b6d03bfa7fb57b622aed1c1843bed519d1246": {
+      "image": "sha256:e78f91b40b152468589f959cbc7adff897fe2069b9b54c7229a9bca41b387755",
+      "started": "2026-09-23T20:42:41.819981113Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\information_policy.json",
+          "Destination": "/app/config/information_policy.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_private_key.pem",
+          "Destination": "/run/secrets/edge_private_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode_diode-network",
+        "software-data-diode_edge-host-network",
+        "software-data-diode_edge-network"
+      ]
+    },
+    "3b22073ab188d5cdb739ab372a085d39ed0212014cd495d742ab53f682f4a808": {
+      "image": "sha256:66cbe1e3f8f991647f3625d1035fd7774e6f33cb7b7595fa3b38cd503feed667",
+      "started": "2026-09-23T20:42:41.309099301Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_fog-host-network",
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "f1a1e22ff951098af56c9e341c0e75046fe5917a81654888958a8dfca61d8c25": {
+      "image": "sha256:767ba9265c33afe18c5cdd626bcf91e3ada56b13519e0c7fc07c7a7b6a95ac11",
+      "started": "2026-09-23T20:42:35.559314117Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode_diode-network",
+        "software-data-diode_fog-ingress-network"
+      ]
+    },
+    "293fef6b37e718d94fdbefdce6185a1ef0f015725cfb3525ab4a30cd186a1ef1": {
+      "image": "sha256:acdb41a3f0043113c0d598473dd9ca50313f6ee8b9344168f23711a64428bc7d",
+      "started": "2026-09-23T20:42:35.556892306Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "10ee8a4fde0f888baa6d1f81e941e8bbc85fc3656dd737543a3ce24d9c97b49e": {
+      "image": "sha256:9ffc938501b8c0fef75245a750fc49982a0f87d8091a844c9b5ba8986f6361a9",
+      "started": "2026-09-23T20:42:29.783602859Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_public_key.pem",
+          "Destination": "/run/secrets/edge_public_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode_fog-ingress-network",
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "ea48b65d959271f42058fb973a69f40aa5114c22e29d9d678872cecadc10103d": {
+      "image": "sha256:25efd8a944f77c8632ba64ef963d7f25735498096a5d6271ea33df671b74744a",
+      "started": "2026-09-23T20:42:24.071662727Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "4059be951b90681b52a5bc831861ddb5fd150b954504dae2472e19bf881d57b5": {
+      "image": "sha256:b5e47e86c53596e5b1af95fdfc9ca5a2ce52acf51610edcc19b569336c02f39a",
+      "started": "2026-09-23T20:42:18.377486159Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "54dea7ec30562bd5521f8dc1952810795f20fcf8467f86cfc09342c83503ec5b": {
+      "image": "sha256:2c81ed46d2d810e5772f332246ae7d20e51399af25f011433a8f4f0a4be57014",
+      "started": "2026-09-23T20:42:12.656238211Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "79d1a13e2564796eb311640ab6cb37ff9fefb867eb52f34fd6e7a494dda674bd": {
+      "image": "sha256:7753ad493720e33560077e8bc5e05fbce4ade777f1387b19ab5050b6777111dd",
+      "started": "2026-09-23T20:42:06.761772028Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\grafana\\provisioning",
+          "Destination": "/etc/grafana/provisioning",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_grafana-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode_grafana-data/_data",
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\grafana\\dashboards",
+          "Destination": "/var/lib/grafana/dashboards",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode_fog-host-network",
+        "software-data-diode_observability-control-network"
+      ]
+    },
+    "3c6deab1689c47426aafccde3461a6f680d2462b54ad45f0dcf594173dedfd47": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-09-23T20:42:11.952639817Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\database\\migrations",
+          "Destination": "/migrations",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "87d062b3f184da80f2cbbd14260574216dfd2c87ff1a0ca285722b7f00b147fe",
+          "Source": "/var/lib/docker/volumes/87d062b3f184da80f2cbbd14260574216dfd2c87ff1a0ca285722b7f00b147fe/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "9ec00c40917b55504366f8af4be5c514d8971cde4fbf97f8a9c470e1e9d28060": {
+      "image": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+      "started": "2026-09-23T20:42:06.193281201Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\prometheus\\edge.yml",
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_prometheus-edge-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode_prometheus-edge-data/_data",
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode_diode-network",
+        "software-data-diode_edge-host-network",
+        "software-data-diode_observability-control-network"
+      ]
+    },
+    "b0c20eaaad3b5524ed544d013ee93f4dd7f03ee6babb89c4b37c24eaf08ef296": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-09-23T20:42:06.163497017Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/database/migrations",
+          "Destination": "/docker-entrypoint-initdb.d",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_fog-postgres-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode_fog-postgres-data/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode_fog-services-network"
+      ]
+    },
+    "ac7a25005318cbea327fbd02c12cf3415fe43f3b1713085a2b8638c9e38f131c": {
+      "image": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+      "started": "2026-09-23T20:42:06.196536077Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\prometheus\\fog.yml",
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_prometheus-fog-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode_prometheus-fog-data/_data",
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode_fog-host-network",
+        "software-data-diode_fog-services-network",
+        "software-data-diode_observability-control-network"
+      ]
+    },
+    "a28d1d50cf49e0f847d9048dbb0a34238de61b631a750b607a8c247343af391e": {
+      "image": "sha256:61da99ab6f46c15b69b41257ff0b0931f4d92c4f75ae31f18bc8a38448372f1f",
+      "started": "2026-09-23T20:42:06.149259926Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "none"
+      ]
+    },
+    "116685eeb2b9400b4d609d894e3312d30b65b09a40ebfc59c91df3bca1bc3a42": {
+      "image": "sha256:35d9f702873bb4930aca6a76f7b4f229fe023737b2260df033ca932177d5163b",
+      "started": "2026-09-23T20:39:51.202055885Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_public_key.pem",
+          "Destination": "/run/secrets/edge_public_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_fog-ingress-network",
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "86332befba4f169ed1b8f0f6a120c7d51431111ffa1e2424079c62cfe77cefe5": {
+      "image": "sha256:33d6b5fdce382c94d85674901dd2329b1b94deb436d794f55b19de911add2c73",
+      "started": "2026-09-23T20:39:51.358757711Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_edge-network"
+      ]
+    },
+    "7313234f0724fa81bd2be5a22e6f5fa320b3372577f6b1c63d6c3220811b14d3": {
+      "image": "sha256:962137af0becbda04f8f14546a582c1c590b01e4791e32efbe2dde0361a8874f",
+      "started": "2026-09-23T20:39:51.212754504Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_edge-network"
+      ]
+    },
+    "258d0bc9b97388566414611cb2e10ba9ae2f4a553ec959e918d5de14d412fc09": {
+      "image": "sha256:32781b2e15369454fcbd9289e2ee0ba6ebd752374b934d3d387719339bdd0119",
+      "started": "2026-09-23T20:39:51.372593138Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_edge-network"
+      ]
+    },
+    "760f44129351ebe1a038bc6b32ab1fea1de0b6f4869e05d75aaeaee4833f165a": {
+      "image": "sha256:77b7df49ee3634dd5a032cc1c835b871d2f1199f16016de746a6022b4b6f7d0a",
+      "started": "2026-09-23T20:39:51.345898544Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_edge-network"
+      ]
+    },
+    "5449a789d0ad0e68f9adad669f2818619f7cca80f9e89ccac84487335453f81b": {
+      "image": "sha256:5bb530c080a5384e7341425b63bacb4e628d4932c02f79829fbb4de5d7c486f8",
+      "started": "2026-09-23T20:39:51.141893374Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_edge-network"
+      ]
+    },
+    "70e05af3f45d02f7ee3a7c21888f5c7913a80f99d7fd95a7795f9462a53a1367": {
+      "image": "sha256:543ce05c5b9bcd5dd7442287cd7a13cdb31e555668ca30f2965ce10a951c8256",
+      "started": "2026-09-23T20:39:51.272364359Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\config\\information_policy.json",
+          "Destination": "/app/config/information_policy.json",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\secrets\\edge_private_key.pem",
+          "Destination": "/run/secrets/edge_private_key.pem",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_diode-network",
+        "software-data-diode-audit_edge-host-network",
+        "software-data-diode-audit_edge-network"
+      ]
+    },
+    "ae57772ad5259c2117b3e47cb429042563c3e6b35caeaed74d4186b59abf8e74": {
+      "image": "sha256:491236624c2cefb8d30c31ba213bddd044b64cfac36243d52f3c4c87ac2d00ca",
+      "started": "2026-09-23T20:39:51.280396004Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "d3f7e6052c8d69c6d4dba6ca01ee01952605653dcfe99e9f960bc8b8687f0cca": {
+      "image": "sha256:1336d48a1da45d3657a1fe7cca6b50b6e4c613b718629d51623ad7f124d296e3",
+      "started": "2026-09-23T20:39:51.288401927Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "z",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_diode-network",
+        "software-data-diode-audit_fog-ingress-network"
+      ]
+    },
+    "5d3d9402dc1bd5f3594055dce2ae0769ed19a743d146b632f1c748ad61aaf2c6": {
+      "image": "sha256:58a2db70ec9329179a33c22c85aa840fe67d622848b63e1ef05a6ae2e65654f9",
+      "started": "2026-09-23T20:39:51.309422278Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "5d873707553b15a9e94bccf870d6d6abdd9cafd8edfe7de5d7b90993d763b2fc": {
+      "image": "sha256:3c1da212ad134fae31c19f89644944983723ebeac8015db79dbec93b11753f10",
+      "started": "2026-09-23T20:39:51.339951829Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "3ca90298e4c95e0200123c26056752e1b4ebb7356585fc47810544b7d529805d": {
+      "image": "sha256:0df63610845a8e8e5bf2d7649a03292c07b289dff1511ca956ec3bbb0762248d",
+      "started": "2026-09-23T20:39:51.340497798Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "f3d14f440edaba731f99155aef32b234860f46ef92782b32277d39695b19a092": {
+      "image": "sha256:49877be6fb70bfc616e75d8febad3fded9dda761b6be0af2e94b10f2e42679a8",
+      "started": "2026-09-23T07:47:48.667675377Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_audit-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_audit-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "none"
+      ]
+    },
+    "b8f0994ddeeb5803e2b51f6d3c43507f9ecc139105313abc5604897a404f246f": {
+      "image": "sha256:0037adc04d82b1f829a7c302f1ac193ae3a2a6efa63b51b0c248186e7588f19e",
+      "started": "2026-09-23T20:39:51.105203874Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-audit_fog-host-network",
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "dfa17dde28775f731642941d6c3aa4b671aab878d4323021633113d5b9edc0eb": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-09-23T07:47:49.167475824Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\database\\migrations",
+          "Destination": "/migrations",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "c89b6bda31ad5a89cc33e731eb17b0d86008b54f35c96aa261bc8677c374b4cc",
+          "Source": "/var/lib/docker/volumes/c89b6bda31ad5a89cc33e731eb17b0d86008b54f35c96aa261bc8677c374b4cc/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "c316e7b3f4522d288e5c70094b9cf63412b691eec2eed28a7f49faf8300de33e": {
+      "image": "sha256:7753ad493720e33560077e8bc5e05fbce4ade777f1387b19ab5050b6777111dd",
+      "started": "2026-09-23T20:39:51.385776774Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/observability/grafana/provisioning",
+          "Destination": "/etc/grafana/provisioning",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_grafana-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_grafana-data/_data",
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        },
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/observability/grafana/dashboards",
+          "Destination": "/var/lib/grafana/dashboards",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_fog-host-network",
+        "software-data-diode-audit_observability-control-network"
+      ]
+    },
+    "29145a2c4eeb7ac361ada6a191ed80d32052118e54223d1f3af84d13b8c07e17": {
+      "image": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+      "started": "2026-09-23T20:39:51.237020264Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\prometheus\\fog.yml",
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_prometheus-fog-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_prometheus-fog-data/_data",
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_fog-host-network",
+        "software-data-diode-audit_fog-services-network",
+        "software-data-diode-audit_observability-control-network"
+      ]
+    },
+    "063a87a926aba42ba1d995008f3de1fd6be496a1b0fa5f74283f548601e0cc3b": {
+      "image": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "started": "2026-09-23T20:39:51.228361825Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "/run/desktop/mnt/host/c/Users/Rithvik Kumar/Desktop/fogedge/software-data-diode/database/migrations",
+          "Destination": "/docker-entrypoint-initdb.d",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_fog-postgres-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_fog-postgres-data/_data",
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_fog-services-network"
+      ]
+    },
+    "817325a609c7b5e7fe001414b3c84f346f1dca8b08d1cbf3bb9cf239a30e2b36": {
+      "image": "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0",
+      "started": "2026-09-23T20:39:51.313248476Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "bind",
+          "Source": "C:\\Users\\Rithvik Kumar\\Desktop\\fogedge\\software-data-diode\\observability\\prometheus\\edge.yml",
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": "rprivate"
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-audit_prometheus-edge-data",
+          "Source": "/var/lib/docker/volumes/software-data-diode-audit_prometheus-edge-data/_data",
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-audit_diode-network",
+        "software-data-diode-audit_edge-host-network",
+        "software-data-diode-audit_observability-control-network"
+      ]
+    },
+    "5a3163eec8b873403e4fc0d7abf57ac1a2a2cb3ac2cb08dbdbf077b8b06f5ba3": {
+      "image": "sha256:87744fffc67e4bc58b1a6e8d42418cc05b56e96e2df7f767a904d4250329b589",
+      "started": "2026-10-12T11:57:48.212397151Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_device-state",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_device-state/_data",
+          "Destination": "/state",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase2_edge-network"
+      ]
+    },
+    "a213f8f14c1f60c855cad19b8977906c9ffadc47510d2550b84768d024aebb9c": {
+      "image": "sha256:47bbabc59e8e3a8c217c01a8ec73bf2921f7a6bd1d899cc09591cbede3309fe1",
+      "started": "2026-10-12T11:57:48.217078687Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_edge-private",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_edge-private/_data",
+          "Destination": "/private",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_verification-public",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_verification-public/_data",
+          "Destination": "/public",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_edge-state",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_edge-state/_data",
+          "Destination": "/state",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase2_edge-network",
+        "software-data-diode-phase2_gateway-network"
+      ]
+    },
+    "ef54e8c9eda975de5022677cb2681e8825353d6bf293dce5808efd7f1fadfdf3": {
+      "image": "sha256:2392dd4fb73c6febafeeea05ecfeb7a6b2e715322bd2ca9c973972bc43b3b343",
+      "started": "2026-10-12T11:57:48.222266997Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_verification-public",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_verification-public/_data",
+          "Destination": "/public",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_diode-state",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_diode-state/_data",
+          "Destination": "/state",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase2_fog-network",
+        "software-data-diode-phase2_gateway-network"
+      ]
+    },
+    "beacde34ae8ee3742a64820afc1a6a0a40a092d97918517abf34b874af762914": {
+      "image": "sha256:98b4d3781160552abce7dc844061af2c7eb309206a07812176d5e17840a13a1a",
+      "started": "2026-10-12T11:57:48.20667218Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_verification-public",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_verification-public/_data",
+          "Destination": "/public",
+          "Driver": "local",
+          "Mode": "ro",
+          "RW": false,
+          "Propagation": ""
+        },
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase2_fog-state",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase2_fog-state/_data",
+          "Destination": "/state",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase2_fog-network"
+      ]
+    },
+    "f17a00aeb2d3e719377d935d2ac3ff7cc4fdc0e13df23e68c91d75c0246e40bd": {
+      "image": "sha256:22fe9e42e88779d6a84bcd97982391432211115d1e31888ca1df73dfa0ed26d6",
+      "started": "2026-10-12T11:57:48.230631087Z",
+      "status": "exited",
+      "mounts": [],
+      "networks": [
+        "software-data-diode-phase1_edge-network"
+      ]
+    },
+    "07fe9ca038c5a6424c68ace930f764038f7afeb0b07f041b7dc317616bc8c427": {
+      "image": "sha256:bbd69969c90b1c8d94b20d7e8d0c4fc27bed869f19028dd0c17eb89e4038ed70",
+      "started": "2026-10-12T11:57:48.234033894Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase1_edge-gateway-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase1_edge-gateway-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase1_edge-network",
+        "software-data-diode-phase1_gateway-network"
+      ]
+    },
+    "89651a2b0144d97522437a9f5046428ee2376fd56308d7293b4f885103f210eb": {
+      "image": "sha256:ce4767739e359daaefc89492b9ae791f7268d25d4d3540190c8450b670391be0",
+      "started": "2026-10-12T11:57:48.226325405Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase1_unidirectional-gateway-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase1_unidirectional-gateway-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase1_fog-network",
+        "software-data-diode-phase1_gateway-network"
+      ]
+    },
+    "6d05ea39116fedc5e285a51e45b7d9a3a175ee84a63be8b19a5867f529620874": {
+      "image": "sha256:163d0c72099bfee58c3658499c584e05000bab841b14f81ba143122516dfbbeb",
+      "started": "2026-10-12T11:57:48.201970313Z",
+      "status": "exited",
+      "mounts": [
+        {
+          "Type": "volume",
+          "Name": "software-data-diode-phase1_fog-receiver-logs",
+          "Source": "/var/lib/docker/volumes/software-data-diode-phase1_fog-receiver-logs/_data",
+          "Destination": "/logs",
+          "Driver": "local",
+          "Mode": "rw",
+          "RW": true,
+          "Propagation": ""
+        }
+      ],
+      "networks": [
+        "software-data-diode-phase1_fog-network"
+      ]
+    }
+  },
+  "source": {
+    "scripts\\coverage_local.py": "40355c56b152366c23f3af58df319a310e9b0150d1f4040aa635ad18298e921c",
+    "docker-compose.n9.yml": "c9c734454a0257b8235cd2ff13aa0cd11df6b115b413df86a21505102d056244",
+    "shared\\coverage\\__init__.py": "e7fc0885fc805d252ecac8a30f6b0458a84f24dbb7e2801a36193fb0366467ee",
+    "shared\\coverage\\admission.py": "7617bbff0457959b32d3642b0702a7b64bf75ca6bc20fbaac886854b26bf6a53",
+    "shared\\coverage\\budget.py": "e65a2c8d352f62ceb0e0eed6f863a63e17f169217a83c9f12bab68ccaf7fea26",
+    "shared\\coverage\\capsules.py": "e14fbbca59a9de40db33de3cea07d0ca2cd30a38dec79f3e6dcab831291e2078",
+    "shared\\coverage\\contracts.py": "9857fd4fd42678d0714bfcfef5b856ca9ab2247b3ae2ec007bfaa2fa71649115",
+    "shared\\coverage\\demo_faults.py": "748eeab378f4cce2f776b74c210b6c5e34939b398c760d3c222bd77fa4346010",
+    "shared\\coverage\\demo_provision.py": "25410fe124b46e93cc88cc451a7ce0059ac0fa97d80248f0a6cb84e9756ccb60",
+    "shared\\coverage\\evaluation.py": "1313ebd7a08d3d42c3213c8d079317fef3abf75ffa227716c6384f97a9147f7d",
+    "shared\\coverage\\fog_store.py": "a3e9436850a667eda8a8fe51ea7d08b554b68767b23ac7546cdd88af9c46c142",
+    "shared\\coverage\\ledger.py": "3e7cfb74b4ddfe2687628dfff9f71e2ca4e654a09916458a45a8af790bd09d28",
+    "shared\\coverage\\models.py": "4d955321844b05a3d4cf43c4a1e31e95d01a486b4b37d34b702980dc530fcf9b",
+    "shared\\coverage\\monitoring.py": "96f2cfcdd1b59a107d7d4d9f04b69eb1beaa043c9904b473fe227209b07b0265",
+    "shared\\coverage\\oracle.py": "f549b0351d7e0364538236e59c6ae2448ac3006e97c760a4fe83c88f21fe4c58",
+    "shared\\coverage\\parts.py": "c923b50db87ff1b386b372e33756a9ad01ca75fb6d898e8d48e2176464edb250",
+    "shared\\coverage\\policy_state.py": "5505134675a5213c2ecfc9db4f16ba040edc46a8a759c2d9573cf6d22b7cf530",
+    "shared\\coverage\\provisioning.py": "054f18e2eabc3477457835d4404c2f1ee9f96beb8f3705442cc084e4246a33df",
+    "shared\\coverage\\research_replay.py": "5496d3b7b7489dfc86589cc8b7329b539574c7c491af816837160db56001d261",
+    "shared\\coverage\\rules.py": "1c30c783aa491ed0ef5f75ac3ed529a43934fbad28d3ee0a2a2f281935e84d6f",
+    "shared\\coverage\\runtime_state.py": "063873a79c7e03e54a73b9a5cee02122335e3434f073e5ff8fa6265f027ec28c",
+    "shared\\coverage\\sealing.py": "64524cdf8ec147a93fe72c177edaa896809a49d583a46524bb531ed1175ffa5e",
+    "shared\\coverage\\service.py": "21fc092037411548f24510e565db95d29fc262a9081ef8a28ae96af9ca7de55c",
+    "shared\\coverage\\transport.py": "4ce8ccaaa1ac2b56c733c2dd56c9fc5fc09c3a21dbd9046fa884b1d127b1f943",
+    "shared\\coverage\\transport_mode.py": "889d49209b4660a2bf99be5b72478a52b37100be1778f4d4ae0fe0d27450b8ce",
+    "shared\\coverage\\udp_runtime.py": "4dfcba0b43d15178ee55e796ebdaa376b13e9260d80687448482b946af11cd48",
+    "shared\\coverage\\verification.py": "e4632adbde5afbd6ac53ed6ff540d7d7fe957f0c21fabf6cf13bf18a359accf0",
+    "shared\\coverage\\windows.py": "5d211921f43fe0277e5db39fe7718502e50fffd48ef36a6c0c817e6d8c9bf66f",
+    "config\\rule_coverage.json": "86b944ea6efd235aab5a75d4434b31535e3257089dffe24b19b09cd3962d58ed",
+    "config\\rule_coverage_admission.json": "593918601bf428a2c3132f91778f8bfa3582e267af9c2adc178533ba974d32e9",
+    "config\\rule_coverage_monitoring.json": "2d5d968a4df26607f0e15feb25c32244508f66020e7f5f5771e1735732d8c43b",
+    "config\\rule_coverage_transport.json": "ee24acff83e14663c13082a52d20d95667ab4a2679c89a4eac3d8323649761c8"
+  },
+  "services": {
+    "dashboard": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-host-network",
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {
+        "8501/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "39501"
+          }
+        ]
+      }
+    },
+    "monitoring-api": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "fog-analytics": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "fog-receiver": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-ingress-network",
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "alert-engine": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "event-processor": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-01": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-04": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-05": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-03": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-02": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_edge-network"
+      ],
+      "ports": {}
+    },
+    "database-migrator": {
+      "state": "exited",
+      "health": null,
+      "user": "",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "edge-gateway": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_diode-network",
+        "software-data-diode-coverage-n11-1a11c0de0002_edge-network"
+      ],
+      "ports": {}
+    },
+    "data-diode": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_diode-network",
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-ingress-network"
+      ],
+      "ports": {}
+    },
+    "postgres": {
+      "state": "running",
+      "health": "healthy",
+      "user": "",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0002_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "validation-init": {
+      "state": "exited",
+      "health": null,
+      "user": "0:0",
+      "networks": [
+        "none"
+      ],
+      "ports": {}
+    }
+  }
+}

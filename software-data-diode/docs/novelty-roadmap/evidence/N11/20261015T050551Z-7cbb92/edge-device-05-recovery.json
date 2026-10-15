@@ -1,0 +1,190 @@
+{
+  "device_id": "edge-device-05",
+  "observations": [
+    {
+      "scenario": "recovery",
+      "sample": 0,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 31,
+        "window_index": 179204090,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "a42d4329f946092245fb1343e2d004b5c287f81056d181e148540dae4032556b",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "industrial_process",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T05:08:22.010052Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 1,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 32,
+        "window_index": 179204090,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "176cf29828b403cfe174917707e412d7333c83a316cb2437038ae0f44c95b141",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "industrial_process",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T05:08:22.202299Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 2,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 33,
+        "window_index": 179204090,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "c85bc721641550108ef7aab310dc3d0290f08d3a0508feafe10c2dd874908761",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "industrial_process",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T05:08:22.365183Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 3,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 34,
+        "window_index": 179204090,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "7a707eda3e436752ee1d4b2c61597be15b09f87039febee2767555214b31de96",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "industrial_process",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T05:08:22.597603Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 4,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 35,
+        "window_index": 179204090,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "0abfef21e7391d0926927d929ada26ba311a3eb46ec5a169531bfaca991a8d68",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "industrial_process",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T05:08:22.849732Z"
+      }
+    }
+  ]
+}

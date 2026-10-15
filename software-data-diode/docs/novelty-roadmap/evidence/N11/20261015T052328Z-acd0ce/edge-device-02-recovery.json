@@ -1,0 +1,190 @@
+{
+  "device_id": "edge-device-02",
+  "observations": [
+    {
+      "scenario": "recovery",
+      "sample": 0,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-02",
+        "ingress_sequence": 66,
+        "window_index": 179204196,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "d6c2ae731adb098d757d5e8b81b362a5d99c4e2c9dc76609cf334539e9bd379e",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "resource",
+        "telemetry_type": "system",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-02",
+        "timestamp": "2026-10-15T05:26:02.021459Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 1,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-02",
+        "ingress_sequence": 67,
+        "window_index": 179204196,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "8863ac9abca7ebf988298ee09f02713aa95133a11a23f2fa09187efdd62645c9",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "resource",
+        "telemetry_type": "system",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-02",
+        "timestamp": "2026-10-15T05:26:02.349719Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 2,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-02",
+        "ingress_sequence": 68,
+        "window_index": 179204196,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "3bdc01d24f3c0dfd44945eb8582a488ff21b672d120444dd395b24c48b70cfb0",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "resource",
+        "telemetry_type": "system",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-02",
+        "timestamp": "2026-10-15T05:26:02.591467Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 3,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-02",
+        "ingress_sequence": 69,
+        "window_index": 179204196,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "d03d1a7014d4a65332578eaa43def1612d3e4eec0fcf9be06d3e7dff9fed745d",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "resource",
+        "telemetry_type": "system",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-02",
+        "timestamp": "2026-10-15T05:26:02.835171Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 4,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+        "device_id": "edge-device-02",
+        "ingress_sequence": 70,
+        "window_index": 179204196,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "584e7888e118bd5b313ef971b83b3eb93ffdf0a8c41fc8e2b55efecbc9d05b3d",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "resource",
+        "telemetry_type": "system",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-02",
+        "timestamp": "2026-10-15T05:26:03.044139Z"
+      }
+    }
+  ]
+}

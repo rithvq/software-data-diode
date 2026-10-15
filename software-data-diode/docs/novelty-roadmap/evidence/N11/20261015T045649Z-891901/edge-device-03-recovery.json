@@ -1,0 +1,190 @@
+{
+  "device_id": "edge-device-03",
+  "observations": [
+    {
+      "scenario": "recovery",
+      "sample": 0,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-03",
+        "ingress_sequence": 31,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "8e6cfda2e760731a661e1a2a24447694f6c84434a0c4a5f2ab2089b015890a16",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "network",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-03",
+        "timestamp": "2026-10-15T04:59:12.025072Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 1,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-03",
+        "ingress_sequence": 32,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "c0a72219433b6560edaa2c700f0c89e03e96c37e8b3c78e6939cfb840d00551b",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "network",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-03",
+        "timestamp": "2026-10-15T04:59:12.310347Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 2,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-03",
+        "ingress_sequence": 33,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "ab0a18b94de93c76039787dbb50514823ef6a5787ebdd72ed954e2744ae79377",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "network",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-03",
+        "timestamp": "2026-10-15T04:59:12.516501Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 3,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-03",
+        "ingress_sequence": 34,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "ff2928c6f49bcbfb2b8fe4eacf23fa5584341b6af36e8ef7c75fee3f44c14a9b",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "network",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-03",
+        "timestamp": "2026-10-15T04:59:12.719371Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 4,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-03",
+        "ingress_sequence": 35,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "25b0e3e51e747b5c4447bfda6c73115446535a8e641227cc58b3fe1063ea2f80",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "network",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-03",
+        "timestamp": "2026-10-15T04:59:12.983495Z"
+      }
+    }
+  ]
+}

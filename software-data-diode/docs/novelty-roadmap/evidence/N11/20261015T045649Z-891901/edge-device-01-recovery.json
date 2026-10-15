@@ -1,0 +1,190 @@
+{
+  "device_id": "edge-device-01",
+  "observations": [
+    {
+      "scenario": "recovery",
+      "sample": 0,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-01",
+        "ingress_sequence": 31,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "6d5fa6371c452cdc5e1ad8bcbebb426e3203bc2f85fb12db9409a9b2073dad2d",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 40.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "environmental",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-01",
+        "timestamp": "2026-10-15T04:59:12.007868Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 1,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-01",
+        "ingress_sequence": 32,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "6505216be613b1387d7a113e4d2cfd7312cae0556b0bdcf18beccad7eb154a6c",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 40.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "environmental",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-01",
+        "timestamp": "2026-10-15T04:59:12.190752Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 2,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-01",
+        "ingress_sequence": 33,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "f7149e8fba12b61669d7f5da26e06872f3eda54fabcfc4cf976344493b6759bf",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 40.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "environmental",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-01",
+        "timestamp": "2026-10-15T04:59:12.347307Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 3,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-01",
+        "ingress_sequence": 34,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "5798f95564ff77ff4bcf8df1a75c57414dd37dddb4d4d8ac46fbff769008ae29",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 40.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "environmental",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-01",
+        "timestamp": "2026-10-15T04:59:12.560224Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 4,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-01",
+        "ingress_sequence": 35,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "9af2d134956b8ddbe5903d710438d331e559a34302c4d506c84d1f3ed267264d",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 40.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "environmental",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-01",
+        "timestamp": "2026-10-15T04:59:12.785627Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+{
+  "scope": "ACKNOWLEDGED_NATIVE_GATEWAY_INGRESS",
+  "ingress_time_precision": "RECEIPT_WINDOW_MEMBERSHIP_ONLY_NOT_EXACT_ARRIVAL_INSTANT",
+  "rows": [
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204184,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204185,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204185,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204185,
+      "oracle": "FALSE",
+      "received": "FALSE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204186,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204187,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204188,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204189,
+      "oracle": "FALSE",
+      "received": "UNKNOWN",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "environmental-threshold",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "incident-correlation",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "industrial-threshold",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "network-threshold",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-attention",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "process-correlation",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "repeated-security-observations",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "resource-threshold",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    },
+    {
+      "rule_id": "security-threshold",
+      "window_index": 179204196,
+      "oracle": "TRUE",
+      "received": "TRUE",
+      "wrong_definite": false
+    }
+  ],
+  "wrong_definite": 0
+}

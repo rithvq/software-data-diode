@@ -1,0 +1,72 @@
+[
+  {
+    "scenario": "normal-reduction",
+    "window_index": 179204024,
+    "rule_id": "environmental-threshold",
+    "expected": "FALSE",
+    "actual": "FALSE",
+    "passed": false,
+    "reason": "[\"MATCHING_UPPER_BOUND\"]",
+    "evidence_file": "received.json"
+  },
+  {
+    "scenario": "registered-match",
+    "window_index": 179204025,
+    "rule_id": "environmental-threshold",
+    "expected": "TRUE",
+    "actual": "TRUE",
+    "passed": true,
+    "reason": "[\"MATCHING_LOWER_BOUND\"]",
+    "evidence_file": "received.json"
+  },
+  {
+    "scenario": "cross-device-incident",
+    "window_index": 179204026,
+    "rule_id": "incident-correlation",
+    "expected": "TRUE",
+    "actual": "TRUE",
+    "passed": true,
+    "reason": "[\"MATCHING_LOWER_BOUND\"]",
+    "evidence_file": "received.json"
+  },
+  {
+    "scenario": "raw-loss",
+    "window_index": 179204027,
+    "rule_id": "incident-correlation",
+    "expected": "TRUE",
+    "actual": "TRUE",
+    "passed": true,
+    "reason": "[\"MATCHING_LOWER_BOUND\"]",
+    "evidence_file": "received.json"
+  },
+  {
+    "scenario": "evidence-loss",
+    "window_index": 179204028,
+    "rule_id": "environmental-threshold",
+    "expected": "UNKNOWN",
+    "actual": "UNKNOWN",
+    "passed": true,
+    "reason": "[\"MISSING_EVIDENCE\", \"MISSING_FACTS\"]",
+    "evidence_file": "received.json"
+  },
+  {
+    "scenario": "tampering",
+    "window_index": 179204029,
+    "rule_id": "environmental-threshold",
+    "expected": "UNKNOWN",
+    "actual": "NOT_PERSISTED",
+    "passed": false,
+    "reason": "[]",
+    "evidence_file": "received.json"
+  },
+  {
+    "scenario": "recovery",
+    "window_index": 179204035,
+    "rule_id": "incident-correlation",
+    "expected": "TRUE",
+    "actual": "TRUE",
+    "passed": true,
+    "reason": "[\"MATCHING_LOWER_BOUND\"]",
+    "evidence_file": "recovery.json"
+  }
+]

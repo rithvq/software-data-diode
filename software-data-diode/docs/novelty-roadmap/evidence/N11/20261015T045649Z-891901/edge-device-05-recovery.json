@@ -1,0 +1,190 @@
+{
+  "device_id": "edge-device-05",
+  "observations": [
+    {
+      "scenario": "recovery",
+      "sample": 0,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 31,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "ee59dc23a7ed7e8aeb1f7b9687282cd6a8f1a36111426021950566fc7dc07dfa",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T04:59:12.024811Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 1,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 32,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "e3f149a6b8fea8018b06c68c77550d7078bb76f1c125cf6e4c1152d89ecb42db",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T04:59:12.291816Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 2,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 33,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "7a98e56b672e78e011c3f66ed96dff462ca90e2ae7ac0fc05c10b260ab512014",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T04:59:12.492648Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 3,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 34,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "25c0a72aae64ec5ed999add4bcd67c5423785e3b75a0b74e7d2a8a737e7a7750",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T04:59:12.698756Z"
+      }
+    },
+    {
+      "scenario": "recovery",
+      "sample": 4,
+      "receipt": {
+        "status": "accepted",
+        "mode": "coupled",
+        "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+        "device_id": "edge-device-05",
+        "ingress_sequence": 35,
+        "window_index": 179204035,
+        "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+        "input_hash": "d665af0d7e295f543149c9e9f5d710a34e727f5b2dcf8f35d1bf0c2e6f22b558",
+        "duplicate": false,
+        "disposition": "SELECTED_RAW"
+      },
+      "original": {
+        "temperature": 25.0,
+        "humidity": 50.0,
+        "status": "normal",
+        "event_type": "n11_demonstration",
+        "telemetry_type": "industrial",
+        "cpu_usage": 95.0,
+        "memory_usage": null,
+        "measurements": {
+          "packets_per_second": 9000.0,
+          "failed_logins": 6.0,
+          "vibration_mm_s": 9.0
+        },
+        "attributes": {
+          "synthetic_demo": true,
+          "n11_scenario": "recovery"
+        },
+        "aggregation": null,
+        "device_id": "edge-device-05",
+        "timestamp": "2026-10-15T04:59:12.962091Z"
+      }
+    }
+  ]
+}

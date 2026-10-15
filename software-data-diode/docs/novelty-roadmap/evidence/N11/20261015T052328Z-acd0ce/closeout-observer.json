@@ -1,0 +1,10 @@
+{
+  "runtime_source_unchanged": true,
+  "stored_cross_device_incident": true,
+  "stored_visibility_alert": true,
+  "fog_socket_audit": {
+    "installed": true,
+    "udp_send_calls": 0,
+    "last_destinations": []
+  }
+}

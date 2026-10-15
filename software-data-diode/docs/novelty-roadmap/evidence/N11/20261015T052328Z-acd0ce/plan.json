@@ -1,0 +1,13 @@
+{
+  "start": 1792041840,
+  "run_id": "20261015T052328Z-acd0ce",
+  "scenarios": [
+    "normal-reduction",
+    "registered-match",
+    "cross-device-incident",
+    "raw-loss",
+    "evidence-loss",
+    "tampering"
+  ],
+  "timing": "six aligned ingress windows; faults affect subsequent evidence closure; no feedback"
+}

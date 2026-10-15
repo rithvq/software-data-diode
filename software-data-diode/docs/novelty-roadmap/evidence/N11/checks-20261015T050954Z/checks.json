@@ -1,0 +1,206 @@
+{
+  "project": "software-data-diode-coverage-n11-1a11c0de0004",
+  "reverse_failures": true,
+  "profile_unchanged": true,
+  "permissions": {
+    "edge-gateway": {
+      "uid": 10001,
+      "writable": true
+    },
+    "data-diode": {
+      "uid": 10001,
+      "writable": true
+    },
+    "fog-receiver": {
+      "uid": 10001,
+      "writable": true
+    },
+    "edge-device-01": {
+      "uid": 10001,
+      "writable": true
+    },
+    "edge-device-02": {
+      "uid": 10001,
+      "writable": true
+    },
+    "edge-device-03": {
+      "uid": 10001,
+      "writable": true
+    },
+    "edge-device-04": {
+      "uid": 10001,
+      "writable": true
+    },
+    "edge-device-05": {
+      "uid": 10001,
+      "writable": true
+    }
+  },
+  "dashboard": {
+    "url": "http://127.0.0.1:39501/_stcore/health",
+    "status": 200,
+    "body": "ok"
+  },
+  "fog_socket_audit": {
+    "installed": true,
+    "udp_send_calls": 0,
+    "last_destinations": []
+  },
+  "services": {
+    "dashboard": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-host-network",
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {
+        "8501/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "39501"
+          }
+        ]
+      }
+    },
+    "monitoring-api": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "fog-receiver": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-ingress-network",
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "fog-analytics": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "alert-engine": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "event-processor": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-02": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-01": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-05": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-04": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_edge-network"
+      ],
+      "ports": {}
+    },
+    "edge-device-03": {
+      "state": "running",
+      "health": null,
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_edge-network"
+      ],
+      "ports": {}
+    },
+    "database-migrator": {
+      "state": "exited",
+      "health": null,
+      "user": "",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "data-diode": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_diode-network",
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-ingress-network"
+      ],
+      "ports": {}
+    },
+    "edge-gateway": {
+      "state": "running",
+      "health": "healthy",
+      "user": "10001:10001",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_diode-network",
+        "software-data-diode-coverage-n11-1a11c0de0004_edge-network"
+      ],
+      "ports": {}
+    },
+    "postgres": {
+      "state": "running",
+      "health": "healthy",
+      "user": "",
+      "networks": [
+        "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network"
+      ],
+      "ports": {}
+    },
+    "validation-init": {
+      "state": "exited",
+      "health": null,
+      "user": "0:0",
+      "networks": [
+        "none"
+      ],
+      "ports": {}
+    }
+  }
+}

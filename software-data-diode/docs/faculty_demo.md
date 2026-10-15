@@ -1,5 +1,11 @@
 # Faculty Demonstration
 
+This is the preserved HTTP/legacy demonstration. For the isolated RCCD research
+mechanism use the [N11 local runbook](novelty-roadmap/local-demo.md) and
+[faculty explanation](novelty-roadmap/faculty-explanation.md). Do not merge the
+two deployments or substitute their state/keys. N10's negative findings remain
+part of the research presentation.
+
 Allow about 12 minutes. Run commands from the repository root.
 
 ## Before the Session

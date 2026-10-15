@@ -316,6 +316,9 @@ is inferred from one environment.
 - [Generated experiment report](experiments/results/phase7/experiment_summary.md)
 - [N10 coverage experiments and local commands](experiments/README-coverage.md)
 - [N10 repeated-trial findings and limitations](docs/novelty-roadmap/reports/N10.md)
+- [N11 local PowerShell setup/start/demo/stop/restart](docs/novelty-roadmap/local-demo.md)
+- [Faculty explanation and disclosure draft: NOT FILED, NOVELTY UNESTABLISHED](docs/novelty-roadmap/invention-disclosure.md)
+- [N11 verification evidence and operating limits](docs/novelty-roadmap/reports/N11.md)
 
 ## Known Limitations
 

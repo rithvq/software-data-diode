@@ -1,6 +1,6 @@
 # RCCD technical specification
 
-Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N10 implemented and locally verified within their reports' scopes. N10 retains negative comparative findings and distinct simulation/actual-UDP evidence. Research mode remains disabled in the baseline deployment. N11 remains proposed.
+Status: N0 specification frozen; N1-N3 implemented/reported, N4 admission code verified, N5-N11 implemented and locally verified within their reports' scopes. N10 retains negative comparative findings and distinct simulation/actual-UDP evidence. Research mode remains disabled in the baseline deployment. N11 adds a bounded native local demo and unfiled disclosure, not new v1 semantics or established novelty. See [N11 limits and evidence](reports/N11.md).
 Version: roadmap-1 + N0-contract-v1. Date: 2026-10-13.
 The normative v1 decisions are in [N0 contract freeze](reports/N0-contract-v1.md).
 N0 adds baseline evidence only. N1 adds pure contracts and semantics. N2 adds a ledger-only opt-in path, not a coverage pipeline. See [N2 scope and recovery limits](reports/N2.md).

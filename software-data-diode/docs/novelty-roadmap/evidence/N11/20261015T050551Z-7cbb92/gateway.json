@@ -1,0 +1,182 @@
+{
+  "traffic": {
+    "total_bytes_generated": 0,
+    "bytes_filtered": 0,
+    "bytes_transmitted": 0,
+    "latency_sample_count": 0,
+    "average_latency": null,
+    "latency_p95": null,
+    "throughput_messages_per_second": 0.0,
+    "queue_utilization": 0.0,
+    "congestion_state": "NORMAL",
+    "by_priority": {}
+  },
+  "devices": [
+    {
+      "device_id": "edge-device-01",
+      "health": "STALE",
+      "last_seen": "2026-10-15T05:07:12.872462Z",
+      "last_sequence_number": 0,
+      "received_count": 30,
+      "forwarded_count": 0,
+      "filtered_count": 0,
+      "rejected_count": 0,
+      "message_rate_per_minute": 12.0,
+      "recent_activity_count": 12,
+      "filtering_statistics": {},
+      "priority_statistics": {
+        "LOW": 15,
+        "CRITICAL": 15
+      }
+    },
+    {
+      "device_id": "edge-device-02",
+      "health": "STALE",
+      "last_seen": "2026-10-15T05:07:13.007079Z",
+      "last_sequence_number": 0,
+      "received_count": 30,
+      "forwarded_count": 0,
+      "filtered_count": 0,
+      "rejected_count": 0,
+      "message_rate_per_minute": 12.0,
+      "recent_activity_count": 12,
+      "filtering_statistics": {},
+      "priority_statistics": {
+        "LOW": 15,
+        "CRITICAL": 15
+      }
+    },
+    {
+      "device_id": "edge-device-03",
+      "health": "STALE",
+      "last_seen": "2026-10-15T05:07:12.898374Z",
+      "last_sequence_number": 0,
+      "received_count": 30,
+      "forwarded_count": 0,
+      "filtered_count": 0,
+      "rejected_count": 0,
+      "message_rate_per_minute": 11.0,
+      "recent_activity_count": 11,
+      "filtering_statistics": {},
+      "priority_statistics": {
+        "LOW": 15,
+        "CRITICAL": 15
+      }
+    },
+    {
+      "device_id": "edge-device-04",
+      "health": "STALE",
+      "last_seen": "2026-10-15T05:07:12.980405Z",
+      "last_sequence_number": 0,
+      "received_count": 30,
+      "forwarded_count": 0,
+      "filtered_count": 0,
+      "rejected_count": 0,
+      "message_rate_per_minute": 11.0,
+      "recent_activity_count": 11,
+      "filtering_statistics": {},
+      "priority_statistics": {
+        "LOW": 15,
+        "CRITICAL": 15
+      }
+    },
+    {
+      "device_id": "edge-device-05",
+      "health": "STALE",
+      "last_seen": "2026-10-15T05:07:12.948625Z",
+      "last_sequence_number": 0,
+      "received_count": 30,
+      "forwarded_count": 0,
+      "filtered_count": 0,
+      "rejected_count": 0,
+      "message_rate_per_minute": 11.0,
+      "recent_activity_count": 11,
+      "filtering_statistics": {},
+      "priority_statistics": {
+        "LOW": 15,
+        "CRITICAL": 15
+      }
+    }
+  ],
+  "information_policy": null,
+  "coverage_ledger": {
+    "epoch": "d4fc4e88-9728-452c-be59-76809b338e8a",
+    "generation": 0,
+    "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+    "retained_records": 150,
+    "pending_outbox_bytes": 0,
+    "unsized_obligations": 0,
+    "last_limitation": "RECOVERY_DOWNTIME",
+    "clock_halted": false,
+    "admission_blocked": false,
+    "database_bytes": 745472
+  },
+  "coverage_admission": {
+    "mode": "coupled",
+    "baseline_policy": "legacy_information_engine_v1",
+    "outbox_items": 0,
+    "outbox_bytes": 0,
+    "reserved_wire_bytes": 0,
+    "pending_evidence_obligations": 0,
+    "unsupported_scopes": 0,
+    "refused_unaccepted": 0,
+    "local_lease_unresolved": false,
+    "modeled_scheduled_bytes": 464765,
+    "confirmed_receipt": "NOT_OBSERVED",
+    "forward_byte_accounting": {
+      "EVIDENCE": 314144,
+      "RAW": 124934,
+      "STATE": 25687,
+      "scope": "N8_LOCAL_GRANTS_SINCE_START",
+      "start_utc_us": 1792040708874574,
+      "total": 464765
+    }
+  },
+  "coverage_udp": {
+    "live": true,
+    "sender": {
+      "attempts": 503,
+      "attempted_payload_bytes": 450681,
+      "local_send_calls_succeeded": 503
+    },
+    "socket_audit": {
+      "installed": true,
+      "udp_send_calls": 503,
+      "last_destinations": [
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ],
+        [
+          "10.0.3.18",
+          9001
+        ]
+      ]
+    },
+    "confirmed_receipt": "NOT_OBSERVED"
+  }
+}

@@ -1,0 +1,368 @@
+[
+  {
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004_diode-network",
+    "Id": "bcce2ad193afa53ca4c0b2b35bbfc0b9c739f97dd6e1466def76a6a6e5626113",
+    "Created": "2026-10-15T05:05:03.176241795Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "10.0.3.16/28",
+          "Gateway": "10.0.3.17"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "7dd52716903a4173793ce20a77c7557a962a8f8105433df3f3e93a8feae8619c",
+      "com.docker.compose.network": "diode-network",
+      "com.docker.compose.project": "software-data-diode-coverage-n11-1a11c0de0004",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "1757f7085846c9b42f207ea45106884c8f4c102017fe5f78fe03dba0eb543dc6": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-data-diode-1",
+        "EndpointID": "38494a1225af2cd9f01da9cfb7c9e27e653dce390b05e3916b29f89f1b1d9e5a",
+        "MacAddress": "f6:1a:d1:7a:92:b0",
+        "IPv4Address": "10.0.3.18/28",
+        "IPv6Address": ""
+      },
+      "926bd802410556f0986eef0f783c60790395ee270d79480985220a65310ce860": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-gateway-1",
+        "EndpointID": "6e4222f512431400f49d65236df19a5ee82589b0630ac91baa30f6644a0de332",
+        "MacAddress": "12:c1:33:6a:5e:05",
+        "IPv4Address": "10.0.3.19/28",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "10.0.3.16/28": {
+            "IPsInUse": 5,
+            "DynamicIPsAvailable": 11
+          }
+        }
+      }
+    }
+  },
+  {
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004_edge-network",
+    "Id": "a88061672f7b2f4397f8d9794dd62e7a643f21fa170d7c47b80a01fe4297623f",
+    "Created": "2026-10-15T05:05:03.176257285Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "10.0.3.0/28",
+          "Gateway": "10.0.3.1"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "e6a66208a97d51cb1597b654011d986399ef6b2c3955d26aeccfe482ea48a6b0",
+      "com.docker.compose.network": "edge-network",
+      "com.docker.compose.project": "software-data-diode-coverage-n11-1a11c0de0004",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "24b291ab5a7e56f9decb031c1357ed4f337767ac77fc6474b768cf2626544622": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-05-1",
+        "EndpointID": "4330f7aed32bbf7183c5257e3fe0709225e685cabdcf2e63b3ee0217c6e97552",
+        "MacAddress": "52:cf:46:6b:9c:d9",
+        "IPv4Address": "10.0.3.3/28",
+        "IPv6Address": ""
+      },
+      "6e92a3e5054f6b3c423a843bffec4de770ffab2977370edd2d7820befff2399c": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-01-1",
+        "EndpointID": "b9aade348e18adc182ea9e83ddb62ea4f6e906747bf0538db99e733334a96946",
+        "MacAddress": "fe:02:da:d9:0c:05",
+        "IPv4Address": "10.0.3.7/28",
+        "IPv6Address": ""
+      },
+      "926bd802410556f0986eef0f783c60790395ee270d79480985220a65310ce860": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-gateway-1",
+        "EndpointID": "c5a29e354988a457979d539851a433970410de2c709e3bca993632f58a6b3ed6",
+        "MacAddress": "c2:e2:f8:44:05:ef",
+        "IPv4Address": "10.0.3.2/28",
+        "IPv6Address": ""
+      },
+      "bae0457026fe85bf63511a17e3538191abddc2b0cec72c1406749e912d601285": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-02-1",
+        "EndpointID": "99ec050a5bf8083e0bb42e7157d9917d41cf7ab0dea47164253421f629e52a3d",
+        "MacAddress": "2a:9b:0e:75:9c:e6",
+        "IPv4Address": "10.0.3.6/28",
+        "IPv6Address": ""
+      },
+      "edceb303ed4d8e75b5a449d8901c18702a241a6eb1306bb31a1bb3ae3a18407d": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-04-1",
+        "EndpointID": "5959880e7e6c92f50793ac6d968cda086bfae72b5019c4622f0116d0120789c0",
+        "MacAddress": "ba:f0:5f:1e:c3:f1",
+        "IPv4Address": "10.0.3.5/28",
+        "IPv6Address": ""
+      },
+      "f969eed51e43530fad1b8c226ed9969f37ec650b916fbf0ec987f19120365f40": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-03-1",
+        "EndpointID": "25ae05d02cbad1e119ee84154db05763cfec2d6676e65f32b8b9880059ac9f68",
+        "MacAddress": "b2:1d:cb:29:6c:d2",
+        "IPv4Address": "10.0.3.4/28",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "10.0.3.0/28": {
+            "IPsInUse": 9,
+            "DynamicIPsAvailable": 7
+          }
+        }
+      }
+    }
+  },
+  {
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004_fog-host-network",
+    "Id": "f0a4e3d6aa1734a83225664bed7b434f61fbb82df39a52157c4fa32715b6f11e",
+    "Created": "2026-10-15T05:05:03.167011604Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "10.0.3.64/28",
+          "Gateway": "10.0.3.65"
+        }
+      ]
+    },
+    "Internal": false,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "91bdb3f174f25097e0a4c6ab1de86cdd59f001f649a614219949f98893aae152",
+      "com.docker.compose.network": "fog-host-network",
+      "com.docker.compose.project": "software-data-diode-coverage-n11-1a11c0de0004",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "00bf6e68176492759c650f180982aa41cff3bc7494d20165f5174b5fa7080493": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-dashboard-1",
+        "EndpointID": "e0c4c24d4541dbd2e5bb267c3389099d56a85437ae491d242c39adeb4fe63168",
+        "MacAddress": "2a:16:03:29:a0:3e",
+        "IPv4Address": "10.0.3.66/28",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "10.0.3.64/28": {
+            "IPsInUse": 4,
+            "DynamicIPsAvailable": 12
+          }
+        }
+      }
+    }
+  },
+  {
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004_fog-ingress-network",
+    "Id": "3efa525c891f2a1f6c565396b950615aae26b25f99a95ead11a797c1986f835e",
+    "Created": "2026-10-15T05:05:03.179701768Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "10.0.3.32/28",
+          "Gateway": "10.0.3.33"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "ef0a432a4373e9f74aeed23126211e74dab8ba237ab1ad28ccca392c8ace39d7",
+      "com.docker.compose.network": "fog-ingress-network",
+      "com.docker.compose.project": "software-data-diode-coverage-n11-1a11c0de0004",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "1757f7085846c9b42f207ea45106884c8f4c102017fe5f78fe03dba0eb543dc6": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-data-diode-1",
+        "EndpointID": "6a749a93f4fd6e61da38781b825f1663d90314fded2ea4521685e9c366b81762",
+        "MacAddress": "e2:c5:47:e6:cb:11",
+        "IPv4Address": "10.0.3.34/28",
+        "IPv6Address": ""
+      },
+      "40cd652254baaf3e1b1c3334ad93142cd10205c311c4e50bf662f481c71ff412": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-fog-receiver-1",
+        "EndpointID": "e3ede337084d70b08bf77caa99d38194855807d4dc265ef92a31e54857f2ca23",
+        "MacAddress": "be:5b:64:59:1d:c9",
+        "IPv4Address": "10.0.3.35/28",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "10.0.3.32/28": {
+            "IPsInUse": 5,
+            "DynamicIPsAvailable": 11
+          }
+        }
+      }
+    }
+  },
+  {
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004_fog-services-network",
+    "Id": "1c427720e7f9c422d3745b5d0777c343207c4740ed5a6099e1fa55baa812851b",
+    "Created": "2026-10-15T05:05:03.167059269Z",
+    "Scope": "local",
+    "Driver": "bridge",
+    "EnableIPv4": true,
+    "EnableIPv6": false,
+    "IPAM": {
+      "Driver": "default",
+      "Options": null,
+      "Config": [
+        {
+          "Subnet": "10.0.3.48/28",
+          "Gateway": "10.0.3.49"
+        }
+      ]
+    },
+    "Internal": true,
+    "Attachable": false,
+    "Ingress": false,
+    "ConfigFrom": {
+      "Network": ""
+    },
+    "ConfigOnly": false,
+    "Options": {
+      "com.docker.network.enable_ipv4": "true",
+      "com.docker.network.enable_ipv6": "false"
+    },
+    "Labels": {
+      "com.docker.compose.config-hash": "f518bfebe1aff334f163b30011c6e64a1f9af76e75058861c5a5f02dc3614baf",
+      "com.docker.compose.network": "fog-services-network",
+      "com.docker.compose.project": "software-data-diode-coverage-n11-1a11c0de0004",
+      "com.docker.compose.version": "5.5.0"
+    },
+    "Containers": {
+      "00bf6e68176492759c650f180982aa41cff3bc7494d20165f5174b5fa7080493": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-dashboard-1",
+        "EndpointID": "334576850d5fc6d006c17fd2aff3bd7b04acf792db91f6e2621b754a8e2755e9",
+        "MacAddress": "f6:e9:22:a0:84:76",
+        "IPv4Address": "10.0.3.56/28",
+        "IPv6Address": ""
+      },
+      "0bca811b7533ce2d192fe965fbe14b2d6618a61f6964ae45f4cb4f2be45c56ea": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-alert-engine-1",
+        "EndpointID": "9b0aecd09f04c08193dbc30454c839aaf576285e143b409fcced0b201db25513",
+        "MacAddress": "9a:15:cd:14:5d:b5",
+        "IPv4Address": "10.0.3.51/28",
+        "IPv6Address": ""
+      },
+      "37c463b00ad4467af3cba8fe77e43c93b3e053282f7e704dfc400b2cdadae4b8": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-postgres-1",
+        "EndpointID": "5ce6162bdc20c9a81acb1333e0b6d34723f23f5cee054ecfc3924c312f5e9d77",
+        "MacAddress": "aa:6d:21:bd:d5:d3",
+        "IPv4Address": "10.0.3.50/28",
+        "IPv6Address": ""
+      },
+      "40cd652254baaf3e1b1c3334ad93142cd10205c311c4e50bf662f481c71ff412": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-fog-receiver-1",
+        "EndpointID": "11826b35651374c4319a8056d7e1495425c47e3993e532fe3f99c5ecf6cc0c45",
+        "MacAddress": "3e:b6:48:38:e4:2b",
+        "IPv4Address": "10.0.3.54/28",
+        "IPv6Address": ""
+      },
+      "55be9fe7479d029e7fcb3d910e77bc63dcb43dcc1654b543f7e34da7fc309ee6": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-fog-analytics-1",
+        "EndpointID": "b581e08a1e6793ed4eb1e15e5bf9fbc53a5b031972956772e7aaae378b2c8627",
+        "MacAddress": "52:58:41:c3:0c:7f",
+        "IPv4Address": "10.0.3.52/28",
+        "IPv6Address": ""
+      },
+      "d40b3f88d99fe9ad1a595a3baa0ef058a16723708120dfcc198ec998ccdb1d4c": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-monitoring-api-1",
+        "EndpointID": "c361eef8a4199c0e1de20a919835e2f3d08381fc982c6ad61ef5d0808c96fabf",
+        "MacAddress": "6e:c5:5a:a1:3d:d7",
+        "IPv4Address": "10.0.3.55/28",
+        "IPv6Address": ""
+      },
+      "e1211bfa14bc74eea4de00deec3dc2c4890ccf00719f32fab1f3aa420bce7994": {
+        "Name": "software-data-diode-coverage-n11-1a11c0de0004-event-processor-1",
+        "EndpointID": "894fe6f843378c3c3bfabbdf68c4365ff644d3564e54fc5542aab189b7d74842",
+        "MacAddress": "ee:48:74:98:8d:77",
+        "IPv4Address": "10.0.3.53/28",
+        "IPv6Address": ""
+      }
+    },
+    "Status": {
+      "IPAM": {
+        "Subnets": {
+          "10.0.3.48/28": {
+            "IPsInUse": 10,
+            "DynamicIPsAvailable": 6
+          }
+        }
+      }
+    }
+  }
+]

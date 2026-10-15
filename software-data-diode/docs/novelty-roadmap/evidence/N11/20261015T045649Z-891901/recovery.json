@@ -1,0 +1,5415 @@
+{
+  "before": {
+    "epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+    "devices": [
+      [
+        "edge-device-01",
+        30,
+        30
+      ],
+      [
+        "edge-device-02",
+        30,
+        30
+      ],
+      [
+        "edge-device-03",
+        30,
+        30
+      ],
+      [
+        "edge-device-04",
+        30,
+        30
+      ],
+      [
+        "edge-device-05",
+        30,
+        30
+      ]
+    ],
+    "uid": 10001
+  },
+  "after": {
+    "epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+    "devices": [
+      [
+        "edge-device-01",
+        30,
+        30
+      ],
+      [
+        "edge-device-02",
+        30,
+        30
+      ],
+      [
+        "edge-device-03",
+        30,
+        30
+      ],
+      [
+        "edge-device-04",
+        30,
+        30
+      ],
+      [
+        "edge-device-05",
+        30,
+        30
+      ]
+    ],
+    "uid": 10001
+  },
+  "received": {
+    "capsules": [
+      {
+        "artifact_digest": "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5",
+        "scope_id": "2efee8e727674e0150a9eca2285799ef37efd1d659f1d5241e97f3006ca90b8b",
+        "body": {
+          "device_id": "edge-device-02",
+          "capsule_id": "2efee8e727674e0150a9eca2285799ef37efd1d659f1d5241e97f3006ca90b8b",
+          "gateway_id": "coverage-gateway",
+          "scope_kind": "WINDOW",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "window_index": 179204035,
+          "artifact_kind": "RCC",
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "closure_reason": "WINDOW_END",
+          "signing_key_id": "coverage-key",
+          "contract_profile": "rccd-contract-v1",
+          "input_commitment": {
+            "root": "37d5032319befbbd865844756b24b520a571173027d719d6bd32c6286ebc62ff",
+            "construction": "sha256-scope-seeded-input-fold-v1",
+            "record_count": 5
+          },
+          "online_assurance": "AUTHENTICATED_SUMMARY",
+          "protocol_version": "rccd-capsule-v1",
+          "created_at_utc_us": 1792040360011645,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "window_end_utc_us": 1792040360000000,
+          "per_condition_facts": [
+            {
+              "witnesses": [
+                {
+                  "input_hash": "c90d13c3995a006fb58ef3a83c4d0eb807efa7b5bac2de05aac24fedfddd1a60",
+                  "ingress_sequence": 31
+                },
+                {
+                  "input_hash": "8ec4d2ad37e612f792e11d78f3ad58d449810d200427bc95adb8358ad77faa09",
+                  "ingress_sequence": 32
+                }
+              ],
+              "condition_id": "resource-busy",
+              "matching_count": 5,
+              "unresolved_count": 0,
+              "nonmatching_count": 0
+            }
+          ],
+          "population_complete": true,
+          "window_start_utc_us": 1792040350000000,
+          "coverage_limitations": [],
+          "reduction_accounting": {
+            "dropped_raw": 0,
+            "reduced_raw": 0,
+            "selected_raw": 5,
+            "archived_local": 0,
+            "pending_policy": 0,
+            "receipt_assurance": "NOT_OBSERVED",
+            "queue_overflow_drops": 0,
+            "raw_dispatch_attempts": 5,
+            "confirmed_receipt_count": null
+          },
+          "ingress_last_sequence": 35,
+          "ingress_first_sequence": 31,
+          "previous_capsule_digest": "c18c41a4aae270b3825ae49f76b52d200082857fde84a29879e556a56f59d3eb",
+          "accepted_observation_count": 5
+        },
+        "verification": {
+          "status": "VALID",
+          "scope_id": "2efee8e727674e0150a9eca2285799ef37efd1d659f1d5241e97f3006ca90b8b",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "GAP",
+          "created_at_utc_us": 1792040360011645,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040361052431,
+          "replay_width_windows": 30
+        },
+        "received_at_us": 1792040361052431
+      },
+      {
+        "artifact_digest": "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b",
+        "scope_id": "ada625c66de3b4e4136ac3e98f0180bbfa58d936a24617bb31ca86e86ff60e98",
+        "body": {
+          "device_id": "edge-device-04",
+          "capsule_id": "ada625c66de3b4e4136ac3e98f0180bbfa58d936a24617bb31ca86e86ff60e98",
+          "gateway_id": "coverage-gateway",
+          "scope_kind": "WINDOW",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "window_index": 179204035,
+          "artifact_kind": "RCC",
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "closure_reason": "WINDOW_END",
+          "signing_key_id": "coverage-key",
+          "contract_profile": "rccd-contract-v1",
+          "input_commitment": {
+            "root": "1dda8f52a35b3bea43431c7147382b6a26693449ad735298c514b8cd97c30bac",
+            "construction": "sha256-scope-seeded-input-fold-v1",
+            "record_count": 5
+          },
+          "online_assurance": "AUTHENTICATED_SUMMARY",
+          "protocol_version": "rccd-capsule-v1",
+          "created_at_utc_us": 1792040360015210,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "window_end_utc_us": 1792040360000000,
+          "per_condition_facts": [
+            {
+              "witnesses": [
+                {
+                  "input_hash": "ba7dc28e50c3af73270a368abe044bdb39b689896ce3221d30c3c53853f8675d",
+                  "ingress_sequence": 31
+                },
+                {
+                  "input_hash": "ce432dab96ef59513c193a7378a208cb2a1c864b4bde9e22d1440efa4e5ab9ff",
+                  "ingress_sequence": 32
+                }
+              ],
+              "condition_id": "security-failures",
+              "matching_count": 5,
+              "unresolved_count": 0,
+              "nonmatching_count": 0
+            },
+            {
+              "witnesses": [
+                {
+                  "input_hash": "ba7dc28e50c3af73270a368abe044bdb39b689896ce3221d30c3c53853f8675d",
+                  "ingress_sequence": 31
+                },
+                {
+                  "input_hash": "ce432dab96ef59513c193a7378a208cb2a1c864b4bde9e22d1440efa4e5ab9ff",
+                  "ingress_sequence": 32
+                }
+              ],
+              "condition_id": "security-repeat",
+              "matching_count": 5,
+              "unresolved_count": 0,
+              "nonmatching_count": 0
+            }
+          ],
+          "population_complete": true,
+          "window_start_utc_us": 1792040350000000,
+          "coverage_limitations": [],
+          "reduction_accounting": {
+            "dropped_raw": 0,
+            "reduced_raw": 0,
+            "selected_raw": 5,
+            "archived_local": 0,
+            "pending_policy": 0,
+            "receipt_assurance": "NOT_OBSERVED",
+            "queue_overflow_drops": 0,
+            "raw_dispatch_attempts": 5,
+            "confirmed_receipt_count": null
+          },
+          "ingress_last_sequence": 35,
+          "ingress_first_sequence": 31,
+          "previous_capsule_digest": "e7d0013f2d66a92f04494905050fff52ba3df4ffc5b49425bb84a932b0590019",
+          "accepted_observation_count": 5
+        },
+        "verification": {
+          "status": "VALID",
+          "scope_id": "ada625c66de3b4e4136ac3e98f0180bbfa58d936a24617bb31ca86e86ff60e98",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5836,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "GAP",
+          "created_at_utc_us": 1792040360015210,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040361583318,
+          "replay_width_windows": 30
+        },
+        "received_at_us": 1792040361583318
+      },
+      {
+        "artifact_digest": "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1",
+        "scope_id": "bdbe283dca715d465845fde46820bb82d2f8420746d124b852e7e2069ac47fe2",
+        "body": {
+          "device_id": "edge-device-01",
+          "capsule_id": "bdbe283dca715d465845fde46820bb82d2f8420746d124b852e7e2069ac47fe2",
+          "gateway_id": "coverage-gateway",
+          "scope_kind": "WINDOW",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "window_index": 179204035,
+          "artifact_kind": "RCC",
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "closure_reason": "WINDOW_END",
+          "signing_key_id": "coverage-key",
+          "contract_profile": "rccd-contract-v1",
+          "input_commitment": {
+            "root": "3b4d96446054bad3ad45f62205303955548f295badc11730daa01d5a845f6057",
+            "construction": "sha256-scope-seeded-input-fold-v1",
+            "record_count": 5
+          },
+          "online_assurance": "AUTHENTICATED_SUMMARY",
+          "protocol_version": "rccd-capsule-v1",
+          "created_at_utc_us": 1792040360007817,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "window_end_utc_us": 1792040360000000,
+          "per_condition_facts": [
+            {
+              "witnesses": [
+                {
+                  "input_hash": "6d5fa6371c452cdc5e1ad8bcbebb426e3203bc2f85fb12db9409a9b2073dad2d",
+                  "ingress_sequence": 31
+                },
+                {
+                  "input_hash": "6505216be613b1387d7a113e4d2cfd7312cae0556b0bdcf18beccad7eb154a6c",
+                  "ingress_sequence": 32
+                }
+              ],
+              "condition_id": "environmental-hot",
+              "matching_count": 5,
+              "unresolved_count": 0,
+              "nonmatching_count": 0
+            }
+          ],
+          "population_complete": true,
+          "window_start_utc_us": 1792040350000000,
+          "coverage_limitations": [],
+          "reduction_accounting": {
+            "dropped_raw": 0,
+            "reduced_raw": 0,
+            "selected_raw": 5,
+            "archived_local": 0,
+            "pending_policy": 0,
+            "receipt_assurance": "NOT_OBSERVED",
+            "queue_overflow_drops": 0,
+            "raw_dispatch_attempts": 5,
+            "confirmed_receipt_count": null
+          },
+          "ingress_last_sequence": 35,
+          "ingress_first_sequence": 31,
+          "previous_capsule_digest": "ef83e8e95839da5323f57686a2f4c9e9c8e31a809584c41f3fb4cb204489961c",
+          "accepted_observation_count": 5
+        },
+        "verification": {
+          "status": "VALID",
+          "scope_id": "bdbe283dca715d465845fde46820bb82d2f8420746d124b852e7e2069ac47fe2",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "GAP",
+          "created_at_utc_us": 1792040360007817,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040360493419,
+          "replay_width_windows": 30
+        },
+        "received_at_us": 1792040360493419
+      },
+      {
+        "artifact_digest": "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e",
+        "scope_id": "f35ebd01efc75dc55168920d778322586940141e1958ce456a48399319df325b",
+        "body": {
+          "device_id": "edge-device-03",
+          "capsule_id": "f35ebd01efc75dc55168920d778322586940141e1958ce456a48399319df325b",
+          "gateway_id": "coverage-gateway",
+          "scope_kind": "WINDOW",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "window_index": 179204035,
+          "artifact_kind": "RCC",
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "closure_reason": "WINDOW_END",
+          "signing_key_id": "coverage-key",
+          "contract_profile": "rccd-contract-v1",
+          "input_commitment": {
+            "root": "88713c9777f3d639b625b72a9fdad2df7226142a2cb90343a3e9daeba5b7b5bb",
+            "construction": "sha256-scope-seeded-input-fold-v1",
+            "record_count": 5
+          },
+          "online_assurance": "AUTHENTICATED_SUMMARY",
+          "protocol_version": "rccd-capsule-v1",
+          "created_at_utc_us": 1792040360021228,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "window_end_utc_us": 1792040360000000,
+          "per_condition_facts": [
+            {
+              "witnesses": [
+                {
+                  "input_hash": "8e6cfda2e760731a661e1a2a24447694f6c84434a0c4a5f2ab2089b015890a16",
+                  "ingress_sequence": 31
+                },
+                {
+                  "input_hash": "c0a72219433b6560edaa2c700f0c89e03e96c37e8b3c78e6939cfb840d00551b",
+                  "ingress_sequence": 32
+                }
+              ],
+              "condition_id": "network-spike",
+              "matching_count": 5,
+              "unresolved_count": 0,
+              "nonmatching_count": 0
+            }
+          ],
+          "population_complete": true,
+          "window_start_utc_us": 1792040350000000,
+          "coverage_limitations": [],
+          "reduction_accounting": {
+            "dropped_raw": 0,
+            "reduced_raw": 0,
+            "selected_raw": 5,
+            "archived_local": 0,
+            "pending_policy": 0,
+            "receipt_assurance": "NOT_OBSERVED",
+            "queue_overflow_drops": 0,
+            "raw_dispatch_attempts": 5,
+            "confirmed_receipt_count": null
+          },
+          "ingress_last_sequence": 35,
+          "ingress_first_sequence": 31,
+          "previous_capsule_digest": "3dc2df1c53a466ea5c6be40292f44f325654c1933200a6b63e1202d1363e80fa",
+          "accepted_observation_count": 5
+        },
+        "verification": {
+          "status": "VALID",
+          "scope_id": "f35ebd01efc75dc55168920d778322586940141e1958ce456a48399319df325b",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "GAP",
+          "created_at_utc_us": 1792040360021228,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040362662585,
+          "replay_width_windows": 30
+        },
+        "received_at_us": 1792040362662585
+      },
+      {
+        "artifact_digest": "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6",
+        "scope_id": "f741a45ed6703fe6346a3d6198fe1fddc686163c930d2c82711deb65d9c22276",
+        "body": {
+          "device_id": "edge-device-05",
+          "capsule_id": "f741a45ed6703fe6346a3d6198fe1fddc686163c930d2c82711deb65d9c22276",
+          "gateway_id": "coverage-gateway",
+          "scope_kind": "WINDOW",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "window_index": 179204035,
+          "artifact_kind": "RCC",
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "closure_reason": "WINDOW_END",
+          "signing_key_id": "coverage-key",
+          "contract_profile": "rccd-contract-v1",
+          "input_commitment": {
+            "root": "05089b3229d40f151b5b5fa2e46710426741a0f87943ff7bd3338286ee6100b6",
+            "construction": "sha256-scope-seeded-input-fold-v1",
+            "record_count": 5
+          },
+          "online_assurance": "AUTHENTICATED_SUMMARY",
+          "protocol_version": "rccd-capsule-v1",
+          "created_at_utc_us": 1792040360018375,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "window_end_utc_us": 1792040360000000,
+          "per_condition_facts": [
+            {
+              "witnesses": [
+                {
+                  "input_hash": "ee59dc23a7ed7e8aeb1f7b9687282cd6a8f1a36111426021950566fc7dc07dfa",
+                  "ingress_sequence": 31
+                },
+                {
+                  "input_hash": "e3f149a6b8fea8018b06c68c77550d7078bb76f1c125cf6e4c1152d89ecb42db",
+                  "ingress_sequence": 32
+                }
+              ],
+              "condition_id": "industrial-vibration",
+              "matching_count": 5,
+              "unresolved_count": 0,
+              "nonmatching_count": 0
+            }
+          ],
+          "population_complete": true,
+          "window_start_utc_us": 1792040350000000,
+          "coverage_limitations": [],
+          "reduction_accounting": {
+            "dropped_raw": 0,
+            "reduced_raw": 0,
+            "selected_raw": 5,
+            "archived_local": 0,
+            "pending_policy": 0,
+            "receipt_assurance": "NOT_OBSERVED",
+            "queue_overflow_drops": 0,
+            "raw_dispatch_attempts": 5,
+            "confirmed_receipt_count": null
+          },
+          "ingress_last_sequence": 35,
+          "ingress_first_sequence": 31,
+          "previous_capsule_digest": "4048f17bd7973cb520ccdde0a3b7a0c772ccf2bf9ad9581ed26dd84b52fecb91",
+          "accepted_observation_count": 5
+        },
+        "verification": {
+          "status": "VALID",
+          "scope_id": "f741a45ed6703fe6346a3d6198fe1fddc686163c930d2c82711deb65d9c22276",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5416,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "GAP",
+          "created_at_utc_us": 1792040360018375,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040362092936,
+          "replay_width_windows": 30
+        },
+        "received_at_us": 1792040362092936
+      }
+    ],
+    "verdicts": [
+      {
+        "rule_id": "environmental-threshold",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "environmental-threshold",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "environmental-hot",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "daf01de5-c730-5f4b-b9dc-a9c6dcf44b37",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1"
+          ],
+          "rule_device_status": {
+            "edge-device-01": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "environmental-hot"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "incident-correlation",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "incident-correlation",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "resource-busy",
+              "coverage_complete": true
+            },
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "network-spike",
+              "coverage_complete": true
+            },
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "security-failures",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "ff539334-980f-560f-86cc-8539df932a24",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02",
+            "edge-device-03",
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 5,
+              "upper": 5
+            },
+            "resource-busy": {
+              "lower": 5,
+              "upper": 5
+            },
+            "security-failures": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e",
+            "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b",
+            "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5"
+          ],
+          "rule_device_status": {
+            "edge-device-02": "VERIFIED_EVIDENCE",
+            "edge-device-03": "VERIFIED_EVIDENCE",
+            "edge-device-04": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e",
+            "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b",
+            "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "resource-busy",
+            "network-spike",
+            "security-failures"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "industrial-threshold",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "industrial-threshold",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "ec26a2cc-15c6-585c-b22c-e9c789bb6b82",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "industrial-vibration": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6"
+          ],
+          "rule_device_status": {
+            "edge-device-05": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "industrial-vibration"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "network-threshold",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "network-threshold",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "network-spike",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "da17724a-bebc-5370-a6f2-b7bfe998d103",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-03"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "network-spike": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e"
+          ],
+          "rule_device_status": {
+            "edge-device-03": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "network-spike"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "process-attention",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "process-attention",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "environmental-hot",
+              "coverage_complete": true
+            },
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "31862449-c376-59ec-a461-57fdbfe4578d",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 5,
+              "upper": 5
+            },
+            "industrial-vibration": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1",
+            "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6"
+          ],
+          "rule_device_status": {
+            "edge-device-01": "VERIFIED_EVIDENCE",
+            "edge-device-05": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "environmental-hot"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "process-correlation",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "process-correlation",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "environmental-hot",
+              "coverage_complete": true
+            },
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "industrial-vibration",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "0d3bc2a5-314d-595a-ab90-e2c85a188bd0",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-01",
+            "edge-device-05"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "environmental-hot": {
+              "lower": 5,
+              "upper": 5
+            },
+            "industrial-vibration": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1",
+            "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6"
+          ],
+          "rule_device_status": {
+            "edge-device-01": "VERIFIED_EVIDENCE",
+            "edge-device-05": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1",
+            "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "environmental-hot",
+            "industrial-vibration"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "repeated-security-observations",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "repeated-security-observations",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "security-repeat",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "38be8dd9-2f24-5332-93eb-3d0bc41e549e",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "security-repeat": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b"
+          ],
+          "rule_device_status": {
+            "edge-device-04": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "security-repeat"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "resource-threshold",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "resource-threshold",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "resource-busy",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "db07ef1f-e3c0-519e-8348-4d620bf83ba8",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-02"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "resource-busy": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5"
+          ],
+          "rule_device_status": {
+            "edge-device-02": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "resource-busy"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      },
+      {
+        "rule_id": "security-threshold",
+        "window_index": 179204035,
+        "verdict": "TRUE",
+        "result": {
+          "mode": "RCCD_SCOPED_RULES_V1",
+          "truth": "TRUE",
+          "rule_id": "security-threshold",
+          "conditions": [
+            {
+              "truth": "TRUE",
+              "reason": "MATCHING_LOWER_BOUND",
+              "condition_id": "security-failures",
+              "coverage_complete": true
+            }
+          ],
+          "gateway_id": "coverage-gateway",
+          "quantifier": "Each EXISTS needs at least one match and each COUNT_GE its registered count bound in the same gateway-ingress window; physical simultaneity is not asserted.",
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "decision_id": "5461916a-2ba2-5f48-88ae-49023479de3d",
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "MATCHING_LOWER_BOUND"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "device_health": "NOT_ASSESSED",
+          "source_devices": [
+            "edge-device-04"
+          ],
+          "coverage_health": {
+            "scope": "REGISTERED_CONDITIONS_THIS_WINDOW_ONLY",
+            "state": "COMPLETE",
+            "devices": {
+              "edge-device-01": "VERIFIED_EVIDENCE",
+              "edge-device-02": "VERIFIED_EVIDENCE",
+              "edge-device-03": "VERIFIED_EVIDENCE",
+              "edge-device-04": "VERIFIED_EVIDENCE",
+              "edge-device-05": "VERIFIED_EVIDENCE"
+            },
+            "complete": true,
+            "device_health": "NOT_ASSESSED",
+            "rule_conditions_complete": true
+          },
+          "condition_bounds": {
+            "security-failures": {
+              "lower": 5,
+              "upper": 5
+            }
+          },
+          "coverage_complete": true,
+          "evaluator_version": "rccd-rules-v1",
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "examined_artifacts": [
+            "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b"
+          ],
+          "rule_device_status": {
+            "edge-device-04": "VERIFIED_EVIDENCE"
+          },
+          "unknown_conditions": [],
+          "verification_status": "VERIFIED",
+          "supporting_artifacts": [
+            "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b"
+          ],
+          "artifact_verification": "VALID",
+          "supporting_conditions": [
+            "security-failures"
+          ],
+          "checked_original_witnesses": []
+        },
+        "revision": 5
+      }
+    ],
+    "raw": [
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "recovery",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "tampering",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "evidence-loss",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "cross-device-incident",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 40.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 95.0,
+          "attributes": {
+            "n11_scenario": "registered-match",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 6.0,
+            "vibration_mm_s": 9.0,
+            "packets_per_second": 9000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      },
+      {
+        "device_id": "edge-device-03",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "network"
+        }
+      },
+      {
+        "device_id": "edge-device-01",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "environmental"
+        }
+      },
+      {
+        "device_id": "edge-device-05",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "industrial"
+        }
+      },
+      {
+        "device_id": "edge-device-04",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "security"
+        }
+      },
+      {
+        "device_id": "edge-device-02",
+        "payload": {
+          "status": "normal",
+          "humidity": 50.0,
+          "cpu_usage": 30.0,
+          "attributes": {
+            "n11_scenario": "normal-reduction",
+            "synthetic_demo": true
+          },
+          "event_type": "n11_demonstration",
+          "aggregation": null,
+          "temperature": 25.0,
+          "measurements": {
+            "failed_logins": 0.0,
+            "vibration_mm_s": 2.0,
+            "packets_per_second": 1000.0
+          },
+          "memory_usage": null,
+          "telemetry_type": "system"
+        }
+      }
+    ],
+    "outcomes": [
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "f35ebd01efc75dc55168920d778322586940141e1958ce456a48399319df325b",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "22644a45b4f0544e7cccd76fcff361842e20e702f3b062b5902b0fceb628e61e",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040360021228,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040362662585,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "f741a45ed6703fe6346a3d6198fe1fddc686163c930d2c82711deb65d9c22276",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "c5ab60622182478ef0d6322cbb79208475914f180d058c1c78b02e777a5063a6",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5416,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040360018375,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040362092936,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "ada625c66de3b4e4136ac3e98f0180bbfa58d936a24617bb31ca86e86ff60e98",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "3b696539a6fc148aef8fc6e6ceabfe57e239ffda3a5e14d777978933f440025b",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5836,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040360015210,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040361583318,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "2efee8e727674e0150a9eca2285799ef37efd1d659f1d5241e97f3006ca90b8b",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "9e03f6518c7dc55021779bd1993d630566f15aae66c1c916c68c4b11bace4fc5",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040360011645,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040361052431,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "bdbe283dca715d465845fde46820bb82d2f8420746d124b852e7e2069ac47fe2",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204035,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "bc88c960aa4678cbf17832894db5e8517de96e23b43db45023fac3b8ed86d0d1",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040360007817,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040360493419,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "8e9a1975f33667bf1ac389a72aedda32a9aa62b2f8ce3b8d2b529f9f2be4d35c"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "1f3bd8dea1ac9f44aea3e4713ad6f812921611631180e86e9deff4592244f309"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "68054cd74a3743ae86644728d2e8c2834c50958871eab52a293e1a725e1011bc"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "cd532ab806c4eb58f22314ee05eb2e4b6f0653228632e21162cb49351f7be8c9"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "75d31b4f5ff59bda33f6f0a4f1d37d77533143c83e3bbf9f356c6e3924c585f5"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "47e596de2253d50e506438511f6651a77b0c8ebac9c5bf643a941f880ef13412"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "546fca010b5f0e351326e93a79a7dd785a3fb3a8c3f48a4817c65593e38a74b5"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "06e1e94ccabc620e1812132445ca884b44aaa89c3fc4b171e3d5cad8688743ba"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "e559f823c81ed01a1fad58dde18de28d958a320ac3de0c3b18145bc9b5e7372f"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "fe70a5eda325fc9c21263e64530bf6d3d0cdbb9c288d921151fd11f213984635"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "e3998a9e39f6bcfdd8c56d1c33042aa69099152ea8162b4a7563b7da0cbbd362"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "232670e8d9c22c90979bf4d1e9e4843c0c03ba9562aae4505885f1be1e5bd28d"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "32ae95a9488c1bb8a2f8266852f593d2ec848a21007e3c488678c1fcf7266b7f"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "762a627a19c27f37bf3ec268f111e1babc6876b667ab639076802d6064665213"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "11d929179f4286c561a5bb4b30cbb105be0ef3520d2b83b18f431ee1b5db85c8"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "4f67cec9224b66e149949576f87c795a1b096a7416aaa8f54c10af228e4e3f34"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "4eeafe645f9f9c8ef7dad6e8e5b1c62708538cfbe5d3b4790548f13c3c558884"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "9e941da3582470dbc71309cdb58744017ee359fc4e30cc71594e099ea9e550a7"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "818f6a707b5337620eae12b1dd1a6cf3a3dd565f9be83976459246a43ee4b572"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "9f2a097b4d253b0016e231b2a3abd274c15f4f01ec0e2e7fad641199cbbd32d2"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "e755c02111d358660ed9c6723402f0170a9a1527c7adfd7c14fdc17f77329e7b"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "315b4747b3d9cb3186b2ec5af7d29e05ea1744e7225ceb9d6e45848c47c5ec78"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "2424aa9e539b24c4c2fe898da2b5a222a1cb55621aade743e96a44ef893a43f8"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "c10c3665825d7ce4a0263ce8d04969f40d19ee9d5853c05ab748447ea07f86a0"
+        }
+      },
+      {
+        "reason_code": "INVALID_SIGNED_PART",
+        "details": {
+          "input_digest": "56bb315db55f42eda15d6efe4795315f3092ee8aea2d6a79c89a0fd741896547"
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "e76800eab58a311bdeccb321598f6653c81f8b246e62239e9cd74470c6bfa291",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204027,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "4489a85ba6a6a46249a5541f1143584aff22a6bfdcef25077cc291dfc254fb53",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040280029440,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040283836853,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "24bebd8fb021080da80fd1a8364119be8609f72d4bafb351a9d0a5c33dd7ebb7",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204027,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "21dd79d919435b70abe09d6b92ff6164b86067bdee49ebd23b3ac2d75bbe623f",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040280025586,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040281970579,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "6f9ef83cf9ca2266753314c96c6ebea5c57bb680ea29d03551f954f2799fa4f6",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204027,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "47f744665daa1c254fed3655c8466cab6ed36dd08022c4929034d3481c4a06dc",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040280020623,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040281473844,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "993f880284353d64675f69467b00fbda7c6710e5d01797ebdab83f9a0f860bce",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204027,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "e39fce08e87a3b743e0cfc8734ee9ab972c752270fb636a81d194d3f1097dec7",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5416,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040280016978,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040280955884,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "9ce1d3e0e6979872f0e488171ea8e3c3b32a64f6fd97b305c1ab520831b67b44",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204027,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "b977efcdd7ef419f6bca44e23a0b22fcb5687632612782286fd8435f0941c70c",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5836,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040280011772,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040280323037,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "695af4c9f89a4aaaaef1b9b510c441ff1fd6215c9f86e2950ddfeedf583ce0d8",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204026,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "876526893720493860bae27b56cd82278326450c5e61542b708f14b51f438bfc",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040270016371,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040274337756,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "f32c8541ec2469c325c73d3de073bdf1653000704f2c7f1b46623015d8e2f0e2",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204026,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "b6b45c82127fcf1666d9054975e86603cad2f4436a6fca516d944cf6662c34b1",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5836,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040270013157,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040271930580,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "ad1d38277c744bdf16eda3b79eaa095d7a4bfc7289e300669916d2609527d047",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204026,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "f932272c9230faef36314322c62c456807c58f45d0c3c734b1b590b400420a0e",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5416,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040270010399,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040271411972,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "8ce69a637cb273c4ad3c08aacc796f3bf8b8346bb6dc91af344062746357a810",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204026,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "719352d56a5e63bf1bac40ad208c94ab35d11551e665a635b11e42d4c0c6161a",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040270007217,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040270901312,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "8b46bb6c67945a86d9254e949f529ed6dd042e499f5ad2872f6c233486dfdffd",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204026,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "f65ec4248fc0fa7329effa4c7cf12b411feaac0f1e4e876e0b0571250285305b",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5404,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040270002930,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040270373133,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "3698f8f80dd8b533cb4c8bb498d309b6d6ccb43879d86f4b34026dbb80cf2622",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204025,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "4c40175a6f2799a72de1da26dbafacea2c535632eee10395e578fd185360bf0f",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5828,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040260026176,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040264208628,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "d2ccc9c985ead353c125d9c10a8c7f484648ff96a5fe6e36f355179e08b0d0e7",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204025,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "e3e56fd2be6a6065f036cd13ad02f91aeb640220e58d853d2eba8a1924269129",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5408,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040260020782,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040262261732,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "8e9f41f5ecd565b90437f2f2529a0b4b21828a33cf98aadc67d94e998c511691",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204025,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "636d24b02037993a99c81d9442e0b6d8c96a575d40e6b6c6b56256ece6326bfc",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5400,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040260016208,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040261555005,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "547007e7cf4d1334bf00f72d6fdaa333e377e654e879a659d45f7bef74138ba8",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204025,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "918d3db4976becd30b019e263a26d82a033d03cf1e343d7991f44c271248f086",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5412,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040260010966,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040260969901,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "be58b334797d5590d5850570c703214b9b37c7821d81d2566fbe72574632affe",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 6,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204025,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "b5bfd315f09ff8ad157dec531258c1c49ae5613faa8cffcce116c41fe00420f3",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 5400,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040260004889,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040260428607,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "a38b7f82f9e17d5696086b3053b7859d41ac3ac51add1dd940439e4c647b49c5",
+          "device_id": "edge-device-03",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204024,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "24a14558bd2d9b6bb93afb4f1af67cf76b4a665542d538424c7b4059b3af6782",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4580,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040250019258,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040251632496,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "f88465d43f9857a76dd277e90d47040204874eebc45f45fe0d28aa9d90182f2e",
+          "device_id": "edge-device-01",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204024,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "50e9db96ea48e6efcd34bd06a62d5709dc846d1ab2af7dc491a8b966c786f65e",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4584,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040250016773,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040251304157,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "753d4426f1b2a00ee0d9d5df506a5e2db844da8feead63ba2a96e51cf800b966",
+          "device_id": "edge-device-05",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204024,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "08a2bb79afe14ed7c065343a315157a1aa7e4aa025d9ccfad64bfb7b62bbeae2",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4588,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040250014173,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040250949670,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "905f5f1ba580498a708f280963ffe167a2b54c5249ab52880acb6008fdf0aac7",
+          "device_id": "edge-device-04",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204024,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "ec26b1708f4db6751e87079b625057573bbe48b1286b93d259e54d303e19f756",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4736,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040250010864,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040250597302,
+          "replay_width_windows": 30
+        }
+      },
+      {
+        "reason_code": "EVIDENCE_COMMITTED",
+        "details": {
+          "status": "VALID",
+          "scope_id": "0eb9889493ef6964bf476f92e503ceedcd9e043fe595248e0b28de5441b4f76b",
+          "device_id": "edge-device-02",
+          "gateway_id": "coverage-gateway",
+          "part_count": 5,
+          "time_basis": "gateway_ingress_utc_microseconds",
+          "limitations": [],
+          "ledger_epoch": "d4be2d23-47c8-49f5-ba94-8ca874c1c50f",
+          "reason_codes": [
+            "SIGNATURE_SCHEMA_CONTRACT_SCOPE_COUNTS_VERIFIED",
+            "HIDDEN_INPUTS_NOT_RECOMPUTED"
+          ],
+          "window_index": 179204024,
+          "contract_hash": "5ac9d246d40fc6a333c68fe984025d7f6169bec2fe3e85589c5af3cee51204bd",
+          "signing_key_id": "coverage-key",
+          "artifact_digest": "e4272c7bd6a7f0573568e14b35e3035b1e4370617c58db0e8a6857042c0572ca",
+          "assurance_level": "AUTHENTICATED_SUMMARY",
+          "part_completion": "COMPLETE",
+          "transport_bytes": 4580,
+          "verifier_version": "rccd-fog-verifier-v1",
+          "continuity_status": "UNASSESSED",
+          "created_at_utc_us": 1792040250007272,
+          "observation_scope": "accepted_normalized_gateway_ingress",
+          "public_key_sha256": "ec8ffb0d49e8b901ad4f0ed5ca6f1eb9ec11f65b335a99b61ca787a8bcbcea52",
+          "received_at_utc_us": 1792040250245230,
+          "replay_width_windows": 30
+        }
+      }
+    ],
+    "tables": [
+      {
+        "tablename": "accepted_telemetry"
+      },
+      {
+        "tablename": "alerts"
+      },
+      {
+        "tablename": "anomalies"
+      },
+      {
+        "tablename": "coverage_alert_cooldowns"
+      },
+      {
+        "tablename": "coverage_alert_history"
+      },
+      {
+        "tablename": "coverage_alert_intents"
+      },
+      {
+        "tablename": "coverage_alert_states"
+      },
+      {
+        "tablename": "coverage_capsules"
+      },
+      {
+        "tablename": "coverage_conflicts"
+      },
+      {
+        "tablename": "coverage_epochs"
+      },
+      {
+        "tablename": "coverage_facts"
+      },
+      {
+        "tablename": "coverage_heads"
+      },
+      {
+        "tablename": "coverage_monitor_gaps"
+      },
+      {
+        "tablename": "coverage_monitor_state"
+      },
+      {
+        "tablename": "coverage_original_witnesses"
+      },
+      {
+        "tablename": "coverage_outcomes"
+      },
+      {
+        "tablename": "coverage_parts"
+      },
+      {
+        "tablename": "coverage_performance"
+      },
+      {
+        "tablename": "coverage_publications"
+      },
+      {
+        "tablename": "coverage_rule_history"
+      },
+      {
+        "tablename": "coverage_rule_verdicts"
+      },
+      {
+        "tablename": "coverage_scopes"
+      },
+      {
+        "tablename": "experiment_metadata"
+      },
+      {
+        "tablename": "observability_snapshots"
+      },
+      {
+        "tablename": "performance_metrics"
+      },
+      {
+        "tablename": "rejected_messages"
+      },
+      {
+        "tablename": "security_events"
+      }
+    ]
+  }
+}

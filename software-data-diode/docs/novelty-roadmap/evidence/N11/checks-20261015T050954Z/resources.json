@@ -1,0 +1,156 @@
+[
+  {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "0.59%",
+    "Container": "00bf6e68176492759c650f180982aa41cff3bc7494d20165f5174b5fa7080493",
+    "ID": "00bf6e681764",
+    "MemPerc": "15.62%",
+    "MemUsage": "119.9MiB / 768MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-dashboard-1",
+    "NetIO": "12.5MB / 4.58MB",
+    "PIDs": "22"
+  },
+  {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "20.77%",
+    "Container": "d40b3f88d99fe9ad1a595a3baa0ef058a16723708120dfcc198ec998ccdb1d4c",
+    "ID": "d40b3f88d99f",
+    "MemPerc": "15.00%",
+    "MemUsage": "57.62MiB / 384MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-monitoring-api-1",
+    "NetIO": "12.6MB / 13.7MB",
+    "PIDs": "8"
+  },
+  {
+    "BlockIO": "69.6kB / 3.18MB",
+    "CPUPerc": "14.46%",
+    "Container": "40cd652254baaf3e1b1c3334ad93142cd10205c311c4e50bf662f481c71ff412",
+    "ID": "40cd652254ba",
+    "MemPerc": "18.05%",
+    "MemUsage": "69.3MiB / 384MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-fog-receiver-1",
+    "NetIO": "5.41MB / 6.98MB",
+    "PIDs": "10"
+  },
+  {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "10.90%",
+    "Container": "55be9fe7479d029e7fcb3d910e77bc63dcb43dcc1654b543f7e34da7fc309ee6",
+    "ID": "55be9fe7479d",
+    "MemPerc": "22.97%",
+    "MemUsage": "58.8MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-fog-analytics-1",
+    "NetIO": "1.87MB / 2.36MB",
+    "PIDs": "9"
+  },
+  {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "0.67%",
+    "Container": "0bca811b7533ce2d192fe965fbe14b2d6618a61f6964ae45f4cb4f2be45c56ea",
+    "ID": "0bca811b7533",
+    "MemPerc": "18.10%",
+    "MemUsage": "46.35MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-alert-engine-1",
+    "NetIO": "2.5MB / 2.46MB",
+    "PIDs": "9"
+  },
+  {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "0.13%",
+    "Container": "e1211bfa14bc74eea4de00deec3dc2c4890ccf00719f32fab1f3aa420bce7994",
+    "ID": "e1211bfa14bc",
+    "MemPerc": "21.31%",
+    "MemUsage": "54.56MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-event-processor-1",
+    "NetIO": "821kB / 947kB",
+    "PIDs": "8"
+  },
+  {
+    "BlockIO": "0B / 889kB",
+    "CPUPerc": "0.00%",
+    "Container": "bae0457026fe85bf63511a17e3538191abddc2b0cec72c1406749e912d601285",
+    "ID": "bae0457026fe",
+    "MemPerc": "1.75%",
+    "MemUsage": "4.469MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-02-1",
+    "NetIO": "29.7kB / 35.1kB",
+    "PIDs": "2"
+  },
+  {
+    "BlockIO": "0B / 889kB",
+    "CPUPerc": "0.00%",
+    "Container": "6e92a3e5054f6b3c423a843bffec4de770ffab2977370edd2d7820befff2399c",
+    "ID": "6e92a3e5054f",
+    "MemPerc": "1.75%",
+    "MemUsage": "4.484MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-01-1",
+    "NetIO": "29.8kB / 35.9kB",
+    "PIDs": "2"
+  },
+  {
+    "BlockIO": "0B / 889kB",
+    "CPUPerc": "0.00%",
+    "Container": "24b291ab5a7e56f9decb031c1357ed4f337767ac77fc6474b768cf2626544622",
+    "ID": "24b291ab5a7e",
+    "MemPerc": "1.76%",
+    "MemUsage": "4.516MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-05-1",
+    "NetIO": "29.6kB / 35.6kB",
+    "PIDs": "2"
+  },
+  {
+    "BlockIO": "0B / 889kB",
+    "CPUPerc": "0.00%",
+    "Container": "edceb303ed4d8e75b5a449d8901c18702a241a6eb1306bb31a1bb3ae3a18407d",
+    "ID": "edceb303ed4d",
+    "MemPerc": "1.82%",
+    "MemUsage": "4.648MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-04-1",
+    "NetIO": "30.1kB / 35.2kB",
+    "PIDs": "2"
+  },
+  {
+    "BlockIO": "0B / 889kB",
+    "CPUPerc": "0.00%",
+    "Container": "f969eed51e43530fad1b8c226ed9969f37ec650b916fbf0ec987f19120365f40",
+    "ID": "f969eed51e43",
+    "MemPerc": "1.76%",
+    "MemUsage": "4.508MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-device-03-1",
+    "NetIO": "29.8kB / 35.1kB",
+    "PIDs": "2"
+  },
+  {
+    "BlockIO": "0B / 4.1kB",
+    "CPUPerc": "0.14%",
+    "Container": "1757f7085846c9b42f207ea45106884c8f4c102017fe5f78fe03dba0eb543dc6",
+    "ID": "1757f7085846",
+    "MemPerc": "18.45%",
+    "MemUsage": "47.23MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-data-diode-1",
+    "NetIO": "580kB / 503kB",
+    "PIDs": "6"
+  },
+  {
+    "BlockIO": "0B / 27.5MB",
+    "CPUPerc": "19.86%",
+    "Container": "926bd802410556f0986eef0f783c60790395ee270d79480985220a65310ce860",
+    "ID": "926bd8024105",
+    "MemPerc": "25.03%",
+    "MemUsage": "64.07MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-edge-gateway-1",
+    "NetIO": "27.4kB / 124kB",
+    "PIDs": "13"
+  },
+  {
+    "BlockIO": "123kB / 22.7MB",
+    "CPUPerc": "35.76%",
+    "Container": "37c463b00ad4467af3cba8fe77e43c93b3e053282f7e704dfc400b2cdadae4b8",
+    "ID": "37c463b00ad4",
+    "MemPerc": "11.97%",
+    "MemUsage": "30.63MiB / 256MiB",
+    "Name": "software-data-diode-coverage-n11-1a11c0de0004-postgres-1",
+    "NetIO": "8.92MB / 12.7MB",
+    "PIDs": "6"
+  }
+]

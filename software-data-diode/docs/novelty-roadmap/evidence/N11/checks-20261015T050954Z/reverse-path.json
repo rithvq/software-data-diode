@@ -1,0 +1,153 @@
+[
+  {
+    "service": "edge-gateway",
+    "kind": "DNS",
+    "failed": true
+  },
+  {
+    "service": "edge-gateway",
+    "port": 8000,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-gateway",
+    "port": 9001,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-01",
+    "kind": "DNS",
+    "failed": true
+  },
+  {
+    "service": "edge-device-01",
+    "port": 8000,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-01",
+    "port": 9001,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-02",
+    "kind": "DNS",
+    "failed": true
+  },
+  {
+    "service": "edge-device-02",
+    "port": 8000,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-02",
+    "port": 9001,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-03",
+    "kind": "DNS",
+    "failed": true
+  },
+  {
+    "service": "edge-device-03",
+    "port": 8000,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-03",
+    "port": 9001,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-04",
+    "kind": "DNS",
+    "failed": true
+  },
+  {
+    "service": "edge-device-04",
+    "port": 8000,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-04",
+    "port": 9001,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-05",
+    "kind": "DNS",
+    "failed": true
+  },
+  {
+    "service": "edge-device-05",
+    "port": 8000,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-05",
+    "port": 9001,
+    "kind": "TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-01",
+    "address": "10.0.3.7",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-02",
+    "address": "10.0.3.6",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-03",
+    "address": "10.0.3.4",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-04",
+    "address": "10.0.3.5",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-device-05",
+    "address": "10.0.3.3",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-gateway",
+    "address": "10.0.3.19",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  },
+  {
+    "service": "edge-gateway",
+    "address": "10.0.3.2",
+    "port": 8000,
+    "kind": "KNOWN_IP_TCP",
+    "failed": true
+  }
+]

@@ -136,17 +136,25 @@ class PassiveDiode(IngressRuntime):
             raise ValueError("invalid locally configured forwarding capacity")
         super().__init__(config, "edge-gateway")
         self.sender, self.capacity = SendOnlyUDP(host, port, config.datagram_bytes), link_capacity
+        self.demo_faults = None
+        if os.getenv("N11_DEMO_ENABLED") == "true":
+            from .demo_faults import DemoForwardFaults
+            self.demo_faults = DemoForwardFaults()
 
     async def _process(self):
         while True:
             frame = await self.queue.get()
-            self.sender.attempt(frame)
+            outgoing = self.demo_faults.transform(frame) if self.demo_faults else frame
+            if outgoing is not None:
+                self.sender.attempt(outgoing)
             self.counts["forward_attempts"] += 1
             self.queue.task_done()
             await asyncio.sleep((len(frame)+28)/self.capacity)
 
     def status(self):
-        return {**super().status(), "sender": dict(self.sender.counts), "forwarding": "PASSIVE_FIFO_LOCAL_ATTEMPTS"}
+        return {**super().status(), "sender": dict(self.sender.counts), "forwarding": "PASSIVE_FIFO_LOCAL_ATTEMPTS",
+                **({"n11_faults": dict(self.demo_faults.counts), "n11_events": self.demo_faults.events}
+                   if self.demo_faults else {})}
 
     async def close(self):
         await super().close()

@@ -10,3 +10,4 @@ demo-results/
 ci-results/
 .coverage
 .coverage.*
+.local/

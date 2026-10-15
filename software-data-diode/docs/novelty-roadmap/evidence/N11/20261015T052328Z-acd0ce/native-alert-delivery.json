@@ -1,0 +1,1922 @@
+[
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204184,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204185,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204185,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204185,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 2,
+    "delivered_revision": 2,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 3,
+    "delivered_revision": 3,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 4,
+    "delivered_revision": 4,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 3,
+    "delivered_revision": 3,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 2,
+    "delivered_revision": 2,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204186,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204186,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 4,
+    "delivered_revision": 4,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 2,
+    "delivered_revision": 2,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 4,
+    "delivered_revision": 4,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 2,
+    "delivered_revision": 2,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 3,
+    "delivered_revision": 3,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204187,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204187,
+    "kind": "INCIDENT",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204188,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204189,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204190,
+    "kind": "VISIBILITY",
+    "active": true,
+    "reason": "OBSERVATION_DEGRADED_NOT_ATTACK",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204191,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204192,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204193,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204194,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204195,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 4,
+    "delivered_revision": 4,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 2,
+    "delivered_revision": 2,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 3,
+    "delivered_revision": 3,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 4,
+    "delivered_revision": 4,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 2,
+    "delivered_revision": 2,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204196,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "OBSERVATION_RECOVERED",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204196,
+    "kind": "INCIDENT",
+    "active": true,
+    "reason": "SCOPED_RULE_TRUE",
+    "delivery_revision": 5,
+    "delivered_revision": 5,
+    "stored_by_alert_engine": true
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204197,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204198,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204199,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204200,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204201,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "environmental-threshold",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "incident-correlation",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "industrial-threshold",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "network-threshold",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-attention",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "process-correlation",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "repeated-security-observations",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "resource-threshold",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  },
+  {
+    "rule_id": "security-threshold",
+    "window_index": 179204202,
+    "kind": "VISIBILITY",
+    "active": false,
+    "reason": "COOLDOWN_SUPPRESSED",
+    "delivery_revision": 1,
+    "delivered_revision": 1,
+    "stored_by_alert_engine": false
+  }
+]

@@ -1,0 +1,8 @@
+scenario,window_index,rule_id,expected,actual,passed,reason,evidence_file
+normal-reduction,179204024,environmental-threshold,FALSE,FALSE,False,"[""MATCHING_UPPER_BOUND""]",received.json
+registered-match,179204025,environmental-threshold,TRUE,TRUE,True,"[""MATCHING_LOWER_BOUND""]",received.json
+cross-device-incident,179204026,incident-correlation,TRUE,TRUE,True,"[""MATCHING_LOWER_BOUND""]",received.json
+raw-loss,179204027,incident-correlation,TRUE,TRUE,True,"[""MATCHING_LOWER_BOUND""]",received.json
+evidence-loss,179204028,environmental-threshold,UNKNOWN,UNKNOWN,True,"[""MISSING_EVIDENCE"", ""MISSING_FACTS""]",received.json
+tampering,179204029,environmental-threshold,UNKNOWN,NOT_PERSISTED,False,[],received.json
+recovery,179204035,incident-correlation,TRUE,TRUE,True,"[""MATCHING_LOWER_BOUND""]",recovery.json
